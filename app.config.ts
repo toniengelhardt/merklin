@@ -4,7 +4,7 @@ export default defineAppConfig({
       spinner: 'ph:spinner-gap',
       light: 'ph:sun-duotone',
       dark: 'ph:moon-duotone',
-      system: 'ph:circle-half-duotone',
+      system: 'ph:circle-half',
       nuxt: 'logos:nuxt-icon',
       vite: 'logos:vitejs',
       unocss: 'logos:unocss',

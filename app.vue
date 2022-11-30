@@ -1,7 +1,26 @@
 <script setup lang="ts">
-const { provider, signer } = await useProvider()
-console.log('Provider:', provider)
-console.log('Signer:', signer)
+import { useRabbitholeStore } from '~/stores/rabbithole'
+const rhStore = useRabbitholeStore()
+
+async function initRabbithole() {
+  const { provider, signer } = await useProvider()
+  console.log('Provider:', provider)
+  console.log('Signer:', signer)
+
+  const accounts: Web3Account[] = []
+  const addresses = await provider.send('eth_requestAccounts', []) as Web3Address[]
+  await Promise.all(addresses.map(async (address) => {
+    const account: Web3Account = { address }
+    account.ens = await provider.lookupAddress(address)
+    if (account.ens)
+      account.avatar = await provider.getAvatar(account.ens)
+    accounts.push(account)
+    return Promise.resolve()
+  }))
+  rhStore.accounts = accounts
+}
+
+onMounted(async () => initRabbithole())
 </script>
 
 <template>
@@ -11,8 +30,8 @@ console.log('Signer:', signer)
       <Header />
       <main flex-1 flex justify-center items-center>
         <div w-full max-w-screen-md>
-          <div panel flex justify-center items-center h-48 text-2rem font-mono>
-            gm
+          <div panel flex justify-center items-center h-48 text-3rem font-mono>
+            gm 🦧
           </div>
         </div>
       </main>

@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div flex justify-between items-center h-12 px-4>
+  <div flex justify-between items-center h-16 px-4>
     <div text-sm />
     <div grid grid-flow-col gap-4 items-center>
       <Icon name="nuxt" />
