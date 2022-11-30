@@ -1,6 +1,6 @@
 <template>
   <div relative bg-base>
-    <div id="bg" absolute top-0 left-0 bottom-0 right-0 z-0 />
+    <div class="bg-gradient" absolute top-0 left-0 bottom-0 right-0 z-0 />
     <div relative flex flex-col min-h-100vh text-base z-1>
       <Header />
       <main flex-1 p4>
@@ -22,9 +22,7 @@ body {
   overscroll-behavior: none;
 }
 
-#bg {
-  background:
-    radial-gradient(circle at top, rgba(53, 73, 94, 0.3), rgba(53, 73, 94, 0) 160%),
-    radial-gradient(circle at top, rgba(65, 184, 131, 0.15), rgba(65, 184, 131, 0) 80%);
+.bg-gradient {
+  background: radial-gradient(100% 100% at 50% 5%, rgba(65, 184, 131, 0.2) 0%, rgba(65, 184, 131, 0.05) 52.6%, rgba(0, 0, 0, 0) 100%);
 }
 </style>

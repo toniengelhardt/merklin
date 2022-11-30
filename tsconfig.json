@@ -1,10 +1,12 @@
 {
   "extends": "./.nuxt/tsconfig.json",
+  "exclude": [
+    "coverage",
+    "dist",
+    "node_modules"
+  ],
   "compilerOptions": {
     "strict": true,
-    "resolveJsonModule": true,
-    "types": [
-      "vue/ref-macros"
-    ]
+    "resolveJsonModule": true
   }
 }
