@@ -10,7 +10,7 @@ import {
 export default defineConfig({
   shortcuts: {
     'bg-base': 'bg-zinc-100 dark:bg-zinc-900',
-    'bg-surface': 'bg-white dark:bg-zinc-100/5',
+    'bg-surface': 'bg-white/50 dark:bg-zinc-900/50',
     'bg-contrast': 'bg-zinc-900 dark:bg-zinc-100',
     'text-base': 'text-zinc-900 dark:text-zinc-200',
     'text-dim': 'text-zinc-900/70 dark:text-zinc-200/60',

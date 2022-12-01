@@ -1,23 +1,18 @@
-<script setup lang="ts">
-const blocknumber = useBlocknumber()
-</script>
-
 <template>
-  <div flex justify-between items-center h-16 px-4>
-    <div grid grid-flow-col gap-4 items-center text-sm>
-      <div flex items-center>
-        <Icon name="block" px-2 />
-        <div text-xs text-dim>
-          {{ blocknumber || '...' }}
-        </div>
-      </div>
+  <div grid grid-cols-12 h-16 px-4>
+    <div col-span-4 grid grid-flow-col gap-4 items-center text-sm>
+      <NetworkInfo />
     </div>
-    <div grid grid-flow-col gap-4 items-center>
+    <div col-span-4 grid grid-flow-col gap-8 justify-center items-center>
       <Icon name="nuxt" />
       <Icon name="vite" />
       <Icon name="unocss" dark:invert />
       <Icon name="headless" />
-      <ThemeToggle ml-1 />
+    </div>
+    <div col-span-4 grid grid-flow-col gap-4 justify-end items-center pr-2>
+      <Icon name="twitter" size="1.5rem" />
+      <Icon name="discord" size="1.5rem" />
+      <Icon name="github" size="1.5rem" />
     </div>
   </div>
 </template>

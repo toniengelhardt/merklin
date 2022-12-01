@@ -33,11 +33,11 @@ onMounted(() => initRabbithole())
       <Header />
       <main flex-1 px-4 grid grid-cols-12 gap-4>
         <div col-span-2 panel flex justify-center items-center h-32 text-2rem font-mono>
-          gm 🦧
+          <span mr-2>gm</span>
         </div>
         <div col-span-7 panel>
           <div>Transactions</div>
-          <Transactions />
+          <TransactionList />
         </div>
         <div col-span-3 panel>
           Statistics

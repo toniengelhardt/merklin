@@ -10,7 +10,7 @@
     "lint:fix": "eslint. --fix"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.32.0",
+    "@antfu/eslint-config": "^0.33.1",
     "@nuxt/test-utils-edge": "^3.0.1-rc.0-27828744.aa9aec1",
     "@nuxtjs/color-mode": "^3.2.0",
     "@unocss/nuxt": "^0.47.1",
@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.6",
+    "date-fns": "^2.29.3",
     "ethers": "^5.7.2",
     "pinia-plugin-persistedstate": "^3.0.1"
   }

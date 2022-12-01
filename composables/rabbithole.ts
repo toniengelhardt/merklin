@@ -30,12 +30,18 @@ export const useTransactions = async () => {
 
 export const useBlocknumber = () => {
   const blocknumber = ref<number | undefined>(undefined)
+  const rhStore = useRabbitholeStore()
   useWeb3()
     .then(() => {
       useIntervalFn(() => {
         web3.getBlockNumber()
-          .then((bn: number) => blocknumber.value = bn)
-          .catch(() => {})
+          .then((bn: number) => {
+            blocknumber.value = bn
+            rhStore.status = 'connected'
+          })
+          .catch(() => {
+            rhStore.status = 'error'
+          })
       }, 5 * 1000, { immediate: true })
     })
     .catch(() => {})

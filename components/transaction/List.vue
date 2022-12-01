@@ -1,12 +1,11 @@
 <script setup lang="ts">
 import type { ethers } from 'ethers'
-import { logger } from 'ethers'
 
-let transactions = ref<ethers.Transaction[] | null>(null)
+let transactions = ref<TransactionRespose[] | null>(null)
 
 onMounted(() => {
   useTransactions()
-    .then(_transactions => transactions = _transactions as any)
+    .then(_transactions => transactions = _transactions)
   console.log(transactions)
 })
 </script>
@@ -19,6 +18,7 @@ onMounted(() => {
       mb-2
     >
       <div>{{ transaction.hash }}</div>
+      <div>{{ formatTimestamp(transaction.timestamp) }}</div>
       <div>{{ transaction.from }} >> {{ transaction.to }}</div>
     </div>
   </div>
