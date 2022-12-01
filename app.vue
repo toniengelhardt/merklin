@@ -19,6 +19,8 @@ async function initRabbithole() {
     return Promise.resolve()
   }))
   rhStore.accounts = accounts
+  if (accounts.length)
+    rhStore.account = accounts[0]
 }
 
 onMounted(() => initRabbithole())
@@ -34,7 +36,8 @@ onMounted(() => initRabbithole())
           gm 🦧
         </div>
         <div col-span-7 panel>
-          Transactions
+          <div>Transactions</div>
+          <Transactions />
         </div>
         <div col-span-3 panel>
           Statistics

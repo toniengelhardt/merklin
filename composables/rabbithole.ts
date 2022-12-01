@@ -13,10 +13,19 @@ export const useWeb3 = async () => {
   return { web3, signer }
 }
 
-export const useEtherScanEth = async () => {
+export const useEtherscanEth = async () => {
   if (!etherscanEth)
     etherscanEth = new ethers.providers.EtherscanProvider('homestead')
   return etherscanEth
+}
+
+export const useTransactions = async () => {
+  const rabbitholeStore = useRabbitholeStore()
+  if (rabbitholeStore.account) {
+    const etherscanEth = await useEtherscanEth()
+    return await etherscanEth.getHistory(rabbitholeStore.account.address)
+  }
+  return Promise.resolve()
 }
 
 export const useBlocknumber = () => {
