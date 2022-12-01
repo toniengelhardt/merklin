@@ -1,6 +1,8 @@
 # m3tadata
 
-This project is an experiment to build a [Zapper](https://zapper.fi/) / [Zerion](https://app.zerion.io/) with [Nuxt](https://nuxt.com). The idea is to focus mostly on wallet analytics, e.g.
+This project is an experiment to build a [Zapper](https://zapper.fi/) / [Zerion](https://app.zerion.io/) with [Nuxt](https://nuxt.com). 
+
+The idea is to focus mostly on wallet analytics, e.g.
 
 - Detailed charts of wallet activity
 - Funds spent on gas cost over time
