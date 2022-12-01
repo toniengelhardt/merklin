@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const rhStore = useRabbitholeStore()
+const account = $computed(() => rhStore.accounts?.length ? rhStore.accounts[0] : undefined)
 const display = $computed(() => account ? `${account.address.slice(0, 6)}...${account.address.slice(-4)}` : 'Connect Wallet')
 </script>
 

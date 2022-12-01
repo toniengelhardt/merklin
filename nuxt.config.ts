@@ -8,6 +8,9 @@ export default defineNuxtConfig({
     'nuxt-headlessui',
     'nuxt-icon',
   ],
+  imports: {
+    dirs: ['./stores'],
+  },
   experimental: {
     reactivityTransform: true,
   },

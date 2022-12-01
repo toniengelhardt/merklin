@@ -22,6 +22,7 @@ export default defineAppConfig({
       menu: 'ph:dots-three-outline',
       dropdown: 'ph:caret-down',
       gas: 'ph:gas-pump-duotone',
+      block: 'ph:cube-duotone',
     },
   },
 })

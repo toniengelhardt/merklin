@@ -1,8 +1,5 @@
 <script setup lang="ts">
-const { provider } = await useProvider()
-console.log(provider)
-
-// const network =
+const { web3 } = await useWeb3()
 </script>
 
 <template>

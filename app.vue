@@ -3,24 +3,25 @@ import { useRabbitholeStore } from '~/stores/rabbithole'
 const rhStore = useRabbitholeStore()
 
 async function initRabbithole() {
-  const { provider, signer } = await useProvider()
-  console.log('Provider:', provider)
+  const { web3, signer } = await useWeb3()
+  console.log('web3:', web3)
   console.log('Signer:', signer)
 
+  // Get accounts
   const accounts: Web3Account[] = []
-  const addresses = await provider.send('eth_requestAccounts', []) as Web3Address[]
+  const addresses = await web3.send('eth_requestAccounts', []) as Web3Address[]
   await Promise.all(addresses.map(async (address) => {
     const account: Web3Account = { address }
-    account.ens = await provider.lookupAddress(address)
-    if (account.ens)
-      account.avatar = await provider.getAvatar(account.ens)
+    // account.ens = await web3.lookupAddress(address)
+    // if (account.ens)
+    //   account.avatar = await web3.getAvatar(account.ens)
     accounts.push(account)
     return Promise.resolve()
   }))
   rhStore.accounts = accounts
 }
 
-onMounted(async () => initRabbithole())
+onMounted(() => initRabbithole())
 </script>
 
 <template>
@@ -28,11 +29,15 @@ onMounted(async () => initRabbithole())
     <div class="bg-gradient" absolute top-0 left-0 bottom-0 right-0 z-0 />
     <div relative flex flex-col min-h-100vh text-base z-1>
       <Header />
-      <main flex-1 flex justify-center items-center>
-        <div w-full max-w-screen-md>
-          <div panel flex justify-center items-center h-48 text-3rem font-mono>
-            gm 🦧
-          </div>
+      <main flex-1 px-4 grid grid-cols-12 gap-4>
+        <div col-span-2 panel flex justify-center items-center h-32 text-2rem font-mono>
+          gm 🦧
+        </div>
+        <div col-span-7 panel>
+          Transactions
+        </div>
+        <div col-span-3 panel>
+          Statistics
         </div>
       </main>
       <Footer />
