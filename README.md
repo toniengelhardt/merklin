@@ -10,6 +10,8 @@ This project is an experiment to build a [Zapper](https://zapper.fi/) / [Zerion]
 - Ecosystem overview per network
 - etc.
 
+Networks: Ethereum, Arbitrum, Optimism, Polygon, zkSync.
+
 Development insights available on [RepoTracker](https://repo-tracker.com/r/gh/toniengelhardt/m3tadata).
 
 ## Stack
