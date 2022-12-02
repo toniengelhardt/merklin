@@ -29,13 +29,15 @@ onMounted(() => initRabbithole())
 <template>
   <div class="no-translate" relative bg-base>
     <div class="bg-gradient" absolute top-0 left-0 bottom-0 right-0 z-0 />
-    <div relative flex min-h-100vh text-base z-1>
+    <div relative flex h-100vh max-h-100vh max-h-100dvh text-base z-1>
       <div flex flex-col w-70 bg-surface>
         <AppMenu />
       </div>
-      <main flex-1 flex flex-col pb-4>
+      <main flex-1 flex flex-col>
         <ActionBar />
-        <NuxtPage />
+        <div flex-1 flex overflow-scroll pb-4>
+          <NuxtPage />
+        </div>
       </main>
     </div>
   </div>

@@ -10,9 +10,9 @@ import {
 export default defineConfig({
   shortcuts: {
     'page': 'flex-1 px-4 grid grid-cols-12 gap-4',
-    'bg-base': 'bg-zinc-100 dark:bg-zinc-900',
-    'bg-surface': 'bg-white/50 dark:bg-zinc-900/50',
-    'bg-element': 'bg-white/75 dark:bg-zinc-900/75',
+    'bg-base': 'bg-white dark:bg-zinc-900',
+    'bg-surface': 'bg-white/75 dark:bg-zinc-900/75',
+    'bg-element': 'bg-zinc-900/5 dark:bg-white/5',
     'bg-contrast': 'bg-zinc-900 dark:bg-zinc-100',
     'radius-base': 'rounded-xl',
     'text-base': 'text-zinc-900 dark:text-zinc-200',

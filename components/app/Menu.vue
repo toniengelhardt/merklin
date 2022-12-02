@@ -15,7 +15,15 @@ const menuItems = [
     label: 'Transactions',
     title: 'Transactions',
     link: '/transactions',
-  }
+  },
+  {
+    icon: {
+      name: 'airdrop',
+    },
+    label: 'Airdrops',
+    title: 'Airdrops',
+    link: '/airdrops',
+  },
 ]
 </script>
 
@@ -43,13 +51,47 @@ const menuItems = [
     </NuxtLink>
   </div> -->
   <div h-12 flex justify-between items-center text-center px-6>
-    <Icon name="nuxt" />
-    <Icon name="vite" />
-    <Icon name="unocss" dark:invert />
-    <Icon name="headless" />
-    <Icon name="vercel" />
-    <div text-sm text-faint>
+    <NuxtLink
+      href="https://nuxt.com"
+      target="_blank"
+      title="Nuxt"
+    >
+      <Icon name="nuxt" />
+    </NuxtLink>
+    <NuxtLink
+      href="https://vitejs.dev"
+      target="_blank"
+      title="Vite"
+    >
+      <Icon name="vite" />
+    </NuxtLink>
+    <NuxtLink
+      href="https://uno.antfu.me"
+      target="_blank"
+      title="UnoCSS"
+    >
+      <Icon name="unocss" dark:invert />
+    </NuxtLink>
+    <NuxtLink
+      href="https://headlessui.com"
+      target="_blank"
+      title="Headless UI"
+    >
+      <Icon name="headless" />
+    </NuxtLink>
+    <NuxtLink
+      href="https://vercel.com"
+      target="_blank"
+      title="Vercel"
+    >
+      <Icon name="vercel" />
+    </NuxtLink>
+    <NuxtLink
+      to="https://github.com/toniengelhardt/m3tadata/releases"
+      title="Releases on GitHub"
+      text-sm text-dim hover:text-base decoration-none hover:decoration-none
+    >
       v0.1-alpha
-    </div>
+    </NuxtLink>
   </div>
 </template>

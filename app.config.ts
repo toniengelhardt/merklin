@@ -11,6 +11,7 @@ export default defineAppConfig({
       headless: 'logos:headlessui-icon',
       vercel: 'akar-icons:vercel-fill',
       github: 'carbon:logo-github',
+      repotracker: 'ph:binoculars-duotone',
       discord: 'logos:discord-icon',
       twitter: 'logos:twitter',
       metamask: 'logos:metamask-icon',
@@ -28,6 +29,7 @@ export default defineAppConfig({
       block: 'ph:cube-duotone',
       dashboard: 'ph:squares-four-duotone',
       transaction: 'ph:arrows-left-right-duotone',
+      airdrop: 'ph:parachute-duotone',
     },
   },
 })

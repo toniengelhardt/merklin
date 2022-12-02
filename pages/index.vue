@@ -1,10 +1,3 @@
-<script setup lang="ts">
-const props = defineProps<{
-  modelValue?: boolean,
-}>()
-
-</script>
-
 <template>
   <div page>
     <div col-span-3 panel flex justify-center items-center h-32 text-2rem font-mono>
@@ -23,5 +16,6 @@ const props = defineProps<{
 
       </div>
     </div>
+    <div col-span-12></div>
   </div>
 </template>

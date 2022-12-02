@@ -21,11 +21,13 @@ function onClick() {
 <template>
   <div
     title="Toggle theme"
-    class="flex justify-center items-center w-8 min-h-8 cursor-pointer"
+    group flex w-full items-center rounded-lg px-2 py-2 text-sm
+    box-border cursor-pointer
     @click="onClick()"
   >
     <ClientOnly>
-      <Icon :name="colorMode.preference" size="1.2rem" />
+      <Icon :name="colorMode.preference" size="1.2rem" mr-2 h-5 w-5 aria-hidden="true" />
+      <span>Theme</span>
     </ClientOnly>
   </div>
 </template>

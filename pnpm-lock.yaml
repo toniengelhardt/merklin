@@ -8,6 +8,9 @@ specifiers:
   '@unocss/nuxt': ^0.47.1
   '@unocss/transformer-directives': ^0.47.4
   '@vueuse/nuxt': ^9.6.0
+  chart.js: ^4.0.1
+  chartjs-adapter-date-fns: ^2.0.1
+  chartjs-plugin-annotation: ^2.1.0
   date-fns: ^2.29.3
   eslint: ^8.28.0
   ethers: ^5.7.2
@@ -17,12 +20,17 @@ specifiers:
   pinia-plugin-persistedstate: ^3.0.1
   typescript: ^4.9.3
   vitest: ^0.25.3
+  vue-chartjs: ^4.1.2
 
 dependencies:
   '@pinia/nuxt': 0.4.6_typescript@4.9.3
+  chart.js: 4.0.1
+  chartjs-adapter-date-fns: 2.0.1_chart.js@4.0.1
+  chartjs-plugin-annotation: 2.1.0_chart.js@4.0.1
   date-fns: 2.29.3
   ethers: 5.7.2
   pinia-plugin-persistedstate: 3.0.1
+  vue-chartjs: 4.1.2_chart.js@4.0.1
 
 devDependencies:
   '@antfu/eslint-config': 0.33.1_hsf322ms6xhhd4b5ne6lb74y4a
@@ -2369,6 +2377,27 @@ packages:
   /chardet/0.7.0:
     resolution: {integrity: sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==}
     dev: true
+
+  /chart.js/4.0.1:
+    resolution: {integrity: sha512-5/8/9eBivwBZK81mKvmIwTb2Pmw4D/5h1RK9fBWZLLZ8mCJ+kfYNmV9rMrGoa5Hgy2/wVDBMLSUDudul2/9ihA==}
+    engines: {pnpm: ^7.0.0}
+    dev: false
+
+  /chartjs-adapter-date-fns/2.0.1_chart.js@4.0.1:
+    resolution: {integrity: sha512-v3WV9rdnQ05ce3A0ZCjzUekJCAbfm6+3HqSoeY2BIkdMYZoYr/4T+ril1tZyDl869lz6xdNVMXejUFT9YKpw4A==}
+    peerDependencies:
+      chart.js: '>=2.8.0'
+    dependencies:
+      chart.js: 4.0.1
+    dev: false
+
+  /chartjs-plugin-annotation/2.1.0_chart.js@4.0.1:
+    resolution: {integrity: sha512-wHxP6mBWrgdldAEbHM5nMaMJ3PuunXgiotVh8natosuZsEqpjU0ZeyvMTBwIkKXLSDncb3faLunl4BI89Vmj/g==}
+    peerDependencies:
+      chart.js: '>=3.7.0'
+    dependencies:
+      chart.js: 4.0.1
+    dev: false
 
   /check-error/1.0.2:
     resolution: {integrity: sha512-BrgHpW9NURQgzoNyjfq0Wu6VFO6D7IZEmJNdtgNqpzGG8RuNFHt2jQxWlAs4HMe119chBnv+34syEZtc6IhLtA==}
@@ -7072,6 +7101,15 @@ packages:
     dependencies:
       ufo: 1.0.1
     dev: true
+
+  /vue-chartjs/4.1.2_chart.js@4.0.1:
+    resolution: {integrity: sha512-QSggYjeFv/L4jFSBQpX8NzrAvX0B+Ha6nDgxkTG8tEXxYOOTwKI4phRLe+B4f+REnkmg7hgPY24R0cixZJyXBg==}
+    peerDependencies:
+      chart.js: ^3.7.0
+      vue: ^3.0.0-0 || ^2.6.0
+    dependencies:
+      chart.js: 4.0.1
+    dev: false
 
   /vue-demi/0.13.11:
     resolution: {integrity: sha512-IR8HoEEGM65YY3ZJYAjMlKygDQn25D5ajNFNoKh9RSDMQtlzCxtfQjdQgv9jjK+m3377SsJXY8ysq8kLCZL25A==}

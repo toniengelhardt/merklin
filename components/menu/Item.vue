@@ -1,19 +1,30 @@
+<script setup lang="ts">
+const props = defineProps<{
+  item?: MenuItem,
+}>()
+
+</script>
+
 <template>
   <HeadlessMenuItem v-slot="{ active }">
-    <slot>
-      <button
-        :class="[
-          active ? 'bg-violet-500 text-white' : 'text-gray-900',
-          'group flex w-full items-center rounded-md px-2 py-2 text-sm',
-        ]"
-      >
-        <EditIcon
-          :active="active"
-          class="mr-2 h-5 w-5 text-violet-400"
-          aria-hidden="true"
-        />
-        Edit
-      </button>
+    <slot :active="active">
+      <template v-if="item">
+        <NuxtLink
+          :to="item.link"
+          :class="[active ? 'bg-element' : undefined]"
+          group flex w-full items-center rounded-lg px-2 py-2 text-sm
+          box-border cursor-pointer
+          @click="item.action ? item.action() : null"
+        >
+          <Icon
+            :name="item.icon.name"
+            :active="active"
+            class="mr-2 h-5 w-5"
+            aria-hidden="true"
+          />
+          {{ item.label }}
+        </NuxtLink>
+      </template>
     </slot>
   </HeadlessMenuItem>
 </template>

@@ -11,9 +11,24 @@ body {
   overscroll-behavior: none;
 }
 
+button {
+  @apply border-none;
+}
+
+a {
+  @apply decoration-none;
+}
+a:visited {
+  color: inherit;
+}
+
 .text-brand {
-  color: #00DC82;
+  color: #00DC82; /* Nuxt primary */
 }
 .text-brand-alt {
-  color: #002E3B;
+  color: #002E3B; /* Nuxt secondary */
+}
+
+.router-link-exact-active {
+  @apply cursor-default;
 }
