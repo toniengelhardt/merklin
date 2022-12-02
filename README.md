@@ -14,7 +14,7 @@ The idea is to focus mostly on powerful wallet analytics, e.g.
 - Ecosystem overview for each network with links
 - etc.
 
-For now, only ETH networks: Ethereum, Arbitrum, Optimism, Polygon, zkSync.
+For now, only ETH networks: [Ethereum](https://ethereum.org), [Arbitrum](https://arbitrum.io), [Optimism](https://www.optimism.io/), [Polygon](https://polygon.technology), [zkSync](https://zksync.io).
 
 ## Goals
 
