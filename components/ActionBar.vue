@@ -3,15 +3,17 @@
 </script>
 
 <template>
-  <div flex items-center h-16 px-4>
+  <div h-16 px-4 flex items-center>
     <div flex-1>
-      <Brand />
+      <div flex items-center px-3 box-border>
+        <NetworkInfo />
+        <GasPrice pl-6 />
+      </div>
     </div>
     <div grid grid-flow-col gap-2>
-      <GasPrice mr-4 />
-      <Network mr-4 />
+      <Network />
       <Wallet />
-      <Menu />
+      <AccountMenu />
     </div>
   </div>
 </template>

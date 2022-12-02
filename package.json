@@ -14,6 +14,7 @@
     "@nuxt/test-utils-edge": "^3.0.1-rc.0-27828744.aa9aec1",
     "@nuxtjs/color-mode": "^3.2.0",
     "@unocss/nuxt": "^0.47.1",
+    "@unocss/transformer-directives": "^0.47.4",
     "@vueuse/nuxt": "^9.6.0",
     "eslint": "^8.28.0",
     "nuxt": "^3.0.0",

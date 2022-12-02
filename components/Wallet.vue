@@ -5,7 +5,7 @@ const display = $computed(() => account ? `${account.address.slice(0, 6)}...${ac
 </script>
 
 <template>
-  <div btn px-4>
+  <div btn-transparent px-4>
     <Icon name="metamask" />
     <div ml-2>
       {{ display }}

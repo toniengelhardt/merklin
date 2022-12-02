@@ -7,8 +7,8 @@ const status = $computed(() => rhStore.status)
 
 <template>
   <div flex items-center>
-    <Icon name="block" pl-2 pr-1 />
-    <div text-xs text-dim>
+    <Icon name="block" />
+    <div ml-2 text-xs text-dim>
       {{ blocknumber || '...' }}
     </div>
     <div

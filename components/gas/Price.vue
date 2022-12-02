@@ -4,9 +4,9 @@ const gasPrice = useGasPrice()
 
 <template>
   <div flex items-center>
-    <Icon name="gas" size="1.2rem" />
+    <Icon name="gas" />
     <div ml-2 text-xs text-dim>
-      {{ gasPrice !== undefined ? gasPrice : '...' }}
+      {{ gasPrice !== undefined ? `${gasPrice} gwei` : '...' }}
     </div>
   </div>
 </template>

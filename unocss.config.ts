@@ -9,14 +9,19 @@ import {
 
 export default defineConfig({
   shortcuts: {
+    'page': 'flex-1 px-4 grid grid-cols-12 gap-4',
     'bg-base': 'bg-zinc-100 dark:bg-zinc-900',
     'bg-surface': 'bg-white/50 dark:bg-zinc-900/50',
+    'bg-element': 'bg-white/75 dark:bg-zinc-900/75',
     'bg-contrast': 'bg-zinc-900 dark:bg-zinc-100',
+    'radius-base': 'rounded-xl',
     'text-base': 'text-zinc-900 dark:text-zinc-200',
     'text-dim': 'text-zinc-900/70 dark:text-zinc-200/60',
     'text-faint': 'text-zinc-900/40 dark:text-zinc-200/30',
     'panel': 'p-4 bg-surface rounded-1.5rem',
-    'btn': 'flex justify-center items-center h-10 min-w-10 text-zinc-900 bg-surface dark:(hover:bg-zinc-100/10 text-zinc-200) border-0 rounded-2xl box-border cursor-pointer',
+    'btn': 'flex justify-center items-center h-10 min-w-10 text-base border-0 radius-base box-border cursor-pointer decoration-none',
+    'btn-transparent': 'btn bg-transparent hover:bg-white/50 dark:(hover:bg-zinc-900/50)',
+    'btn-default': 'btn bg-surface hover:bg-white/75 dark:(hover:bg-zinc-900/75)',
   },
   presets: [
     presetUno(),

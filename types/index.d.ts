@@ -11,12 +11,18 @@ declare interface Web3Account {
   avatar?: string | null,
 }
 
-declare type ItemIcon = { name: string, class?: string }
-declare type ItemLink = string
+declare type ItemIcon = { name: string, size?: string, class?: string }
 
 declare interface MenuItem {
-  label: string,
   icon: ItemIcon,
-  link: ItemLink,
-  action: () => {},
+  label: string,
+  link?: string,
+  action?: () => {},
+}
+
+declare interface AppMenuItem {
+  icon: ItemIcon,
+  label: string,
+  title: string,
+  link: string,
 }

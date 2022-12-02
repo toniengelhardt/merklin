@@ -26,6 +26,8 @@ export default defineAppConfig({
       dropdown: 'ph:caret-down',
       gas: 'ph:gas-pump-duotone',
       block: 'ph:cube-duotone',
+      dashboard: 'ph:squares-four-duotone',
+      transaction: 'ph:arrows-left-right-duotone',
     },
   },
 })
