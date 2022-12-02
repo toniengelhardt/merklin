@@ -33,7 +33,7 @@ Some wise words from @jack:
 ## Stack
 
 - Typescript
-- Nuxt 3
+- Nuxt
 - Vite
 - Vitest
 - Pinia
