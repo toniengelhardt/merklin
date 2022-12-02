@@ -1,6 +1,8 @@
-# m3tadata
+# M Ξ T A D 🦧 T A
 
 This project is an experiment to build a [Zapper](https://zapper.fi/) / [Zerion](https://app.zerion.io/) with [Nuxt](https://nuxt.com). 
+
+![Preview](https://m3ta-data.vercel.app/preview.png)
 
 The idea is to focus mostly on wallet analytics, e.g.
 
@@ -12,7 +14,7 @@ The idea is to focus mostly on wallet analytics, e.g.
 - Ecosystem overview per network
 - etc.
 
-Networks: Ethereum, Arbitrum, Optimism, Polygon, zkSync.
+For now, only ETH networks: Ethereum, Arbitrum, Optimism, Polygon, zkSync.
 
 Development insights available on [RepoTracker](https://repo-tracker.com/r/gh/toniengelhardt/m3tadata).
 
