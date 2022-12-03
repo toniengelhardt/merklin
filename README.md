@@ -1,6 +1,6 @@
 # M Ξ T A D 🦧 T A
 
-🏴‍☠️
+🏴‍☠️ 🏴‍☠️ 🏴‍☠️
 
 This is an attempt to build an open-source [Zapper](https://zapper.fi/)/[Zerion](https://app.zerion.io/) based on [Vue](https://vuejs.org) and [Nuxt](https://nuxt.com) and supercharge it with [Dune](https://dune.com)-like analytics.
 
