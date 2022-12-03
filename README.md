@@ -32,7 +32,9 @@ Some wise words from [@jack](https://twitter.com/jack):
 
 ## Principles
 
-Let's stick with the fundamentals and focus on delivering value.
+1. Let's stick with the fundamentals and focus on delivering value.
+2. DX is everything. We pick the best technology to have fun and move fast.
+3. 🌺 [Aloha Spirit](https://www.hawaii.edu/uhwo/clear/home/lawaloha.html).
 
 ## Stack
 
@@ -45,6 +47,8 @@ Let's stick with the fundamentals and focus on delivering value.
 - HeadlessUI
 - Ethers.js
 - Chart.js
+
+That's for now, might evolve...
 
 ## Setup
 
