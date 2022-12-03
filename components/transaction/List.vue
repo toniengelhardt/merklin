@@ -1,25 +1,70 @@
 <script setup lang="ts">
-import type { ethers } from 'ethers'
+import type { TransactionResponse } from '@ethersproject/abstract-provider'
+import Approve from '~/components/transaction/item/Approve.vue'
+import Send from '~/components/transaction/item/Send.vue'
+import Receive from '~/components/transaction/item/Receive.vue'
+import Swap from '~/components/transaction/item/Swap.vue'
+import Unknown from '~/components/transaction/item/Unknown.vue'
+import { formatDate } from '~/utils/dates'
 
-let transactions = ref<TransactionRespose[] | null>(null)
+const rhStore = useRabbitholeStore()
 
-onMounted(() => {
-  useTransactions()
-    .then(_transactions => transactions = _transactions)
-  console.log(transactions)
+const compMap: Record<TransactionSignature, any> = {
+  approve: Approve,
+  send: Send,
+  receive: Receive,
+  swap: Swap,
+}
+
+let transactions = $ref<TransactionResponse[] | null>(null)
+
+const account = $computed(() => rhStore.account)
+const transactionItems = $computed(() => {
+  if (account && transactions) {
+    let prevDate: DateString | undefined
+    const items: TransactionItem = transactions.reverse().map((transaction) => {
+      const type = transaction.to?.toLowerCase() === account.address
+        ? 'receive'
+        : transaction.value._hex !== '0x00'
+          ? 'send'
+          : TransactionSignatureMap[transaction.data.slice(0, 10)]
+      console.log('type', type)
+
+      const timestamp = transaction.timestamp ? new Date(transaction.timestamp * 1000) : undefined
+      const date = timestamp ? formatDate(timestamp) : undefined
+      const firstForDate = date !== prevDate
+      prevDate = date
+      return {
+        timestamp,
+        date,
+        firstForDate,
+        type,
+        transaction,
+      }
+    })
+    console.log(items)
+    return items
+  }
 })
+
+async function loadTrasactions() {
+  transactions = await useTransactions() || []
+}
+
+onMounted(() => loadTrasactions())
 </script>
 
 <template>
-  <div v-if="transactions">
-    <div
-      v-for="transaction in transactions"
-      :key="transaction.hash"
-      mb-2
+  <div v-if="transactionItems">
+    <template
+      v-for="item in transactionItems"
+      :key="item.transaction.hash"
     >
-      <div>{{ transaction.hash }}</div>
-      <div>{{ formatTimestamp(transaction.timestamp) }}</div>
-      <div>{{ transaction.from }} >> {{ transaction.to }}</div>
-    </div>
+      <div v-if="item.firstForDate" mt-4 mb-2 px-4 font-bold>
+        {{ displayDate(item.timestamp) }}
+      </div>
+      <component :is="item.type ? compMap[item.type as TransactionSignature] : Unknown" :item="item" />
+    </template>
   </div>
+  <Loading v-else />
 </template>

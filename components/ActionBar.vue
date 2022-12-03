@@ -11,6 +11,7 @@
       </div>
     </div>
     <div grid grid-flow-col gap-2>
+      <Currency />
       <Network />
       <Wallet />
       <AccountMenu />

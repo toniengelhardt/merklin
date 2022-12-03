@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const rhStore = useRabbitholeStore()
 // let idx = 3
 
 const labels = $ref(['1', '2', '3'])
@@ -7,7 +8,7 @@ const data = $ref([40, 20, 12])
 const chartData = $computed(() => {
   return {
     labels,
-    datasets: [ { data } ]
+    datasets: [{ data }],
   }
 })
 // onMounted(() => {
@@ -23,10 +24,10 @@ const chartData = $computed(() => {
 <template>
   <div page>
     <div col-span-12 panel>
-      <ChartBar :chartData="chartData" />
+      <ChartBar :chart-data="chartData" height="12rem" />
     </div>
     <div col-span-12 panel>
-      <TransactionList />
+      <TransactionList v-if="rhStore.account" />
     </div>
   </div>
 </template>

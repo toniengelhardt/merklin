@@ -2,7 +2,6 @@
 const props = defineProps<{
   item: AppMenuItem
 }>()
-
 </script>
 
 <template>
@@ -27,4 +26,3 @@ const props = defineProps<{
   @apply bg-gradient-to-r from-yellow-600 to-yellow-400 text-transparent bg-clip-text;
 }
 </style>
-ß

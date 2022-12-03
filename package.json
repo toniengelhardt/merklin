@@ -10,16 +10,16 @@
     "lint:fix": "eslint. --fix"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.33.1",
-    "@nuxt/test-utils-edge": "^3.0.1-rc.0-27828744.aa9aec1",
+    "@antfu/eslint-config": "0.33.1",
+    "@nuxt/test-utils-edge": "^3.0.1-rc.0-27833302.52421a9",
     "@nuxtjs/color-mode": "^3.2.0",
-    "@unocss/nuxt": "^0.47.1",
-    "@unocss/transformer-directives": "^0.47.4",
+    "@unocss/nuxt": "^0.47.5",
+    "@unocss/transformer-directives": "^0.47.5",
     "@vueuse/nuxt": "^9.6.0",
-    "eslint": "^8.28.0",
+    "eslint": "^8.29.0",
     "nuxt": "^3.0.0",
     "nuxt-headlessui": "^1.0.4",
-    "nuxt-icon": "^0.1.7",
+    "nuxt-icon": "^0.1.8",
     "typescript": "^4.9.3",
     "vitest": "^0.25.3"
   },
@@ -31,6 +31,7 @@
     "date-fns": "^2.29.3",
     "ethers": "^5.7.2",
     "pinia-plugin-persistedstate": "^3.0.1",
+    "vue-blockies": "^1.0.0",
     "vue-chartjs": "^4.1.2"
   }
 }

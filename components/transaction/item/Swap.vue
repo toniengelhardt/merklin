@@ -1,0 +1,26 @@
+<script setup lang="ts">
+defineProps<{
+  item: TransactionItem
+}>()
+</script>
+
+<template>
+  <TransactionItem :item="item">
+    <template #icon>
+      <div w-full flex justify-center items-center bg-blue-500:10 rounded-full>
+        <Icon name="swap" size="1.2rem" text-blue-500 />
+      </div>
+    </template>
+    <template #label>
+      Swap
+    </template>
+    <template #address>
+      <div flex flex-col items-start>
+        <div text-xs text-dim>
+          with:
+        </div>
+        <WalletAddress :address="item.transaction.to" />
+      </div>
+    </template>
+  </TransactionItem>
+</template>

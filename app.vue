@@ -3,13 +3,13 @@ import { useRabbitholeStore } from '~/stores/rabbithole'
 const rhStore = useRabbitholeStore()
 
 async function initRabbithole() {
-  const { web3, signer } = await useWeb3()
-  console.log('web3:', web3)
-  console.log('Signer:', signer)
+  const { web3Provider, web3Signer } = await useWeb3Provider()
+  // console.info('web3Provider:', web3Provider)
+  // console.info('web3Signer:', web3Signer)
 
   // Get accounts
   const accounts: Web3Account[] = []
-  const addresses = await web3.send('eth_requestAccounts', []) as Web3Address[]
+  const addresses = await web3Provider.send('eth_requestAccounts', []) as Web3Address[]
   await Promise.all(addresses.map(async (address) => {
     const account: Web3Account = { address }
     // account.ens = await web3.lookupAddress(address)

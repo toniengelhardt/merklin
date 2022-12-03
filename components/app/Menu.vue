@@ -18,6 +18,14 @@ const menuItems = [
   },
   {
     icon: {
+      name: 'ecosystem',
+    },
+    label: 'Ecosystem',
+    title: 'Ecosystem',
+    link: '/ecosystem',
+  },
+  {
+    icon: {
       name: 'airdrop',
     },
     label: 'Airdrops',
@@ -40,16 +48,28 @@ const menuItems = [
       />
     </div>
   </div>
-  <!-- <div h-12 grid grid-flow-col justify-items-center items-center text-center px-3>
-    <NuxtLink
-      to="https://github.com/toniengelhardt/m3tadata"
-      title="GitHub repository"
-      class="w-full btn"
-    >
-      <Icon name="github" size="1.2rem" />
-      <div ml-2 mr-2>Contribute</div>
-    </NuxtLink>
-  </div> -->
+  <div px-3 text-xs>
+    <div p-3 border-1 border-base radius-base>
+      <p flex items-center text-sm m-0>
+        <b>Disclaimer</b><Icon name="warning" ml-1 />
+      </p>
+      <p m-0 mt-2 text-dim>
+        This project is work in progress and the presented data might not be correct. Use at your own risk!
+      </p>
+      <p flex items-center m-0 mt-2>
+        <Icon name="opensource" mr-1 style="color: #4CAF50" />
+        <Icon name="github" mr-1 />
+        <NuxtLink
+          :to="$config.repoUrl"
+          title="MΞTADATA repository on GitHub"
+          target="_blank"
+          underline
+        >
+          Contribute
+        </NuxtLink>
+      </p>
+    </div>
+  </div>
   <div h-12 flex justify-between items-center text-center px-6>
     <NuxtLink
       href="https://nuxt.com"

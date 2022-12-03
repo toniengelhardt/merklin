@@ -14,6 +14,7 @@ export default defineConfig({
     'bg-surface': 'bg-white/75 dark:bg-zinc-900/75',
     'bg-element': 'bg-zinc-900/5 dark:bg-white/5',
     'bg-contrast': 'bg-zinc-900 dark:bg-zinc-100',
+    'border-base': 'border-zinc-900/10 dark:border-zinc-200/10',
     'radius-base': 'rounded-xl',
     'text-base': 'text-zinc-900 dark:text-zinc-200',
     'text-dim': 'text-zinc-900/70 dark:text-zinc-200/60',

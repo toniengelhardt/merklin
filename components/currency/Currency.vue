@@ -5,7 +5,6 @@
 <template>
   <div btn-transparent px-4>
     <Icon name="dropdown" size="0.8rem" text-dim />
-    <Icon name="ethereum" size="1.2rem" px-1 />
-    <div>Ethereum</div>
+    <div ml-2 text-lg>€</div>
   </div>
 </template>

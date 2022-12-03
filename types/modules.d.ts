@@ -1,1 +1,1 @@
-declare module 'postcss-comment'
+declare module 'vue-blockies'

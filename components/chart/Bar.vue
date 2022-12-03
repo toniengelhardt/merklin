@@ -5,15 +5,15 @@ const props = withDefaults(defineProps<{
   chartId?: string,
   chartData: ChartData,
   chartOptions?: ChartOptions,
-  width?: number,
-  height?: number,
+  width?: number | string,
+  height?: number | string,
   cssClasses?: '',
   styles?: any, // Partial<CSSStyleDeclaration>,
   plugins?: any, // Plugin<'bar'>{},
 }>(), {
+  width: '100%',
+  height: '14rem',
   chartId: 'bar-chart',
-  width: 400,
-  height: 400,
   cssClasses: '',
   styles: () => {},
   plugins: () => {},
@@ -30,16 +30,16 @@ const mergedPlugins = $computed(() => [...defaultPlugins, ...props.plugins])
 </script>
 
 <template>
-  <div relative>
+  <div relative flex w-full :style="{ width, height }">
     <BarChart
       :chartId="chartId"
       :chartData="chartData"
       :chartOptions="mergedOptions"
-      :width="width"
-      :height="height"
       :class="cssClasses"
       :style="styles"
       :plugins="[]"
+      w-full
+      h-full
     />
   </div>
 </template>
