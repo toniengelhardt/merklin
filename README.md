@@ -1,5 +1,7 @@
 # M Ξ T A D 🦧 T A
 
+🏴‍☠️
+
 This is an attempt to build an open-source [Zapper](https://zapper.fi/)/[Zerion](https://app.zerion.io/) based on [Vue](https://vuejs.org) and [Nuxt](https://nuxt.com) and supercharge it with [Dune](https://dune.com)-like analytics.
 
 ![Preview](https://m3ta-data.vercel.app/preview.png)
@@ -74,5 +76,3 @@ Development insights available on [RepoTracker](https://repo-tracker.com/r/gh/to
 Feel free to play around and contribute. Discussions, Issues, PRs welcome!
 
 Here's a [list](https://github.com/toniengelhardt/web3-vue-and-nuxt-projects) of web3 projects built with Vue/Nuxt.
-
-🏴‍☠️
