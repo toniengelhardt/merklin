@@ -28,8 +28,6 @@ const transactionItems = $computed(() => {
         : transaction.value._hex !== '0x00'
           ? 'send'
           : TransactionSignatureMap[transaction.data.slice(0, 10)]
-      console.log('type', type)
-
       const timestamp = transaction.timestamp ? new Date(transaction.timestamp * 1000) : undefined
       const date = timestamp ? formatDate(timestamp) : undefined
       const firstForDate = date !== prevDate
@@ -42,7 +40,7 @@ const transactionItems = $computed(() => {
         transaction,
       }
     })
-    console.log(items)
+    // console.log(items)
     return items
   }
 })

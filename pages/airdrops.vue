@@ -1,12 +1,11 @@
 <script setup lang="ts">
 const props = defineProps<{
-  modelValue?: boolean,
+  modelValue?: boolean
 }>()
-
 </script>
 
 <template>
   <div>
-    <slot/>
+    <slot />
   </div>
 </template>
