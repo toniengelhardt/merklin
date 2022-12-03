@@ -75,4 +75,4 @@ Feel free to play around and contribute. Discussions, Issues, PRs welcome!
 
 Here's a [list](https://github.com/toniengelhardt/web3-vue-and-nuxt-projects) of web3 projects built with Vue/Nuxt.
 
-Let's go 🏴‍☠️
+🏴‍☠️
