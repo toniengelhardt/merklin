@@ -4,8 +4,8 @@ const menuItems = [
     icon: {
       name: 'dashboard',
     },
-    label: 'Dashboard',
-    title: 'Dashboard',
+    label: 'Overview',
+    title: 'Overview',
     link: '/',
   },
   {

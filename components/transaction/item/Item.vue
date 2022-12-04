@@ -10,10 +10,10 @@ defineProps<{
       <slot name="icon" />
     </div>
     <div flex flex-col ml-4>
-      <div font-bold>
+      <div font-bold text-sm>
         <slot name="label" />
       </div>
-      <div text-sm>
+      <div text-xs text-dim>
         {{ formatTime(item.timestamp) }}h
       </div>
     </div>

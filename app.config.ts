@@ -30,7 +30,7 @@ export default defineAppConfig({
       // App modules:
       dashboard: 'ph:squares-four-duotone',
       transaction: 'ph:arrows-left-right-duotone',
-      ecosystem: 'icon-park-solid:six-circular-connection',
+      ecosystem: 'ph:snowflake-duotone',
       airdrop: 'ph:parachute-duotone',
       // App elements:
       loading: 'line-md:loading-twotone-loop',
