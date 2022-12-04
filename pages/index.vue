@@ -7,7 +7,7 @@
       Take a look at transactions 🤫
     </div>
     <div col-span-3 grid gap-4>
-      <div panel />
+      <PricefeedFeeds />
       <div panel />
       <div panel />
     </div>
