@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import { ChartData, ChartOptions } from 'chart.js'
+import type { ChartData, ChartOptions } from 'chart.js'
 
 const props = withDefaults(defineProps<{
-  chartId?: string,
-  chartData: ChartData,
-  chartOptions?: ChartOptions,
-  width?: number | string,
-  height?: number | string,
-  cssClasses?: '',
-  styles?: any, // Partial<CSSStyleDeclaration>,
-  plugins?: any, // Plugin<'bar'>{},
+  chartId?: string
+  chartData: ChartData
+  chartOptions?: ChartOptions
+  width?: number | string
+  height?: number | string
+  cssClasses?: ''
+  styles?: any // Partial<CSSStyleDeclaration>,
+  plugins?: any // Plugin<'bar'>{},
 }>(), {
   width: '100%',
   height: '14rem',
@@ -32,9 +32,9 @@ const mergedPlugins = $computed(() => [...defaultPlugins, ...props.plugins])
 <template>
   <div relative flex w-full :style="{ width, height }">
     <BarChart
-      :chartId="chartId"
-      :chartData="chartData"
-      :chartOptions="mergedOptions"
+      :chart-id="chartId"
+      :chart-data="chartData"
+      :chart-options="mergedOptions"
       :class="cssClasses"
       :style="styles"
       :plugins="[]"

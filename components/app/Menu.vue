@@ -48,24 +48,24 @@ const menuItems = [
       />
     </div>
   </div>
-  <div px-3 text-xs>
-    <div p-3 border-1 border-base radius-base>
+  <div px-6 text-xs>
+    <div py-4 border-b-1 border-base>
       <p flex items-center text-sm m-0>
-        <b>Disclaimer</b><Icon name="warning" ml-1 />
+        <b>Disclaimer</b><span ml-2>🚧</span>
       </p>
       <p m-0 mt-2 text-dim>
         This project is work in progress and the presented data might not be correct. Use at your own risk!
       </p>
       <p flex items-center m-0 mt-2>
-        <Icon name="opensource" mr-1 style="color: #4CAF50" />
-        <Icon name="github" mr-1 />
         <NuxtLink
           :to="$config.repoUrl"
           title="MΞTADATA repository on GitHub"
           target="_blank"
-          underline
+          btn-default h-6 px-2 rounded
         >
-          Contribute
+          <Icon name="opensource" mr-1 style="color: #4CAF50" />
+          <Icon name="github" mr-1 />
+          <span>Contribute</span>
         </NuxtLink>
       </p>
     </div>

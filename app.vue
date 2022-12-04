@@ -35,8 +35,9 @@ onMounted(() => initRabbithole())
       </div>
       <main flex-1 flex flex-col>
         <ActionBar />
-        <div flex-1 flex overflow-scroll pb-4>
-          <NuxtPage />
+        <div flex-1 flex overflow-scroll>
+          <NuxtPage v-if="rhStore.account" />
+          <Loading v-else />
         </div>
       </main>
     </div>
