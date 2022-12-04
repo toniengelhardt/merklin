@@ -105,41 +105,6 @@ const chartOptions = computed<ChartOptions<any> | undefined>(() => (
           title: {
             display: false,
           },
-          // tooltip: {
-          //   enabled: true,
-          //   caretSize: 0,
-          //   callbacks: {
-          //     title: (ctx: any) => {
-          //       const [date, year, _] = ctx[0].label.split(',')
-          //       return `${date}, ${year}`
-          //     },
-          //     label: (ctx: any) => {
-          //       if (ctx.dataset.label === 'Total')
-          //         return `Total: ${ctx.parsed.y}`
-
-        //       return `${ctx.dataset.label}: ${ctx.parsed._custom.end - ctx.parsed._custom.start}`
-        //     },
-        //   },
-        // },
-        // annotation: {
-        //   annotations: Object.assign(
-        //     {},
-        //     ...props.releases.map((release, idx) => {
-        //       const pubDt = new Date(`${release.publishedAt.slice(0, 10)}T12:00:00`)
-        //       return {
-        //         [`release-${idx}`]: {
-        //           type: 'line',
-        //           mode: 'vertical',
-        //           xMin: pubDt,
-        //           xMax: pubDt,
-        //           borderWidth: 2,
-        //           borderColor: hexOpacify(releaseColor.value, colorMode.value === 'light' ? 0.4 : 0.6),
-        //           drawTime: 'beforeDatasetsDraw',
-        //         },
-        //       }
-        //     }),
-        //   ),
-        // },
         },
       })
     : undefined
@@ -192,10 +157,6 @@ function generateHistograms(items: TransactionItem[]): {
     sent.push(sentCount)
     received.push(receivedCount)
   })
-
-  // sent.reverse()
-  // received.reverse()
-
   return {
     labels,
     sent,
