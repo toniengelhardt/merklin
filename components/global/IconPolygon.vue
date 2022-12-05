@@ -16,6 +16,6 @@ c0.7,0.4,1.6,0.4,2.4,0l8.1-4.7c0.7-0.4,1.2-1.2,1.2-2.1V17c0-0.8-0.4-1.6-1.2-2.1L
   </svg>
 </template>
 
-<style type="text/css">
+<style type="text/css" scoped>
 .st0{fill:#8247E5;}
 </style>

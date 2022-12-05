@@ -21,7 +21,7 @@ export default defineAppConfig({
       arbitrum: 'IconArbitrum',
       optimism: 'IconOptimism',
       polygon: 'IconPolygon',
-      sksync: 'IconZkSync',
+      zksync: 'IconZkSync',
       gnosis: 'IconGnosis',
       // App theme:
       light: 'ph:sun-duotone',
@@ -40,6 +40,8 @@ export default defineAppConfig({
       cross: 'ph:x',
       external: 'ph:arrow-square-out-duotone',
       warning: 'ph:warning-duotone',
+      visible: 'ph:eye-duotone',
+      obscured: 'ph:eye-closed-duotone',
       // Blockchain:
       gas: 'ph:gas-pump-duotone',
       block: 'ph:cube-duotone',

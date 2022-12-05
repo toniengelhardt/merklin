@@ -53,7 +53,7 @@ const menuItems = [
       <p flex items-center text-sm m-0>
         <b>Disclaimer</b><span ml-2>🚧</span>
       </p>
-      <p m-0 mt-2 text-dim>
+      <p m-0 mt-1 text-dim>
         This project is work in progress and the presented data might not be correct. Use at your own risk!
       </p>
       <p flex items-center m-0 mt-2>

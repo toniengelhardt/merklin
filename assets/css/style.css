@@ -22,6 +22,12 @@ a:visited {
   color: inherit;
 }
 
+.obscure .text-value,
+.obscure .text-currency,
+.obscure .text-address {
+  @apply blur-6;
+}
+
 .text-brand {
   color: #00DC82; /* Nuxt primary */
 }

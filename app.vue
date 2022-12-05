@@ -2,6 +2,8 @@
 import { useRabbitholeStore } from '~/stores/rabbithole'
 const rhStore = useRabbitholeStore()
 
+const ui = useUIStore()
+
 async function initRabbithole() {
   const { web3Provider, web3Signer } = await useWeb3Provider()
   // console.info('web3Provider:', web3Provider)
@@ -27,7 +29,7 @@ onMounted(() => initRabbithole())
 </script>
 
 <template>
-  <div class="no-translate" relative bg-base>
+  <div class="no-translate" :class="{ obscure: ui.obscure }" relative bg-base>
     <div class="bg-gradient" absolute top-0 left-0 bottom-0 right-0 z-0 />
     <div relative flex h-100vh max-h-100vh max-h-100dvh text-base z-1>
       <div flex flex-col w-70 bg-surface>

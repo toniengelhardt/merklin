@@ -41,6 +41,9 @@ const items = {
     <MenuItem v-slot="{ active }">
       <ThemeToggle :class="[active ? 'bg-element' : undefined]" @click.prevent />
     </MenuItem>
+    <MenuItem v-slot="{ active }">
+      <ObscureToggle :class="[active ? 'bg-element' : undefined]" @click.prevent />
+    </MenuItem>
     <MenuItem :item="items.github" />
     <MenuItem :item="items.repotracker" />
     <MenuItem :item="items.web3VueNuxtProjects" />

@@ -16,8 +16,8 @@ defineProps<{
     </template>
     <template #address>
       <div flex flex-col items-start>
-        <div text-xs text-dim>
-          with:
+        <div text-xs text-dim mb-1>
+          via:
         </div>
         <WalletAddress :address="item.transaction.to" />
       </div>

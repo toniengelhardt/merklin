@@ -96,3 +96,13 @@ export const useGasPrice = () => {
     .catch(() => {})
   return gasPrice
 }
+
+/**
+ * TODO: Implement this!
+ * Hardcoded for now for UI dev.
+ */
+export const useEthToCurrency = (value: number | undefined) => {
+  return value
+    ? new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(value * 1200)
+    : undefined
+}

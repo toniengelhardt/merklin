@@ -14,12 +14,21 @@ defineProps<{
     <template #label>
       Receive
     </template>
-    <template #address>
-      <div flex flex-col items-start>
-        <div text-xs text-dim>
-          from:
+    <template #details>
+      <div flex w-full>
+        <div flex-1 flex items-center>
+          <TokenValueDisplay
+            network="ethereum"
+            token="eth"
+            :value="item.transaction.value"
+          />
         </div>
-        <WalletAddress :address="item.transaction.to" />
+        <div flex flex-col items-start w-36>
+          <div text-xs text-dim mb-1>
+            from:
+          </div>
+          <WalletAddress :address="item.transaction.to" />
+        </div>
       </div>
     </template>
   </TransactionItem>

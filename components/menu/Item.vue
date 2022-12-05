@@ -1,8 +1,7 @@
 <script setup lang="ts">
 const props = defineProps<{
-  item?: MenuItem,
+  item?: MenuItem
 }>()
-
 </script>
 
 <template>

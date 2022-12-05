@@ -6,18 +6,13 @@ const props = defineProps<{
   items: TransactionItem[]
 }>()
 
+const colorMode = useColorMode()
+
 const histData = $computed(() => generateHistograms(props.items))
 const maxVal = $computed(() => {
-  if (histData) {
-    const _min = Math.min(...histData.sent)
-    const _max = Math.max(...histData.received)
-    console.log(_min, _max)
-    const x = Math.max(Math.abs(_min), _max)
-    console.log(x)
-
-    return x
-  }
-  return undefined
+  return histData
+    ? Math.max(Math.abs(Math.min(...histData.sent)), Math.max(...histData.received))
+    : undefined
 })
 
 const lastIdx = histData.labels.length - 1
@@ -70,6 +65,9 @@ const chartOptions = computed<ChartOptions<any> | undefined>(() => (
                 day: 'MMM',
               },
             },
+            border: {
+              display: false,
+            },
             ticks: {
               color: 'grey',
               maxRotation: 0,
@@ -77,13 +75,16 @@ const chartOptions = computed<ChartOptions<any> | undefined>(() => (
             },
             grid: {
               display: false,
-              borderColor: 'blue',
+              drawBorder: false,
             },
           },
           y: {
             stacked: false,
             min: -maxVal - 1,
             max: maxVal + 1,
+            border: {
+              display: false,
+            },
             ticks: {
               display: false,
               precision: 0,
@@ -91,10 +92,15 @@ const chartOptions = computed<ChartOptions<any> | undefined>(() => (
             },
             grid: {
               tickColor: 'transparent',
-              // color: 'grey',
-              // borderColor: 'grey',
               tickLength: 0,
               drawBorder: false,
+              color: (item: any, ctx: any) => {
+                const base = colorMode.value === 'light' ? '0,0,0' : '255,255,255'
+                if (item.tick.value === 0)
+                  return `rgba(${base},.2)`
+
+                return `rgba(${base},.05)`
+              },
             },
           },
         },
