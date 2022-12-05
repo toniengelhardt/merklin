@@ -1,7 +1,24 @@
 <script setup lang="ts">
-defineProps<{
-  items?: TransactionItem
+const props = defineProps<{
+  items?: TransactionItem[]
 }>()
+
+const counts = $computed(() => {
+  if (props.items) {
+    let received = 0
+    let sent = 0
+    props.items?.forEach((item) => {
+      if (item.type === 'receive')
+        received++
+      else if (item.type === 'send')
+        sent++
+    })
+    return {
+      received,
+      sent,
+    }
+  }
+})
 </script>
 
 <template>
@@ -12,10 +29,10 @@ defineProps<{
       </h2>
       <div flex="~ 1/3" justify-center items-center>
         <div flex items-center ml-2 text-xs text-dim>
-          <div w-2 h-2 bg-green-500 rounded-full mr-1 />Received
+          <div w-2 h-2 bg-green-500 rounded-full mr-1 />Received ({{ counts?.received || '?' }})
         </div>
         <div flex items-center ml-4 text-xs text-dim>
-          <div w-2 h-2 bg-orange-500 rounded-full mr-1 />Sent
+          <div w-2 h-2 bg-orange-500 rounded-full mr-1 />Sent ({{ counts?.sent || '?' }})
         </div>
       </div>
       <div flex="~ 1/3" justify-end items-center text-sm>
