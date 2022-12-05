@@ -36,7 +36,7 @@ Some wise words from [@jack](https://twitter.com/jack):
 
 1. Let's stick with the fundamentals and focus on delivering value.
 2. DX is everything. Only the best tech so we have fun and can build efficiently.
-3. Code is art! Treat it like that.
+3. Code is art, treat it accordingly.
 4. 🌺 [Aloha Spirit](https://www.hawaii.edu/uhwo/clear/home/lawaloha.html).
 
 ## Stack
