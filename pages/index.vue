@@ -1,18 +1,37 @@
 <template>
   <div page>
-    <div col-span-3 panel flex justify-center items-center h-32 text-2rem font-mono>
-      <span mr-2>gm</span>🌴
-    </div>
-    <div col-span-6 panel flex justify-center items-center>
-      Take a look at transactions 🤫
-    </div>
-    <div col-span-3 grid gap-4>
-      <div panel>
-        <PriceFeed />
+    <div col-span-3 panel flex justify-center items-center>
+      <div text-center>
+        <p my-0 text-2rem font-mono>
+          <span mr-2>gm</span>🌴
+        </p>
+        <p text-sm text-dim>
+          Check out transactions for now!
+        </p>
       </div>
-      <div panel />
-      <div panel />
     </div>
-    <div col-span-12 />
+    <div col-span-9 panel>
+      <h2 panel-title>
+        Performance
+      </h2>
+      <div italic text-dim>
+        Portfolio value over time in USD/EUR/...
+      </div>
+    </div>
+    <div col-span-3 panel>
+      <PriceFeed />
+    </div>
+    <div col-span-9 panel>
+      <h2 panel-title>
+        Gas bill
+      </h2>
+      <div italic text-dim>
+        Commulative gas chart...
+      </div>
+    </div>
+    <div col-span-3 panel />
+    <div col-span-3 panel />
+    <div col-span-3 panel />
+    <div col-span-3 panel />
   </div>
 </template>

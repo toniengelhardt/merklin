@@ -64,7 +64,7 @@ onMounted(() => loadTrasactions())
     <div col-span-8 panel>
       <!-- <ChartBar :chart-data="chartData" height="12rem" /> -->
       <div flex justify-between mb-2>
-        <h2 flex="1/3" mt-0 mb-2 text-faint>
+        <h2 flex="1/3" panel-title>
           Activity
         </h2>
         <div flex="~ 1/3" justify-center items-center>
@@ -96,7 +96,7 @@ onMounted(() => loadTrasactions())
       />
     </div>
     <div col-span-4 panel>
-      <h2 mt-0 mb-2 text-faint>
+      <h2 panel-title>
         Type
       </h2>
       <p text-dim text-sm>
@@ -105,10 +105,10 @@ onMounted(() => loadTrasactions())
     </div>
     <div col-span-8 panel>
       <div flex justify-between items-center mb-2>
-        <h2 m-0 text-faint>
+        <h2 panel-title mb-0>
           History
         </h2>
-        <div flex px-3 text-s>
+        <div flex px-3 text-sm>
           <span text-dim>#</span>
           <span ml-1 font-bold>{{ transactionItems?.length || 0 }}</span>
         </div>
@@ -116,7 +116,7 @@ onMounted(() => loadTrasactions())
       <TransactionList :items="transactionItems" />
     </div>
     <div col-span-4 panel h-64>
-      <h2 mt-0 mb-2 text-faint>
+      <h2 panel-title>
         Insights
       </h2>
       <div mt-4 grid grid-cols-2>
