@@ -145,15 +145,16 @@ function generateHistograms(items: TransactionItem[]): {
   }
 
   items.forEach((item) => {
-    const timestamp = new Date(item.timestamp)
-    normalizeDate(timestamp)
-    const _timestamp = timestamp.toISOString()
-    if (valueDict[_timestamp]) {
-      if (item.type === 'send')
-        valueDict[_timestamp].sent -= 1
+    if (item.timestamp) {
+      normalizeDate(item.timestamp)
+      const _timestamp = item.timestamp.toISOString()
+      if (valueDict[_timestamp]) {
+        if (item.type === 'send')
+          valueDict[_timestamp].sent -= 1
 
-      else if (item.type === 'receive')
-        valueDict[_timestamp].received += 1
+        else if (item.type === 'receive')
+          valueDict[_timestamp].received += 1
+      }
     }
   })
 
