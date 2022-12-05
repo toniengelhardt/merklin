@@ -1,9 +1,9 @@
 <script setup lang="ts">
-const ethUsd = await getETHPrice()
+const ethUsd = await useEthPrice()
 </script>
 
 <template>
-  <div col-span-1 panel>
+  <div>
     <h2 mt-0 mb-2 text-faint>
       Price Feed
     </h2>
