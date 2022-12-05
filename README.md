@@ -68,7 +68,7 @@ pnpm install
 
 ## Development Server
 
-Start the development server on http://localhost:3050
+Start the development server on `http://localhost:3050`
 
 ```bash
 pnpm dev
