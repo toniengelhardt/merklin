@@ -35,22 +35,25 @@ Some wise words from [@jack](https://twitter.com/jack):
 ## Principles
 
 1. Let's stick with the fundamentals and focus on delivering value.
-2. DX is everything. We pick the best technology to have fun and move fast.
-3. 🌺 [Aloha Spirit](https://www.hawaii.edu/uhwo/clear/home/lawaloha.html).
+2. DX is everything. Only the best tech so we have fun and can build efficiently.
+3. Code is art! Treat it like that.
+4. 🌺 [Aloha Spirit](https://www.hawaii.edu/uhwo/clear/home/lawaloha.html).
 
 ## Stack
 
-- Typescript
-- Nuxt
-- Vite
-- Vitest
-- Pinia
-- UnoCSS
-- HeadlessUI
-- Ethers.js
-- Chart.js
+- [Typescript](https://www.typescriptlang.org)
+- [Nuxt](https://nuxt.com)
+- [Vite](https://vitejs.dev)
+- [Vitest](https://vitest.dev)
+- [Pinia](https://pinia.vuejs.org)
+- [UnoCSS](https://uno.antfu.me)
+- [HeadlessUI](https://headlessui.com)
+- [Ethers.js](https://ethers.io)
+- [Chart.js](https://chartjs.org)
 
 That's for now, might evolve...
+
+Thinking about adding [Naive UI](https://www.naiveui.com), looks really cool.
 
 ## Setup
 
