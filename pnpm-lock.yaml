@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@antfu/eslint-config': 0.33.1
+  '@antfu/eslint-config': ^0.33.1
   '@nuxt/test-utils-edge': ^3.0.1-rc.0-27837318.5fe7c1c
   '@nuxtjs/color-mode': ^3.2.0
   '@pinia/nuxt': ^0.4.6

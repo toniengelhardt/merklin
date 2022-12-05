@@ -10,7 +10,7 @@ const account = $computed(() => rhStore.account)
 const transactionItems = $computed(() => {
   if (account && transactions) {
     let prevDate: DateString | undefined
-    const items: TransactionItem[] = transactions.map((transaction) => {
+    const items: TransactionItem[] = transactions.reverse().map((transaction) => {
       const type = (
         transaction.to?.toLowerCase() === account.address
           ? 'receive'
@@ -34,7 +34,7 @@ const transactionItems = $computed(() => {
         transaction,
       }
       return item
-    }).reverse()
+    })
     // console.log(items)
     return items
   }

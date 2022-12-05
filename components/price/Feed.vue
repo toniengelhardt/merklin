@@ -5,7 +5,7 @@ const ethUsd = await useEthPrice()
 <template>
   <div>
     <h2 mt-0 mb-2 text-faint>
-      Price Feed
+      Prices
     </h2>
     <div flex justify-between mb-2>
       <div flex>

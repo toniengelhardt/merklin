@@ -69,6 +69,7 @@ const chartOptions = computed<ChartOptions<any> | undefined>(() => (
               display: false,
             },
             ticks: {
+              // source: 'labels',
               color: 'grey',
               maxRotation: 0,
               callback: formatTicksMonthly,
@@ -76,6 +77,8 @@ const chartOptions = computed<ChartOptions<any> | undefined>(() => (
             grid: {
               display: false,
               drawBorder: false,
+              tickLength: 0,
+              color: colorMode.value === 'light' ? 'rgba(0,0,0,.05)' : 'rgba(255,255,255,.05)',
             },
           },
           y: {
@@ -91,10 +94,11 @@ const chartOptions = computed<ChartOptions<any> | undefined>(() => (
               color: 'grey',
             },
             grid: {
+              // display: false,
               tickColor: 'transparent',
               tickLength: 0,
               drawBorder: false,
-              color: (item: any, ctx: any) => {
+              color: (item: any) => {
                 const base = colorMode.value === 'light' ? '0,0,0' : '255,255,255'
                 if (item.tick.value === 0)
                   return `rgba(${base},.2)`
@@ -149,11 +153,12 @@ function generateHistograms(items: TransactionItem[]): {
       normalizeDate(item.timestamp)
       const _timestamp = item.timestamp.toISOString()
       if (valueDict[_timestamp]) {
-        if (item.type === 'send')
+        if (item.type === 'send') {
           valueDict[_timestamp].sent -= 1
-
-        else if (item.type === 'receive')
+        }
+        else if (item.type === 'receive') {
           valueDict[_timestamp].received += 1
+        }
       }
     }
   })

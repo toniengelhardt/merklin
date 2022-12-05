@@ -1,7 +1,10 @@
 <script setup lang="ts">
 const props = defineProps<{
-  modelValue?: boolean
+  items?: TransactionItem
 }>()
+
+const inAddressCount = $ref(0)
+const outAddressCount = $ref(0)
 </script>
 
 <template>
