@@ -5,11 +5,21 @@ const props = defineProps<{
   items?: TransactionItem[]
 }>()
 
-const walletAge = $computed(() => {
+const firstTransactionAge = $computed(() => {
   if (props.items?.length) {
     const firstTransaction = props.items.at(-1)
     if (firstTransaction?.timestamp)
       return formatDistanceToNow(firstTransaction.timestamp)
+
+    return 'N/A'
+  }
+  return undefined
+})
+const lastTransactionAge = $computed(() => {
+  if (props.items?.length) {
+    const lastTransaction = props.items[0]
+    if (lastTransaction?.timestamp)
+      return formatDistanceToNow(lastTransaction.timestamp)
 
     return 'N/A'
   }
@@ -28,7 +38,15 @@ const walletAge = $computed(() => {
           First transaction
         </div>
         <div class="insights-value">
-          {{ walletAge }} ago
+          {{ firstTransactionAge }} ago
+        </div>
+      </div>
+      <div>
+        <div class="insights-label">
+          Last transaction
+        </div>
+        <div class="insights-value">
+          {{ lastTransactionAge }} ago
         </div>
       </div>
     </div>

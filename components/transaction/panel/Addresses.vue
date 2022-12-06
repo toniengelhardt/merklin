@@ -51,13 +51,13 @@ const addressCounts = $computed(() => {
         </div>
       </div>
       <div flex-1>
-        <div h-1 bg-action ml-1 mr-2 />
+        <div h-1 bg-action ml-1 />
       </div>
       <div flex justify-center items-center w-18 h-18 bg-element rounded-2xl>
         <Icon name="wallet" size="2rem" />
       </div>
       <div flex-1>
-        <div h-1 bg-action ml-2 mr-1 />
+        <div h-1 bg-action mr-1 />
       </div>
       <div flex flex-col items-center w-18>
         <div flex-center h-10 mt-2 text-xs text-dim>
