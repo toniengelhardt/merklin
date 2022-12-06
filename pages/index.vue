@@ -12,7 +12,7 @@
     </div>
     <div col-span-8 panel>
       <h2 panel-title>
-        Performance
+        Portfolio performance
       </h2>
       <div italic text-dim>
         Portfolio value over time in USD/EUR/...
@@ -23,7 +23,7 @@
     </div>
     <div col-span-8 panel>
       <h2 panel-title>
-        Gas bill
+        The pump
       </h2>
       <div italic text-dim>
         Commulative gas chart...

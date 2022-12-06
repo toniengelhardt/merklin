@@ -1,10 +1,13 @@
 <script setup lang="ts">
 import type { ChartData, ChartOptions } from 'chart.js'
+import { theme } from '@unocss/preset-mini'
 import { normalizeDate } from '~/utils/dates'
 
 const props = defineProps<{
   items: TransactionItem[]
 }>()
+
+const colors = theme.colors!
 
 const colorMode = useColorMode()
 
@@ -26,7 +29,7 @@ const chartData = computed<ChartData<any> | undefined>(() => (
             label: 'Sent',
             type: 'bar',
             data: histData.sent,
-            backgroundColor: 'orange',
+            backgroundColor: colors.orange['500'],
             stack: 'bars',
             order: 2,
           },
@@ -34,7 +37,7 @@ const chartData = computed<ChartData<any> | undefined>(() => (
             label: 'Received',
             type: 'bar',
             data: histData.received,
-            backgroundColor: 'green',
+            backgroundColor: colors.green['500'],
             stack: 'bars',
             order: 2,
           },
@@ -94,7 +97,6 @@ const chartOptions = computed<ChartOptions<any> | undefined>(() => (
               color: 'grey',
             },
             grid: {
-              // display: false,
               tickColor: 'transparent',
               tickLength: 0,
               drawBorder: false,

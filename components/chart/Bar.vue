@@ -33,8 +33,8 @@ const mergedPlugins = $computed(() => [...defaultPlugins, ...props.plugins])
   <div relative flex w-full :style="{ width, height }">
     <BarChart
       :chart-id="chartId"
-      :chart-data="chartData"
-      :chart-options="mergedOptions"
+      :data="chartData"
+      :options="mergedOptions"
       :class="cssClasses"
       :style="styles"
       :plugins="[]"

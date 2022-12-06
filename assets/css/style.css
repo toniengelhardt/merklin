@@ -16,6 +16,7 @@ button {
 }
 
 a {
+  color: inherit;
   @apply decoration-none;
 }
 a:visited {

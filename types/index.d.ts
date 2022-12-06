@@ -49,3 +49,19 @@ declare interface TransactionItem {
   type: TransactionItemType,
   transaction: TransactionResponse,
 }
+
+declare type NetworkLayer = 'L1' | 'L2' | 'L3'
+
+declare type NetworkTechnology = { label: string, link: string }
+
+declare interface  NetworkInformation {
+  icon: string,
+  name: string,
+  layer: NetworkLayer,
+  technology: NetworkTechnology,
+  tokenPrice: number | string,
+  gasPrice: number | string,
+  transactionCost: number | string,
+  transactionsPerSecond: number | string,
+  activeWalletCount: number | string,
+}

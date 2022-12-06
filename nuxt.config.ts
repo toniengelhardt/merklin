@@ -14,6 +14,7 @@ export default defineNuxtConfig({
   },
   modules: [
     '@nuxtjs/color-mode',
+    '@nuxtjs/plausible',
     '@pinia/nuxt',
     '@unocss/nuxt',
     '@vueuse/nuxt',
@@ -39,6 +40,9 @@ export default defineNuxtConfig({
   ],
   colorMode: {
     classSuffix: '',
+  },
+  plausible: {
+    domain: process.env.PLAUSIBLE_DOMAIN || '',
   },
   typescript: {
     shim: false,

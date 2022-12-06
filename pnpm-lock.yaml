@@ -2,8 +2,9 @@ lockfileVersion: 5.4
 
 specifiers:
   '@antfu/eslint-config': ^0.33.1
-  '@nuxt/test-utils-edge': ^3.0.1-rc.0-27837318.5fe7c1c
+  '@nuxt/test-utils-edge': ^3.0.1-rc.0-27838776.d0c0cd7
   '@nuxtjs/color-mode': ^3.2.0
+  '@nuxtjs/plausible': ^0.2.0
   '@pinia/nuxt': ^0.4.6
   '@unocss/nuxt': ^0.47.5
   '@unocss/transformer-directives': ^0.47.5
@@ -19,9 +20,9 @@ specifiers:
   nuxt-icon: ^0.1.8
   pinia-plugin-persistedstate: ^3.0.1
   typescript: ^4.9.3
-  vitest: ^0.25.3
+  vitest: ^0.25.4
   vue-blockies: ^1.0.0
-  vue-chartjs: ^4.1.2
+  vue-chartjs: ^5.0.0
 
 dependencies:
   '@pinia/nuxt': 0.4.6_typescript@4.9.3
@@ -32,12 +33,13 @@ dependencies:
   ethers: 5.7.2
   pinia-plugin-persistedstate: 3.0.1
   vue-blockies: 1.0.0
-  vue-chartjs: 4.1.2_chart.js@4.0.1
+  vue-chartjs: 5.0.0_chart.js@4.0.1
 
 devDependencies:
   '@antfu/eslint-config': 0.33.1_s5ps7njkmjlaqajutnox5ntcla
-  '@nuxt/test-utils-edge': 3.0.1-rc.0-27837437.9c478ee
+  '@nuxt/test-utils-edge': 3.0.1-rc.0-27838776.d0c0cd7
   '@nuxtjs/color-mode': 3.2.0
+  '@nuxtjs/plausible': 0.2.0
   '@unocss/nuxt': 0.47.5
   '@unocss/transformer-directives': 0.47.5
   '@vueuse/nuxt': 9.6.0_nuxt@3.0.0
@@ -46,7 +48,7 @@ devDependencies:
   nuxt-headlessui: 1.0.4
   nuxt-icon: 0.1.8
   typescript: 4.9.3
-  vitest: 0.25.3
+  vitest: 0.25.4
 
 packages:
 
@@ -932,11 +934,11 @@ packages:
     resolution: {integrity: sha512-YBI/6o2EBz02tdEJRBK8xkt3zvOFOWlLBf7WKYGBsSYSRtjjgrqPe2skp6VLLmKx5WbHHDNcW+6oACaurxGzeA==}
     dev: true
 
-  /@nuxt/kit-edge/3.0.1-rc.0-27837437.9c478ee:
-    resolution: {integrity: sha512-ijCmN79kF24ha199zmfO7ckHxwmFjz9LQWPOHq23BM3b++5gYmJKujXYc7KNB+YyBfMSUqdn3CPEWlB3lc5UWg==}
+  /@nuxt/kit-edge/3.0.1-rc.0-27838776.d0c0cd7:
+    resolution: {integrity: sha512-cSsElkR8L/AMU6oFAS51oPdDFt4Tz0mnaY94C7eqysqUO2WfZPsbQRMfIID2KqE+g9j3HU0aq4Ilv1i/pvK8Hw==}
     engines: {node: ^14.16.0 || ^16.10.0 || ^17.0.0 || ^18.0.0 || ^19.0.0}
     dependencies:
-      '@nuxt/schema': /@nuxt/schema-edge/3.0.1-rc.0-27837437.9c478ee
+      '@nuxt/schema': /@nuxt/schema-edge/3.0.1-rc.0-27838776.d0c0cd7
       c12: 1.0.1
       consola: 2.15.3
       defu: 6.1.1
@@ -1012,8 +1014,8 @@ packages:
       - supports-color
     dev: true
 
-  /@nuxt/schema-edge/3.0.1-rc.0-27837437.9c478ee:
-    resolution: {integrity: sha512-BiPvhMuFUhVzRFRWBqngWnRQuaNyzfgUUKqLDbnN6iKs8wneIUAw6FXg8+6fo54ZPsHZesV7NhHoORgcF5WaQA==}
+  /@nuxt/schema-edge/3.0.1-rc.0-27838776.d0c0cd7:
+    resolution: {integrity: sha512-ntE7sUeaafRdvCGZ54v5arSTsXvtp7TZExBJ8tgaA7hJS/G2mfflVzVICS7aXAIvALLQqTx/FKObC3dyvUpBXw==}
     engines: {node: ^14.16.0 || ^16.10.0 || ^17.0.0 || ^18.0.0 || ^19.0.0}
     dependencies:
       c12: 1.0.1
@@ -1103,14 +1105,14 @@ packages:
       - supports-color
     dev: true
 
-  /@nuxt/test-utils-edge/3.0.1-rc.0-27837437.9c478ee:
-    resolution: {integrity: sha512-gkcqOJTu6Fclj4nKuB7rpjBV5IAvWCR39jLX+/gyZT1rrOjPqg2vDos4/le936NHBDgMpLfuEPxqfzqStUfsnw==}
+  /@nuxt/test-utils-edge/3.0.1-rc.0-27838776.d0c0cd7:
+    resolution: {integrity: sha512-LHgU3ez1yXzJTMJh32mViZhCatjPowYT9mOXtyCRtZWsu1HGW8ODoSkDGAo9te+jy+EmaQlry+bDBLYyOSjohg==}
     engines: {node: ^14.16.0 || ^16.10.0 || ^17.0.0 || ^18.0.0 || ^19.0.0}
     peerDependencies:
       vue: ^3.2.45
     dependencies:
-      '@nuxt/kit': /@nuxt/kit-edge/3.0.1-rc.0-27837437.9c478ee
-      '@nuxt/schema': /@nuxt/schema-edge/3.0.1-rc.0-27837437.9c478ee
+      '@nuxt/kit': /@nuxt/kit-edge/3.0.1-rc.0-27838776.d0c0cd7
+      '@nuxt/schema': /@nuxt/schema-edge/3.0.1-rc.0-27838776.d0c0cd7
       consola: 2.15.3
       defu: 6.1.1
       execa: 6.1.0
@@ -1187,6 +1189,18 @@ packages:
       '@nuxt/kit': 3.0.0
       lodash.template: 4.5.0
       pathe: 1.0.0
+    transitivePeerDependencies:
+      - rollup
+      - supports-color
+    dev: true
+
+  /@nuxtjs/plausible/0.2.0:
+    resolution: {integrity: sha512-mke+eW94PCca7zK0kNpNA9ULat5JCrBP2JUCmas6ZKpskU3+IaBv2OzWYzWJb/SsungfV9a/dukKbjAJeBTzhQ==}
+    dependencies:
+      '@nuxt/kit': 3.0.0
+      defu: 6.1.1
+      pathe: 1.0.0
+      plausible-tracker: 0.3.8
     transitivePeerDependencies:
       - rollup
       - supports-color
@@ -5544,6 +5558,11 @@ packages:
       mlly: 1.0.0
       pathe: 1.0.0
 
+  /plausible-tracker/0.3.8:
+    resolution: {integrity: sha512-lmOWYQ7s9KOUJ1R+YTOR3HrjdbxIS2Z4de0P/Jx2dQPteznJl2eX3tXxKClpvbfyGP59B5bbhW8ftN59HbbFSg==}
+    engines: {node: '>=10'}
+    dev: true
+
   /pluralize/8.0.0:
     resolution: {integrity: sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==}
     engines: {node: '>=4'}
@@ -6427,12 +6446,6 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /strip-literal/0.4.2:
-    resolution: {integrity: sha512-pv48ybn4iE1O9RLgCAN0iU4Xv7RlBTiit6DKmMiErbs9x1wH6vXBs45tWc0H5wUIF6TLTrKweqkmYF/iraQKNw==}
-    dependencies:
-      acorn: 8.8.1
-    dev: true
-
   /strip-literal/1.0.0:
     resolution: {integrity: sha512-5o4LsH1lzBzO9UFH63AJ2ad2/S2AVx6NtjOcaz+VTT2h1RiRvbipW72z8M/lxEhcPHDBQwpDrnTF7sXy/7OwCQ==}
     dependencies:
@@ -7001,8 +7014,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitest/0.25.3:
-    resolution: {integrity: sha512-/UzHfXIKsELZhL7OaM2xFlRF8HRZgAHtPctacvNK8H4vOcbJJAMEgbWNGSAK7Y9b1NBe5SeM7VTuz2RsTHFJJA==}
+  /vitest/0.25.4:
+    resolution: {integrity: sha512-v/qoSEYPrf8qa1CbKIKYK+1GGmPPEJyXFbkuD6jhh080cfNBsuUDAdMu6hV2h9Uv34EMiUrVETL/wB+EHxFtbA==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
     peerDependencies:
@@ -7032,7 +7045,7 @@ packages:
       debug: 4.3.4
       local-pkg: 0.4.2
       source-map: 0.6.1
-      strip-literal: 0.4.2
+      strip-literal: 1.0.0
       tinybench: 2.3.1
       tinypool: 0.3.0
       tinyspy: 1.0.2
@@ -7107,10 +7120,10 @@ packages:
       ufo: 1.0.1
     dev: true
 
-  /vue-chartjs/4.1.2_chart.js@4.0.1:
-    resolution: {integrity: sha512-QSggYjeFv/L4jFSBQpX8NzrAvX0B+Ha6nDgxkTG8tEXxYOOTwKI4phRLe+B4f+REnkmg7hgPY24R0cixZJyXBg==}
+  /vue-chartjs/5.0.0_chart.js@4.0.1:
+    resolution: {integrity: sha512-exA46UJOVMGz8Pvjs1iG+sz0sdAKhUqIGCfEQN82XJLYMg64gnk1OeknCrcIKMwP5c2Kw0Wurd5ch6bwDqb2/A==}
     peerDependencies:
-      chart.js: ^3.7.0
+      chart.js: ^4.0.0
       vue: ^3.0.0-0 || ^2.6.0
     dependencies:
       chart.js: 4.0.1

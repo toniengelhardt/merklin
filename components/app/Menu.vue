@@ -18,11 +18,19 @@ const menuItems = [
   },
   {
     icon: {
-      name: 'ecosystem',
+      name: 'nft',
     },
-    label: 'Ecosystem',
-    title: 'Ecosystem',
-    link: '/ecosystem',
+    label: 'NFTs',
+    title: 'NFTs',
+    link: '/nfts',
+  },
+  {
+    icon: {
+      name: 'blockchain',
+    },
+    label: 'Networks',
+    title: 'Networks',
+    link: '/networks',
   },
   {
     icon: {

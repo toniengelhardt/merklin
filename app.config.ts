@@ -46,6 +46,9 @@ export default defineAppConfig({
       wallet: 'ic:twotone-account-balance-wallet',
       gas: 'ph:gas-pump-duotone',
       block: 'ph:cube-duotone',
+      network: 'ph:graph-duotone',
+      blockchain: 'icon-park-twotone:blockchain',
+      nft: 'ph:hexagon-duotone',
       // Transaction types:
       approve: 'ph:lock-open-duotone',
       send: 'ph:arrow-up-bold',
