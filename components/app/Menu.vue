@@ -49,7 +49,7 @@ const menuItems = [
     </div>
   </div>
   <div px-6 text-xs>
-    <div py-4 border-b-1 border-base>
+    <div py-4 border-b-0 border-base>
       <p flex items-center text-sm m-0>
         <b>Disclaimer</b><span ml-2>🚧</span>
       </p>

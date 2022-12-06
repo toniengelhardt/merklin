@@ -43,6 +43,7 @@ export default defineAppConfig({
       visible: 'ph:eye-duotone',
       obscured: 'ph:eye-closed-duotone',
       // Blockchain:
+      wallet: 'ic:twotone-account-balance-wallet',
       gas: 'ph:gas-pump-duotone',
       block: 'ph:cube-duotone',
       // Transaction types:
