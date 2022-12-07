@@ -3,7 +3,7 @@
     <div col-span-3>
       <div panel flex flex-col h-61>
         <h2 panel-title>
-          GM
+          gm
         </h2>
         <div flex-1 flex-center flex-col pb-7>
           <p m-0 text-2rem font-mono>

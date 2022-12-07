@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { useRabbitholeStore } from '~/stores/rabbithole'
-
 const rhStore = useRabbitholeStore()
 const uiStore = useUIStore()
 const transactionStore = useTransactionStore()
@@ -9,7 +7,7 @@ function setMobile() {
   // The timeout is necessary to make it work correctly.
   // Without the timeout the size will be determined before the resize is
   // complete e.g. when switching between mobile/desktop in Chrome dev tools.
-  setTimeout(() => uiStore.mobile = window.innerWidth < 1024, 10)
+  setTimeout(() => uiStore.mobile = window.innerWidth < 1024, 15)
 }
 
 function initUI() {

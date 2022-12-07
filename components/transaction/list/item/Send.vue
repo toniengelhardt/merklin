@@ -5,14 +5,14 @@ defineProps<{
 </script>
 
 <template>
-  <TransactionItem :item="item">
+  <TransactionListItem :item="item">
     <template #icon>
-      <div w-full flex justify-center items-center bg-green-500:10 rounded-full>
-        <Icon name="receive" text-green-500 />
+      <div w-full flex justify-center items-center bg-orange-500:10 rounded-full>
+        <Icon name="send" text-orange-500 />
       </div>
     </template>
     <template #label>
-      Receive
+      Send
     </template>
     <template #details>
       <div flex w-full>
@@ -21,15 +21,16 @@ defineProps<{
             network="ethereum"
             token="eth"
             :value="item.transaction.value"
+            :multiplier="-1"
           />
         </div>
         <div flex flex-col items-start w-36>
           <div text-xs text-dim mb-1>
-            from:
+            to:
           </div>
           <WalletAddress :address="item.transaction.to" />
         </div>
       </div>
     </template>
-  </TransactionItem>
+  </TransactionListItem>
 </template>

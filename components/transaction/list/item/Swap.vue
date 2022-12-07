@@ -5,7 +5,7 @@ defineProps<{
 </script>
 
 <template>
-  <TransactionItem :item="item">
+  <TransactionListItem :item="item">
     <template #icon>
       <div w-full flex justify-center items-center bg-blue-500:10 rounded-full>
         <Icon name="swap" size="1.2rem" text-blue-500 />
@@ -22,5 +22,5 @@ defineProps<{
         <WalletAddress :address="item.transaction.to" />
       </div>
     </template>
-  </TransactionItem>
+  </TransactionListItem>
 </template>

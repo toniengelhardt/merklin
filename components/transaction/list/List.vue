@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import Approve from '~/components/transaction/item/Approve.vue'
-import Send from '~/components/transaction/item/Send.vue'
-import Receive from '~/components/transaction/item/Receive.vue'
-import Swap from '~/components/transaction/item/Swap.vue'
-import Unknown from '~/components/transaction/item/Unknown.vue'
+import Approve from '~/components/transaction/list/item/Approve.vue'
+import Send from '~/components/transaction/list/item/Send.vue'
+import Receive from '~/components/transaction/list/item/Receive.vue'
+import Swap from '~/components/transaction/list/item/Swap.vue'
+import Unknown from '~/components/transaction/list/item/Unknown.vue'
 
 const props = defineProps<{
   items?: TransactionItem[]

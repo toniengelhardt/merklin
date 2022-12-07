@@ -5,7 +5,7 @@ defineProps<{
 </script>
 
 <template>
-  <TransactionItem :item="item">
+  <TransactionListItem :item="item">
     <template #icon>
       <div w-full flex justify-center items-center bg-element rounded-full>
         <Icon name="approve" />
@@ -14,5 +14,5 @@ defineProps<{
     <template #label>
       Approve
     </template>
-  </TransactionItem>
+  </TransactionListItem>
 </template>
