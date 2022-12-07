@@ -36,9 +36,10 @@ Some wise words from [@jack](https://twitter.com/jack):
  
 1. The idea is to learn and have fun.
 2. Let's stick with the fundamentals and focus on solving problems.
-3. DX is everything.
-3. Code is art.
-4. 🌺 [Aloha Spirit](https://www.hawaii.edu/uhwo/clear/home/lawaloha.html).
+3. The fundamentals are pseudonymity and censorship resistance.
+4. DX is everything.
+5. Code is art.
+6. 🌺 [Aloha Spirit](https://www.hawaii.edu/uhwo/clear/home/lawaloha.html).
 
 ## Stack
 
