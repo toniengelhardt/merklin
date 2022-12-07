@@ -1,8 +1,8 @@
 <script setup lang="ts">
-const rhStore = useRabbitholeStore()
+const networkStore = useNetworkStore()
 const blocknumber = useBlocknumber()
 
-const status = $computed(() => rhStore.status)
+const status = $computed(() => networkStore.status)
 </script>
 
 <template>

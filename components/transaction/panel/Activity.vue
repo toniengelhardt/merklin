@@ -1,13 +1,12 @@
 <script setup lang="ts">
-const props = defineProps<{
-  items?: TransactionItem[]
-}>()
+const transactionStore = useTransactionStore()
+const items = $computed(() => transactionStore.transactionItems)
 
 const counts = $computed(() => {
-  if (props.items) {
+  if (items) {
     let received = 0
     let sent = 0
-    props.items?.forEach((item) => {
+    items?.forEach((item) => {
       if (item.type === 'receive')
         received++
       else if (item.type === 'send')
@@ -50,6 +49,6 @@ const counts = $computed(() => {
         </div>
       </div>
     </div>
-    <ChartTransactionTimeline v-if="items" :items="items" />
+    <TransactionChartTimeline v-if="items" :items="items" />
   </div>
 </template>

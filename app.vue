@@ -1,14 +1,15 @@
 <script setup lang="ts">
 import { useRabbitholeStore } from '~/stores/rabbithole'
-const rhStore = useRabbitholeStore()
 
-const ui = useUIStore()
+const rhStore = useRabbitholeStore()
+const uiStore = useUIStore()
+const transactionStore = useTransactionStore()
 
 function setMobile() {
   // The timeout is necessary to make it work correctly.
   // Without the timeout the size will be determined before the resize is
   // complete e.g. when switching between mobile/desktop in Chrome dev tools.
-  setTimeout(() => ui.mobile = window.innerWidth < 1024, 10)
+  setTimeout(() => uiStore.mobile = window.innerWidth < 1024, 10)
 }
 
 function initUI() {
@@ -40,13 +41,16 @@ async function initRabbithole() {
 onMounted(() => {
   initUI()
   initRabbithole()
+    .then(() => {
+      transactionStore.loadTransactions()
+    })
 })
 </script>
 
 <template>
   <div
     class="no-translate"
-    :class="{ obscure: ui.obscure }"
+    :class="{ obscure: uiStore.obscure }"
     relative bg-base
   >
     <div class="bg-gradient" absolute top-0 left-0 bottom-0 right-0 z-0 />
@@ -54,20 +58,20 @@ onMounted(() => {
       relative flex flex-col md:flex-row h-100vh max-h-100vh max-h-100dvh
       max-w-100vw overflow-x-hidden text-base z-1
     >
-      <div v-if="ui.mobile" flex>
+      <div v-if="uiStore.mobile" flex>
         <MobileHeader h-16 />
       </div>
       <div v-else flex flex-col w-70 bg-surface>
         <AppMenu />
       </div>
       <main flex-1 flex flex-col>
-        <ActionBar v-if="!ui.mobile" />
+        <ActionBar v-if="!uiStore.mobile" />
         <div flex-1 flex overflow-scroll>
           <NuxtPage v-if="rhStore.account" />
           <Loading v-else />
         </div>
       </main>
-      <div v-if="ui.mobile" h-16>
+      <div v-if="uiStore.mobile" h-16>
         <MobileNavigation />
       </div>
     </div>

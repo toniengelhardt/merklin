@@ -1,13 +1,12 @@
 <script setup lang="ts">
-const props = defineProps<{
-  items?: TransactionItem[]
-}>()
+const transactionStore = useTransactionStore()
+const items = $computed(() => transactionStore.transactionItems)
 
 const addressCounts = $computed(() => {
-  if (props.items) {
+  if (items) {
     const inDict = {}
     const outDict = {}
-    props.items.forEach((item) => {
+    items.forEach((item) => {
       if (item.type === 'send') {
         dictIncrement(outDict, item.transaction.to)
       }

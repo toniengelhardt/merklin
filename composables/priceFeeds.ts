@@ -1,8 +1,7 @@
 import { ethers } from 'ethers'
 
 export const useEthPrice = async () => {
-  const provider = new ethers.providers.JsonRpcProvider('https://eth-mainnet.g.alchemy.com/v2/n5Vj8wE2BHWCtpxqeIZZRJFMVyvifuYv' || process.env.RPC_URL!)
-
+  const provider = await useRpcProvider()
   const aggregatorV3InterfaceABI = [
     {
       inputs: [],

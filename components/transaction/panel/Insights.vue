@@ -1,13 +1,12 @@
 <script setup lang="ts">
 import { formatDistanceToNow } from 'date-fns'
 
-const props = defineProps<{
-  items?: TransactionItem[]
-}>()
+const transactionStore = useTransactionStore()
+const items = $computed(() => transactionStore.transactionItems)
 
 const firstTransactionAge = $computed(() => {
-  if (props.items?.length) {
-    const firstTransaction = props.items.at(-1)
+  if (items?.length) {
+    const firstTransaction = items.at(-1)
     if (firstTransaction?.timestamp)
       return formatDistanceToNow(firstTransaction.timestamp)
 
@@ -16,8 +15,8 @@ const firstTransactionAge = $computed(() => {
   return undefined
 })
 const lastTransactionAge = $computed(() => {
-  if (props.items?.length) {
-    const lastTransaction = props.items[0]
+  if (items?.length) {
+    const lastTransaction = items[0]
     if (lastTransaction?.timestamp)
       return formatDistanceToNow(lastTransaction.timestamp)
 
