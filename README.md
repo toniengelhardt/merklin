@@ -6,8 +6,6 @@ This is an attempt to build an open-source [Zapper](https://zapper.fi/)/[Zerion]
 
 <img width="1680" alt="MΞTAD🦧TA preview insights" src="https://user-images.githubusercontent.com/2703233/206278704-cabaa31e-db4c-4c1d-a39a-26a08b62956e.png">
 
-<img width="1680" alt="MΞTAD🦧TA preview transactions" src="https://user-images.githubusercontent.com/2703233/206278738-a7132c38-66e8-4ccb-8742-631dec84856c.png">
-
 The idea is to focus mostly on powerful wallet analytics, e.g.
 
 - Detailed charts of wallet activity
