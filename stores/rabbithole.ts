@@ -4,16 +4,10 @@ export const useRabbitholeStore = defineStore('rabbithole', {
   state: (): {
     accounts: Web3Account[] | undefined
     account: Web3Account | undefined // Active account
-    network: Web3Network | undefined
-    blocknumber: number | undefined
-    status: ConnectionStatus | undefined
   } => {
     return {
       accounts: undefined,
       account: undefined,
-      network: undefined,
-      blocknumber: undefined,
-      status: undefined,
     }
   },
   actions: {

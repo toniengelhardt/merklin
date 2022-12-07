@@ -1,3 +1,4 @@
+import type { TransactionResponse } from '@ethersproject/abstract-provider'
 import type { BigNumber } from 'ethers'
 import { ethers, utils } from 'ethers'
 
@@ -7,6 +8,7 @@ import { ethers, utils } from 'ethers'
 let web3Provider: ethers.providers.Web3Provider
 let web3Signer: ethers.providers.JsonRpcSigner
 let defaultProvider: ethers.providers.BaseProvider
+let rpcProvider: ethers.providers.JsonRpcProvider
 let etherscanProvider: ethers.providers.EtherscanProvider
 
 const network = 'homestead'
@@ -41,6 +43,13 @@ export const useDefaultProvider = async () => {
   return defaultProvider
 }
 
+export const useRpcProvider = async () => {
+  if (!rpcProvider) {
+    rpcProvider = new ethers.providers.JsonRpcProvider('https://eth-mainnet.g.alchemy.com/v2/n5Vj8wE2BHWCtpxqeIZZRJFMVyvifuYv' || process.env.RPC_URL!)
+  }
+  return rpcProvider
+}
+
 /**
  * Etherscan provider
  * The only one that has the transaction history.
@@ -54,18 +63,19 @@ export const useEtherscanProvider = async () => {
 }
 
 export const useTransactions = async () => {
-  const rabbitholeStore = useRabbitholeStore()
+  const rhStore = useRabbitholeStore()
 
-  if (rabbitholeStore.account) {
+  if (rhStore.account) {
     const etherscanProvider = await useEtherscanProvider()
-    return await etherscanProvider.getHistory(rabbitholeStore.account.address)
+    const transactions: TransactionResponse[] = await etherscanProvider.getHistory(rhStore.account.address)
+    return transactions
   }
   return Promise.resolve()
 }
 
 export const useBlocknumber = () => {
   const blocknumber = ref<number | undefined>(undefined)
-  const rhStore = useRabbitholeStore()
+  const rhStore = useNetworkStore()
   useDefaultProvider()
     .then(() => {
       useIntervalFn(() => {
@@ -102,7 +112,15 @@ export const useGasPrice = () => {
  * Hardcoded for now for UI dev.
  */
 export const useEthToCurrency = (value: number | undefined) => {
-  return value
-    ? new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(value * 1200)
-    : undefined
+  if (value) {
+    const conversionFactor = 1200 // useEthPrice()
+    return value * conversionFactor
+  }
+}
+
+export const useEthToCurrencyFormatted = (value: number | undefined) => {
+  const cValue = useEthToCurrency(value)
+  if (cValue) {
+    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(cValue)
+  }
 }

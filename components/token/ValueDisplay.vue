@@ -11,7 +11,7 @@ const props = defineProps<{
 }>()
 
 const valueDisplay = $computed(() => (+utils.formatUnits(props.value, 'ether') * (props.multiplier || 0)).toPrecision(4))
-const currencyDisplay = $computed(() => useEthToCurrency(+utils.formatUnits(props.value, 'ether')))
+const currencyDisplay = $computed(() => useEthToCurrencyFormatted(+utils.formatUnits(props.value, 'ether')))
 </script>
 
 <template>

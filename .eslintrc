@@ -3,6 +3,7 @@
         "@antfu"
     ],
     "rules": {
-        "curly": "off"
+        "curly": "off",
+        "no-extra-parens": "off"
     }
 }

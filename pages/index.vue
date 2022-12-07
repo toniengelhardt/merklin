@@ -22,31 +22,26 @@
         Portfolio value over time in USD/EUR/...
       </div>
     </div>
-    <div col-span-3 panel>
+    <div col-span-3 panel h-61>
       <PriceFeed />
     </div>
-    <div col-span-9 panel>
+    <div col-span-9>
+      <InsightPanelGasFees />
+    </div>
+    <div col-span-4 panel>
       <h2 panel-title>
-        Gas fees
+        Predictions
       </h2>
-      <div italic text-dim>
-        Commulative chart of gas fees over time...
+      <div>
+        Follow oracles on betting markets.
       </div>
     </div>
     <div col-span-4 panel>
       <h2 panel-title>
-        Oracle
+        Airdrop detection
       </h2>
       <div>
-        Follow predictions on prediction markets.
-      </div>
-    </div>
-    <div col-span-4 panel>
-      <h2 panel-title>
-        Airdrops
-      </h2>
-      <div>
-        Airdrop detection similar to
+        Similar to
         <NuxtLink
           to="https://earni.fi/"
           title="Earni.fi airdrop detection"
@@ -65,6 +60,13 @@
         </NuxtLink>.
       </div>
     </div>
-    <div col-span-4 panel />
+    <div col-span-4 panel>
+      <h2 panel-title>
+        D<span font-mono>0x</span>ing score
+      </h2>
+      <div>
+        Potential exposure and safety factor.
+      </div>
+    </div>
   </div>
 </template>
