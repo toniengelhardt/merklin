@@ -4,7 +4,9 @@
 
 This is an attempt to build an open-source [Zapper](https://zapper.fi/)/[Zerion](https://app.zerion.io/) based on [Vue](https://vuejs.org) and [Nuxt](https://nuxt.com) and supercharge it with [Dune](https://dune.com)-like analytics.
 
-<img width="960" alt="MΞTAD🦧TA preview dark" src="https://user-images.githubusercontent.com/2703233/206170014-e748694e-df8d-43bd-bc1b-94c1d0ea775e.png">
+<img width="1680" alt="MΞTAD🦧TA preview insights" src="https://user-images.githubusercontent.com/2703233/206278704-cabaa31e-db4c-4c1d-a39a-26a08b62956e.png">
+
+<img width="1680" alt="MΞTAD🦧TA preview transactions" src="https://user-images.githubusercontent.com/2703233/206280249-7fe4e727-babc-4461-a9a8-10d6958d6aaa.png">
 
 The idea is to focus mostly on powerful wallet analytics, e.g.
 
