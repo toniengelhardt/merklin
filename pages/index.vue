@@ -1,11 +1,14 @@
 <template>
   <div page>
-    <div col-span-3 panel flex justify-center items-center>
-      <div text-center>
-        <p pt-4 m-0 text-2rem font-mono>
-          <span mr-2>gm</span>🌴
+    <div col-span-3 panel flex flex-col>
+      <h2 panel-title>
+        GM
+      </h2>
+      <div flex-1 flex-center flex-col pb-7>
+        <p m-0 text-2rem font-mono>
+          🌴
         </p>
-        <p text-sm text-dim>
+        <p m-0 text-sm text-dim text-center>
           Let's learn and have fun!<br>
           Check out transactions for now.
         </p>
