@@ -52,9 +52,9 @@ const gasCostDisplay = $computed(() => gasCost?.toPrecision(2))
             <span ml-1 text-xs tracking-tighter>@ {{ gasPriceDisplay }} gwei</span>
           </div>
           <div class="text-currency">
-            ~{{ useEthToCurrency(gasCost) }}
+            ~{{ useEthToCurrencyFormatted(gasCost) }}
           </div>
-        </div>
+        </div>w
       </div>
     </div>
     <div

@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import { version } from '~/package.json'
+
+const appVersion = version
+
 const menuItems = [
   {
     icon: {
@@ -119,7 +123,7 @@ const menuItems = [
       title="Releases on GitHub"
       text-sm text-dim hover:text-base decoration-none hover:decoration-none
     >
-      v0.1-alpha
+      {{ appVersion }}
     </NuxtLink>
   </div>
 </template>

@@ -1,4 +1,7 @@
 {
+  "version": "0.2.0-alpha",
+  "releaseDate": "07.12.2022",
+  "author": "Humanity",
   "private": true,
   "scripts": {
     "build": "nuxt build",
