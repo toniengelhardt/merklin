@@ -1,25 +1,29 @@
 <template>
   <div page>
-    <div col-span-3 panel flex flex-col>
-      <h2 panel-title>
-        GM
-      </h2>
-      <div flex-1 flex-center flex-col pb-7>
-        <p m-0 text-2rem font-mono>
-          🌴
-        </p>
-        <p m-0 text-sm text-dim text-center>
-          Let's learn and have fun!<br>
-          Check out transactions for now.
-        </p>
+    <div col-span-3>
+      <div panel flex flex-col h-61>
+        <h2 panel-title>
+          GM
+        </h2>
+        <div flex-1 flex-center flex-col pb-7>
+          <p m-0 text-2rem font-mono>
+            🌴
+          </p>
+          <p m-0 text-sm text-dim text-center>
+            Let's learn and have fun!<br>
+            Check out transactions for now.
+          </p>
+        </div>
       </div>
     </div>
-    <div col-span-9 panel>
-      <h2 panel-title>
-        Portfolio performance
-      </h2>
-      <div italic text-dim>
-        Portfolio value over time in USD/EUR/...
+    <div col-span-9>
+      <div panel h-61>
+        <h2 panel-title>
+          Portfolio performance
+        </h2>
+        <div italic text-dim>
+          Portfolio value over time in USD/EUR/...
+        </div>
       </div>
     </div>
     <div col-span-3 panel h-61>
@@ -28,7 +32,7 @@
     <div col-span-9>
       <InsightPanelGasFees />
     </div>
-    <div col-span-4 panel>
+    <div col-span-4 panel h-61>
       <h2 panel-title>
         Predictions
       </h2>
@@ -36,7 +40,7 @@
         Follow oracles on betting markets.
       </div>
     </div>
-    <div col-span-4 panel>
+    <div col-span-4 panel h-61>
       <h2 panel-title>
         Airdrop detection
       </h2>
@@ -60,7 +64,7 @@
         </NuxtLink>.
       </div>
     </div>
-    <div col-span-4 panel>
+    <div col-span-4 panel h-61>
       <h2 panel-title>
         D<span font-mono>0x</span>ing score
       </h2>
