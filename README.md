@@ -33,10 +33,11 @@ Some wise words from [@jack](https://twitter.com/jack):
 <img width="554" alt="Screenshot 2022-12-02 at 16 13 33" src="https://user-images.githubusercontent.com/2703233/205336586-2517bfd2-ead1-4ace-8091-4f988e9b2df3.png">
 
 ## Principles
-
-1. Let's stick with the fundamentals and focus on delivering value.
-2. DX is everything. Only the best tech so we have fun and can build efficiently.
-3. Code is art, treat it accordingly.
+ 
+1. The idea is to learn and have fun.
+2. Let's stick with the fundamentals and focus on solving problems.
+3. DX is everything.
+3. Code is art.
 4. 🌺 [Aloha Spirit](https://www.hawaii.edu/uhwo/clear/home/lawaloha.html).
 
 ## Stack
