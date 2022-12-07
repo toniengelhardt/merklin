@@ -12,7 +12,7 @@ const props = withDefaults(defineProps<{
   plugins?: any // Plugin<'bar'>{},
 }>(), {
   width: '100%',
-  height: '14rem',
+  height: '12rem',
   chartId: 'bar-chart',
   cssClasses: '',
   styles: () => {},

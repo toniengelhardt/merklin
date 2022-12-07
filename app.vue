@@ -4,6 +4,18 @@ const rhStore = useRabbitholeStore()
 
 const ui = useUIStore()
 
+function setMobile() {
+  // The timeout is necessary to make it work correctly.
+  // Without the timeout the size will be determined before the resize is
+  // complete e.g. when switching between mobile/desktop in Chrome dev tools.
+  setTimeout(() => ui.mobile = window.innerWidth < 1024, 10)
+}
+
+function initUI() {
+  setMobile()
+  useEventListener(window.visualViewport, 'resize', useThrottleFn(() => setMobile(), 100))
+}
+
 async function initRabbithole() {
   const { web3Provider, web3Signer } = await useWeb3Provider()
   // console.info('web3Provider:', web3Provider)
@@ -25,23 +37,39 @@ async function initRabbithole() {
     rhStore.account = accounts[0]
 }
 
-onMounted(() => initRabbithole())
+onMounted(() => {
+  initUI()
+  initRabbithole()
+})
 </script>
 
 <template>
-  <div class="no-translate" :class="{ obscure: ui.obscure }" relative bg-base>
+  <div
+    class="no-translate"
+    :class="{ obscure: ui.obscure }"
+    relative bg-base
+  >
     <div class="bg-gradient" absolute top-0 left-0 bottom-0 right-0 z-0 />
-    <div relative flex h-100vh max-h-100vh max-h-100dvh text-base z-1>
-      <div flex flex-col w-70 bg-surface>
+    <div
+      relative flex flex-col md:flex-row h-100vh max-h-100vh max-h-100dvh
+      max-w-100vw overflow-x-hidden text-base z-1
+    >
+      <div v-if="ui.mobile" flex>
+        <MobileHeader h-16 />
+      </div>
+      <div v-else flex flex-col w-70 bg-surface>
         <AppMenu />
       </div>
       <main flex-1 flex flex-col>
-        <ActionBar />
+        <ActionBar v-if="!ui.mobile" />
         <div flex-1 flex overflow-scroll>
           <NuxtPage v-if="rhStore.account" />
           <Loading v-else />
         </div>
       </main>
+      <div v-if="ui.mobile" h-16>
+        <MobileNavigation />
+      </div>
     </div>
   </div>
 </template>

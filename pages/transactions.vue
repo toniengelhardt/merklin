@@ -50,10 +50,10 @@ onMounted(() => loadTrasactions())
 
 <template>
   <div v-if="account" page>
-    <TransactionPanelActivity :items="transactionItems" col-span-8 />
-    <TransactionPanelAddresses :items="transactionItems" col-span-4 />
-    <TransactionPanelHistory :items="transactionItems" col-span-8 />
-    <TransactionPanelInsights :items="transactionItems" col-span-4 max-h-60 />
+    <TransactionPanelActivity :items="transactionItems" col-span-12 md:col-span-8 />
+    <TransactionPanelAddresses :items="transactionItems" col-span-12 md:col-span-4 />
+    <TransactionPanelHistory :items="transactionItems" col-span-12 md:col-span-8 />
+    <TransactionPanelInsights :items="transactionItems" col-span-12 md:col-span-4 max-h-60 />
   </div>
   <Loading v-else />
 </template>

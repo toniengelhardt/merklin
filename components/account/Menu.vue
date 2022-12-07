@@ -9,7 +9,7 @@ const items = {
   },
   repotracker: {
     icon: { name: 'repotracker' },
-    label: 'RepoTracker',
+    label: 'Dev Stats',
     link: 'https://repo-tracker.com/r/gh/toniengelhardt/m3tadata',
     external: true,
   },
@@ -17,7 +17,7 @@ const items = {
     icon: { name: 'github' },
     label: 'Contribute',
     title: 'MΞTADATA repository on GitHub',
-    link: config.public.repoLink,
+    link: config.public.repoUrl,
     external: true,
   },
   twitter: {

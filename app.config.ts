@@ -29,9 +29,8 @@ export default defineAppConfig({
       system: 'ph:circle-half',
       // App modules:
       dashboard: 'ph:squares-four-duotone',
-      transaction: 'ph:arrows-left-right-duotone',
-      ecosystem: 'ph:snowflake-duotone',
-      airdrop: 'ph:parachute-duotone',
+      insights: 'ph:projector-screen-chart-duotone',
+      assets: 'ph-chart-pie-slice-duotone',
       // App elements:
       loading: 'line-md:loading-twotone-loop',
       menu: 'ph:dots-three-outline',
@@ -48,7 +47,10 @@ export default defineAppConfig({
       block: 'ph:cube-duotone',
       network: 'ph:graph-duotone',
       blockchain: 'icon-park-twotone:blockchain',
+      transaction: 'ph:arrows-left-right-duotone',
       nft: 'ph:hexagon-duotone',
+      airdrop: 'ph:parachute-duotone',
+      ecosystem: 'ph:snowflake-duotone',
       // Transaction types:
       approve: 'ph:lock-open-duotone',
       send: 'ph:arrow-up-bold',

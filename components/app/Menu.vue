@@ -2,19 +2,19 @@
 const menuItems = [
   {
     icon: {
-      name: 'dashboard',
+      name: 'insights',
     },
-    label: 'Overview',
-    title: 'Overview',
+    label: 'Insights',
+    title: 'Insights',
     link: '/',
   },
   {
     icon: {
-      name: 'transaction',
+      name: 'assets',
     },
-    label: 'Transactions',
-    title: 'Transactions',
-    link: '/transactions',
+    label: 'Assets',
+    title: 'Assets',
+    link: '/assets',
   },
   {
     icon: {
@@ -26,19 +26,19 @@ const menuItems = [
   },
   {
     icon: {
+      name: 'transaction',
+    },
+    label: 'Transactions',
+    title: 'Transactions',
+    link: '/transactions',
+  },
+  {
+    icon: {
       name: 'blockchain',
     },
     label: 'Networks',
     title: 'Networks',
     link: '/networks',
-  },
-  {
-    icon: {
-      name: 'airdrop',
-    },
-    label: 'Airdrops',
-    title: 'Airdrops',
-    link: '/airdrops',
   },
 ]
 </script>

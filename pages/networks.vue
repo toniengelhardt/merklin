@@ -109,7 +109,7 @@ const networks = [
     <div
       v-for="(network, idx) in networks"
       :key="idx"
-      col-span-4 panel justify-start
+      col-span-12 md:col-span-4 panel justify-start
     >
       <div flex items-center>
         <div class="icon-container">

@@ -65,3 +65,5 @@ declare interface  NetworkInformation {
   transactionsPerSecond: number | string,
   activeWalletCount: number | string,
 }
+
+declare type TokenSymbol = keyof typeof tickers
