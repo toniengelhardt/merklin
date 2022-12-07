@@ -11,6 +11,7 @@ export default defineAppConfig({
       opensource: 'ri:open-source-line',
       github: 'carbon:logo-github',
       repotracker: 'ph:binoculars-duotone',
+      plausible: 'IconPlausible',
       // Social:
       discord: 'logos:discord-icon',
       twitter: 'logos:twitter',

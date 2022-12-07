@@ -13,6 +13,12 @@ const items = {
     link: 'https://repo-tracker.com/r/gh/toniengelhardt/m3tadata',
     external: true,
   },
+  plausible: {
+    icon: { name: 'plausible' },
+    label: 'Analytics',
+    link: 'https://plausible.io/m3tadata.vercel.app',
+    external: true,
+  },
   github: {
     icon: { name: 'github' },
     label: 'Contribute',
@@ -46,6 +52,7 @@ const items = {
     </MenuItem>
     <MenuItem :item="items.github" />
     <MenuItem :item="items.repotracker" />
+    <MenuItem :item="items.plausible" />
     <MenuItem :item="items.web3VueNuxtProjects" />
     <MenuItem :item="items.twitter" />
     <MenuItem :item="items.discord" />
