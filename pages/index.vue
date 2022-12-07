@@ -6,8 +6,8 @@
           gm
         </h2>
         <div flex-1 flex-center flex-col pb-7>
-          <p m-0 text-2rem font-mono>
-            🌴
+          <p mt-0 mb-2>
+            <span class="text-2rem">🌴</span>
           </p>
           <p m-0 text-sm text-dim text-center>
             Let's learn and have fun!<br>
@@ -18,8 +18,9 @@
     </div>
     <div col-span-9>
       <div panel h-61>
-        <h2 panel-title>
-          Portfolio performance
+        <h2 panel-title flex justify-between>
+          <span>Portfolio performance</span>
+          <span class="mx-1 text-1.5rem text-base">🦍</span>
         </h2>
         <div italic text-dim>
           Portfolio value over time in USD/EUR/...
@@ -66,10 +67,10 @@
     </div>
     <div col-span-4 panel h-61>
       <h2 panel-title>
-        D<span font-mono>0x</span>ing score
+        D<span font-mono>0x</span>ing score<span ml-3 text-base>🐍</span>
       </h2>
       <div>
-        Potential exposure and safety factor.
+        Potential exposure and security.
       </div>
     </div>
   </div>
