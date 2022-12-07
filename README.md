@@ -4,7 +4,7 @@
 
 This is an attempt to build an open-source [Zapper](https://zapper.fi/)/[Zerion](https://app.zerion.io/) based on [Vue](https://vuejs.org) and [Nuxt](https://nuxt.com) and supercharge it with [Dune](https://dune.com)-like analytics.
 
-![Preview dark](https://res.cloudinary.com/daixf8djk/image/upload/v1670257061/M%CE%9ETAD%EF%A6%A7TA/preview_20221205_ocwals.png)
+<img width="960" alt="MΞTAD🦧TA preview dark" src="https://user-images.githubusercontent.com/2703233/206170014-e748694e-df8d-43bd-bc1b-94c1d0ea775e.png">
 
 The idea is to focus mostly on powerful wallet analytics, e.g.
 
@@ -33,11 +33,13 @@ Some wise words from [@jack](https://twitter.com/jack):
 <img width="554" alt="Screenshot 2022-12-02 at 16 13 33" src="https://user-images.githubusercontent.com/2703233/205336586-2517bfd2-ead1-4ace-8091-4f988e9b2df3.png">
 
 ## Principles
-
-1. Let's stick with the fundamentals and focus on delivering value.
-2. DX is everything. Only the best tech so we have fun and can build efficiently.
-3. Code is art, treat it accordingly.
-4. 🌺 [Aloha Spirit](https://www.hawaii.edu/uhwo/clear/home/lawaloha.html).
+ 
+1. The idea is to learn and have fun.
+2. Let's stick with the fundamentals and focus on solving problems.
+3. The fundamentals are pseudonymity and censorship resistance.
+4. DX is everything.
+5. Code is art.
+6. 🌺 [Aloha Spirit](https://www.hawaii.edu/uhwo/clear/home/lawaloha.html).
 
 ## Stack
 
