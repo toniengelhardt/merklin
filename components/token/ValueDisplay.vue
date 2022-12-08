@@ -3,8 +3,8 @@ import type { BigNumber } from 'ethers'
 import { utils } from 'ethers'
 
 const props = defineProps<{
-  network: Web3Network
-  token: Web3Token
+  network: NetworkName
+  token: TokenName
   value: BigNumber // in Wei
   multiplier?: number // e.g. -1 to display a negative value
   timestamp?: DatetimeString

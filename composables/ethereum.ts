@@ -1,11 +1,17 @@
 const ethTransactionGasLimit = 21000
 
+/**
+ * Returns unformatted token price in currently selected currency.
+ */
 export const useEthTokenPrice = () => {
   const priceStore = usePriceStore()
   return computed(() => priceStore.ethUsd)
 }
 
-export const useEthTokenPriceFormatted = () => {
+/**
+ * Returns formatted token price in currently selected currency.
+ */
+export const useTokenPriceFormatted = () => {
   const tp = useEthTokenPrice()
   const currency = useCurrency()
   return computed(() => (

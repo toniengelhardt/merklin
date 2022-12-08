@@ -3,7 +3,7 @@ import { defineStore } from 'pinia'
 
 export const useNetworkStore = defineStore('networks', {
   state: (): {
-    network: Web3Network | undefined
+    network: NetworkName | undefined
     blocknumber: number | undefined
     status: ConnectionStatus | undefined
     gasPrice: number | null | undefined
