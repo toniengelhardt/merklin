@@ -3,13 +3,13 @@ import { defineStore } from 'pinia'
 export const usePriceStore = defineStore('prices', {
   state: (): {
     ethUsd: TokenPrice | undefined
-    polygonEthUsd: TokenPrice | undefined
-    historicPolygonPrice: TokenPrice | undefined
+    maticUsd: TokenPrice | undefined
+    maticUsdHist: TokenPrice | undefined
   } => {
     return {
       ethUsd: undefined,
-      polygonEthUsd: undefined,
-      historicPolygonPrice: undefined,
+      maticUsd: undefined,
+      maticUsdHist: undefined,
     }
   },
   actions: {
@@ -19,18 +19,18 @@ export const usePriceStore = defineStore('prices', {
       const decimals = await priceFeed.decimals()
       this.ethUsd = Number((roundData.answer.toString() / 10 ** decimals).toFixed(2))
     },
-    async updatePolygonEthUsd() {
-      const priceFeed = await usePolygonPriceFeed()
+    async updateMaticUsd() {
+      const priceFeed = await useMaticPriceFeed()
       const roundData = await priceFeed.latestRoundData()
       const decimals = await priceFeed.decimals()
-      this.polygonEthUsd = Number((roundData.answer.toString() / 10 ** decimals).toFixed(2))
+      this.maticUsd = Number((roundData.answer.toString() / 10 ** decimals).toFixed(2))
     },
-    async getHistoricPolygonPrice() {
-      const priceFeed = await usePolygonPriceFeed()
+    async getMaticHistPrice() {
+      const priceFeed = await useMaticPriceFeed()
       // We can loop through the roundId parameter to get the token price at each round, hardcoded as example
       const roundData = await priceFeed.getRoundData(55340232221128668506n)
       const decimals = await priceFeed.decimals()
-      this.historicPolygonPrice = Number((roundData.answer.toString() / 10 ** decimals).toFixed(2))
+      this.maticUsdHist = Number((roundData.answer.toString() / 10 ** decimals).toFixed(2))
     },
   },
   persist: {

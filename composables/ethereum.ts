@@ -1,53 +1,61 @@
-const ethTransactionGasLimit = 21000
+const transactionGasLimit: Record<NetworkName, number> = {
+  ethereum: 21000,
+  optimism: 0,
+  arbitrum: 0,
+  zksync: 0,
+  polygon: 0,
+  gnosis: 0,
+}
 
 /**
  * Returns unformatted token price in currently selected currency.
  */
-export const useEthTokenPrice = () => {
+export const useTokenPrice = (tokenName: TokenName) => {
   const priceStore = usePriceStore()
-  return computed(() => priceStore.ethUsd)
+  const identifier = tokenName + useCapitalize(useCurrency().name)
+  return computed(() => priceStore[identifier as keyof typeof priceStore])
 }
 
 /**
  * Returns formatted token price in currently selected currency.
  */
-export const useEthTokenPriceFormatted = () => {
-  const tp = useEthTokenPrice()
+export const useTokenPriceFormatted = (tokenName: TokenName) => {
+  const tp = useTokenPrice(tokenName)
   const currency = useCurrency()
   return computed(() => (
     tp.value
       ? new Intl.NumberFormat('en-US', {
         style: 'currency',
-        currency: currency.abbr,
+        currency: currency.ticker,
       })
         .format(tp.value)
       : 'N/A'
   ))
 }
 
-export const useEthGasPrice = () => {
+export const useGasPrice = (networkName: NetworkName) => {
   const networkStore = useNetworkStore()
-  return computed(() => networkStore.gasPrice)
+  return computed(() => (networkStore[networkName as keyof typeof networkStore]! as NetworkData).gasPrice)
 }
 
-export const useEthGasPriceFormatted = () => {
-  const gp = useEthGasPrice()
+export const useGasPriceFormatted = (networkName: NetworkName) => {
+  const gp = useGasPrice(networkName)
   return computed(() => gp.value ? `${gp.value} gwei` : 'N/A')
 }
 
-export const useEthTransactionCost = () => {
-  const gp = useEthGasPrice()
-  return computed(() => gp.value ? gp.value * ethTransactionGasLimit : undefined)
+export const useTransactionCost = (networkName: NetworkName) => {
+  const gp = useGasPrice(networkName)
+  return computed(() => gp.value ? gp.value * transactionGasLimit[networkName] : undefined)
 }
 
-export const useEthTransactionCostFormatted = () => {
-  const tc = useEthTransactionCost()
+export const useTransactionCostFormatted = (networkName: NetworkName) => {
+  const tc = useTransactionCost(networkName)
   const currency = useCurrency()
   return computed(() => (
     tc.value
       ? new Intl.NumberFormat('en-US', {
         style: 'currency',
-        currency: currency.abbr,
+        currency: currency.ticker,
       })
         .format(tc.value)
       : 'N/A'

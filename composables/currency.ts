@@ -1,16 +1,19 @@
 const currencies = {
   usd: {
+    name: 'usd',
     label: 'US Dollar',
-    abbr: 'USD',
+    ticker: 'USD',
     symbol: '$',
   },
   eur: {
+    name: 'eur',
     label: 'Euro',
-    abbr: 'EUR',
+    ticker: 'EUR',
     symbol: '€',
   },
 }
 
 export const useCurrency = () => {
+  // For now static, but should eventually be wired to the selector.
   return currencies.usd
 }

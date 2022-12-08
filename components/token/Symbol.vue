@@ -1,8 +1,8 @@
 <script setup lang="ts">
 const props = defineProps<{
-  name: TokenSymbol
+  name: TokenName
 }>()
-const ticker = tickers[props.name]
+const ticker = tokens[props.name]
 </script>
 
 <template>

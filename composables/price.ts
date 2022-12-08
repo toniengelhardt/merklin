@@ -53,10 +53,10 @@ const aggregatorV3InterfaceABI = [
 // Mainnet ETH/USD Chainlink contract
 const ethUsdChainlinkAddress = '0x5f4ec3df9cbd43714fe2740f5e3616155c5b8419'
 // Polygon ETH/USD Chainlink contract
-const polygonEthUsdAddress = '0x7bac85a8a13a4bcd8abb3eb7d6b4d632c5a57676'
+const maticUsdChainlinkAddress = '0x7bac85a8a13a4bcd8abb3eb7d6b4d632c5a57676'
 
 let ethUsdChainlinkContract: ethers.Contract
-let polygonEthUsdChainlinkContract: ethers.Contract
+let maticUsdChainlinkContract: ethers.Contract
 
 export const useEthPriceFeed = async () => {
   const provider = await useRpcProvider()
@@ -66,10 +66,10 @@ export const useEthPriceFeed = async () => {
   return ethUsdChainlinkContract
 }
 
-export const usePolygonPriceFeed = async () => {
+export const useMaticPriceFeed = async () => {
   const provider = await useRpcProvider()
-  if (!polygonEthUsdChainlinkContract) {
-    polygonEthUsdChainlinkContract = new ethers.Contract(polygonEthUsdAddress, aggregatorV3InterfaceABI, provider)
+  if (!maticUsdChainlinkContract) {
+    maticUsdChainlinkContract = new ethers.Contract(maticUsdChainlinkAddress, aggregatorV3InterfaceABI, provider)
   }
-  return polygonEthUsdChainlinkContract
+  return maticUsdChainlinkContract
 }

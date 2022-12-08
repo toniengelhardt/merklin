@@ -3,16 +3,26 @@ import { defineStore } from 'pinia'
 
 export const useNetworkStore = defineStore('networks', {
   state: (): {
-    network: NetworkName | undefined
+    activeNetwork: NetworkName | undefined
     blocknumber: number | undefined
     status: ConnectionStatus | undefined
-    gasPrice: number | null | undefined
+    ethereum: NetworkData
+    optimism: NetworkData
+    arbitrum: NetworkData
+    zksync: NetworkData
+    polygon: NetworkData
+    gnosis: NetworkData
   } => {
     return {
-      network: undefined,
+      activeNetwork: undefined,
       blocknumber: undefined,
       status: undefined,
-      gasPrice: undefined,
+      ethereum: {},
+      optimism: {},
+      arbitrum: {},
+      zksync: {},
+      polygon: {},
+      gnosis: {},
     }
   },
   actions: {
@@ -31,7 +41,7 @@ export const useNetworkStore = defineStore('networks', {
       try {
         const defaultProvider = await useDefaultProvider()
         const gp = await defaultProvider.getGasPrice()
-        this.gasPrice = Math.round(+utils.formatUnits(gp, 'gwei'))
+        this.ethereum.gasPrice = Math.round(+utils.formatUnits(gp, 'gwei'))
       }
       catch { }
       return Promise.resolve()

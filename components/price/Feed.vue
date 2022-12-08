@@ -23,7 +23,7 @@ const priceStore = usePriceStore()
       </div>
       <div flex items-center text-sm>
         <div px-2 py-2px bg-element font-bold rounded-md>
-          ${{ priceStore.polygonEthUsd }}
+          ${{ priceStore.maticUsd }}
         </div>
       </div>
     </div>

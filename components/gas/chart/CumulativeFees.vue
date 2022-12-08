@@ -100,7 +100,7 @@ const chartOptions = $computed<ChartOptions<any> | undefined>(() => (
           currency: {
             title: {
               display: true,
-              text: `${currency.abbr} ${currency.symbol}`,
+              text: `${currency.ticker} ${currency.symbol}`,
             },
             position: 'right',
             min: useEthToCurrency(data[0].y),

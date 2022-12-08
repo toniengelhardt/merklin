@@ -22,7 +22,7 @@ function initDataFeeds() {
   useEagerIntervalFn(() => {
     console.log('Updating prices (60s interval)')
     priceStore.updateEthUsd()
-    priceStore.updatePolygonEthUsd()
+    priceStore.updateMaticUsd()
   }, 60 * 1000)
   // 10s interval
   useEagerIntervalFn(() => {

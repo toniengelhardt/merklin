@@ -1,18 +1,28 @@
-declare type NetworkName = 'ethereum' | 'arbitrum' | 'optimism' | 'polygon' | 'zksync'
+declare type NetworkName = 'ethereum' | 'arbitrum' | 'optimism' | 'polygon' | 'zksync' | 'gnosis'
+declare type NetworkIcon = typeof string
 declare type NetworkLayer = 'L1' | 'L2' | 'L3'
 declare type NetworkTechnology = { label: string, link: string }
 
-declare interface NetworkInformation {
-  icon: string,
-  name: string,
-  layer: NetworkLayer,
-  technology: NetworkTechnology,
-  tokenPrice: number | string,
-  gasPrice: number | string,
-  transactionCost: number | string,
-  transactionsPerSecond: number | string,
-  activeWalletCount: number | string,
+declare interface Network {
+  name: NetworkName
+  icon: NetworkIcon
+  label: string
+  layer: NetworkLayer
+  technology: NetworkTechnology
+  token?: Token
 }
+
+declare interface NetworkData {
+  gasPrice?: number
+  transactionCost?: number | string
+  tps?: {
+    max: number | string
+    24: number | string
+  },
+  activeWalletCount?: number | string
+}
+
+declare interface NetworkInfo extends Network, NetworkData {}
 
 declare type ConnectionStatus = 'connected' | 'error'
 

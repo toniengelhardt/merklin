@@ -7,7 +7,7 @@ const props = defineProps<{
   items: TransactionItem[]
 }>()
 
-const colors = theme.colors!
+const colors: Colors = theme.colors!
 
 const colorMode = useColorMode()
 
@@ -29,7 +29,7 @@ const chartData = computed<ChartData<any> | undefined>(() => (
             label: 'Sent',
             type: 'bar',
             data: histData.sent,
-            backgroundColor: colors.orange['500'],
+            backgroundColor: (colors.orange as Colors)['500'],
             stack: 'bars',
             order: 2,
           },
@@ -37,7 +37,7 @@ const chartData = computed<ChartData<any> | undefined>(() => (
             label: 'Received',
             type: 'bar',
             data: histData.received,
-            backgroundColor: colors.green['500'],
+            backgroundColor: (colors.green as Colors)['500'],
             stack: 'bars',
             order: 2,
           },
