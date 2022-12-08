@@ -13,8 +13,6 @@ let etherscanProvider: ethers.providers.EtherscanProvider
 
 const network = 'homestead'
 
-const priceStore = usePriceStore()
-
 /**
  * Wallet provider, e.g. MetaMask.
  */
@@ -115,6 +113,7 @@ export const useGasPrice = () => {
  */
 export const useEthToCurrency = (value: number | undefined) => {
   if (value) {
+    const priceStore = usePriceStore()
     const conversionFactor = priceStore.ethUsd || 0
     return value * conversionFactor
   }
