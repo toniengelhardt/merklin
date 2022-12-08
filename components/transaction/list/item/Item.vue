@@ -54,7 +54,7 @@ const gasCostDisplay = $computed(() => gasCost?.toPrecision(2))
           <div class="text-currency">
             ~{{ useEthToCurrencyFormatted(gasCost) }}
           </div>
-        </div>w
+        </div>
       </div>
     </div>
     <div
