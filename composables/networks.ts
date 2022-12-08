@@ -10,7 +10,7 @@ export const useGasPriceFormatted = (networkName: NetworkName) => {
 
 export const useTransactionCost = (networkName: NetworkName) => {
   const gp = useGasPrice(networkName)
-  return computed(() => gp.value ? gp.value * transactionGasLimit[networkName] : undefined)
+  return computed(() => gp.value ? gp.value / 1000000 * transactionGasLimit[networkName] : undefined)
 }
 
 export const useTransactionCostFormatted = (networkName: NetworkName) => {

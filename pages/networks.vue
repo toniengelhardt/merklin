@@ -91,7 +91,7 @@ const networks: NetworkInfo[] = [
           <Icon :name="network.icon" size="1.5rem" />
         </div>
         <div flex-1 ml-3 text-2xl>
-          {{ network.name }}
+          {{ network.label }}
         </div>
       </div>
       <div mt-3>
