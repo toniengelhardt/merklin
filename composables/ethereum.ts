@@ -11,7 +11,7 @@ export const useEthTokenPrice = () => {
 /**
  * Returns formatted token price in currently selected currency.
  */
-export const useTokenPriceFormatted = () => {
+export const useEthTokenPriceFormatted = () => {
   const tp = useEthTokenPrice()
   const currency = useCurrency()
   return computed(() => (
