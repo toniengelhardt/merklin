@@ -16,3 +16,12 @@ export const networkTechnologies: { [name: string]: NetworkTechnology } = {
     link: 'https://ethereum.org/en/developers/docs/scaling/sidechains',
   },
 }
+
+export const transactionGasLimit: Record<NetworkName, number> = {
+  ethereum: 21000,
+  optimism: 0,
+  arbitrum: 0,
+  zksync: 0,
+  polygon: 0,
+  gnosis: 0,
+}
