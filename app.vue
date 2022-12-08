@@ -1,6 +1,7 @@
 <script setup lang="ts">
-const rhStore = useRabbitholeStore()
 const uiStore = useUIStore()
+const rhStore = useRabbitholeStore()
+const priceStore = usePriceStore()
 const transactionStore = useTransactionStore()
 
 function setMobile() {
@@ -13,6 +14,15 @@ function setMobile() {
 function initUI() {
   setMobile()
   useEventListener(window.visualViewport, 'resize', useThrottleFn(() => setMobile(), 100))
+}
+
+function initPricefeeds() {
+  console.log('Loading ETH/USD price')
+  priceStore.updateEthUsd()
+  useIntervalFn(() => {
+    console.log('Updating ETH/USD price (60s interval)')
+    priceStore.updateEthUsd()
+  }, 60 * 1000)
 }
 
 async function initRabbithole() {
@@ -38,6 +48,7 @@ async function initRabbithole() {
 
 onMounted(() => {
   initUI()
+  initPricefeeds()
   initRabbithole()
     .then(() => {
       transactionStore.loadTransactions()

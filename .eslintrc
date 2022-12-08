@@ -4,6 +4,7 @@
     ],
     "rules": {
         "curly": "off",
+        "no-console": "off",
         "no-extra-parens": "off"
     }
 }

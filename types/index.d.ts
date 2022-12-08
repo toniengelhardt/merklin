@@ -67,5 +67,6 @@ declare interface  NetworkInformation {
 }
 
 declare type TokenSymbol = keyof typeof tickers
+declare type TokenPrice = number
 
 declare type EtherUnit = 'wei' | 'gwei' | 'ether'
