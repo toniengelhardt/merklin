@@ -1,7 +1,5 @@
 <script setup lang="ts">
-const props = defineProps<{
-  modelValue?: boolean
-}>()
+const networkStore = useNetworkStore()
 
 const technologies: { [name: string]: NetworkTechnology } = {
   evm: {
@@ -29,9 +27,9 @@ const networks = [
     layer: 'L1',
     technology: technologies.evm,
     tokenTicker: 'ETH',
-    tokenPrice: useEthTokenPrice(),
-    gasPrice: useEthGasPrice(),
-    transactionCost: useEthTransactionCost(),
+    tokenPrice: useEthTokenPriceFormatted(),
+    gasPrice: useEthGasPriceFormatted(),
+    transactionCost: useEthTransactionCostFormatted(),
     tpsMax: '15-30',
     tps24: '??',
     activeWalletCount: '??',

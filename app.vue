@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const uiStore = useUIStore()
-const rhStore = useRabbitholeStore()
+const accountStore = useAccountStore()
+const networkStore = useNetworkStore()
 const priceStore = usePriceStore()
 const transactionStore = useTransactionStore()
 
@@ -16,40 +17,25 @@ function initUI() {
   useEventListener(window.visualViewport, 'resize', useThrottleFn(() => setMobile(), 100))
 }
 
-function initPricefeeds() {
-  console.log('Loading ETH/USD price')
-  priceStore.updateEthUsd()
-  useIntervalFn(() => {
+function initDataFeeds() {
+  // 60s interval
+  useEagerIntervalFn(() => {
     console.log('Updating ETH/USD price (60s interval)')
     priceStore.updateEthUsd()
   }, 60 * 1000)
-}
-
-async function initRabbithole() {
-  const { web3Provider, web3Signer } = await useWeb3Provider()
-  // console.info('web3Provider:', web3Provider)
-  // console.info('web3Signer:', web3Signer)
-
-  // Get accounts
-  const accounts: Web3Account[] = []
-  const addresses = await web3Provider.send('eth_requestAccounts', []) as Web3Address[]
-  await Promise.all(addresses.map(async (address) => {
-    const account: Web3Account = { address }
-    // account.ens = await web3.lookupAddress(address)
-    // if (account.ens)
-    //   account.avatar = await web3.getAvatar(account.ens)
-    accounts.push(account)
-    return Promise.resolve()
-  }))
-  rhStore.accounts = accounts
-  if (accounts.length)
-    rhStore.account = accounts[0]
+  // 10s interval
+  useEagerIntervalFn(() => {
+    networkStore.updateBlocknumber()
+    networkStore.updateGasPrice()
+  }, 10 * 1000)
 }
 
 onMounted(() => {
   initUI()
-  initPricefeeds()
-  initRabbithole()
+  initDataFeeds()
+  // Load account first, then trigger actions that require the account.
+  accountStore
+    .getAccount()
     .then(() => {
       transactionStore.loadTransactions()
     })
@@ -76,7 +62,7 @@ onMounted(() => {
       <main flex-1 flex flex-col>
         <ActionBar v-if="!uiStore.mobile" />
         <div flex-1 flex overflow-scroll>
-          <NuxtPage v-if="rhStore.account" />
+          <NuxtPage v-if="accountStore.activeAccount" />
           <Loading v-else />
         </div>
       </main>

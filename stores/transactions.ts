@@ -11,13 +11,13 @@ export const useTransactionStore = defineStore('transactions', {
   },
   actions: {
     async loadTransactions() {
-      const rhStore = useRabbitholeStore()
+      const accountStore = useAccountStore()
       const transactions = await useTransactions()
       if (transactions) {
         let prevDate: DateString | undefined
         const items: TransactionItem[] = transactions.map((transaction) => {
           const type = (
-            transaction.to?.toLowerCase() === rhStore.account!.address
+            transaction.to?.toLowerCase() === accountStore.activeAccount!.address
               ? 'receive'
               : transaction.value._hex !== '0x00'
                 ? 'send'

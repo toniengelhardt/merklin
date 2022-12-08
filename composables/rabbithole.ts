@@ -1,6 +1,5 @@
 import type { TransactionResponse } from '@ethersproject/abstract-provider'
-import type { BigNumber } from 'ethers'
-import { ethers, utils } from 'ethers'
+import { ethers } from 'ethers'
 
 // https://docs.metamask.io/guide/ethereum-provider.html#table-of-contents
 // https://docs.ethers.io/v5/getting-started/
@@ -63,48 +62,14 @@ export const useEtherscanProvider = async () => {
 }
 
 export const useTransactions = async () => {
-  const rhStore = useRabbitholeStore()
+  const accountStore = useAccountStore()
 
-  if (rhStore.account) {
+  if (accountStore.activeAccount) {
     const etherscanProvider = await useEtherscanProvider()
-    const transactions: TransactionResponse[] = await etherscanProvider.getHistory(rhStore.account.address)
+    const transactions: TransactionResponse[] = await etherscanProvider.getHistory(accountStore.activeAccount.address)
     return transactions
   }
   return Promise.resolve()
-}
-
-export const useBlocknumber = () => {
-  const blocknumber = ref<number | undefined>(undefined)
-  const rhStore = useNetworkStore()
-  useDefaultProvider()
-    .then(() => {
-      useIntervalFn(() => {
-        defaultProvider.getBlockNumber()
-          .then((bn: number) => {
-            blocknumber.value = bn
-            rhStore.status = 'connected'
-          })
-          .catch(() => {
-            rhStore.status = 'error'
-          })
-      }, 5 * 1000, { immediate: true })
-    })
-    .catch(() => {})
-  return blocknumber
-}
-
-export const useGasPrice = () => {
-  const gasPrice = ref<number | undefined>(undefined)
-  useDefaultProvider()
-    .then(() => {
-      useIntervalFn(() => {
-        defaultProvider.getGasPrice()
-          .then((gp: BigNumber) => gasPrice.value = Math.round(+utils.formatUnits(gp, 'gwei')))
-          .catch(() => {})
-      }, 5 * 1000)
-    })
-    .catch(() => {})
-  return gasPrice
 }
 
 /**
