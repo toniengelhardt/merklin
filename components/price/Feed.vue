@@ -1,5 +1,10 @@
 <script setup lang="ts">
 const ethUsd = await useEthPrice()
+const polygonEthUsd = await usePolygonPrice()
+
+// Used as a test to check
+// const historicPolygon = await historicPolygonPrice()
+// console.log(historicPolygon)
 </script>
 
 <template>
@@ -23,7 +28,7 @@ const ethUsd = await useEthPrice()
       </div>
       <div flex items-center text-sm>
         <div px-2 py-2px bg-element font-bold rounded-md>
-          ??
+          ${{ polygonEthUsd }}
         </div>
       </div>
     </div>
