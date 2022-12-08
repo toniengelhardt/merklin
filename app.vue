@@ -19,9 +19,11 @@ function initUI() {
 function initPricefeeds() {
   console.log('Loading ETH/USD price')
   priceStore.updateEthUsd()
+  priceStore.updatePolygonEthUsd()
   useIntervalFn(() => {
     console.log('Updating ETH/USD price (60s interval)')
     priceStore.updateEthUsd()
+    priceStore.updatePolygonEthUsd()
   }, 60 * 1000)
 }
 
