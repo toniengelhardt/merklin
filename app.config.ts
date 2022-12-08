@@ -24,6 +24,7 @@ export default defineAppConfig({
       polygon: 'IconPolygon',
       zksync: 'IconZkSync',
       gnosis: 'IconGnosis',
+      xdai: 'IconXDai',
       // App theme:
       light: 'ph:sun-duotone',
       dark: 'ph:moon-duotone',
