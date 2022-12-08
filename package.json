@@ -24,8 +24,8 @@
     "nuxt": "^3.0.0",
     "nuxt-headlessui": "^1.0.4",
     "nuxt-icon": "^0.1.8",
-    "typescript": "^4.9.3",
-    "vitest": "^0.25.5"
+    "typescript": "^4.9.4",
+    "vitest": "^0.25.6"
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.6",

@@ -20,8 +20,9 @@ function initUI() {
 function initDataFeeds() {
   // 60s interval
   useEagerIntervalFn(() => {
-    console.log('Updating ETH/USD price (60s interval)')
+    console.log('Updating prices (60s interval)')
     priceStore.updateEthUsd()
+    priceStore.updatePolygonEthUsd()
   }, 60 * 1000)
   // 10s interval
   useEagerIntervalFn(() => {
