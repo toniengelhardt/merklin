@@ -2,16 +2,16 @@
   <div page>
     <div col-span-3>
       <div panel flex flex-col h-61>
-        <h2 panel-title>
-          gm
-        </h2>
-        <div flex-1 flex-center flex-col pb-7>
-          <p mt-0 mb-2>
+        <div flex-1 flex-center flex-col>
+          <p m-0>
             <span class="text-2rem">🌴</span>
           </p>
+          <h2 text-3xl mt-1 mb-2 font-black>
+            gm
+          </h2>
           <p m-0 text-sm text-dim text-center>
             Let's learn and have fun!<br>
-            Check out transactions for now.
+            Check out transaction.
           </p>
         </div>
       </div>
@@ -38,7 +38,7 @@
         Predictions
       </h2>
       <div>
-        Follow oracles on betting markets.
+        Follow oracles and prediction markets.
       </div>
     </div>
     <div col-span-4 panel h-61>
