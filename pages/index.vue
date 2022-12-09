@@ -7,12 +7,12 @@
             <span inline-block ml-12>gm</span>
             <span inline-block w-12 text="center 2.2rem">🌴</span>
           </h2>
-          <div mt-2 italic text-faint>
+          <div mt-1 italic text-faint>
             Welcome to the jungle!
           </div>
         </div>
         <div flex-1 mt-4 panel flex-center flex-col>
-          <div mb-2 text-dim italic>
+          <div mb-1 text-dim font-bold>
             Degen Level
           </div>
           <div text-5xl font-black text-gradient-yellow-rose>
