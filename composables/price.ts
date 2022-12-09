@@ -50,13 +50,13 @@ const aggregatorV3InterfaceABI = [
   },
 ]
 
-// Mainnet ETH/USD Chainlink contract
+// ETH/USD Chainlink contract
 const ethUsdChainlinkAddress = '0x5f4ec3df9cbd43714fe2740f5e3616155c5b8419'
 // MATIC/USD Chainlink contract
 const maticUsdChainlinkAddress = '0x7bac85a8a13a4bcd8abb3eb7d6b4d632c5a57676'
 // OP/USD Chainlink contract
 const optimismUsdAddress = '0x0d276fc14719f9292d5c1ea2198673d1f4269246'
-// DaiUSD Chainlink contract
+// xDai/USD Chainlink contract
 const daiChainlinkAddress = '0xaed0c38402a5d19df6e4c03f4e2dced6e29c1ee9'
 
 let ethUsdChainlinkContract: ethers.Contract

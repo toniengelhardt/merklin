@@ -4,16 +4,16 @@ export const usePriceStore = defineStore('prices', {
   state: (): {
     ethUsd: TokenPrice | undefined
     maticUsd: TokenPrice | undefined
-    optimismUsd: TokenPrice | undefined
-    daiUsd: TokenPrice | undefined
     maticUsdHist: TokenPrice | undefined
+    opUsd: TokenPrice | undefined
+    xdaiUsd: TokenPrice | undefined
   } => {
     return {
       ethUsd: undefined,
       maticUsd: undefined,
-      optimismUsd: undefined,
-      daiUsd: undefined,
       maticUsdHist: undefined,
+      opUsd: undefined,
+      xdaiUsd: undefined,
     }
   },
   actions: {
@@ -29,17 +29,17 @@ export const usePriceStore = defineStore('prices', {
       const decimals = await priceFeed.decimals()
       this.maticUsd = Number((roundData.answer.toString() / 10 ** decimals).toFixed(2))
     },
-    async updateOptimismUsd() {
+    async updateOpUsd() {
       const priceFeed = await useOptimismPriceFeed()
       const roundData = await priceFeed.latestRoundData()
       const decimals = await priceFeed.decimals()
-      this.optimismUsd = Number((roundData.answer.toString() / 10 ** decimals).toFixed(2))
+      this.opUsd = Number((roundData.answer.toString() / 10 ** decimals).toFixed(2))
     },
-    async updateDaiUsd() {
+    async updateXdaiUsd() {
       const priceFeed = await useDaiPriceFeed()
       const roundData = await priceFeed.latestRoundData()
       const decimals = await priceFeed.decimals()
-      this.daiUsd = Number((roundData.answer.toString() / 10 ** decimals).toFixed(2))
+      this.xdaiUsd = Number((roundData.answer.toString() / 10 ** decimals).toFixed(2))
     },
     async getMaticHistPrice() {
       const priceFeed = await useMaticPriceFeed()

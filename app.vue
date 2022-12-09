@@ -23,8 +23,8 @@ function initDataFeeds() {
     console.log('Updating prices (60s interval)')
     priceStore.updateEthUsd()
     priceStore.updateMaticUsd()
-    priceStore.updateOptimismUsd()
-    priceStore.updateDaiUsd()
+    priceStore.updateOpUsd()
+    priceStore.updateXdaiUsd()
   }, 60 * 1000)
   // 10s interval
   useEagerIntervalFn(() => {

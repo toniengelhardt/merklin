@@ -13,7 +13,7 @@ const priceStore = usePriceStore()
       </div>
       <div flex items-center text-sm>
         <div px-2 py-2px bg-element font-bold rounded-md>
-          ${{ priceStore.ethUsd }}
+          {{ useTokenPriceFormatted('eth').value }}
         </div>
       </div>
     </div>
@@ -23,7 +23,7 @@ const priceStore = usePriceStore()
       </div>
       <div flex items-center text-sm>
         <div px-2 py-2px bg-element font-bold rounded-md>
-          ${{ priceStore.maticUsd }}
+          {{ useTokenPriceFormatted('matic').value }}
         </div>
       </div>
     </div>
@@ -33,8 +33,8 @@ const priceStore = usePriceStore()
       </div>
       <div flex items-center text-sm>
         <div px-2 py-2px bg-element font-bold rounded-md>
-          $ --
-          {{ priceStore.optimismUsd }}
+          $ N/A
+          {{ useTokenPriceFormatted('op').value }}
         </div>
       </div>
     </div>
@@ -44,7 +44,7 @@ const priceStore = usePriceStore()
       </div>
       <div flex items-center text-sm>
         <div px-2 py-2px bg-element font-bold rounded-md>
-          $ {{ priceStore.daiUsd }}
+          {{ useTokenPriceFormatted('xdai').value }}
         </div>
       </div>
     </div>
