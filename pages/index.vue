@@ -2,11 +2,14 @@
   <div page>
     <div col-span-12 md:col-span-3>
       <div col-span-1 flex flex-col h-full>
-        <div flex-1 panel flex-center>
-          <h2 w-full text-3xl text-center font-black>
-            <span inline-block ml-14>gm</span>
-            <span inline-block w-14 text="center 2.2rem">🌴</span>
+        <div flex-1 panel flex-center flex-col>
+          <h2 w-full m-0 text-3xl text-center font-black>
+            <span inline-block ml-12>gm</span>
+            <span inline-block w-12 text="center 2.2rem">🌴</span>
           </h2>
+          <div mt-2 italic text-faint>
+            Welcome to the jungle!
+          </div>
         </div>
         <div flex-1 mt-4 panel flex-center flex-col>
           <div mb-2 text-dim italic>
