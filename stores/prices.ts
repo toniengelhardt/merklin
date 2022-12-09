@@ -28,7 +28,7 @@ export const usePriceStore = defineStore('prices', {
     async getMaticHistPrice() {
       const priceFeed = await useMaticPriceFeed()
       // We can loop through the roundId parameter to get the token price at each round, hardcoded as example
-      const roundData = await priceFeed.getRoundData(55340232221128668506n)
+      const roundData = await priceFeed.getRoundData(BigInt('55340232221128668506'))
       const decimals = await priceFeed.decimals()
       this.maticUsdHist = Number((roundData.answer.toString() / 10 ** decimals).toFixed(2))
     },

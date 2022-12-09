@@ -27,13 +27,8 @@ export default defineNuxtConfig({
   experimental: {
     reactivityTransform: true,
   },
-  app: {
-    head: {
-      htmlAttrs: {
-        lang: 'en',
-        translate: 'no',
-      },
-    },
+  typescript: {
+    shim: false,
   },
   css: [
     'assets/css/style.css',
@@ -44,7 +39,12 @@ export default defineNuxtConfig({
   plausible: {
     domain: process.env.PLAUSIBLE_DOMAIN || '',
   },
-  typescript: {
-    shim: false,
+  app: {
+    head: {
+      htmlAttrs: {
+        lang: 'en',
+        translate: 'no',
+      },
+    },
   },
 })
