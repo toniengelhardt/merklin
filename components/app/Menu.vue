@@ -121,7 +121,7 @@ const menuItems = [
     <NuxtLink
       to="https://github.com/toniengelhardt/m3tadata/releases"
       title="Releases on GitHub"
-      text-sm text-dim hover:text-base decoration-none hover:decoration-none
+      text-xs text-dim hover:text-base decoration-none hover:decoration-none
     >
       {{ appVersion }}
     </NuxtLink>

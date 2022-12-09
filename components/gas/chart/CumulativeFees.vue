@@ -18,6 +18,17 @@ const transactionStore = useTransactionStore()
 const items = $computed(() => transactionStore.transactionItems)
 const data = $computed(() => items ? generateData(items) : undefined)
 
+const lineColors = $computed(() => (
+  colorMode.value === 'light'
+    ? [(colors.purple as Colors)['500'], (colors.blue as Colors)['500'], (colors.sky as Colors)['500']]
+    : [(colors.purple as Colors)['500'], (colors.blue as Colors)['500'], (colors.sky as Colors)['500']]
+))
+const fillColors = $computed(() => (
+  colorMode.value === 'light'
+    ? [(colors.purple as Colors)['200'], (colors.blue as Colors)['200'], (colors.sky as Colors)['200']]
+    : [(colors.purple as Colors)['800'], (colors.blue as Colors)['800'], (colors.sky as Colors)['800']]
+))
+
 type ChartDataType = ChartData<any, (number | ScatterDataPoint | null)[], unknown>
 const chartData = $computed<ChartDataType | undefined>(() => (
   data
@@ -26,13 +37,14 @@ const chartData = $computed<ChartDataType | undefined>(() => (
           {
             label: 'Ethereum (L1)',
             data,
-            borderColor: 'transparent',
+            borderWidth: 2,
+            borderColor: (context: any) => generateChartGradient(context, lineColors),
             backgroundColor: 'transparent',
-            // stack: 'bars',
-            // order: 2,
+            pointBorderColor: 'transparent',
+            pointBackgroundColor: 'transparent',
             fill: {
               target: 'origin',
-              above: colorMode.value === 'light' ? colors.blue['300'] : colors.blue['800'],
+              above: (context: any) => generateChartGradient(context, fillColors),
             },
             stepped: true,
           },
@@ -63,11 +75,8 @@ const chartOptions = $computed<ChartOptions<any> | undefined>(() => (
                 day: 'MMM',
               },
             },
-            border: {
-              // display: false,
-            },
             ticks: {
-              color: colors.zinc[500],
+              color: (colors.zinc as Colors)[500],
               maxRotation: 0,
               callback: formatTicksMonthly,
             },
@@ -86,15 +95,12 @@ const chartOptions = $computed<ChartOptions<any> | undefined>(() => (
             stacked: false,
             min: data[0].y,
             max: data[data.length - 1].y,
-            // border: {
-            //   display: false,
-            // },
             ticks: {
-              color: colors.zinc[500],
+              color: (colors.zinc as Colors)[500],
             },
             grid: {
               tickLength: 0,
-              color: colorMode.value === 'light' ? colors.zinc[200] : colors.zinc[800],
+              color: colorMode.value === 'light' ? (colors.zinc as Colors)[200] : (colors.zinc as Colors)[800],
             },
           },
           currency: {
@@ -106,7 +112,7 @@ const chartOptions = $computed<ChartOptions<any> | undefined>(() => (
             min: useEthToCurrency(data[0].y),
             max: useEthToCurrency(data[data.length - 1].y),
             ticks: {
-              color: colors.zinc[500],
+              color: (colors.zinc as Colors)[500],
             },
           },
         },

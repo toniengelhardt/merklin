@@ -1,22 +1,24 @@
 <template>
   <div page>
-    <div col-span-3>
-      <div panel flex flex-col h-61>
-        <div flex-1 flex-center flex-col>
-          <p m-0>
-            <span class="text-2rem">🌴</span>
-          </p>
-          <h2 text-3xl mt-1 mb-2 font-black>
-            gm
+    <div col-span-12 md:col-span-3>
+      <div col-span-1 flex flex-col h-full>
+        <div flex-1 panel flex-center>
+          <h2 w-full text-3xl text-center font-black>
+            <span inline-block ml-14>gm</span>
+            <span inline-block w-14 text="center 2.2rem">🌴</span>
           </h2>
-          <p m-0 text-sm text-dim text-center>
-            Let's learn and have fun!<br>
-            Check out transaction.
-          </p>
+        </div>
+        <div flex-1 mt-4 panel flex-center flex-col>
+          <div mb-2 text-dim italic>
+            Degen Level
+          </div>
+          <div text-5xl font-black text-gradient-yellow-rose>
+            69
+          </div>
         </div>
       </div>
     </div>
-    <div col-span-9>
+    <div col-span-12 md:col-span-9>
       <div panel h-61>
         <h2 panel-title flex justify-between>
           <span>Portfolio performance</span>
@@ -27,21 +29,29 @@
         </div>
       </div>
     </div>
-    <div col-span-3 panel h-61>
-      <PriceFeed />
-    </div>
-    <div col-span-9>
+    <div col-span-12 md:col-span-8>
       <InsightPanelGasFees />
     </div>
-    <div col-span-4 panel h-61>
+    <div col-span-12 md:col-span-4 panel h-61>
+      <PriceFeed />
+    </div>
+    <!-- <div col-span-12 md:col-span-4 panel h-61>
       <h2 panel-title>
         Predictions
       </h2>
       <div>
-        Follow oracles and prediction markets.
+        Follow oracles on prediction markets.
+      </div>
+    </div> -->
+    <div col-span-12 md:col-span-6 panel h-61>
+      <h2 panel-title>
+        D<span font-mono>0x</span>ing score<span ml-3 text-base>🐍</span>
+      </h2>
+      <div>
+        Has pseudonymity been compromised?
       </div>
     </div>
-    <div col-span-4 panel h-61>
+    <div col-span-12 md:col-span-6 panel h-61>
       <h2 panel-title>
         Airdrop detection
       </h2>
@@ -53,7 +63,7 @@
           target="_blank"
           inline-block underline
         >
-          Earnify
+          earni.fi
         </NuxtLink> and
         <NuxtLink
           to="https://earndrop.io/"
@@ -61,16 +71,8 @@
           target="_blank"
           inline-block underline
         >
-          Earndrop
+          earndrop.io
         </NuxtLink>.
-      </div>
-    </div>
-    <div col-span-4 panel h-61>
-      <h2 panel-title>
-        D<span font-mono>0x</span>ing score<span ml-3 text-base>🐍</span>
-      </h2>
-      <div>
-        Potential exposure and security.
       </div>
     </div>
   </div>

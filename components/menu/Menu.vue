@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const props = defineProps<{
+defineProps<{
   toggleIcon: ItemIcon
   toggleLabel?: string
   toggleClass?: string
@@ -36,25 +36,7 @@ const props = defineProps<{
           focus:outline-none z-12
         >
           <div p-1>
-            <slot>
-              <!-- <MenuItem
-                v-if="items"
-                v-for="(item, idx) in items"
-                :key="idx"
-              >
-                <NuxtLink
-                  :to="item.link"
-                  @click="item.action()"
-                >
-                  <div>
-                    {{ item.label }}
-                  </div>
-                  <div>
-                    <Icon :name="item.icon.name" :class="item.icon.class" />
-                  </div>
-                </NuxtLink>
-              </MenuItem> -->
-            </slot>
+            <slot />
           </div>
         </HeadlessMenuItems>
       </transition>

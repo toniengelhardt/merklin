@@ -26,3 +26,22 @@ export function formatTicksMonthly(value: number): string | string[] {
     ? [monthStr, new Intl.DateTimeFormat('en', { year: 'numeric' }).format(date)]
     : monthStr
 }
+
+/**
+ * Line chart gradient.
+ * Source: https://www.chartjs.org/docs/latest/samples/advanced/linear-gradient.html
+ */
+export function generateChartGradient(context: any, colors: Color[], direction: 'vertical' | 'horizontal' = 'horizontal') {
+  const chart = context.chart
+  const { ctx, chartArea } = chart
+  if (!chartArea) {
+    return null
+  }
+  const stepSize = 1 / (colors.length - 1)
+  const x = direction === 'horizontal'
+    ? [chartArea.left, 0, chartArea.right, 0]
+    : [0, chartArea.bottom, 0, chartArea.top]
+  const gradient = ctx.createLinearGradient(...x)
+  colors.forEach((color, idx) => gradient!.addColorStop(idx * stepSize, color))
+  return gradient
+}

@@ -10,7 +10,7 @@ import {
 export default defineConfig({
   shortcuts: {
     'flex-center': 'flex justify-center items-center',
-    'page': 'flex-1 px-4 mb-4 grid grid-cols-12 gap-4',
+    'page': 'flex-1 px-1 md:px-4 mb-4 grid grid-cols-12 gap-2 md:gap-4',
     'bg-base': 'bg-white dark:bg-zinc-900',
     'bg-surface': 'bg-white/85 dark:bg-zinc-900/85',
     'bg-element': 'bg-zinc-900/5 dark:bg-white/5',
@@ -24,6 +24,7 @@ export default defineConfig({
     'text-dim': 'text-zinc-900/70 dark:text-zinc-200/60',
     'text-faint': 'text-zinc-900/40 dark:text-zinc-200/30',
     'text-gradient-yellow': 'bg-gradient-to-r from-yellow-600 to-yellow-400 text-transparent bg-clip-text',
+    'text-gradient-yellow-rose': 'bg-gradient-to-r from-yellow-400 to-rose-400 text-transparent bg-clip-text',
     'text-gradient-purple': 'bg-gradient-to-r from-purple-600 to-purple-400 text-transparent bg-clip-text',
     'text-address': 'self-start font-mono',
     'text-value': 'self-start font-mono',
