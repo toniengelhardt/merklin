@@ -23,4 +23,19 @@ export const tokens: Record<TokenName, Token> = {
     ticker: 'XDAI',
     label: 'xDAI',
   },
+  gno: {
+    name: 'gno',
+    icon: 'gnosis',
+    ticker: 'GNO',
+    label: 'GNO',
+  },
 }
+
+// Tokens to be displayed in feeds (ordererd)
+export const tokenList: Token[] = [
+  tokens.eth, // utility
+  tokens.matic, // utility
+  tokens.xdai, // utility
+  tokens.op, // gov
+  tokens.gno, // gov
+]
