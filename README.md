@@ -74,7 +74,3 @@ Development insights available on [RepoTracker](https://repo-tracker.com/r/gh/to
 Feel free to play around and contribute. Discussions, Issues, PRs welcome!
 
 Here's a [list](https://github.com/toniengelhardt/web3-vue-and-nuxt-projects) of web3 projects built with Vue/Nuxt.
-
-## License
-
-[MIT](https://github.com/toniengelhardt/m3tadata/blob/main/LICENSE)
