@@ -2,20 +2,21 @@
 
 🏴‍☠️ 🏴‍☠️ 🏴‍☠️
 
-This is an attempt to build an open-source [Zapper](https://zapper.fi/)/[Zerion](https://app.zerion.io/)/[DeBank](https://debank.com/) based on [Vue](https://vuejs.org) and [Nuxt](https://nuxt.com) and supercharge it with [Dune](https://dune.com)-like analytics.
+This is an attempt to build an open-source [Zapper](https://zapper.fi/)/[Zerion](https://app.zerion.io/)/[DeBank](https://debank.com/) based on [Vue](https://vuejs.org)/[Nuxt](https://nuxt.com) and supercharge it with [Dune](https://dune.com)-like analytics.
 
 <img width="960" alt="MΞTAD🦧TA preview insights" src="https://user-images.githubusercontent.com/2703233/206712331-3f227ed3-cfbf-406d-8cdf-cc9b87e58066.png">
 
 <img width="960" alt="MΞTAD🦧TA preview transactions" src="https://user-images.githubusercontent.com/2703233/206712383-f7bb3fc4-4a64-4c1a-b97e-42d063fc9a8a.png">
 
-The idea is to focus mostly on powerful wallet analytics, e.g.
+The idea is to focus mostly on powerful wallet analytics, i.a.
 
 - Detailed charts of wallet activity
 - Funds spent on gas over time
 - Ingoing/outgoing addresses with transaction frequency
 - Asset distribution between networks
+- D0xing score
 - Airdrop detection
-- Ecosystem overview for each network with links
+- Network overview with technology and stats
 - etc.
 
 For now, only ETH networks: [Ethereum](https://ethereum.org), [Arbitrum](https://arbitrum.io), [Optimism](https://www.optimism.io/), [Polygon](https://polygon.technology), [Gnosis](https://www.gnosis.io), [zkSync](https://zksync.io), etc.
