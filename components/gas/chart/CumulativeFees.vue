@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { theme } from '@unocss/preset-mini'
 import type { ChartData, ChartOptions, ScatterDataPoint } from 'chart.js'
-import { utils } from 'ethers'
+import { utils as ethersUtils } from 'ethers'
 
 const props = withDefaults(defineProps<{
   unit?: EtherUnit
@@ -135,7 +135,7 @@ function generateData(items: TransactionItem[]) {
   let cum = 0
   return items.reduce((list: { x: DatetimeString; y: number }[], item) => {
     if (item.timestamp) {
-      cum += +utils.formatUnits(item.transaction.gasLimit * item.transaction.gasPrice, props.unit)
+      cum += +ethersUtils.formatUnits(item.transaction.gasLimit * item.transaction.gasPrice, props.unit)
       list.push({
         x: item.timestamp.toISOString(),
         y: cum,

@@ -35,6 +35,7 @@
     "date-fns": "^2.29.3",
     "ethers": "^5.7.2",
     "pinia-plugin-persistedstate": "^3.0.1",
+    "vagmi": "^0.1.20",
     "vue-blockies": "^1.0.0",
     "vue-chartjs": "^5.0.1"
   }

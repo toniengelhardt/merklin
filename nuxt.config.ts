@@ -22,7 +22,10 @@ export default defineNuxtConfig({
     'nuxt-icon',
   ],
   imports: {
-    dirs: ['./stores'],
+    dirs: [
+      './node_modules/vagmi/composables',
+      './stores',
+    ],
   },
   experimental: {
     reactivityTransform: true,

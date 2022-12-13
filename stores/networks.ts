@@ -1,4 +1,4 @@
-import { utils } from 'ethers'
+import { utils as ethersUtils } from 'ethers'
 import { defineStore } from 'pinia'
 
 export const useNetworkStore = defineStore('networks', {
@@ -41,7 +41,7 @@ export const useNetworkStore = defineStore('networks', {
       try {
         const defaultProvider = await useDefaultProvider()
         const gp = await defaultProvider.getGasPrice()
-        this.ethereum.gasPrice = Math.round(+utils.formatUnits(gp, 'gwei'))
+        this.ethereum.gasPrice = Math.round(+ethersUtils.formatUnits(gp, 'gwei'))
       }
       catch { }
       return Promise.resolve()

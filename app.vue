@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useAccount } from 'vagmi'
+
 const uiStore = useUIStore()
 const accountStore = useAccountStore()
 const networkStore = useNetworkStore()
@@ -32,6 +34,10 @@ function initDataFeeds() {
     networkStore.updateGasPrice()
   }, 10 * 1000)
 }
+
+const { address, isConnecting, isDisconnected } = useAccount()
+
+console.log('XXX', address, isConnecting, isDisconnected)
 
 onMounted(() => {
   initUI()
