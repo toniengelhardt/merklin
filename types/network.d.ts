@@ -13,6 +13,8 @@ declare interface Network {
 }
 
 declare interface NetworkData {
+  status?: ConnectionStatus
+  blocknumber?: number
   gasPrice?: number
   transactionCost?: number | string
   tps?: {

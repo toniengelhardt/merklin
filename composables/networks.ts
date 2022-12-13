@@ -3,9 +3,9 @@ export const useGasPrice = (networkName: NetworkName) => {
   return computed(() => (networkStore[networkName as keyof typeof networkStore]! as NetworkData).gasPrice)
 }
 
-export const useGasPriceFormatted = (networkName: NetworkName) => {
+export const useGasPriceFormatted = (networkName: NetworkName, naValue = 'N/A') => {
   const gp = useGasPrice(networkName)
-  return computed(() => gp.value ? `${gp.value} gwei` : 'N/A')
+  return computed(() => gp.value ? `${gp.value} gwei` : naValue)
 }
 
 export const useTransactionCost = (networkName: NetworkName) => {
@@ -13,7 +13,7 @@ export const useTransactionCost = (networkName: NetworkName) => {
   return computed(() => gp.value ? gp.value / 1000000 * transactionGasLimit[networkName] : undefined)
 }
 
-export const useTransactionCostFormatted = (networkName: NetworkName) => {
+export const useTransactionCostFormatted = (networkName: NetworkName, naValue = 'N/A') => {
   const tc = useTransactionCost(networkName)
   const currency = useCurrency()
   return computed(() => (
@@ -23,6 +23,6 @@ export const useTransactionCostFormatted = (networkName: NetworkName) => {
         currency: currency.ticker,
       })
         .format(tc.value)
-      : 'N/A'
+      : naValue
   ))
 }

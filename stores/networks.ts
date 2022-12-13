@@ -29,11 +29,11 @@ export const useNetworkStore = defineStore('networks', {
     async updateBlocknumber() {
       try {
         const defaultProvider = await useDefaultProvider()
-        this.blocknumber = await defaultProvider.getBlockNumber()
-        this.status = 'connected'
+        this.ethereum.blocknumber = await defaultProvider.getBlockNumber()
+        this.ethereum.status = 'connected'
       }
       catch {
-        this.status = 'error'
+        this.ethereum.status = 'error'
       }
       return Promise.resolve()
     },

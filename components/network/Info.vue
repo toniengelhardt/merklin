@@ -6,12 +6,12 @@ const networkStore = useNetworkStore()
   <div flex items-center>
     <Icon name="block" />
     <div ml-2 text-xs text-dim>
-      {{ networkStore.blocknumber || '...' }}
+      {{ networkStore.ethereum.blocknumber || '...' }}
     </div>
     <div
-      v-if="networkStore.status"
+      v-if="networkStore.ethereum.status"
       class="w-1.5 h-1.5 ml-2 rounded-full"
-      :class="networkStore.status === 'connected' ? 'bg-green-500' : 'bg-orange-400'"
+      :class="networkStore.ethereum.status === 'connected' ? 'bg-green-500' : 'bg-red-500'"
     />
   </div>
 </template>
