@@ -1,35 +1,35 @@
 export const tokens: Record<TokenName, Token> = {
   eth: {
     name: 'eth',
-    type: 'util',
+    type: 'utility',
     icon: 'ethereum',
     ticker: 'ETH',
     label: 'ETH',
   },
   op: {
     name: 'op',
-    type: 'gov',
+    type: 'governance',
     icon: 'optimism',
     ticker: 'OP',
     label: 'OP',
   },
   matic: {
     name: 'matic',
-    type: 'util',
+    type: 'utility',
     icon: 'polygon',
     ticker: 'MATIC',
     label: 'MATIC',
   },
   xdai: {
     name: 'xdai',
-    type: ['util', 'stable'],
+    type: ['utility', 'stable'],
     icon: 'xdai',
     ticker: 'XDAI',
     label: 'xDAI',
   },
   gno: {
     name: 'gno',
-    type: 'gov',
+    type: 'governance',
     icon: 'gnosis',
     ticker: 'GNO',
     label: 'GNO',
@@ -38,9 +38,9 @@ export const tokens: Record<TokenName, Token> = {
 
 // Tokens to be displayed in feeds (ordererd)
 export const tokenList: Token[] = [
-  tokens.eth, // utility
-  tokens.matic, // utility
-  tokens.xdai, // utility
-  tokens.op, // gov
-  tokens.gno, // gov
+  tokens.eth,
+  tokens.matic,
+  tokens.xdai,
+  tokens.op,
+  tokens.gno,
 ]

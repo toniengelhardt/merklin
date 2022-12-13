@@ -124,9 +124,9 @@ const networks: NetworkInfo[] = [
           </div>
           <div class="value">
             {{ network.token?.ticker || '--' }}
-            <template v-if="network.token?.type">
+            <small v-if="network.token?.type" text-dim>
               ({{ Array.isArray(network.token.type) ? network.token.type.join(', ') : network.token.type }})
-            </template>
+            </small>
           </div>
         </div>
         <div class="item">
