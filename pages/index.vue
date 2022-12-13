@@ -4,16 +4,16 @@
       <div col-span-1 flex flex-col h-full>
         <div flex-1 panel flex-center flex-col>
           <h2 w-full m-0 text-3xl text-center font-black>
-            <span inline-block ml-12>gm</span>
-            <span inline-block w-12 text="center 2.2rem">🌴</span>
+            <!-- <span inline-block ml-12>gm</span> -->
+            <span inline-block w-12 text="center 2rem">🌴</span>
           </h2>
-          <div mt-1 italic text-faint>
-            Welcome to the jungle!
+          <div mt-1 italic text-dim>
+            Welcome to the jungle
           </div>
         </div>
         <div flex-1 mt-4 panel flex-center flex-col>
-          <div mb-1 text-dim font-bold>
-            Degen Score
+          <div mb-1 text-faint font-bold>
+            Jungle Vibe
           </div>
           <div text-5xl font-black text-gradient-yellow-rose>
             69
@@ -28,7 +28,7 @@
           <span class="mx-1 text-1.5rem text-base">🦍</span>
         </h2>
         <div italic text-dim>
-          Portfolio value over time in USD/EUR/...
+          Coming soon...
         </div>
       </div>
     </div>
@@ -48,15 +48,23 @@
     </div> -->
     <div col-span-12 md:col-span-6 panel h-61>
       <h2 panel-title>
-        D<span font-mono>0x</span>ing detection<span ml-3 text-base>🐍</span>
+        Network status
       </h2>
       <div>
-        Has pseudonymity been compromised?
+        <NetworkStatusTable />
       </div>
     </div>
-    <div col-span-12 md:col-span-6 panel h-61>
+    <div col-span-12 md:col-span-3 panel h-61>
       <h2 panel-title>
-        Airdrop detection
+        D<span font-mono>0x</span>ing score<span ml-3 text-base>🐍</span>
+      </h2>
+      <div>
+        Pseudonymity compromised?
+      </div>
+    </div>
+    <div col-span-12 md:col-span-3 panel h-61>
+      <h2 panel-title>
+        Airdrop detection<span ml-3 text-base>🍌</span>
       </h2>
       <div>
         Similar to

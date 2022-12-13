@@ -18,6 +18,9 @@ const transactionStore = useTransactionStore()
 const items = $computed(() => transactionStore.transactionItems)
 const data = $computed(() => items ? generateData(items) : undefined)
 
+const currencyMin = $computed(() => useEthToCurrency(data ? data[0].y : undefined))
+const currencyMax = $computed(() => useEthToCurrency(data ? data[data.length - 1].y : undefined))
+
 const lineColors = $computed(() => (
   colorMode.value === 'light'
     ? [(colors.purple as Colors)['500'], (colors.blue as Colors)['500'], (colors.sky as Colors)['500']]
@@ -31,7 +34,7 @@ const fillColors = $computed(() => (
 
 type ChartDataType = ChartData<any, (number | ScatterDataPoint | null)[], unknown>
 const chartData = $computed<ChartDataType | undefined>(() => (
-  data
+  data && currencyMin && currencyMax
     ? ({
         datasets: [
           {
@@ -109,8 +112,8 @@ const chartOptions = $computed<ChartOptions<any> | undefined>(() => (
               text: `${currency.ticker} ${currency.symbol}`,
             },
             position: 'right',
-            min: useEthToCurrency(data[0].y),
-            max: useEthToCurrency(data[data.length - 1].y),
+            min: currencyMin,
+            max: currencyMax,
             ticks: {
               color: (colors.zinc as Colors)[500],
             },
