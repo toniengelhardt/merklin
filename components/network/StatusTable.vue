@@ -9,7 +9,7 @@ const networkStore = useNetworkStore()
         <th width="100%">
           <div flex>
             <div w-6>
-              <Icon name="ph:circle-dashed-bold" size="0.7rem" />
+              <Icon name="ph:circle-fill" size="0.35rem" text-faint />
             </div>
             <div ml-6px text-left>
               Name
@@ -48,7 +48,7 @@ const networkStore = useNetworkStore()
         </td>
         <td>{{ networkStore[network.name].gasPrice || '?' }}</td>
         <td>{{ useTransactionCostFormatted(network.name, '?').value }}</td>
-        <td>{{ networkStore[network.name].tps ? networkStore[network.name].tps[24] : '?' }}</td>
+        <td>{{ networkStore[network.name].tps ? networkStore[network.name].tps![24] : '?' }}</td>
         <td>
           <div
             :class="networkStore[network.name].status === 'connected' ? 'bg-green-500' : 'bg-red-500'"

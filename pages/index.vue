@@ -5,9 +5,9 @@
         <div flex-1 panel flex-center flex-col>
           <h2 w-full m-0 text-3xl text-center font-black>
             <!-- <span inline-block ml-12>gm</span> -->
-            <span inline-block w-12 text="center 2rem">🌴</span>
+            <span inline-block w-12 text="center 1.8rem">🌴</span>
           </h2>
-          <div mt-1 italic text-dim>
+          <div mt-1 italic text-sm text-dim>
             Welcome to the jungle
           </div>
         </div>
