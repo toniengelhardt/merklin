@@ -13,7 +13,7 @@
         </div>
         <div flex-1 mt-4 panel flex-center flex-col>
           <div mb-1 text-dim font-bold>
-            Degen Level
+            Degen Score
           </div>
           <div text-5xl font-black text-gradient-yellow-rose>
             69
@@ -48,7 +48,7 @@
     </div> -->
     <div col-span-12 md:col-span-6 panel h-61>
       <h2 panel-title>
-        D<span font-mono>0x</span>ing score<span ml-3 text-base>🐍</span>
+        D<span font-mono>0x</span>ing detection<span ml-3 text-base>🐍</span>
       </h2>
       <div>
         Has pseudonymity been compromised?
