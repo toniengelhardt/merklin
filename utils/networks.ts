@@ -20,6 +20,7 @@ export const networkTechnologies: { [name: string]: NetworkTechnology } = {
 export const networks: Record<NetworkName, NetworkInfo> = {
   ethereum: {
     name: 'ethereum',
+    chainId: 1,
     icon: 'ethereum',
     label: 'Ethereum',
     layer: 'L1',
@@ -33,6 +34,7 @@ export const networks: Record<NetworkName, NetworkInfo> = {
   },
   optimism: {
     name: 'optimism',
+    chainId: 10,
     icon: 'optimism',
     label: 'Optimism',
     layer: 'L2',
@@ -46,6 +48,7 @@ export const networks: Record<NetworkName, NetworkInfo> = {
   },
   arbitrum: {
     name: 'arbitrum',
+    chainId: 42161,
     icon: 'arbitrum',
     label: 'Arbitrum',
     layer: 'L2',
@@ -58,6 +61,7 @@ export const networks: Record<NetworkName, NetworkInfo> = {
   },
   zksync: {
     name: 'zksync',
+    chainId: 324,
     icon: 'zksync',
     label: 'zkSync',
     layer: 'L2',
@@ -70,6 +74,7 @@ export const networks: Record<NetworkName, NetworkInfo> = {
   },
   polygon: {
     name: 'polygon',
+    chainId: 137,
     icon: 'polygon',
     label: 'Polygon',
     layer: 'L2',
@@ -83,6 +88,7 @@ export const networks: Record<NetworkName, NetworkInfo> = {
   },
   gnosis: {
     name: 'gnosis',
+    chainId: 100,
     icon: 'gnosis',
     label: 'Gnosis',
     layer: 'L2',

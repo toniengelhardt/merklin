@@ -29,7 +29,7 @@ export function formatTimestamp(timestamp: BlockTimestamp) {
   return format(date, 'MMM d, yyyy H:mm')
 }
 
-export function displayAddress(address: Web3Address): string {
+export function displayAddress(address: Address): string {
   return `${address.slice(0, 6)}...${address.slice(-4)}`
 }
 

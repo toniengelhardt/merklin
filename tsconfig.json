@@ -1,11 +1,10 @@
 {
   "extends": "./.nuxt/tsconfig.json",
-  "exclude": [
-    "coverage",
-    "node_modules"
-  ],
   "compilerOptions": {
     "strict": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "types": [
+      "@wagmi/core"
+    ]
   }
 }

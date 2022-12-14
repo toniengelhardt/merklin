@@ -3,26 +3,20 @@ import { defineStore } from 'pinia'
 
 export const useNetworkStore = defineStore('networks', {
   state: (): {
-    activeNetwork: NetworkName | undefined
-    blocknumber: number | undefined
-    status: ConnectionStatus | undefined
     ethereum: NetworkData
     optimism: NetworkData
     arbitrum: NetworkData
-    zksync: NetworkData
     polygon: NetworkData
     gnosis: NetworkData
+    zksync: NetworkData
   } => {
     return {
-      activeNetwork: undefined,
-      blocknumber: undefined,
-      status: undefined,
       ethereum: {},
       optimism: {},
       arbitrum: {},
-      zksync: {},
       polygon: {},
       gnosis: {},
+      zksync: {},
     }
   },
   actions: {
@@ -45,6 +39,14 @@ export const useNetworkStore = defineStore('networks', {
       }
       catch { }
       return Promise.resolve()
+    },
+    async updateNetworkData() {
+      console.log('Updating networks (10s interval)')
+      const res = await Promise.all([
+        this.updateBlocknumber(),
+        this.updateGasPrice(),
+      ])
+      return res
     },
   },
   persist: {

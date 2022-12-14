@@ -1,9 +1,17 @@
 <script setup lang="ts">
-import { useConnect } from 'vagmi'
-import { InjectedConnector } from 'vagmi/connectors/injected'
+import { connect } from '@wagmi/core'
+import { arbitrum, mainnet, optimism, polygon } from '@wagmi/core/chains'
+import { MetaMaskConnector } from '@wagmi/core/connectors/metaMask'
+import { WalletConnectConnector } from '@wagmi/core/connectors/walletConnect'
 
-const { connect } = useConnect({
-  connector: new InjectedConnector(),
+const chains = [mainnet, optimism, arbitrum, polygon]
+
+const metamask = new MetaMaskConnector({ chains })
+const walletconnect = new WalletConnectConnector({
+  chains,
+  options: {
+    qrcode: true,
+  },
 })
 </script>
 
@@ -12,17 +20,25 @@ const { connect } = useConnect({
     <!-- <p>Address: {{ address }}</p>
     <p>isConnecting: {{ isConnecting }}</p>
     <p>isDisconnected: {{ isDisconnected }}</p> -->
-    <div flex-center mb-6 text-lg text-dim>
+    <div flex-center mb-6 text-xl text-dim>
       Connect your wallet
     </div>
     <div w-full max-w-100 bg-surface p-2 rounded-3xl>
-      <div h-28 flex-col-center rounded-2xl bg-element hover:bg-element-active cursor-pointer>
+      <div
+        h-28 flex-col-center rounded-2xl bg-element hover:bg-element-active
+        cursor-pointer
+        @click="connect({ connector: metamask })"
+      >
         <Icon name="metamask" size="2.5rem" my-2 />
         <div text-xl>
           MetaMask
         </div>
       </div>
-      <div h-28 mt-2 flex-col-center rounded-2xl bg-element hover:bg-element-active cursor-pointer>
+      <div
+        h-28 mt-2 flex-col-center rounded-2xl bg-element hover:bg-element-active
+        cursor-pointer
+        @click="connect({ connector: walletconnect })"
+      >
         <Icon name="walletconnect" size="3.5rem" />
         <div text-xl>
           WalletConnect

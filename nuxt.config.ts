@@ -7,6 +7,7 @@ export default defineNuxtConfig({
       alchemyApiKey: process.env.ALCHEMY_API_KEY,
       pocketApiKey: process.env.POCKET_API_KEY,
       ankrApiKey: process.env.ANKR_API_KEY,
+      jsonRpcUrl: process.env.RPC_URL || 'https://eth-mainnet.g.alchemy.com/v2/n5Vj8wE2BHWCtpxqeIZZRJFMVyvifuYv',
       repoUrl: 'https://github.com/toniengelhardt/m3tadata',
       twitterUrl: '',
       discordUrl: '',
@@ -23,7 +24,6 @@ export default defineNuxtConfig({
   ],
   imports: {
     dirs: [
-      './node_modules/vagmi/composables',
       './stores',
     ],
   },

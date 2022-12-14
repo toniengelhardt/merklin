@@ -1,6 +1,9 @@
 export const useGasPrice = (networkName: NetworkName) => {
   const networkStore = useNetworkStore()
-  return computed(() => (networkStore[networkName as keyof typeof networkStore]! as NetworkData).gasPrice)
+  return computed(() => {
+    const network = networkStore[networkName as keyof typeof networkStore] as NetworkData | undefined
+    return network?.gasPrice
+  })
 }
 
 export const useGasPriceFormatted = (networkName: NetworkName, naValue = 'N/A') => {

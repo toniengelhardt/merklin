@@ -1,9 +1,9 @@
 <script setup lang="ts">
-const accountStore = useAccountStore()
+const wallet = useWalletStore()
 </script>
 
 <template>
-  <div v-if="accountStore.activeAccount" page>
+  <div v-if="wallet.connected" page>
     <TransactionPanelActivity col-span-12 md:col-span-8 />
     <TransactionPanelAddresses col-span-12 md:col-span-4 />
     <TransactionPanelHistory col-span-12 md:col-span-8 />
