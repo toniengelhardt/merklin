@@ -69,6 +69,8 @@ pnpm dev
 
 ## More
 
+You can get help with web3 issues and Nuxt in the [Nuxt Discord](https://discord.com/invite/ps2h6QT) `web3` channel under "help".
+
 Development insights available on [RepoTracker](https://repo-tracker.com/r/gh/toniengelhardt/m3tadata).
 
 Feel free to play around and contribute. Discussions, Issues, PRs welcome!
