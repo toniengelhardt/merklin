@@ -46,9 +46,7 @@ Some wise words from [@jack](https://twitter.com/jack):
 
 ## Stack
 
-[Vue](https://vuejs.org), [Nuxt](https://nuxt.com), [Typescript](https://www.typescriptlang.org), [Vite](https://vitejs.dev), [Vitest](https://vitest.dev), [Pinia](https://pinia.vuejs.org), [UnoCSS](https://uno.antfu.me), [HeadlessUI](https://headlessui.com), [Ethers.js](https://ethers.io), [Chart.js](https://chartjs.org)
-
-Thinking about also adding [Naive UI](https://www.naiveui.com), looks really slick.
+[Vue](https://vuejs.org), [Nuxt](https://nuxt.com), [Typescript](https://www.typescriptlang.org), [Vite](https://vitejs.dev), [Vitest](https://vitest.dev), [Pinia](https://pinia.vuejs.org), [UnoCSS](https://uno.antfu.me), [HeadlessUI](https://headlessui.com), [chart.js](https://chartjs.org), [ethers.js](https://ethers.io), [wagmi/core](https://wagmi.sh/core).
 
 ## Setup
 
