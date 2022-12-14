@@ -71,8 +71,10 @@ onMounted(() => {
       <main flex-1 flex flex-col>
         <ActionBar v-if="!uiStore.mobile" />
         <div flex-1 flex overflow-scroll>
-          <NuxtPage v-if="accountStore.activeAccount" />
-          <Loading v-else />
+          <!-- <NuxtPage v-if="accountStore.activeAccount" />
+          <Loading v-else /> -->
+          <NuxtPage v-if="address" />
+          <Connect v-else />
         </div>
       </main>
       <div v-if="uiStore.mobile" h-16>

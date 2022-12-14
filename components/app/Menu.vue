@@ -75,7 +75,7 @@ const menuItems = [
           target="_blank"
           btn-default h-6 px-2 rounded
         >
-          <Icon name="opensource" mr-1 style="color: #4CAF50" />
+          <!-- <Icon name="opensource" mr-1 style="color: #4CAF50" /> -->
           <Icon name="github" mr-1 />
           <span>Contribute</span>
         </NuxtLink>

@@ -1,6 +1,12 @@
 <script setup lang="ts">
+import { useConnect, useDisconnect } from 'vagmi'
+
 const config = useRuntimeConfig()
 const items = {
+  disconnect: {
+    icon: { name: 'disconnect' },
+    label: 'Disconnect',
+  },
   web3VueNuxtProjects: {
     icon: { name: 'vue' },
     label: 'Vue web3 projects',
@@ -37,6 +43,9 @@ const items = {
     external: true,
   },
 }
+
+const { isConnected } = useConnect()
+const { disconnect } = useDisconnect()
 </script>
 
 <template>
@@ -44,6 +53,7 @@ const items = {
     :toggle-icon="{ name: 'menu', size: '1.4rem' }"
     toggle-class="btn-transparent"
   >
+    <MenuItem v-if="isConnected" :item="items.disconnect" @click.prevent="disconnect()" />
     <MenuItem v-slot="{ active }">
       <ThemeToggle :class="[active ? 'bg-element' : undefined]" @click.prevent />
     </MenuItem>

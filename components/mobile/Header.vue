@@ -1,9 +1,3 @@
-<script setup lang="ts">
-const props = defineProps<{
-  modelValue?: boolean
-}>()
-</script>
-
 <template>
   <div w-full>
     <div col-span-3 flex h-full items-center>

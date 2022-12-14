@@ -9,9 +9,9 @@ const networkStore = useNetworkStore()
         <th width="100%">
           <div flex>
             <div w-6>
-              <Icon name="ph:circle-fill" size="0.35rem" text-faint />
+              <Icon name="ph:poker-chip-duotone" text-faint />
             </div>
-            <div ml-6px text-left>
+            <div ml-6px text-left lt-md:hidden>
               Name
             </div>
           </div>
@@ -42,7 +42,7 @@ const networkStore = useNetworkStore()
           <div flex-center w-6 h-6 bg-element rounded-full>
             <Icon :name="network.icon" />
           </div>
-          <div ml-6px text-size-base>
+          <div lt-md:hidden ml-6px text-size-base>
             {{ network.label }}
           </div>
         </td>
