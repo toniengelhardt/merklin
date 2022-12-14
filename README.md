@@ -2,7 +2,7 @@
 
 🏴‍☠️ 🏴‍☠️ 🏴‍☠️
 
-This is an attempt to build an open-source [Zapper](https://zapper.fi/)/[Zerion](https://app.zerion.io/)/[DeBank](https://debank.com/) based on [Vue](https://vuejs.org)/[Nuxt](https://nuxt.com) and supercharge it with [Dune](https://dune.com)-like analytics.
+This is an attempt to build an open-source [Zapper](https://zapper.fi/)/[Zerion](https://app.zerion.io/)/[DeBank](https://debank.com/) based on [Vue](https://vuejs.org)/[Nuxt](https://nuxt.com)-like wallet explorer and supercharge it with [Dune](https://dune.com)-style analytics.
 
 <img width="960" alt="MΞTAD🦧TA preview insights" src="https://user-images.githubusercontent.com/2703233/206712331-3f227ed3-cfbf-406d-8cdf-cc9b87e58066.png">
 
