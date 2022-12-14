@@ -9,6 +9,7 @@ specifiers:
   '@unocss/nuxt': ^0.47.6
   '@unocss/transformer-directives': ^0.47.6
   '@vueuse/nuxt': ^9.6.0
+  '@wagmi/core': ^0.8.2
   chart.js: ^4.0.1
   chartjs-adapter-date-fns: ^3.0.0
   chartjs-plugin-annotation: ^2.1.0
@@ -26,6 +27,7 @@ specifiers:
 
 dependencies:
   '@pinia/nuxt': 0.4.6_typescript@4.9.4
+  '@wagmi/core': 0.8.2_c4tpmuajjwy7vjodfmym27ncri
   chart.js: 4.0.1
   chartjs-adapter-date-fns: 3.0.0_thp3sedjxvmiqxrdsmekdnimom
   chartjs-plugin-annotation: 2.1.0_chart.js@4.0.1
@@ -1917,6 +1919,34 @@ packages:
       - vue
     dev: true
 
+  /@wagmi/chains/0.1.1:
+    resolution: {integrity: sha512-isHtXKy6acossn6NQsBzgY25CH+m+v/eAjCUv8HAmAAYHxhvo59fWGneiSRK2pCPdjN3VIG5ZcMG4cAaO7qqjQ==}
+    dev: false
+
+  /@wagmi/core/0.8.2_c4tpmuajjwy7vjodfmym27ncri:
+    resolution: {integrity: sha512-AQzHbGWfYcFb9VPnKH/61MXNjBHJX1o7M7enK5d4qefqbBkhxBiHBjQH+D1YfA4w0dJgriRZo9FsHJj8X2jjDA==}
+    peerDependencies:
+      '@coinbase/wallet-sdk': '>=3.6.0'
+      '@walletconnect/ethereum-provider': '>=1.7.5'
+      ethers: '>=5.5.1'
+    peerDependenciesMeta:
+      '@coinbase/wallet-sdk':
+        optional: true
+      '@walletconnect/ethereum-provider':
+        optional: true
+    dependencies:
+      '@wagmi/chains': 0.1.1
+      abitype: 0.2.5_typescript@4.9.4
+      ethers: 5.7.2
+      eventemitter3: 4.0.7
+      zustand: 4.1.5
+    transitivePeerDependencies:
+      - immer
+      - react
+      - typescript
+      - zod
+    dev: false
+
   /@zhead/schema/1.0.4:
     resolution: {integrity: sha512-v/CM22nH0TW9VU5IcRXlshwrMtsZPnFQWhcLBvpZjOJvfEmjl8cUb6OIJQJRR2WESNjjPW2Cji8mgL9XSVLjxA==}
     dev: true
@@ -1924,6 +1954,19 @@ packages:
   /abbrev/1.1.1:
     resolution: {integrity: sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==}
     dev: true
+
+  /abitype/0.2.5_typescript@4.9.4:
+    resolution: {integrity: sha512-t1iiokWYpkrziu4WL2Gb6YdGvaP9ZKs7WnA39TI8TsW2E99GVRgDPW/xOKhzoCdyxOYt550CNYEFluCwGaFHaA==}
+    engines: {pnpm: '>=7'}
+    peerDependencies:
+      typescript: '>=4.7.4'
+      zod: '>=3.19.1'
+    peerDependenciesMeta:
+      zod:
+        optional: true
+    dependencies:
+      typescript: 4.9.4
+    dev: false
 
   /acorn-jsx/5.3.2_acorn@8.8.1:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -3629,7 +3672,6 @@ packages:
 
   /eventemitter3/4.0.7:
     resolution: {integrity: sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==}
-    dev: true
 
   /execa/5.1.1:
     resolution: {integrity: sha512-8uSpZZocAZRBAPIEINJj3Lo9HyGitllczc27Eh5YYojjMFMn8yHMDMaUHE2Jqfq05D/wucwI4JGURyXt1vchyg==}
@@ -6838,6 +6880,12 @@ packages:
       punycode: 2.1.1
     dev: true
 
+  /use-sync-external-store/1.2.0:
+    resolution: {integrity: sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dev: false
+
   /util-deprecate/1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
@@ -7320,3 +7368,18 @@ packages:
       compress-commons: 4.1.1
       readable-stream: 3.6.0
     dev: true
+
+  /zustand/4.1.5:
+    resolution: {integrity: sha512-PsdRT8Bvq22Yyh1tvpgdHNE7OAeFKqJXUxtJvj1Ixw2B9O2YZ1M34ImQ+xyZah4wZrR4lENMoDUutKPpyXCQ/Q==}
+    engines: {node: '>=12.7.0'}
+    peerDependencies:
+      immer: '>=9.0'
+      react: '>=16.8'
+    peerDependenciesMeta:
+      immer:
+        optional: true
+      react:
+        optional: true
+    dependencies:
+      use-sync-external-store: 1.2.0
+    dev: false

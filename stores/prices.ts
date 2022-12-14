@@ -48,6 +48,15 @@ export const usePriceStore = defineStore('prices', {
       const decimals = await priceFeed.decimals()
       this.maticUsdHist = Number((roundData.answer.toString() / 10 ** decimals).toFixed(2))
     },
+    async updatePriceData() {
+      console.log('Updating prices (60s interval)')
+      return await Promise.all([
+        this.updateEthUsd(),
+        this.updateMaticUsd(),
+        this.updateOpUsd(),
+        this.updateXdaiUsd(),
+      ])
+    },
   },
   persist: {
     paths: [

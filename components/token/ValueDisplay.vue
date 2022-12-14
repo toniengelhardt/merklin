@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { BigNumber } from 'ethers'
-import { utils } from 'ethers'
+import { utils as ethersUtils } from 'ethers'
 
 const props = defineProps<{
   network: NetworkName
@@ -10,8 +10,8 @@ const props = defineProps<{
   timestamp?: DatetimeString
 }>()
 
-const valueDisplay = $computed(() => (+utils.formatUnits(props.value, 'ether') * (props.multiplier || 0)).toPrecision(4))
-const currencyDisplay = $computed(() => useEthToCurrencyFormatted(+utils.formatUnits(props.value, 'ether')))
+const valueDisplay = $computed(() => (+ethersUtils.formatUnits(props.value, 'ether') * (props.multiplier || 0)).toPrecision(4))
+const currencyDisplay = $computed(() => useEthToCurrencyFormatted(+ethersUtils.formatUnits(props.value, 'ether')))
 </script>
 
 <template>

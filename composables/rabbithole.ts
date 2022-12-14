@@ -44,7 +44,8 @@ export const useDefaultProvider = async () => {
 
 export const useRpcProvider = async () => {
   if (!rpcProvider) {
-    rpcProvider = new ethers.providers.JsonRpcProvider('https://eth-mainnet.g.alchemy.com/v2/n5Vj8wE2BHWCtpxqeIZZRJFMVyvifuYv' || process.env.RPC_URL!)
+    const config = useRuntimeConfig()
+    rpcProvider = new ethers.providers.JsonRpcProvider(config.public.jsonRpcUrl)
   }
   return rpcProvider
 }
@@ -62,11 +63,11 @@ export const useEtherscanProvider = async () => {
 }
 
 export const useTransactions = async () => {
-  const accountStore = useAccountStore()
-
-  if (accountStore.activeAccount) {
+  const wallet = useWalletStore()
+  if (wallet.address && wallet.network) {
+    console.log('Fetching transactions...')
     const etherscanProvider = await useEtherscanProvider()
-    const transactions: TransactionResponse[] = await etherscanProvider.getHistory(accountStore.activeAccount.address)
+    const transactions: TransactionResponse[] = await etherscanProvider.getHistory(wallet.address)
     return transactions
   }
   return Promise.resolve()

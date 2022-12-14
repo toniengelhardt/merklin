@@ -1,9 +1,9 @@
 /** Stuff related to the web3 wallet, aka. MetaMask, etc. */
 
-declare type Web3Address = string
+declare type Address = string
 
-declare interface Web3Account {
-  address: Web3Address,
+declare interface Wallet {
+  address: Address,
   ens?: string | null,
   avatar?: string | null,
 }

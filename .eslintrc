@@ -5,6 +5,7 @@
     "rules": {
         "curly": "off",
         "no-console": "off",
-        "no-extra-parens": "off"
+        "no-extra-parens": "off",
+        "@typescript-eslint/brace-style": "off"
     }
 }

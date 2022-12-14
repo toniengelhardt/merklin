@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.6",
+    "@wagmi/core": "^0.8.2",
     "chart.js": "^4.0.1",
     "chartjs-adapter-date-fns": "^3.0.0",
     "chartjs-plugin-annotation": "^2.1.0",

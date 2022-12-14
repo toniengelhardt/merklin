@@ -1,21 +1,21 @@
 <template>
   <div page>
     <div col-span-12 md:col-span-3>
-      <div col-span-1 flex flex-col h-full>
-        <div flex-1 panel flex-center flex-col>
+      <div col-span-1 flex flex-row md:flex-col h-full>
+        <div class="flex-1/2 md:flex-1" panel flex-center flex-col>
           <h2 w-full m-0 text-3xl text-center font-black>
             <!-- <span inline-block ml-12>gm</span> -->
-            <span inline-block w-12 text="center 1.8rem">🌴</span>
+            <span inline-block w-12 class="text-center text-1.5rem md:text-1.8rem">🌴</span>
           </h2>
-          <div mt-1 italic text-sm text-dim>
+          <div md:mt-1 italic text-sm text-dim text-center leading-tight>
             Welcome to the jungle
           </div>
         </div>
-        <div flex-1 mt-4 panel flex-center flex-col>
+        <div class="flex-1/2 lt-md:ml-2 md:(flex-1 mt-4)" panel flex-center flex-col>
           <div mb-1 text-faint font-bold>
             Jungle Vibe
           </div>
-          <div text-5xl font-black text-gradient-yellow-rose>
+          <div text-4xl md:text-5xl font-black text-gradient-yellow-rose>
             69
           </div>
         </div>

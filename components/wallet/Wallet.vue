@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const accountStore = useAccountStore()
+const wallet = useWalletStore()
 </script>
 
 <template>
@@ -7,7 +7,7 @@ const accountStore = useAccountStore()
     <Icon name="dropdown" size="0.8rem" text-dim />
     <Icon name="metamask" mx-2 />
     <div self-center class="text-address">
-      {{ accountStore.activeAccount ? displayAddress(accountStore.activeAccount.address) : 'Connect Wallet' }}
+      {{ wallet.address ? displayAddress(wallet.address) : 'Not connected...' }}
     </div>
   </div>
 </template>

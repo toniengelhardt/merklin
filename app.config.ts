@@ -17,6 +17,7 @@ export default defineAppConfig({
       twitter: 'logos:twitter',
       // Web3 projects:
       metamask: 'logos:metamask-icon',
+      walletconnect: 'IconWalletConnect',
       // Networks:
       ethereum: 'logos:ethereum',
       arbitrum: 'IconArbitrum',
@@ -35,6 +36,7 @@ export default defineAppConfig({
       assets: 'ph-chart-pie-slice-duotone',
       // App elements:
       loading: 'line-md:loading-twotone-loop',
+      disconnect: 'ph:power-duotone',
       menu: 'ph:dots-three-outline',
       dropdown: 'ph:caret-down',
       plus: 'ph:plus',

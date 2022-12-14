@@ -1,6 +1,6 @@
 <script setup lang="ts">
 defineProps<{
-  address: Web3Address
+  address: Address
 }>()
 </script>
 

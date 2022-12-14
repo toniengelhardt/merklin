@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { utils } from 'ethers'
+import { utils as ethersUtils } from 'ethers'
 
 const props = defineProps<{
   item?: TransactionItem
@@ -9,12 +9,12 @@ const expanded = $ref(false)
 
 const gasPriceDisplay = $computed(() => (
   props.item
-    ? Math.round(+utils.formatUnits(props.item.transaction.gasPrice, 'gwei'))
+    ? Math.round(+ethersUtils.formatUnits(props.item.transaction.gasPrice, 'gwei'))
     : undefined
 ))
 const gasCost = $computed(() => (
   props.item
-    ? +utils.formatUnits(props.item.transaction.gasLimit * props.item.transaction.gasPrice, 'ether')
+    ? +ethersUtils.formatUnits(props.item.transaction.gasLimit * props.item.transaction.gasPrice, 'ether')
     : undefined
 ))
 const gasCostDisplay = $computed(() => gasCost?.toPrecision(2))

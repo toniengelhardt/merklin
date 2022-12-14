@@ -1,6 +1,13 @@
 <script setup lang="ts">
+import { disconnect } from '@wagmi/core'
+
 const config = useRuntimeConfig()
+const wallet = useWalletStore()
 const items = {
+  disconnect: {
+    icon: { name: 'disconnect' },
+    label: 'Disconnect',
+  },
   web3VueNuxtProjects: {
     icon: { name: 'vue' },
     label: 'Vue web3 projects',
@@ -44,6 +51,7 @@ const items = {
     :toggle-icon="{ name: 'menu', size: '1.4rem' }"
     toggle-class="btn-transparent"
   >
+    <MenuItem v-if="wallet.connected" :item="items.disconnect" @click.prevent="disconnect()" />
     <MenuItem v-slot="{ active }">
       <ThemeToggle :class="[active ? 'bg-element' : undefined]" @click.prevent />
     </MenuItem>

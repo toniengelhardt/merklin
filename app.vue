@@ -1,54 +1,82 @@
 <script setup lang="ts">
-const uiStore = useUIStore()
-const accountStore = useAccountStore()
-const networkStore = useNetworkStore()
-const priceStore = usePriceStore()
-const transactionStore = useTransactionStore()
+import { watchAccount, watchNetwork } from '@wagmi/core'
+
+const intervals: ReturnType<typeof useIntervalFn>[] = []
+
+const ui = useUIStore()
+const wallet = useWalletStore()
+const { updateNetworkData } = useNetworkStore()
+const { updatePriceData } = usePriceStore()
+const { loadTransactions } = useTransactionStore()
 
 function setMobile() {
   // The timeout is necessary to make it work correctly.
   // Without the timeout the size will be determined before the resize is
   // complete e.g. when switching between mobile/desktop in Chrome dev tools.
-  setTimeout(() => uiStore.mobile = window.innerWidth < 1024, 15)
+  // Note: check if the trailing flag could be used instead:
+  // https://github.com/vueuse/vueuse/blob/main/packages/shared/useThrottleFn/index.ts
+  setTimeout(() => ui.mobile = window.innerWidth < 1024, 15)
 }
 
-function initUI() {
-  setMobile()
-  useEventListener(window.visualViewport, 'resize', useThrottleFn(() => setMobile(), 100))
+function startDataFeeds() {
+  if (!intervals.length) {
+    // Init the intervals if they don't exist yet.
+    intervals.push(useIntervalFn(updateNetworkData, 30 * 1000, { immediateCallback: true })) // 30s interval
+    intervals.push(useIntervalFn(updatePriceData, 60 * 1000, { immediateCallback: true })) // 1m interval
+  } else {
+    // Otherwise recycle them.
+    intervals.forEach(interval => interval.resume())
+  }
 }
 
-function initDataFeeds() {
-  // 60s interval
-  useEagerIntervalFn(() => {
-    console.log('Updating prices (60s interval)')
-    priceStore.updateEthUsd()
-    priceStore.updateMaticUsd()
-    priceStore.updateOpUsd()
-    priceStore.updateXdaiUsd()
-  }, 60 * 1000)
-  // 10s interval
-  useEagerIntervalFn(() => {
-    networkStore.updateBlocknumber()
-    networkStore.updateGasPrice()
-  }, 10 * 1000)
+function pauseDataFeeds() {
+  intervals.forEach(interval => interval.pause())
+}
+
+/**
+ * Called when the tab changes visibility.
+ */
+function onVisibilityChange() {
+  // Pause data feeds when the tab is not visible to save requests.
+  if (document.visibilityState === 'visible') {
+    startDataFeeds()
+  } else {
+    pauseDataFeeds()
+  }
+}
+
+/**
+ * Called when either the account or the network changes.
+ */
+function onWalletChange() {
+  if (wallet.address && wallet.networkName) {
+    loadTransactions()
+    startDataFeeds()
+  }
 }
 
 onMounted(() => {
-  initUI()
-  initDataFeeds()
-  // Load account first, then trigger actions that require the account.
-  accountStore
-    .getAccount()
-    .then(() => {
-      transactionStore.loadTransactions()
-    })
+  setMobile()
+  useEventListener(window.visualViewport, 'resize', useThrottleFn(() => setMobile(), 100))
+  useEventListener(window.document, 'visibilitychange', onVisibilityChange)
+})
+
+watchAccount((account) => {
+  console.log('Account changed:', account.address)
+  wallet.account = account
+  onWalletChange()
+})
+watchNetwork((network) => {
+  console.log('Network changed:', network.chain?.network)
+  wallet.network = network
+  onWalletChange()
 })
 </script>
 
 <template>
   <div
     class="no-translate"
-    :class="{ obscure: uiStore.obscure }"
+    :class="{ obscure: ui.obscure }"
     relative bg-base
   >
     <div class="bg-gradient" absolute top-0 left-0 bottom-0 right-0 z-0 />
@@ -56,20 +84,22 @@ onMounted(() => {
       relative flex flex-col md:flex-row h-100vh max-h-100vh max-h-100dvh
       max-w-100vw overflow-x-hidden text-base z-1
     >
-      <div v-if="uiStore.mobile" flex>
+      <div v-if="ui.mobile" flex>
         <MobileHeader h-16 />
       </div>
       <div v-else flex flex-col w-70 bg-surface>
         <AppMenu />
       </div>
       <main flex-1 flex flex-col>
-        <ActionBar v-if="!uiStore.mobile" />
+        <ActionBar v-if="!ui.mobile" />
         <div flex-1 flex overflow-scroll>
-          <NuxtPage v-if="accountStore.activeAccount" />
-          <Loading v-else />
+          <!-- <NuxtPage v-if="accountStore.activeAccount" />
+          <Loading v-else /> -->
+          <NuxtPage v-if="wallet.address" />
+          <Connect v-else />
         </div>
       </main>
-      <div v-if="uiStore.mobile" h-16>
+      <div v-if="ui.mobile" h-16>
         <MobileNavigation />
       </div>
     </div>
