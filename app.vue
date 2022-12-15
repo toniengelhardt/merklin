@@ -5,6 +5,7 @@ import { Buffer } from 'buffer'
 import { watchAccount, watchNetwork } from '@wagmi/core'
 
 // Fix for WalletConnect issue.
+// https://stackoverflow.com/questions/72267731/uncaught-in-promise-referenceerror-buffer-is-not-defined-in-vite-sveltekit-wi
 window.Buffer = Buffer
 window.process = process
 window.EventEmitter = EventEmitter
