@@ -10,6 +10,7 @@ const metamask = new MetaMaskConnector({ chains })
 const walletconnect = new WalletConnectConnector({
   chains,
   options: {
+    qrcode: true,
   },
 })
 const injectedWallet = new InjectedConnector({
@@ -27,7 +28,7 @@ const injectedWallet = new InjectedConnector({
     <p>isConnecting: {{ isConnecting }}</p>
     <p>isDisconnected: {{ isDisconnected }}</p> -->
     <div flex-center mb-6 text-xl text-dim>
-      Connect your wallet
+      Connect your <Icon name="wallet" mx-1 /> wallet
     </div>
     <div w-full max-w-100 bg-surface p-2 rounded-3xl>
       <div

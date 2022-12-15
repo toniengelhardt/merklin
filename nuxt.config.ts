@@ -1,3 +1,5 @@
+import GlobalPolyFill from '@esbuild-plugins/node-globals-polyfill'
+
 export default defineNuxtConfig({
   ssr: false,
   runtimeConfig: {
@@ -29,6 +31,29 @@ export default defineNuxtConfig({
   },
   experimental: {
     reactivityTransform: true,
+  },
+  vite: {
+    resolve: {
+      alias: {
+        process: 'process/browser',
+        stream: 'stream-browserify',
+        zlib: 'browserify-zlib',
+        util: 'util',
+      },
+    },
+    optimizeDeps: {
+      esbuildOptions: {
+        define: {
+          global: 'globalThis',
+        },
+        plugins: [
+          GlobalPolyFill({
+            process: true,
+            buffer: true,
+          }),
+        ],
+      },
+    },
   },
   typescript: {
     shim: false,

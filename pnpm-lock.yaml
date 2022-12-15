@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@antfu/eslint-config': ^0.34.0
+  '@esbuild-plugins/node-globals-polyfill': ^0.1.1
   '@nuxt/test-utils': ^3.0.0
   '@nuxtjs/color-mode': ^3.2.0
   '@nuxtjs/plausible': ^0.2.0
@@ -11,31 +12,40 @@ specifiers:
   '@vueuse/nuxt': ^9.6.0
   '@wagmi/core': ^0.8.3
   '@walletconnect/ethereum-provider': ^2.1.4
+  buffer: ^6.0.3
   chart.js: ^4.0.1
   chartjs-adapter-date-fns: ^3.0.0
   chartjs-plugin-annotation: ^2.1.0
   date-fns: ^2.29.3
   eslint: ^8.29.0
   ethers: ^5.7.2
+  events: ^3.3.0
   nuxt: ^3.0.0
   nuxt-headlessui: ^1.0.4
   nuxt-icon: ^0.1.8
   pinia-plugin-persistedstate: ^3.0.1
+  process: ^0.11.10
   typescript: ^4.9.4
+  util: ^0.12.5
   vitest: ^0.25.8
   vue-blockies: ^1.0.0
   vue-chartjs: ^5.0.1
 
 dependencies:
+  '@esbuild-plugins/node-globals-polyfill': 0.1.1
   '@pinia/nuxt': 0.4.6_typescript@4.9.4
   '@wagmi/core': 0.8.3_y3h7a3i5qd2yr3gasf4h6xrtii
   '@walletconnect/ethereum-provider': 2.1.4
+  buffer: 6.0.3
   chart.js: 4.0.1
   chartjs-adapter-date-fns: 3.0.0_thp3sedjxvmiqxrdsmekdnimom
   chartjs-plugin-annotation: 2.1.0_chart.js@4.0.1
   date-fns: 2.29.3
   ethers: 5.7.2
+  events: 3.3.0
   pinia-plugin-persistedstate: 3.0.1
+  process: 0.11.10
+  util: 0.12.5
   vue-blockies: 1.0.0
   vue-chartjs: 5.0.1_chart.js@4.0.1
 
@@ -513,6 +523,12 @@ packages:
       - react-native
       - supports-color
       - utf-8-validate
+    dev: false
+
+  /@esbuild-plugins/node-globals-polyfill/0.1.1:
+    resolution: {integrity: sha512-MR0oAA+mlnJWrt1RQVQ+4VYuRJW/P2YmRTv1AsplObyvuBMnPHiizUF95HHYiSsMGLhyGtWufaq2XQg6+iurBg==}
+    peerDependencies:
+      esbuild: '*'
     dev: false
 
   /@esbuild/android-arm/0.15.16:
