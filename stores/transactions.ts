@@ -12,7 +12,7 @@ export const useTransactionStore = defineStore('transactions', {
   actions: {
     async loadTransactions() {
       const transactions = await useTransactions()
-      if (transactions) {
+      if (transactions !== undefined) {
         const wallet = useWalletStore()
         let prevDate: DateString | undefined
         const items: TransactionItem[] = transactions.map((transaction) => {
@@ -40,7 +40,6 @@ export const useTransactionStore = defineStore('transactions', {
           }
           return item
         })
-        // console.log(items)
         this.transactionItems = items
       }
     },
