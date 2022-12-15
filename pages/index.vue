@@ -13,7 +13,7 @@
         </div>
         <div class="flex-1/2 lt-md:ml-2 md:(flex-1 mt-4)" panel flex-center flex-col>
           <div mb-1 text-faint font-bold>
-            Jungle Vibe
+            Vibe
           </div>
           <div text-4xl md:text-5xl font-black text-gradient-yellow-rose>
             69
@@ -22,9 +22,9 @@
       </div>
     </div>
     <div col-span-12 md:col-span-9>
-      <div panel h-61>
+      <div panel md:h-61>
         <h2 panel-title flex justify-between>
-          <span>Portfolio performance</span>
+          <span>Performance</span>
           <span class="mx-1 text-1.5rem text-base">🦍</span>
         </h2>
         <div italic text-dim>
@@ -35,7 +35,7 @@
     <div col-span-12 md:col-span-8>
       <InsightPanelGasFees />
     </div>
-    <div col-span-12 md:col-span-4 panel h-61>
+    <div col-span-12 md:col-span-4 panel>
       <PriceFeed />
     </div>
     <!-- <div col-span-12 md:col-span-4 panel h-61>
@@ -46,7 +46,7 @@
         Follow oracles on prediction markets.
       </div>
     </div> -->
-    <div col-span-12 md:col-span-6 panel h-61>
+    <div col-span-12 md:col-span-6 panel min-h-61>
       <h2 panel-title>
         Network status
       </h2>
@@ -54,15 +54,18 @@
         <NetworkStatusTable />
       </div>
     </div>
-    <div col-span-12 md:col-span-3 panel h-61>
+    <div col-span-12 md:col-span-3 panel>
       <h2 panel-title>
         D<span font-mono>0x</span>ing score<span ml-3 text-base>🐍</span>
       </h2>
       <div>
         Pseudonymity compromised?
       </div>
+      <div mt-2 text-dim italic>
+        Coming soon...
+      </div>
     </div>
-    <div col-span-12 md:col-span-3 panel h-61>
+    <div col-span-12 md:col-span-3 panel>
       <h2 panel-title>
         Airdrop detection<span ml-3 text-base>🍌</span>
       </h2>
@@ -84,6 +87,9 @@
         >
           earndrop.io
         </NuxtLink>.
+      </div>
+      <div mt-2 text-dim italic>
+        Coming soon...
       </div>
     </div>
   </div>

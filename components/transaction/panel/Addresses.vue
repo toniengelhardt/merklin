@@ -76,6 +76,6 @@ const addressCounts = $computed(() => {
       </div>
       <div flex-1 />
     </div>
-    <div h-7 flex-center text-sm text-dim />
+    <div lt-md:hidden h-7 flex-center text-sm text-dim />
   </div>
 </template>

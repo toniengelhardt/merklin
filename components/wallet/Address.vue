@@ -6,7 +6,7 @@ defineProps<{
 
 <template>
   <div flex items-center bg-element px-3px py-2px rounded-md>
-    <IconBlockies :seed="address" w-4 h-4 rounded />
+    <IconBlockies :seed="address" w-4 h-4 rounded lt-md:hidden />
     <span mx-1 text-xs class="text-address">
       {{ displayAddress(address) }}
     </span>

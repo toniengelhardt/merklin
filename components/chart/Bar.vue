@@ -12,12 +12,14 @@ const props = withDefaults(defineProps<{
   plugins?: any // Plugin<'bar'>{},
 }>(), {
   width: '100%',
-  height: '12rem',
+  height: undefined,
   chartId: 'bar-chart',
   cssClasses: '',
   styles: () => {},
   plugins: () => {},
 })
+
+const ui = useUIStore()
 
 const defaultOptions = {
   responsive: true,
@@ -27,10 +29,12 @@ const mergedOptions = $computed(() => Object.assign(defaultOptions, props.chartO
 
 const defaultPlugins: any[] = []
 const mergedPlugins = $computed(() => [...defaultPlugins, ...props.plugins])
+
+const mergedHeight = $computed(() => props.height || (ui.mobile ? '8rem' : '12rem'))
 </script>
 
 <template>
-  <div relative flex w-full :style="{ width, height }">
+  <div relative flex w-full :style="{ width, height: mergedHeight }">
     <BarChart
       :chart-id="chartId"
       :data="chartData"

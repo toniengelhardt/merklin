@@ -23,7 +23,7 @@ const gasCostDisplay = $computed(() => gasCost?.toPrecision(2))
 <template>
   <div
     v-if="item"
-    flex flex-col mb-2 bg-element px-3 radius-base cursor-pointer
+    flex flex-col lt-md:mx="-0.75rem" mb-2 bg-element px-3 radius-base cursor-pointer
     border-1 border-transparent transition-border-color hover:border-base
     :class="{ 'border-base': expanded, 'hover:border-highlight': expanded }"
     @click="(expanded = !expanded)"
@@ -43,7 +43,7 @@ const gasCostDisplay = $computed(() => gasCost?.toPrecision(2))
       <div flex-1 flex ml-3>
         <slot name="details" />
       </div>
-      <div flex items-center w-44 ml-3>
+      <div lt-md:hidden flex items-center w-44 ml-3>
         <Icon name="gas" size="1.2rem" mr-3 text-dim />
         <div flex flex-col text-sm leading-tight>
           <div flex items-center>
