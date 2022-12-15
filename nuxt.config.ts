@@ -96,6 +96,7 @@ export default defineNuxtConfig({
     icon: {
       source: 'icon.png',
       maskableSource: 'icon.maskable.png',
+      maskablePadding: 0,
     },
   },
   colorMode: {
