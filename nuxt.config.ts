@@ -1,5 +1,9 @@
 import GlobalPolyFill from '@esbuild-plugins/node-globals-polyfill'
 
+const appTitle = 'm3tadata'
+const appDescription = 'Open-source wallet explorer based on Vue/Nuxt'
+const appUrl = 'https://m3tadata.vercel.app'
+
 export default defineNuxtConfig({
   ssr: false,
   runtimeConfig: {
@@ -16,6 +20,7 @@ export default defineNuxtConfig({
     },
   },
   modules: [
+    '@kevinmarrec/nuxt-pwa',
     '@nuxtjs/color-mode',
     '@nuxtjs/plausible',
     '@pinia/nuxt',
@@ -61,6 +66,33 @@ export default defineNuxtConfig({
   css: [
     'assets/css/style.css',
   ],
+  pwa: {
+    manifest: {
+      id: '/?standalone=true',
+      name: appTitle,
+      short_name: appTitle,
+      description: appDescription,
+      display: 'standalone',
+      orientation: 'any',
+      lang: 'en',
+      start_url: '/?standalone=true',
+      scope: '/',
+      categories: ['utilities'],
+    },
+    meta: {
+      name: appTitle,
+      description: appDescription,
+      mobileApp: true,
+      mobileAppIOS: true,
+      lang: 'en',
+      ogType: 'website',
+      ogSiteName: appTitle,
+      ogTitle: appTitle,
+      ogDescription: appDescription,
+      ogUrl: appUrl,
+      theme_color: '#ffffff',
+    },
+  },
   colorMode: {
     classSuffix: '',
   },
