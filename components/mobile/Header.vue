@@ -1,15 +1,15 @@
 <template>
-  <div w-full>
-    <div col-span-3 flex h-full items-center>
-      <div w-full pl-2>
-        <GasPrice />
+  <div h-16 flex items-center px-2>
+    <div flex-center w-10 h-10 text-2xl>
+      <div>
+        🦧
       </div>
-      <div w-full pl-1 pr-1>
-        <Wallet />
-      </div>
-      <div w-full pr-2>
-        <NetworkInfo />
-      </div>
+    </div>
+    <div flex-1 flex justify-center>
+      <Wallet />
+    </div>
+    <div>
+      <AccountMenu />
     </div>
   </div>
 </template>

@@ -9,6 +9,7 @@ import { watchAccount, watchNetwork } from '@wagmi/core'
 window.Buffer = Buffer
 window.process = process
 window.EventEmitter = EventEmitter
+window.global = window
 
 const intervals: ReturnType<typeof useIntervalFn>[] = []
 
@@ -93,8 +94,8 @@ watchNetwork((network) => {
       relative flex flex-col md:flex-row h-100vh max-h-100vh max-h-100dvh
       max-w-100vw overflow-x-hidden text-base z-1
     >
-      <div v-if="ui.mobile" flex>
-        <MobileHeader h-16 />
+      <div v-if="ui.mobile" h-16>
+        <MobileHeader />
       </div>
       <div v-else flex flex-col w-70 bg-surface>
         <AppMenu />
