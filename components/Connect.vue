@@ -3,6 +3,7 @@ import { connect } from '@wagmi/core'
 import { arbitrum, mainnet, optimism, polygon } from '@wagmi/core/chains'
 import { MetaMaskConnector } from '@wagmi/core/connectors/metaMask'
 import { WalletConnectConnector } from '@wagmi/core/connectors/walletConnect'
+import { InjectedConnector } from '@wagmi/core'
 
 const chains = [mainnet, optimism, arbitrum, polygon]
 
@@ -11,6 +12,13 @@ const walletconnect = new WalletConnectConnector({
   chains,
   options: {
   },
+})
+const injectedWallet = new InjectedConnector({
+  chains,
+  options: {
+    name: "Injected",
+    shimDisconnect: true
+  }
 })
 </script>
 
@@ -41,6 +49,16 @@ const walletconnect = new WalletConnectConnector({
         <Icon name="walletconnect" size="3rem" />
         <div text-xl>
           WalletConnect
+        </div>
+      </div>
+      <div
+        h-28 mt-2 flex-col-center rounded-2xl bg-element hover:bg-element-active
+        cursor-pointer
+        @click="connect({ connector: injectedWallet })"
+      >
+        <Icon name="walletconnect" size="3.5rem" />
+        <div text-xl>
+          Injected Connector
         </div>
       </div>
     </div>
