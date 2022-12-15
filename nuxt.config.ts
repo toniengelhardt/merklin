@@ -94,8 +94,8 @@ export default defineNuxtConfig({
       theme_color: '#000000',
     },
     icon: {
-      source: 'icon.png',
-      maskableSource: 'icon.maskable.png',
+      source: '/icon.png',
+      maskableSource: '/icon.maskable.png',
       maskablePadding: 0,
     },
   },
