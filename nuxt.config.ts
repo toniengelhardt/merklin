@@ -33,9 +33,6 @@ export default defineNuxtConfig({
     reactivityTransform: true,
   },
   vite: {
-    define: {
-      global: 'window',
-    },
     resolve: {
       alias: {
         process: 'process/browser',
