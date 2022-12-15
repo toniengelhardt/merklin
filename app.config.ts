@@ -18,6 +18,7 @@ export default defineAppConfig({
       // Web3 projects:
       metamask: 'logos:metamask-icon',
       walletconnect: 'IconWalletConnect',
+      injected: 'ph:syringe-duotone',
       // Networks:
       ethereum: 'logos:ethereum',
       arbitrum: 'IconArbitrum',

@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import { connect } from '@wagmi/core'
+import { InjectedConnector, connect } from '@wagmi/core'
 import { arbitrum, mainnet, optimism, polygon } from '@wagmi/core/chains'
 import { MetaMaskConnector } from '@wagmi/core/connectors/metaMask'
 import { WalletConnectConnector } from '@wagmi/core/connectors/walletConnect'
-import { InjectedConnector } from '@wagmi/core'
 
 const chains = [mainnet, optimism, arbitrum, polygon]
 
@@ -16,9 +15,9 @@ const walletconnect = new WalletConnectConnector({
 const injectedWallet = new InjectedConnector({
   chains,
   options: {
-    name: "Injected",
-    shimDisconnect: true
-  }
+    name: 'Injected',
+    shimDisconnect: true,
+  },
 })
 </script>
 
@@ -51,19 +50,19 @@ const injectedWallet = new InjectedConnector({
           WalletConnect
         </div>
       </div>
+    </div>
+    <div flex-col-center max-w-100 mt-6 text-xs text-dim>
       <div
-        h-28 mt-2 flex-col-center rounded-2xl bg-element hover:bg-element-active
+        flex-center px-2 py-1 text-base rounded-md bg-element hover:bg-element-active
         cursor-pointer
         @click="connect({ connector: injectedWallet })"
       >
-        <Icon name="walletconnect" size="3.5rem" />
-        <div text-xl>
-          Injected Connector
-        </div>
+        <Icon name="injected" />
+        <span ml-1>
+          Injected Wallet
+        </span>
       </div>
-    </div>
-    <div flex-col-center max-w-100 mt-6 text-xs text-dim>
-      <p m-0>
+      <p m-0 mt-4>
         This project is work in progress and open-source.
       </p>
       <p m-0 mt-2 text-center>
