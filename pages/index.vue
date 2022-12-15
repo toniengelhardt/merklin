@@ -1,5 +1,5 @@
 <template>
-  <div page>
+  <div class="page">
     <div col-span-12 md:col-span-3>
       <div col-span-1 flex flex-row md:flex-col h-full>
         <div class="flex-1/2 md:flex-1" panel flex-center flex-col>

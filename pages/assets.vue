@@ -5,9 +5,9 @@ const props = defineProps<{
 </script>
 
 <template>
-  <div page>
-    <PanelUnderConstruction col-span-3 h-50 />
-    <div col-span-9 panel h-50>
+  <div class="page">
+    <PanelUnderConstruction col-span-12 md:col-span-3 md:h-50 />
+    <div col-span-12 md:col-span-9 panel md:h-50>
       <h2 panel-title>
         Concept
       </h2>

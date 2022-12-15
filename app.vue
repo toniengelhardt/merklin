@@ -89,9 +89,13 @@ watchNetwork((network) => {
     :class="{ obscure: ui.obscure }"
     relative bg-base
   >
-    <div class="bg-gradient" absolute top-0 left-0 bottom-0 right-0 z-0 />
     <div
-      relative flex flex-col md:flex-row h-100vh max-h-100vh max-h-100dvh
+      class="bg-gradient"
+      absolute top-0 left-0 bottom-0 right-0 z-0
+    />
+    <div
+      class="container"
+      relative flex flex-col md:flex-row
       max-w-100vw overflow-x-hidden text-base z-1
     >
       <div v-if="ui.mobile" h-16>
@@ -102,15 +106,16 @@ watchNetwork((network) => {
       </div>
       <main flex-1 flex flex-col>
         <ActionBar v-if="!ui.mobile" />
-        <div flex-1 flex overflow-scroll>
-          <!-- <NuxtPage v-if="accountStore.activeAccount" />
-          <Loading v-else /> -->
+        <div
+          class="content"
+          flex-1 flex overflow-scroll box-border
+        >
           <NuxtPage v-if="wallet.address" />
           <Connect v-else />
         </div>
       </main>
       <div v-if="ui.mobile" h-16>
-        <MobileNavigation />
+        <MobileNavigation v-if="wallet.address" />
       </div>
     </div>
   </div>
@@ -125,5 +130,24 @@ watchNetwork((network) => {
     radial-gradient(100% 100% at 65% 5%, rgba(var(--gr-main), 0.35) 0%, rgba(var(--gr-main), 0.1) 52.6%, rgba(0, 0, 0, 0) 100%),
     radial-gradient(100% 100% at 100% 100%, rgba(var(--gr-left), 0.15) 0%, rgba(var(--gr-left), 0.015) 52.6%, rgba(0, 0, 0, 0) 100%),
     radial-gradient(200% 200% at 0% 100%, rgba(var(--gr-right), 0.25) 0%, rgba(var(--gr-right), 0.025) 52.6%, rgba(0, 0, 0, 0) 100%);
+}
+.container {
+  height: 100vh;
+  height: 100svh;
+  max-height: 100vh;
+  max-height: 100svh;
+}
+@media (max-width: 639px) {
+  .content {
+    max-height: calc(100svh - 8rem);
+  }
+  /* Hack for padding bug. */
+  .page:before,
+  .page:after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 100%;
+  }
 }
 </style>

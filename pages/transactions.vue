@@ -3,7 +3,7 @@ const wallet = useWalletStore()
 </script>
 
 <template>
-  <div v-if="wallet.connected" page>
+  <div v-if="wallet.connected" class="page">
     <TransactionPanelActivity col-span-12 md:col-span-8 />
     <TransactionPanelAddresses col-span-12 md:col-span-4 />
     <TransactionPanelHistory col-span-12 md:col-span-8 />

@@ -31,6 +31,9 @@ const compMap: Record<TransactionSignature, any> = {
         :item="item"
       />
     </template>
+    <p text-dim italic>
+      That's it for now...
+    </p>
   </div>
   <Loading v-else />
 </template>

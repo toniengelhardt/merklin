@@ -16,7 +16,7 @@ defineProps<{
     </template>
     <template #details>
       <div flex w-full>
-        <div flex-1 flex items-center>
+        <div flex-1 flex justify-start items-center>
           <TokenValueDisplay
             network="ethereum"
             token="eth"
@@ -24,7 +24,7 @@ defineProps<{
             :multiplier="-1"
           />
         </div>
-        <div flex flex-col items-start w-36>
+        <div flex flex-col items-start w-26 md:w-36>
           <div text-xs text-dim mb-1>
             to:
           </div>

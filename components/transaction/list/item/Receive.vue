@@ -23,7 +23,7 @@ defineProps<{
             :value="item.transaction.value"
           />
         </div>
-        <div flex flex-col items-start w-36>
+        <div flex flex-col items-start w-26 md:w-36>
           <div text-xs text-dim mb-1>
             from:
           </div>

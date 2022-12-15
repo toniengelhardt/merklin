@@ -23,16 +23,16 @@ const gasCostDisplay = $computed(() => gasCost?.toPrecision(2))
 <template>
   <div
     v-if="item"
-    flex flex-col lt-md:mx="-0.75rem" mb-2 bg-element px-3 radius-base cursor-pointer
+    flex flex-col lt-md:mx="-1rem" mb-2 bg-element px-3 md:radius-base cursor-pointer
     border-1 border-transparent transition-border-color hover:border-base
     :class="{ 'border-base': expanded, 'hover:border-highlight': expanded }"
     @click="(expanded = !expanded)"
   >
     <div flex items-center h-14>
-      <div flex w-8 h-8>
+      <div flex min-w-5 w-5 h-5 md:w-8 md:h-8>
         <slot name="icon" />
       </div>
-      <div flex flex-col ml-3 w-20>
+      <div flex flex-col ml-2 md:ml-3 w-18>
         <div font-bold text-sm>
           <slot name="label" />
         </div>
@@ -40,7 +40,7 @@ const gasCostDisplay = $computed(() => gasCost?.toPrecision(2))
           {{ item.timestamp ? formatTime(item.timestamp) : '-- ' }}h
         </div>
       </div>
-      <div flex-1 flex ml-3>
+      <div flex-1 flex md:ml-3>
         <slot name="details" />
       </div>
       <div lt-md:hidden flex items-center w-44 ml-3>

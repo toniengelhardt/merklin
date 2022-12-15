@@ -1,52 +1,3 @@
-<script setup lang="ts">
-import { version } from '~/package.json'
-
-const appVersion = version
-
-const menuItems = [
-  {
-    icon: {
-      name: 'insights',
-    },
-    label: 'Insights',
-    title: 'Insights',
-    link: '/',
-  },
-  {
-    icon: {
-      name: 'assets',
-    },
-    label: 'Assets',
-    title: 'Assets',
-    link: '/assets',
-  },
-  {
-    icon: {
-      name: 'nft',
-    },
-    label: 'NFTs',
-    title: 'NFTs',
-    link: '/nfts',
-  },
-  {
-    icon: {
-      name: 'transaction',
-    },
-    label: 'Transactions',
-    title: 'Transactions',
-    link: '/transactions',
-  },
-  {
-    icon: {
-      name: 'blockchain',
-    },
-    label: 'Networks',
-    title: 'Networks',
-    link: '/networks',
-  },
-]
-</script>
-
 <template>
   <div flex items-center h-16 px-6>
     <Brand />
@@ -54,7 +5,7 @@ const menuItems = [
   <div flex-1 px-3>
     <div grid gap-1>
       <AppMenuItem
-        v-for="(item, idx) in menuItems"
+        v-for="(item, idx) in appMenuItems"
         :key="idx"
         :item="item"
       />

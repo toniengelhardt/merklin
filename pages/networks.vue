@@ -1,5 +1,5 @@
 <template>
-  <div page>
+  <div class="page">
     <div
       v-for="(network, idx) in networkList"
       :key="idx"

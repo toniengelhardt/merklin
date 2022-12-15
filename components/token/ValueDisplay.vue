@@ -19,7 +19,7 @@ const currencyDisplay = $computed(() => useEthToCurrencyFormatted(+ethersUtils.f
     <div flex justify-center items-center w-7 h-7 bg-element rounded-full>
       <Icon name="ethereum" />
     </div>
-    <div flex flex-col text-sm leading-tight ml-3>
+    <div flex flex-col text-sm leading-tight ml-2 md:ml-3>
       <div class="text-value">
         {{ valueDisplay }}
       </div>

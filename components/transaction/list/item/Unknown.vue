@@ -12,7 +12,7 @@ defineProps<{
       </div>
     </template>
     <template #label>
-      Unknown
+      N/A
     </template>
   </TransactionListItem>
 </template>
