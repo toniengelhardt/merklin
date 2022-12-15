@@ -66,6 +66,13 @@ export default defineNuxtConfig({
   css: [
     'assets/css/style.css',
   ],
+  app: {
+    head: {
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico', key: 'favicon' },
+      ],
+    },
+  },
   pwa: {
     manifest: {
       id: '/?standalone=true',
@@ -85,6 +92,7 @@ export default defineNuxtConfig({
       mobileApp: true,
       mobileAppIOS: true,
       lang: 'en',
+      favicon: false,
       ogType: 'website',
       ogSiteName: appTitle,
       ogTitle: appTitle,
