@@ -1,5 +1,13 @@
 <script setup lang="ts">
+import process from 'process'
+import EventEmitter from 'events'
+import { Buffer } from 'buffer'
 import { watchAccount, watchNetwork } from '@wagmi/core'
+
+// Fix for WalletConnect issue.
+window.Buffer = Buffer
+window.process = process
+window.EventEmitter = EventEmitter
 
 const intervals: ReturnType<typeof useIntervalFn>[] = []
 
