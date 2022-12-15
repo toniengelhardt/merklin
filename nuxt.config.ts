@@ -91,7 +91,11 @@ export default defineNuxtConfig({
       ogTitle: appTitle,
       ogDescription: appDescription,
       ogUrl: appUrl,
-      theme_color: '#ffffff',
+      theme_color: '#000000',
+    },
+    icon: {
+      source: 'icon.png',
+      maskableSource: 'icon.maskable.png',
     },
   },
   colorMode: {
