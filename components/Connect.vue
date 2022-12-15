@@ -10,13 +10,12 @@ const metamask = new MetaMaskConnector({ chains })
 const walletconnect = new WalletConnectConnector({
   chains,
   options: {
-    qrcode: true,
   },
 })
 </script>
 
 <template>
-  <div flex-col-center w-full pb-16>
+  <div flex-col-center w-full p-8 pb-16 md:mr-70>
     <!-- <p>Address: {{ address }}</p>
     <p>isConnecting: {{ isConnecting }}</p>
     <p>isDisconnected: {{ isDisconnected }}</p> -->
@@ -39,7 +38,7 @@ const walletconnect = new WalletConnectConnector({
         cursor-pointer
         @click="connect({ connector: walletconnect })"
       >
-        <Icon name="walletconnect" size="3.5rem" />
+        <Icon name="walletconnect" size="3rem" />
         <div text-xl>
           WalletConnect
         </div>
