@@ -19,7 +19,7 @@ The idea is to focus mostly on powerful wallet analytics, i.a.
 - Network overview with technology and stats
 - etc.
 
-For now, only ETH networks: [Ethereum](https://ethereum.org), [Arbitrum](https://arbitrum.io), [Optimism](https://www.optimism.io/), [Polygon](https://polygon.technology), [Gnosis](https://www.gnosis.io), [zkSync](https://zksync.io), etc.
+For now, only EVM networks: [Ethereum](https://ethereum.org), [Arbitrum](https://arbitrum.io), [Optimism](https://www.optimism.io/), [Polygon](https://polygon.technology), [Gnosis](https://www.gnosis.io), [zkSync](https://zksync.io), etc.
 
 ## Goals
 
