@@ -50,12 +50,15 @@ Some wise words from [@jack](https://twitter.com/jack):
 
 ## Setup
 
-Make sure to install the dependencies:
+Clone the repo and install the dependencies with pnpm:
 
 ```bash
-# pnpm
 pnpm install
 ```
+
+## Documentation
+
+Ideally, all code that is not self-explanatory should have documentation in the form of comments to make it easy for collaborators to understand. I hope this will improve as the project matures.
 
 ## Development Server
 
@@ -67,7 +70,7 @@ pnpm dev
 
 ## More
 
-You can get help with web3 issues and Nuxt in the [Nuxt Discord](https://discord.com/invite/ps2h6QT) `web3` channel under "help".
+Please don't be afraid to ask questions, you can start a thread under Discussions for topics related to m3tadata specificallyor consult the `web3` channel in the [Nuxt Discord](https://discord.com/invite/ps2h6QT) for more general questions about web3 and Nuxt.
 
 Development insights available on [RepoTracker](https://repo-tracker.com/r/gh/toniengelhardt/m3tadata).
 
