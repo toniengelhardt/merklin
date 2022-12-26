@@ -1,6 +1,11 @@
 <script setup lang="ts">
+import { connect, disconnect } from '@wagmi/core'
 const wallet = useWalletStore()
 const items = {
+  connect: {
+    icon: { name: 'wallet' },
+    label: 'Connect',
+  },
   disconnect: {
     icon: { name: 'disconnect' },
     label: 'Disconnect',
@@ -20,6 +25,7 @@ const items = {
     toggle-class="btn-transparent"
     :toggle-icon="{ name: 'wallet', size: '1.4rem' }"
   >
-    <MenuItem :item="items.disconnect" />
+    <MenuItem v-if="!wallet.connected" :item="items.connect" @click.prevent="connect({ connector: metamask })" />
+    <MenuItem v-if="wallet.connected" :item="items.disconnect" @click.prevent="disconnect()" />
   </Menu>
 </template>
