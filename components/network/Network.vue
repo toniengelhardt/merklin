@@ -1,11 +1,28 @@
 <script setup lang="ts">
 // const defaultProvider = await useDefaultProvider()
+const items = {
+  matic: {
+    icon: { name: 'polygon' },
+    label: 'Polygon',
+  },
+  optimism: {
+    icon: { name: 'optimism' },
+    label: 'Optimism',
+  },
+  xDai: {
+    icon: { name: 'xdai' },
+    label: 'xDai',
+  },
+}
 </script>
 
 <template>
-  <div btn-transparent px-4>
-    <Icon name="dropdown" size="0.8rem" text-dim />
-    <Icon name="ethereum" size="1.2rem" px-1 />
-    <div>Ethereum</div>
-  </div>
+  <Menu
+    :toggle-icon="{ name: 'ethereum', size: '1.4rem' }"
+    toggle-class="btn-transparent"
+  >
+    <MenuItem :item="items.matic" />
+    <MenuItem :item="items.optimism" />
+    <MenuItem :item="items.xDai" />
+  </Menu>
 </template>

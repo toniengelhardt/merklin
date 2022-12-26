@@ -1,25 +1,5 @@
 <script setup lang="ts">
-import { InjectedConnector, connect } from '@wagmi/core'
-import { arbitrum, mainnet, optimism, polygon } from '@wagmi/core/chains'
-import { MetaMaskConnector } from '@wagmi/core/connectors/metaMask'
-import { WalletConnectConnector } from '@wagmi/core/connectors/walletConnect'
-
-const chains = [mainnet, optimism, arbitrum, polygon]
-
-const metamask = new MetaMaskConnector({ chains })
-const walletconnect = new WalletConnectConnector({
-  chains,
-  options: {
-    qrcode: true,
-  },
-})
-const injectedWallet = new InjectedConnector({
-  chains,
-  options: {
-    name: 'Injected',
-    shimDisconnect: true,
-  },
-})
+import { connect } from '@wagmi/core'
 </script>
 
 <template>
