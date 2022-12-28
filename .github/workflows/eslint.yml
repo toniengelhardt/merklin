@@ -20,6 +20,9 @@ jobs:
   eslint:
     name: Run eslint scanning
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [15]
     permissions:
       contents: read
       security-events: write
@@ -28,7 +31,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         
-      - uses: pnpm/action-setup@v2
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
         with:
           version: 7
           
@@ -39,9 +43,10 @@ jobs:
           cache: 'pnpm'
 
       - name: Install dependencies
-        run: | 
-          pnpm install
-          pnpm add @microsoft/eslint-formatter-sarif@2.1.7
+        run: pnpm install
+          
+      - name: Install ESLint formatter
+        run: pnpm add @microsoft/eslint-formatter-sarif@2.1.7
 
       - name: Run ESLint
         run: npx eslint .
