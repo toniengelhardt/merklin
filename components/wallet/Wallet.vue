@@ -26,7 +26,7 @@ const items = {
         0x<span class="mx-0.5" text-base>{{ wallet.address.slice(2, 6) }}</span>...<span class="ml-0.5" text-base>{{ wallet.address.slice(-4) }}</span>
       </div>
     </template>
-    <MenuItem :item="items.addAddresses" @click.prevent="connect()" />
+    <MenuItem :item="items.addAddresses" />
     <MenuItem :item="items.disconnect" @click.prevent="disconnect()" />
   </Menu>
 </template>

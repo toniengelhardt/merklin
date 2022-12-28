@@ -70,7 +70,7 @@ async function connectWallet(connectorName: keyof typeof connectors) {
         cursor-pointer
         @click="connectWallet('injectedWallet')"
       >
-        <Icon name="injected" />
+        <!-- <Icon name="injected" /> -->
         <span ml-1>
           Injected Wallet
         </span>

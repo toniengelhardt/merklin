@@ -31,7 +31,7 @@ const compMap: Record<TransactionSignature, any> = {
         :item="item"
       />
     </template>
-    <p text-dim italic>
+    <p text-xs text-dim italic>
       That's it for now...
     </p>
   </div>

@@ -68,8 +68,6 @@ export const useTransactions = async () => {
     console.log('Fetching transactions...')
     const etherscanProvider = await useEtherscanProvider()
     const transactions: TransactionResponse[] = await etherscanProvider.getHistory(wallet.address)
-    console.log('YOYO', transactions.length)
-
     return transactions
   }
   return Promise.resolve()

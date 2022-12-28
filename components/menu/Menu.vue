@@ -35,7 +35,7 @@ defineProps<{
         leave-to-class="transform scale-95 opacity-0"
       >
         <HeadlessMenuItems
-          absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100
+          absolute mt-2 w-56 right-0 origin-top-right divide-y divide-gray-100
           radius-base bg-base shadow-lg ring-0 ring-zinc-900 ring-opacity-5
           focus:outline-none z-12
         >
