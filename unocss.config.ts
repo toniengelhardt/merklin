@@ -32,7 +32,7 @@ export default defineConfig({
     'text-currency': 'self-start text-value text-faint',
     'panel': 'p-4 bg-surface rounded-1.5rem',
     'panel-title': 'mt-0 mb-2 text-faint',
-    'btn': 'flex justify-center items-center h-10 min-w-10 text-base border-0 radius-base box-border cursor-pointer decoration-none',
+    'btn': 'flex justify-center items-center h-10 min-w-10 text-size-inherit border-0 radius-base box-border cursor-pointer decoration-none',
     'btn-transparent': 'btn bg-transparent hover:bg-white/50 dark:(hover:bg-zinc-900/50)',
     'btn-default': 'btn bg-element hover:bg-element-active',
   },

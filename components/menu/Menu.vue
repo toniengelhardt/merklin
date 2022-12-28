@@ -12,14 +12,18 @@ defineProps<{
     <HeadlessMenu as="div" relative>
       <div>
         <HeadlessMenuButton :class="toggleClass">
-          <Icon
-            :name="toggleIcon.name"
-            :size="toggleIcon.size"
-            :class="toggleIcon.class"
-          />
-          <div v-if="toggleLabel">
-            {{ toggleLabel }}
-          </div>
+          <slot name="icon">
+            <Icon
+              :name="toggleIcon.name"
+              :size="toggleIcon.size"
+              :class="toggleIcon.class"
+            />
+          </slot>
+          <slot name="label">
+            <div v-if="toggleLabel">
+              {{ toggleLabel }}
+            </div>
+          </slot>
         </HeadlessMenuButton>
       </div>
       <transition

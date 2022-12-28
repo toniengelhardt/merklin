@@ -1,13 +1,32 @@
 <script setup lang="ts">
+import { connect, disconnect } from '@wagmi/core'
+
 const wallet = useWalletStore()
+
+const items = {
+  addAddresses: {
+    icon: { name: 'plus' },
+    label: 'Add addresses',
+  },
+  disconnect: {
+    icon: { name: 'disconnect' },
+    label: 'Disconnect',
+  },
+}
 </script>
 
 <template>
-  <div v-if="wallet.address" btn-transparent px-2 md:px-4>
-    <Icon name="dropdown" size="0.8rem" text-dim />
-    <Icon name="wallet" size="1.4rem" mx-2 />
-    <div self-center class="text-address">
-      {{ displayAddress(wallet.address) }}
-    </div>
-  </div>
+  <Menu
+    v-if="wallet.address"
+    :toggle-icon="{ name: 'wallet', size: '1.4rem' }"
+    toggle-class="btn-transparent px-4"
+  >
+    <template #label>
+      <div class="ml-1.5" flex text-sm text-faint>
+        0x<span class="mx-0.5" text-base>{{ wallet.address.slice(2, 6) }}</span>...<span class="ml-0.5" text-base>{{ wallet.address.slice(-4) }}</span>
+      </div>
+    </template>
+    <MenuItem :item="items.addAddresses" @click.prevent="connect()" />
+    <MenuItem :item="items.disconnect" @click.prevent="disconnect()" />
+  </Menu>
 </template>

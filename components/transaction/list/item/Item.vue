@@ -97,6 +97,16 @@ const gasCostDisplay = $computed(() => gasCost?.toPrecision(2))
           </div>
         </div>
       </div>
+      <div flex mt-3>
+        <div flex flex-col>
+          <div text-xs text-faint>
+            Data
+          </div>
+          <div text-sm text-dim>
+            {{ item.transaction.data }}
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <Loading v-else />
