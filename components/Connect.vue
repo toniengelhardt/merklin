@@ -4,22 +4,34 @@ import { arbitrum, mainnet, optimism, polygon } from '@wagmi/core/chains'
 import { MetaMaskConnector } from '@wagmi/core/connectors/metaMask'
 import { WalletConnectConnector } from '@wagmi/core/connectors/walletConnect'
 
+const wallet = useWalletStore()
+
 const chains = [mainnet, optimism, arbitrum, polygon]
 
-const metamask = new MetaMaskConnector({ chains })
-const walletconnect = new WalletConnectConnector({
-  chains,
-  options: {
-    qrcode: true,
-  },
-})
-const injectedWallet = new InjectedConnector({
-  chains,
-  options: {
-    name: 'Injected',
-    shimDisconnect: true,
-  },
-})
+const connectors = {
+  metamask: new MetaMaskConnector({
+    chains,
+  }),
+  walletconnect: new WalletConnectConnector({
+    chains,
+    options: {
+      qrcode: true,
+    },
+  }),
+  injectedWallet: new InjectedConnector({
+    chains,
+    options: {
+      name: 'Injected',
+      shimDisconnect: true,
+    },
+  }),
+}
+
+async function connectWallet(connectorName: keyof typeof connectors) {
+  const connector = connectors[connectorName]
+  await connect({ connector })
+  wallet.connector = connector
+}
 </script>
 
 <template>
@@ -34,7 +46,7 @@ const injectedWallet = new InjectedConnector({
       <div
         h-28 flex-col-center rounded-2xl bg-element hover:bg-element-active
         cursor-pointer
-        @click="connect({ connector: metamask })"
+        @click="connectWallet('metamask')"
       >
         <Icon name="metamask" size="2.5rem" my-2 />
         <div text-xl>
@@ -44,7 +56,7 @@ const injectedWallet = new InjectedConnector({
       <div
         h-28 mt-2 flex-col-center rounded-2xl bg-element hover:bg-element-active
         cursor-pointer
-        @click="connect({ connector: walletconnect })"
+        @click="connectWallet('walletconnect')"
       >
         <Icon name="walletconnect" size="3rem" />
         <div text-xl>
@@ -56,9 +68,9 @@ const injectedWallet = new InjectedConnector({
       <div
         flex-center px-2 py-1 text-base rounded-md bg-element hover:bg-element-active
         cursor-pointer
-        @click="connect({ connector: injectedWallet })"
+        @click="connectWallet('injectedWallet')"
       >
-        <Icon name="injected" />
+        <!-- <Icon name="injected" /> -->
         <span ml-1>
           Injected Wallet
         </span>
