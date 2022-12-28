@@ -19,43 +19,34 @@ on:
 jobs:
   eslint:
     name: Run eslint scanning
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node-version: [15]
+        os: [ubuntu-latest]
+        node: [16]
     permissions:
       contents: read
       security-events: write
       actions: read # only required for a private repository by github/codeql-action/upload-sarif to get the Action run status
+    timeout-minutes: 10
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-        
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
+      - uses: actions/checkout@v3
+      - run: corepack enable
+      - uses: actions/setup-node@v3
         with:
-          version: 7
-          
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'pnpm'
-
+          node-version: ${{ matrix.node }}
+          cache: "pnpm"
       - name: Install dependencies
         run: pnpm install
-          
       - name: Install ESLint formatter
         run: pnpm add @microsoft/eslint-formatter-sarif@2.1.7
-
       - name: Run ESLint
-        run: npx eslint .
+        run: pnpm run eslint .
           --config .eslintrc.js
           --ext .js,.jsx,.ts,.tsx
           --format @microsoft/eslint-formatter-sarif
           --output-file eslint-results.sarif
         continue-on-error: true
-
       - name: Upload analysis results to GitHub
         uses: github/codeql-action/upload-sarif@v2
         with:
