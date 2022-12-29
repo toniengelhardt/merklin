@@ -68,6 +68,14 @@ Start the development server on `http://localhost:3050`
 pnpm dev
 ```
 
+## CI
+
+Upon opening a PR to `main` GitHub actions will run the following checks:
+
+- Lint
+- Typecheck
+- Build and run tests with Vitest
+
 ## More
 
 Please don't be afraid to ask questions, you can start a thread under Discussions for topics related to m3tadata specificallyor consult the `web3` channel in the [Nuxt Discord](https://discord.com/invite/ps2h6QT) for more general questions about web3 and Nuxt.
