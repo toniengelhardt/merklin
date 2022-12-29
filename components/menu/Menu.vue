@@ -1,10 +1,13 @@
 <script setup lang="ts">
-defineProps<{
+withDefaults(defineProps<{
+  orientation?: 'left' | 'right'
   toggleIcon: ItemIcon
   toggleLabel?: string
   toggleClass?: string
   items?: MenuItem[]
-}>()
+}>(), {
+  orientation: 'right',
+})
 </script>
 
 <template>
@@ -20,7 +23,7 @@ defineProps<{
             />
           </slot>
           <slot name="label">
-            <div v-if="toggleLabel">
+            <div v-if="toggleLabel" ml-2>
               {{ toggleLabel }}
             </div>
           </slot>
@@ -35,9 +38,10 @@ defineProps<{
         leave-to-class="transform scale-95 opacity-0"
       >
         <HeadlessMenuItems
-          absolute mt-2 w-56 right-0 origin-top-right divide-y divide-gray-100
+          absolute mt-2 w-56 divide-y divide-gray-100
           radius-base bg-base shadow-lg ring-0 ring-zinc-900 ring-opacity-5
           focus:outline-none z-12
+          :class="orientation === 'left' ? 'right-0 origin-top-right' : 'orientation-top-left'"
         >
           <div p-1>
             <slot />
