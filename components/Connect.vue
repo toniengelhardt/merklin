@@ -1,36 +1,13 @@
 <script setup lang="ts">
-import { InjectedConnector, connect } from '@wagmi/core'
-import { arbitrum, mainnet, optimism, polygon } from '@wagmi/core/chains'
-import { MetaMaskConnector } from '@wagmi/core/connectors/metaMask'
-import { WalletConnectConnector } from '@wagmi/core/connectors/walletConnect'
+import { connect } from '@wagmi/core'
 
 const wallet = useWalletStore()
-
-const chains = [mainnet, optimism, arbitrum, polygon]
-
-const connectors = {
-  metamask: new MetaMaskConnector({
-    chains,
-  }),
-  walletconnect: new WalletConnectConnector({
-    chains,
-    options: {
-      qrcode: true,
-    },
-  }),
-  injectedWallet: new InjectedConnector({
-    chains,
-    options: {
-      name: 'Injected',
-      shimDisconnect: true,
-    },
-  }),
-}
+const connectors = useConnectors()
 
 async function connectWallet(connectorName: keyof typeof connectors) {
   const connector = connectors[connectorName]
   await connect({ connector })
-  wallet.connector = connector
+  wallet.connector = connector // use this connector to connect to more wallets.
 }
 </script>
 
