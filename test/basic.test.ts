@@ -2,7 +2,8 @@ import { /* $fetch, */ fetch, setup } from '@nuxt/test-utils'
 import { describe, expect, it } from 'vitest'
 // import { expectNoClientErrors } from './utils'
 
-// See examples here: https://github.com/nuxt/framework/blob/main/test/basic.test.ts
+// See examples here:
+// https://github.com/nuxt/framework/blob/main/test/basic.test.ts
 
 await setup({
   browser: true,

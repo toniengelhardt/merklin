@@ -1,7 +1,8 @@
 import { getBrowser, url, useTestContext } from '@nuxt/test-utils'
 import { expect } from 'vitest'
 
-// From https://github.com/nuxt/framework/blob/main/test/utils.ts
+// From:
+// https://github.com/nuxt/framework/blob/main/test/utils.ts
 
 export async function renderPage(path = '/') {
   const ctx = useTestContext()
