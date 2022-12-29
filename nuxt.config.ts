@@ -55,7 +55,7 @@ export default defineNuxtConfig({
           GlobalPolyFill({
             process: true,
             buffer: true,
-          }),
+          }) as any, // fix weird type error
         ],
       },
     },
