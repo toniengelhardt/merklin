@@ -5,7 +5,7 @@
   "repository": "toniengelhardt/m3tadata",
   "author": "Degenerate humans",
   "license": "MIT",
-  "packageManager": "pnpm@7.21.0",
+  "packageManager": "pnpm@7.19.0",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev --host 0.0.0.0 --port 3050",
