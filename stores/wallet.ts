@@ -1,12 +1,16 @@
-import type { GetAccountResult, GetNetworkResult } from '@wagmi/core'
+import type { GetAccountResult, GetNetworkResult, InjectedConnector } from '@wagmi/core'
+import type { MetaMaskConnector } from '@wagmi/core/connectors/metaMask'
+import type { WalletConnectConnector } from '@wagmi/core/connectors/walletConnect'
 import { defineStore } from 'pinia'
 
 export const useWalletStore = defineStore('wallet', {
   state: (): {
+    connector: MetaMaskConnector | WalletConnectConnector | InjectedConnector | undefined
     account: GetAccountResult | undefined
     network: GetNetworkResult | undefined
   } => {
     return {
+      connector: undefined,
       account: undefined,
       network: undefined,
     }

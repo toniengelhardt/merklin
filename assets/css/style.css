@@ -15,7 +15,7 @@ body {
 }
 
 button {
-  @apply border-none;
+  @apply border-none text-base;
 }
 
 a {

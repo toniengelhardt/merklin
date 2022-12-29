@@ -12,7 +12,7 @@ specifiers:
   '@unocss/nuxt': ^0.48.0
   '@unocss/transformer-directives': ^0.48.0
   '@vueuse/nuxt': ^9.9.0
-  '@wagmi/core': ^0.8.7
+  '@wagmi/core': ^0.8.8
   buffer: ^6.0.3
   chart.js: ^4.1.1
   chartjs-adapter-date-fns: ^3.0.0
@@ -24,7 +24,7 @@ specifiers:
   nuxt: ^3.0.0
   nuxt-headlessui: ^1.0.4
   nuxt-icon: ^0.1.8
-  pinia-plugin-persistedstate: ^3.0.1
+  pinia-plugin-persistedstate: ^3.0.2
   process: ^0.11.10
   typescript: ^4.9.4
   util: ^0.12.5
@@ -36,7 +36,7 @@ specifiers:
 dependencies:
   '@esbuild-plugins/node-globals-polyfill': 0.1.1
   '@pinia/nuxt': 0.4.6_typescript@4.9.4
-  '@wagmi/core': 0.8.7_c4tpmuajjwy7vjodfmym27ncri
+  '@wagmi/core': 0.8.8_c4tpmuajjwy7vjodfmym27ncri
   buffer: 6.0.3
   chart.js: 4.1.1
   chartjs-adapter-date-fns: 3.0.0_iln6v37jwapfq6ambblo6nwala
@@ -44,7 +44,7 @@ dependencies:
   date-fns: 2.29.3
   ethers: 5.7.2
   events: 3.3.0
-  pinia-plugin-persistedstate: 3.0.1
+  pinia-plugin-persistedstate: 3.0.2
   process: 0.11.10
   util: 0.12.5
   vue-blockies: 1.0.0
@@ -1876,7 +1876,7 @@ packages:
   /@types/connect/3.4.35:
     resolution: {integrity: sha512-cdeYyv4KWoEgpBISTxWvqYsVy444DOqehiF3fM3ne10AmJ62RSyNkUnxMJXHQWRQQX2eR94m5y1IZyDwBjV9FQ==}
     dependencies:
-      '@types/node': 12.20.55
+      '@types/node': 18.11.18
     dev: false
 
   /@types/estree/1.0.0:
@@ -1938,7 +1938,7 @@ packages:
   /@types/ws/7.4.7:
     resolution: {integrity: sha512-JQbbmxZTZehdc2iszGKs5oC3NFnjeay7mtAWrdt7qNtAVK0g19muApzAy4bm9byz79xa2ZnO/BOBC2R8RC5Lww==}
     dependencies:
-      '@types/node': 12.20.55
+      '@types/node': 18.11.18
     dev: false
 
   /@typescript-eslint/eslint-plugin/5.47.1_txmweb6yn7coi7nfrp22gpyqmy:
@@ -2545,7 +2545,7 @@ packages:
     resolution: {integrity: sha512-t9qm4FyzwzJhAcLtnh9HUeOmueSEOXwXlR0RCcS/vhtLSUnzaUfEkjAeu4+7AIujYWjrtdS/Zvlc+PwTjuwTUQ==}
     dev: false
 
-  /@wagmi/connectors/0.1.3_wpqgguluywl6b5frylrm4pk2ua:
+  /@wagmi/connectors/0.1.3_d42bgqf2w2ewczdm4dlvbq3apa:
     resolution: {integrity: sha512-rNRDJsDdgb4R7n3AP6qbIu5L+3QYJU0raRFkFZLqBpA2dlX4d5RATALiDK6XdWw69iCb/q3BEsyj3Y+uNN/ODA==}
     peerDependencies:
       '@wagmi/core': 0.8.x
@@ -2556,7 +2556,7 @@ packages:
     dependencies:
       '@coinbase/wallet-sdk': 3.6.3
       '@ledgerhq/connect-kit-loader': 1.0.2
-      '@wagmi/core': 0.8.7_c4tpmuajjwy7vjodfmym27ncri
+      '@wagmi/core': 0.8.8_c4tpmuajjwy7vjodfmym27ncri
       '@walletconnect/ethereum-provider': 1.8.0
       '@walletconnect/qrcode-modal': 1.8.0
       '@walletconnect/universal-provider': 2.1.5
@@ -2575,8 +2575,8 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@wagmi/core/0.8.7_c4tpmuajjwy7vjodfmym27ncri:
-    resolution: {integrity: sha512-/tKkpRaa1P2N0Q114Mlg0ixkBwwty5HnHLJCBdxVlzMMGlsMw6HFFXAheUIKj2ZXCXiPk/x2h0CK3+iB7cYkZA==}
+  /@wagmi/core/0.8.8_c4tpmuajjwy7vjodfmym27ncri:
+    resolution: {integrity: sha512-bmF1GlfaDh5m5WGNujWOAcNC2UIKJQFWgUmSmX6DJTX+v9WnlNx+v3oKbXR0XjaYlxsXcOq8rtpQ4Dza5Z/mtA==}
     peerDependencies:
       '@coinbase/wallet-sdk': '>=3.6.0'
       '@walletconnect/ethereum-provider': '>=1.7.5'
@@ -2588,7 +2588,7 @@ packages:
         optional: true
     dependencies:
       '@wagmi/chains': 0.1.7
-      '@wagmi/connectors': 0.1.3_wpqgguluywl6b5frylrm4pk2ua
+      '@wagmi/connectors': 0.1.3_d42bgqf2w2ewczdm4dlvbq3apa
       abitype: 0.2.5_typescript@4.9.4
       ethers: 5.7.2
       eventemitter3: 4.0.7
@@ -2996,7 +2996,7 @@ packages:
   /@walletconnect/window-metadata/1.0.0:
     resolution: {integrity: sha512-9eFvmJxIKCC3YWOL97SgRkKhlyGXkrHwamfechmqszbypFspaSk+t2jQXAEU7YClHF6Qjw5eYOmy1//zFi9/GA==}
     dependencies:
-      '@walletconnect/window-getters': 1.0.0
+      '@walletconnect/window-getters': 1.0.1
     dev: false
 
   /@walletconnect/window-metadata/1.0.1:
@@ -7380,8 +7380,8 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
-  /pinia-plugin-persistedstate/3.0.1:
-    resolution: {integrity: sha512-WRNWtR4v8StJqBQH+Qiz88SGnlr4wvEyh7wtA+fYEVLoIOnpZ0v4FICvUcC8eUkAIvQL3n6/Ew2yryw7okazvA==}
+  /pinia-plugin-persistedstate/3.0.2:
+    resolution: {integrity: sha512-84vPyUhPA/8Pr+1mT1ioNb2d8z4tvdgYRqMQf8xyauOVBKjo0ZcRBwPQBV7ZAJG43Kwar43nXG2jU+ZMvAFFRQ==}
     peerDependencies:
       pinia: ^2.0.0
     dev: false
