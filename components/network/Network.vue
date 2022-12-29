@@ -1,11 +1,26 @@
 <script setup lang="ts">
-// const defaultProvider = await useDefaultProvider()
+const ui = useUIStore()
+const wallet = useWalletStore()
+const activeNetwork = $computed(() => wallet.network?.chain ? networks[wallet.network.chain.network as keyof typeof networks] : undefined)
+const otherNetworks = $computed(() => networkList.filter(network => network !== activeNetwork))
 </script>
 
 <template>
-  <div btn-transparent px-4>
-    <Icon name="dropdown" size="0.8rem" text-dim />
-    <Icon name="ethereum" size="1.2rem" px-1 />
-    <div>Ethereum</div>
-  </div>
+  <Menu
+    v-if="activeNetwork"
+    :orientation="ui.mobile ? 'right' : 'left'"
+    :toggle-icon="{ name: activeNetwork.icon, size: '1.4rem' }"
+    :toggle-label="ui.mobile ? undefined : (activeNetwork?.label || 'N/A')"
+    toggle-class="btn-transparent px-4"
+  >
+    <MenuItem
+      v-for="network in otherNetworks"
+      :key="network.name"
+      :item="{
+        icon: { name: network.icon },
+        label: network.label,
+        title: network.label,
+      }"
+    />
+  </Menu>
 </template>

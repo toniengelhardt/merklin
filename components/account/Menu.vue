@@ -1,6 +1,5 @@
 <script setup lang="ts">
 const config = useRuntimeConfig()
-const wallet = useWalletStore()
 const items = {
   disconnect: {
     icon: { name: 'disconnect' },
@@ -46,6 +45,7 @@ const items = {
 
 <template>
   <Menu
+    orientation="left"
     :toggle-icon="{ name: 'menu', size: '1.4rem' }"
     toggle-class="btn-transparent"
   >

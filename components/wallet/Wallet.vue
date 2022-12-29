@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { connect, disconnect } from '@wagmi/core'
 
+const ui = useUIStore()
 const wallet = useWalletStore()
 
 const items = {
@@ -18,6 +19,7 @@ const items = {
 <template>
   <Menu
     v-if="wallet.address"
+    :orientation="ui.mobile ? 'right' : 'left'"
     :toggle-icon="{ name: 'wallet', size: '1.4rem' }"
     toggle-class="btn-transparent px-4"
   >
