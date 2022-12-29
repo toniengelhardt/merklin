@@ -25,6 +25,7 @@
     "@nuxtjs/plausible": "^0.2.0",
     "@unocss/nuxt": "^0.48.0",
     "@unocss/transformer-directives": "^0.48.0",
+    "@vitest/ui": "^0.26.2",
     "@vueuse/nuxt": "^9.9.0",
     "eslint": "^8.30.0",
     "nuxt": "^3.0.0",
