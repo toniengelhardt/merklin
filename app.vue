@@ -8,6 +8,7 @@ import { watchAccount, watchNetwork } from '@wagmi/core'
 // https://stackoverflow.com/a/72978659/1384972
 window.Buffer = Buffer
 window.process = process
+// @ts-expect-error EventEmitter is not defined on the window object.
 window.EventEmitter = EventEmitter
 window.global = window
 

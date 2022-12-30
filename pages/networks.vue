@@ -43,8 +43,8 @@
           </div>
           <div class="value">
             {{ network.token?.ticker || '--' }}
-            <small v-if="network.token?.type" text-dim>
-              ({{ Array.isArray(network.token.type) ? network.token.type.join(', ') : network.token.type }})
+            <small v-if="network.token?.types" text-dim>
+              ({{ network.token.types.join(', ') }})
             </small>
           </div>
         </div>

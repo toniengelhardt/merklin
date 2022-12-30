@@ -102,7 +102,7 @@ export const networks: Record<NetworkName, NetworkInfo> = {
   },
 }
 
-export const networkList: Network[] = [
+export const networkList: NetworkInfo[] = [
   networks.homestead,
   networks.optimism,
   networks.arbitrum,

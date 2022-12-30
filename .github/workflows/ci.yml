@@ -36,7 +36,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: Lint code
-        run: pnpm lint
+        run: pnpm lint:ci
 
   typecheck:
     name: Typecheck
@@ -56,7 +56,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: Typecheck
-        run: pnpm typecheck
+        run: pnpm typecheck:ci
 
   test:
     name: Test
@@ -78,4 +78,4 @@ jobs:
       - name: Build
         run: pnpm run build
       - name: Test
-        run: pnpm run test
+        run: pnpm test:ci
