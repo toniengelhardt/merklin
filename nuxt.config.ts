@@ -14,7 +14,6 @@ export default defineNuxtConfig({
       pocketApiKey: process.env.POCKET_API_KEY,
       ankrApiKey: process.env.ANKR_API_KEY,
       ethJsonRpcUrl: process.env.ETH_RPC_URL || 'https://eth-mainnet.g.alchemy.com/v2/n5Vj8wE2BHWCtpxqeIZZRJFMVyvifuYv',
-      maticJsonRpcUrl: process.env.MATIC_RPC_URL || 'https://polygon-mainnet.g.alchemy.com/v2/2-fMpXk5eHtcWQqsodcNU5epMcMeQMe3',
       repoUrl: 'https://github.com/toniengelhardt/m3tadata',
       twitterUrl: '',
       discordUrl: '',

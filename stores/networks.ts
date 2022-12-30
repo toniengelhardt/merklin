@@ -42,8 +42,8 @@ export const useNetworkStore = defineStore('networks', {
     },
     async updateMaticGasPrice() {
       try {
-        const maticProvider = await useMaticProvider()
-        const gp = await maticProvider.getGasPrice()
+        const defaultProvider = await useDefaultProvider('matic')
+        const gp = await defaultProvider.getGasPrice()
         this.matic.gasPrice = Math.round(+ethersUtils.formatUnits(gp, 'gwei'))
         this.matic.status = 'connected'
       }
