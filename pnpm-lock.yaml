@@ -17,7 +17,7 @@ specifiers:
   buffer: ^6.0.3
   chart.js: ^4.1.1
   chartjs-adapter-date-fns: ^3.0.0
-  chartjs-plugin-annotation: ^2.1.0
+  chartjs-plugin-annotation: ^2.1.1
   date-fns: ^2.29.3
   eslint: ^8.30.0
   ethers: ^5.7.2
@@ -42,7 +42,7 @@ dependencies:
   buffer: 6.0.3
   chart.js: 4.1.1
   chartjs-adapter-date-fns: 3.0.0_iln6v37jwapfq6ambblo6nwala
-  chartjs-plugin-annotation: 2.1.0_chart.js@4.1.1
+  chartjs-plugin-annotation: 2.1.1_chart.js@4.1.1
   date-fns: 2.29.3
   ethers: 5.7.2
   events: 3.3.0
@@ -3660,8 +3660,8 @@ packages:
       date-fns: 2.29.3
     dev: false
 
-  /chartjs-plugin-annotation/2.1.0_chart.js@4.1.1:
-    resolution: {integrity: sha512-wHxP6mBWrgdldAEbHM5nMaMJ3PuunXgiotVh8natosuZsEqpjU0ZeyvMTBwIkKXLSDncb3faLunl4BI89Vmj/g==}
+  /chartjs-plugin-annotation/2.1.1_chart.js@4.1.1:
+    resolution: {integrity: sha512-RVKfwNpecvVZdEUshqk9RtqjwVn9koehQBiz1ZWclgFOVayr2CSTENI6VqsyjuYtzBTFEX6Qark7SqYtnwNiAA==}
     peerDependencies:
       chart.js: '>=3.7.0'
     dependencies:

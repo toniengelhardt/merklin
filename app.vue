@@ -77,7 +77,7 @@ watchAccount((account) => {
   onWalletChange()
 })
 watchNetwork((network) => {
-  console.log('Network changed:', network.chain?.network)
+  console.log('Network changed:', network.chain?.network, network.chain?.name)
   wallet.network = network
   onWalletChange()
 })

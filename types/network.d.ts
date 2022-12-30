@@ -1,4 +1,4 @@
-declare type NetworkName = 'ethereum' | 'arbitrum' | 'optimism' | 'polygon' | 'gnosis' | 'zksync'
+declare type NetworkName = 'homestead' | 'arbitrum' | 'optimism' | 'matic' | 'gnosis' | 'zksync'
 declare type ChainId = 1 | 42161 | 10 | 137 | 100 | 324
 declare type NetworkIcon = typeof string
 declare type NetworkLayer = 'L1' | 'L2' | 'L3'

@@ -18,8 +18,8 @@ export const networkTechnologies: { [name: string]: NetworkTechnology } = {
 }
 
 export const networks: Record<NetworkName, NetworkInfo> = {
-  ethereum: {
-    name: 'ethereum',
+  homestead: {
+    name: 'homestead',
     chainId: 1,
     icon: 'ethereum',
     label: 'Ethereum',
@@ -72,8 +72,8 @@ export const networks: Record<NetworkName, NetworkInfo> = {
     },
     activeWalletCount: '??',
   },
-  polygon: {
-    name: 'polygon',
+  matic: {
+    name: 'matic',
     chainId: 137,
     icon: 'polygon',
     label: 'Polygon',
@@ -103,19 +103,19 @@ export const networks: Record<NetworkName, NetworkInfo> = {
 }
 
 export const networkList: Network[] = [
-  networks.ethereum,
+  networks.homestead,
   networks.optimism,
   networks.arbitrum,
   networks.zksync,
-  networks.polygon,
+  networks.matic,
   networks.gnosis,
 ]
 
 export const transactionGasLimit: Record<NetworkName, number> = {
-  ethereum: 21000,
+  homestead: 21000,
   optimism: 0,
   arbitrum: 0,
   zksync: 0,
-  polygon: 0,
+  matic: 0,
   gnosis: 0,
 }

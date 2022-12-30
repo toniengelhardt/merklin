@@ -3,18 +3,18 @@ import { defineStore } from 'pinia'
 
 export const useNetworkStore = defineStore('networks', {
   state: (): {
-    ethereum: NetworkData
+    homestead: NetworkData
     optimism: NetworkData
     arbitrum: NetworkData
-    polygon: NetworkData
+    matic: NetworkData
     gnosis: NetworkData
     zksync: NetworkData
   } => {
     return {
-      ethereum: {},
+      homestead: {},
       optimism: {},
       arbitrum: {},
-      polygon: {},
+      matic: {},
       gnosis: {},
       zksync: {},
     }
@@ -23,11 +23,11 @@ export const useNetworkStore = defineStore('networks', {
     async updateBlocknumber() {
       try {
         const defaultProvider = await useDefaultProvider()
-        this.ethereum.blocknumber = await defaultProvider.getBlockNumber()
-        this.ethereum.status = 'connected'
+        this.homestead.blocknumber = await defaultProvider.getBlockNumber()
+        this.homestead.status = 'connected'
       }
       catch {
-        this.ethereum.status = 'error'
+        this.homestead.status = 'error'
       }
       return Promise.resolve()
     },
@@ -35,7 +35,7 @@ export const useNetworkStore = defineStore('networks', {
       try {
         const defaultProvider = await useDefaultProvider()
         const gp = await defaultProvider.getGasPrice()
-        this.ethereum.gasPrice = Math.round(+ethersUtils.formatUnits(gp, 'gwei'))
+        this.homestead.gasPrice = Math.round(+ethersUtils.formatUnits(gp, 'gwei'))
       }
       catch { }
       return Promise.resolve()

@@ -43,7 +43,7 @@
     "buffer": "^6.0.3",
     "chart.js": "^4.1.1",
     "chartjs-adapter-date-fns": "^3.0.0",
-    "chartjs-plugin-annotation": "^2.1.0",
+    "chartjs-plugin-annotation": "^2.1.1",
     "date-fns": "^2.29.3",
     "ethers": "^5.7.2",
     "events": "^3.3.0",
