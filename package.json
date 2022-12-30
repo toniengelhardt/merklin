@@ -12,9 +12,11 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
+    "lint": "eslint --ext .vue,.js,.ts,.mjs .",
     "lint:ci": "eslint --ext .vue,.js,.ts,.mjs .",
     "typecheck": "vue-tsc",
     "typecheck:ci": "vue-tsc --noEmit",
+    "test": "vitest",
     "test:ci": "vitest"
   },
   "devDependencies": {
