@@ -10,7 +10,7 @@ let defaultProvider: ethers.providers.BaseProvider
 let rpcProvider: ethers.providers.JsonRpcProvider
 let etherscanProvider: ethers.providers.EtherscanProvider
 // Is there a type for this?
-let maticProvider
+let maticProvider: any
 
 const network = 'homestead'
 
