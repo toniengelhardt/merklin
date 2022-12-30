@@ -67,6 +67,7 @@ jobs:
         node: [16]
     timeout-minutes: 10
     steps:
+      - uses: actions/checkout@v3
       - run: corepack enable
       - uses: actions/setup-node@v3
         with:
