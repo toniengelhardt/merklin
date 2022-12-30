@@ -9,7 +9,8 @@ let web3Signer: ethers.providers.JsonRpcSigner
 let defaultProvider: ethers.providers.BaseProvider
 let rpcProvider: ethers.providers.JsonRpcProvider
 let etherscanProvider: ethers.providers.EtherscanProvider
-let maticProvider: ethers.providers.MaticProvider
+// Is there a type for this?
+let maticProvider
 
 const network = 'homestead'
 
