@@ -9,6 +9,7 @@ let web3Signer: ethers.providers.JsonRpcSigner
 let defaultProvider: ethers.providers.BaseProvider
 let rpcProvider: ethers.providers.JsonRpcProvider
 let etherscanProvider: ethers.providers.EtherscanProvider
+let maticProvider: ethers.providers.MaticProvider
 
 const network = 'homestead'
 
@@ -45,9 +46,17 @@ export const useDefaultProvider = async () => {
 export const useRpcProvider = async () => {
   if (!rpcProvider) {
     const config = useRuntimeConfig()
-    rpcProvider = new ethers.providers.JsonRpcProvider(config.public.jsonRpcUrl)
+    rpcProvider = new ethers.providers.JsonRpcProvider(config.public.ethJsonRpcUrl)
   }
   return rpcProvider
+}
+
+export const useMaticProvider = async () => {
+  if (!maticProvider) {
+    const config = useRuntimeConfig()
+    maticProvider = new ethers.providers.JsonRpcProvider(config.public.maticJsonRpcUrl)
+  }
+  return maticProvider
 }
 
 /**

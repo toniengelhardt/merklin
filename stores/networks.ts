@@ -40,11 +40,22 @@ export const useNetworkStore = defineStore('networks', {
       catch { }
       return Promise.resolve()
     },
+    async updateMaticGasPrice() {
+      try {
+        const maticProvider = await useMaticProvider()
+        const gp = await maticProvider.getGasPrice()
+        this.matic.gasPrice = Math.round(+ethersUtils.formatUnits(gp, 'gwei'))
+        this.matic.status = 'connected'
+      }
+      catch { }
+      return Promise.resolve()
+    },
     async updateNetworkData() {
       console.log('Updating networks (10s interval)')
       const res = await Promise.all([
         this.updateBlocknumber(),
         this.updateGasPrice(),
+        this.updateMaticGasPrice(),
       ])
       return res
     },
