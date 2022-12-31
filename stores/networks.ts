@@ -20,10 +20,12 @@ export const useNetworkStore = defineStore('networks', {
     }
   },
   actions: {
-    async updateBlocknumber() {
+    async updateHomesteadNetwork() {
       try {
-        const defaultProvider = await useDefaultProvider('homestead')
-        this.homestead.blocknumber = await defaultProvider.getBlockNumber()
+        const provider = await useDefaultProvider('homestead')
+        this.homestead.blocknumber = await provider!.getBlockNumber()
+        const gp = await provider!.getGasPrice()
+        this.homestead.gasPrice = Math.round(+ethersUtils.formatUnits(gp, 'gwei'))
         this.homestead.status = 'connected'
       }
       catch {
@@ -31,31 +33,24 @@ export const useNetworkStore = defineStore('networks', {
       }
       return Promise.resolve()
     },
-    async updateGasPrice() {
+    async updateMaticNetwork() {
       try {
-        const defaultProvider = await useDefaultProvider('homestead')
-        const gp = await defaultProvider.getGasPrice()
-        this.homestead.gasPrice = Math.round(+ethersUtils.formatUnits(gp, 'gwei'))
-      }
-      catch { }
-      return Promise.resolve()
-    },
-    async updateMaticGasPrice() {
-      try {
-        const defaultProvider = await useDefaultProvider('matic')
-        const gp = await defaultProvider.getGasPrice()
+        const provider = await useDefaultProvider('matic')
+        this.matic.blocknumber = await provider!.getBlockNumber()
+        const gp = await provider!.getGasPrice()
         this.matic.gasPrice = Math.round(+ethersUtils.formatUnits(gp, 'gwei'))
         this.matic.status = 'connected'
       }
-      catch { }
+      catch {
+        this.homestead.status = 'error'
+      }
       return Promise.resolve()
     },
     async updateNetworkData() {
       console.log('Updating networks (10s interval)')
       const res = await Promise.all([
-        this.updateBlocknumber(),
-        this.updateGasPrice(),
-        this.updateMaticGasPrice(),
+        this.updateHomesteadNetwork(),
+        this.updateMaticNetwork(),
       ])
       return res
     },

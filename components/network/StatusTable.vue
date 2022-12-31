@@ -3,7 +3,7 @@ const networkStore = useNetworkStore()
 </script>
 
 <template>
-  <div>
+  <div v-if="networkStore">
     <table>
       <tr>
         <th width="100%">
@@ -47,7 +47,9 @@ const networkStore = useNetworkStore()
           </div>
         </td>
         <td>{{ networkStore[network.name].gasPrice || '?' }}</td>
-        <td>{{ useTransactionCostFormatted(network.name, '?').value }}</td>
+        <td nowrap>
+          {{ useTransactionCostFormatted(network.name, '?').value }}
+        </td>
         <td>{{ networkStore[network.name].tps ? networkStore[network.name].tps![24] : '?' }}</td>
         <td>
           <div

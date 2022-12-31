@@ -23,7 +23,7 @@ export const useWalletStore = defineStore('wallet', {
       return state.account?.address
     },
     networkName(state) {
-      return state.network?.chain?.network
+      return state.network?.chain?.network as NetworkName | undefined
     },
     networkLabel(state) {
       return state.network?.chain?.name

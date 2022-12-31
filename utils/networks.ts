@@ -111,11 +111,15 @@ export const networkList: NetworkInfo[] = [
   networks.gnosis,
 ]
 
+/**
+ * Gas limit for simple transaction in gwei.
+ * This should be equal to the minimum trasaction cost in gwei.
+ */
 export const transactionGasLimit: Record<NetworkName, number> = {
   homestead: 21000,
   optimism: 0,
   arbitrum: 0,
   zksync: 0,
-  matic: 0,
+  matic: 21000,
   gnosis: 0,
 }

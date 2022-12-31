@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const wallet = useWalletStore()
 const networkStore = useNetworkStore()
 </script>
 
@@ -6,7 +7,7 @@ const networkStore = useNetworkStore()
   <div flex items-center>
     <Icon name="block" />
     <div ml-2 text-xs text-dim>
-      {{ networkStore.homestead.blocknumber || '...' }}
+      {{ wallet?.networkName && networkStore ? networkStore[wallet.networkName].blocknumber : '...' }}
     </div>
     <div
       v-if="networkStore.homestead.status"

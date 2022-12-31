@@ -1,3 +1,7 @@
+/**
+ * Returns gas price for the network in gwei.
+ * @param networkName
+ */
 export const useGasPrice = (networkName: NetworkName) => {
   const networkStore = useNetworkStore()
   return computed(() => {
@@ -12,8 +16,9 @@ export const useGasPriceFormatted = (networkName: NetworkName, naValue = 'N/A') 
 }
 
 export const useTransactionCost = (networkName: NetworkName) => {
+  const tokenPrice = useTokenPrice(networks[networkName].token?.name as TokenName)
   const gp = useGasPrice(networkName)
-  return computed(() => gp.value ? gp.value / 1000000 * transactionGasLimit[networkName] : undefined)
+  return computed(() => tokenPrice && gp.value ? gp.value * transactionGasLimit[networkName] / 1e9 * tokenPrice.value : undefined)
 }
 
 export const useTransactionCostFormatted = (networkName: NetworkName, naValue = 'N/A') => {
@@ -21,11 +26,11 @@ export const useTransactionCostFormatted = (networkName: NetworkName, naValue = 
   const currency = useCurrency()
   return computed(() => (
     tc.value
-      ? new Intl.NumberFormat('en-US', {
+      ? `${tc.value < 0.01 ? '< ' : ''}${new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: currency.ticker,
       })
-        .format(tc.value)
+        .format(tc.value)}`
       : naValue
   ))
 }

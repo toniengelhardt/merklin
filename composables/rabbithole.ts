@@ -6,9 +6,11 @@ import { ethers } from 'ethers'
 
 let web3Provider: ethers.providers.Web3Provider
 let web3Signer: ethers.providers.JsonRpcSigner
-let defaultProvider: ethers.providers.BaseProvider
 let rpcProvider: ethers.providers.JsonRpcProvider
 let etherscanProvider: ethers.providers.EtherscanProvider
+
+// We need one default provider per network.
+const defaultProviders: Partial<Record<NetworkName, ethers.providers.BaseProvider>> = {}
 
 const network = 'homestead'
 
@@ -29,9 +31,9 @@ export const useWeb3Provider = async () => {
  * Get free API keys and add them to your .env file (see .env.example).
  */
 export const useDefaultProvider = async (network: NetworkName) => {
-  if (!defaultProvider) {
+  if (!defaultProviders[network]) {
     const config = useRuntimeConfig()
-    defaultProvider = await ethers.getDefaultProvider(network, {
+    defaultProviders[network] = await ethers.getDefaultProvider(network, {
       etherscan: config.public.etherscanApiKey,
       infura: config.public.infuraApiKey,
       alchemy: config.public.alchemyApiKey,
@@ -39,7 +41,7 @@ export const useDefaultProvider = async (network: NetworkName) => {
       ankr: config.public.ankrApiKey,
     })
   }
-  return defaultProvider
+  return defaultProviders[network]
 }
 
 export const useRpcProvider = async () => {

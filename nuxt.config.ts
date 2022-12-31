@@ -13,7 +13,7 @@ export default defineNuxtConfig({
       alchemyApiKey: process.env.ALCHEMY_API_KEY,
       pocketApiKey: process.env.POCKET_API_KEY,
       ankrApiKey: process.env.ANKR_API_KEY,
-      ethJsonRpcUrl: process.env.ETH_RPC_URL || 'https://eth-mainnet.g.alchemy.com/v2/n5Vj8wE2BHWCtpxqeIZZRJFMVyvifuYv',
+      jsonRpcUrl: process.env.ETH_RPC_URL || 'https://eth-mainnet.g.alchemy.com/v2/n5Vj8wE2BHWCtpxqeIZZRJFMVyvifuYv',
       repoUrl: 'https://github.com/toniengelhardt/m3tadata',
       twitterUrl: '',
       discordUrl: '',
@@ -28,6 +28,7 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     'nuxt-headlessui',
     'nuxt-icon',
+    'nuxt-security',
   ],
   imports: {
     dirs: [
@@ -94,8 +95,6 @@ export default defineNuxtConfig({
       theme_color: '#000000',
     },
     icon: {
-      // source: '/icon.png',
-      // maskableSource: '/icon.maskable.png',
       maskablePadding: 0,
     },
   },
