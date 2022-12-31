@@ -42,7 +42,7 @@ export const useNetworkStore = defineStore('networks', {
         this.matic.status = 'connected'
       }
       catch {
-        this.homestead.status = 'error'
+        this.matic.status = 'error'
       }
       return Promise.resolve()
     },
