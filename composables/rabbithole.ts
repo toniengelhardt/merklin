@@ -28,7 +28,7 @@ export const useWeb3Provider = async () => {
  * https://docs.ethers.io/v5/api/providers/
  * Get free API keys and add them to your .env file (see .env.example).
  */
-export const useDefaultProvider = async () => {
+export const useDefaultProvider = async (network: NetworkName) => {
   if (!defaultProvider) {
     const config = useRuntimeConfig()
     defaultProvider = await ethers.getDefaultProvider(network, {

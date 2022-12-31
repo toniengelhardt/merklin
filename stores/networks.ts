@@ -22,7 +22,7 @@ export const useNetworkStore = defineStore('networks', {
   actions: {
     async updateBlocknumber() {
       try {
-        const defaultProvider = await useDefaultProvider()
+        const defaultProvider = await useDefaultProvider('homestead')
         this.homestead.blocknumber = await defaultProvider.getBlockNumber()
         this.homestead.status = 'connected'
       }
@@ -33,9 +33,19 @@ export const useNetworkStore = defineStore('networks', {
     },
     async updateGasPrice() {
       try {
-        const defaultProvider = await useDefaultProvider()
+        const defaultProvider = await useDefaultProvider('homestead')
         const gp = await defaultProvider.getGasPrice()
         this.homestead.gasPrice = Math.round(+ethersUtils.formatUnits(gp, 'gwei'))
+      }
+      catch { }
+      return Promise.resolve()
+    },
+    async updateMaticGasPrice() {
+      try {
+        const defaultProvider = await useDefaultProvider('matic')
+        const gp = await defaultProvider.getGasPrice()
+        this.matic.gasPrice = Math.round(+ethersUtils.formatUnits(gp, 'gwei'))
+        this.matic.status = 'connected'
       }
       catch { }
       return Promise.resolve()
@@ -45,6 +55,7 @@ export const useNetworkStore = defineStore('networks', {
       const res = await Promise.all([
         this.updateBlocknumber(),
         this.updateGasPrice(),
+        this.updateMaticGasPrice(),
       ])
       return res
     },
