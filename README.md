@@ -72,9 +72,9 @@ pnpm dev
 
 Upon opening a PR to `main` GitHub actions will run the following checks:
 
-- Lint
-- Typecheck
-- Build and run tests with Vitest
+- Lint (ESLint)
+- Typecheck (vue-tsc)
+- Build and run tests (Vitest)
 
 ## More
 
