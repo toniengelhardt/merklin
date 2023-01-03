@@ -33,6 +33,32 @@ export const useNetworkStore = defineStore('networks', {
       }
       return Promise.resolve()
     },
+    async updateOptimismNetwork() {
+      try {
+        const provider = await useDefaultProvider('optimism')
+        this.optimism.blocknumber = await provider!.getBlockNumber()
+        const gp = await provider!.getGasPrice()
+        this.optimism.gasPrice = Math.round(+ethersUtils.formatUnits(gp, 'gwei'))
+        this.optimism.status = 'connected'
+      }
+      catch {
+        this.optimism.status = 'error'
+      }
+      return Promise.resolve()
+    },
+    async updateArbitrumNetwork() {
+      try {
+        const provider = await useDefaultProvider('arbitrum')
+        this.arbitrum.blocknumber = await provider!.getBlockNumber()
+        const gp = await provider!.getGasPrice()
+        this.arbitrum.gasPrice = Math.round(+ethersUtils.formatUnits(gp, 'gwei'))
+        this.arbitrum.status = 'connected'
+      }
+      catch {
+        this.arbitrum.status = 'error'
+      }
+      return Promise.resolve()
+    },
     async updateMaticNetwork() {
       try {
         const provider = await useDefaultProvider('matic')
@@ -50,6 +76,8 @@ export const useNetworkStore = defineStore('networks', {
       console.log('Updating networks (10s interval)')
       const res = await Promise.all([
         this.updateHomesteadNetwork(),
+        this.updateOptimismNetwork(),
+        this.updateArbitrumNetwork(),
         this.updateMaticNetwork(),
       ])
       return res

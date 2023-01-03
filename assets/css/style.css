@@ -26,6 +26,7 @@ a:visited {
   color: inherit;
 }
 
+.obscure .text-obscure,
 .obscure .text-value,
 .obscure .text-currency,
 .obscure .text-address {

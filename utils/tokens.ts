@@ -39,8 +39,8 @@ export const tokens: Record<TokenName, Token> = {
 // Tokens to be displayed in feeds (ordererd)
 export const tokenList: Token[] = [
   tokens.eth,
+  tokens.op,
   tokens.matic,
   tokens.xdai,
-  tokens.op,
   tokens.gno,
 ]

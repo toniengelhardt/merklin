@@ -13,6 +13,9 @@ const otherNetworks = $computed(() => networkList.filter(network => network !== 
     :toggle-label="ui.mobile ? undefined : (activeNetwork.label || 'N/A')"
     toggle-class="btn-transparent px-4"
   >
+    <template v-if="!ui.mobile" #before>
+      <Icon name="dropdown" class="text-dim" mr-1.5 />
+    </template>
     <MenuItem
       v-for="network in otherNetworks"
       :key="network.name"

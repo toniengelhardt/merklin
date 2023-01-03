@@ -47,7 +47,7 @@ export default defineAppConfig({
       visible: 'ph:eye-duotone',
       obscured: 'ph:eye-closed-duotone',
       // Blockchain:
-      wallet: 'ph:wallet-duotone',
+      wallet: 'ph:cardholder-duotone',
       gas: 'ph:gas-pump-duotone',
       block: 'ph:cube-duotone',
       network: 'ph:graph-duotone',

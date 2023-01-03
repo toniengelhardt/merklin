@@ -1,7 +1,7 @@
 <script setup lang="ts">
 withDefaults(defineProps<{
   orientation?: 'left' | 'right'
-  toggleIcon: ItemIcon
+  toggleIcon?: ItemIcon
   toggleLabel?: string
   toggleClass?: string
   items?: MenuItem[]
@@ -15,8 +15,10 @@ withDefaults(defineProps<{
     <HeadlessMenu as="div" relative>
       <div>
         <HeadlessMenuButton :class="toggleClass">
+          <slot name="before" />
           <slot name="icon">
             <Icon
+              v-if="toggleIcon"
               :name="toggleIcon.name"
               :size="toggleIcon.size"
               :class="toggleIcon.class"

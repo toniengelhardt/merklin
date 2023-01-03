@@ -13,10 +13,10 @@
         </div>
         <div class="flex-1/2 lt-md:ml-2 md:(flex-1 mt-4)" panel flex-center flex-col>
           <div mb-1 text-faint font-bold>
-            Vibe
+            Wallet total
           </div>
           <div text-4xl md:text-5xl font-black text-gradient-yellow-rose>
-            69
+            $42
           </div>
         </div>
       </div>
