@@ -55,11 +55,12 @@ const items = {
     <MenuItem v-slot="{ active }">
       <ObscureToggle :class="[active ? 'bg-element' : undefined]" @click.prevent />
     </MenuItem>
+    <MenuDivider />
     <MenuItem :item="items.github" />
     <MenuItem :item="items.repotracker" />
     <MenuItem :item="items.plausible" />
     <MenuItem :item="items.web3VueNuxtProjects" />
-    <MenuItem :item="items.twitter" />
-    <MenuItem :item="items.discord" />
+    <!-- <MenuItem :item="items.twitter" />
+    <MenuItem :item="items.discord" /> -->
   </Menu>
 </template>

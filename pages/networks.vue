@@ -42,10 +42,16 @@
             Token:
           </div>
           <div class="value">
-            {{ network.token?.ticker || '--' }}
-            <small v-if="network.token?.types" text-dim>
+            {{ network.token.ticker || '--' }}
+            <small v-if="network.token.types" text-dim>
               ({{ network.token.types.join(', ') }})
             </small>
+            <template v-if="network.govToken && network.govToken !== network.token">
+              , {{ network.govToken.ticker }}
+              <small v-if="network.govToken.types" text-dim>
+                ({{ network.govToken.types.join(', ') }})
+              </small>
+            </template>
           </div>
         </div>
         <div class="item">
@@ -53,7 +59,13 @@
             Price:
           </div>
           <div class="value">
-            {{ network.token ? useTokenPriceFormatted(network.token.name).value : '--' }}
+            {{
+              network.govToken
+                ? useTokenPriceFormatted(network.govToken.name).value
+                : network.token
+                  ? useTokenPriceFormatted(network.token.name).value
+                  : '--'
+            }}
           </div>
         </div>
         <div class="item">

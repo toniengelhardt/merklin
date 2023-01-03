@@ -6,5 +6,8 @@
     <p text-sm italic text-dim>
       Under construction...
     </p>
+    <p m-0>
+      <AppContributeButton />
+    </p>
   </div>
 </template>

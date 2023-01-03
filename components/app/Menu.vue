@@ -20,16 +20,7 @@
         This project is work in progress and the presented data might not be correct. Use at your own risk!
       </p>
       <p flex items-center m-0 mt-2>
-        <NuxtLink
-          :to="$config.repoUrl"
-          title="MΞTADATA repository on GitHub"
-          target="_blank"
-          btn-default h-6 px-2 rounded
-        >
-          <!-- <Icon name="opensource" mr-1 style="color: #4CAF50" /> -->
-          <Icon name="github" mr-1 />
-          <span>Contribute</span>
-        </NuxtLink>
+        <AppContributeButton />
       </p>
     </div>
   </div>

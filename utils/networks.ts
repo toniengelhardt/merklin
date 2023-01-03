@@ -39,7 +39,8 @@ export const networks: Record<NetworkName, NetworkInfo> = {
     label: 'Optimism',
     layer: 'L2',
     technology: networkTechnologies.optimisticRollups,
-    token: tokens.op,
+    token: tokens.eth,
+    govToken: tokens.op,
     tps: {
       max: 'up to 2k',
       24: '??',
@@ -53,6 +54,7 @@ export const networks: Record<NetworkName, NetworkInfo> = {
     label: 'Arbitrum',
     layer: 'L2',
     technology: networkTechnologies.optimisticRollups,
+    token: tokens.eth,
     tps: {
       max: 'up to 65k',
       24: '??',
@@ -66,6 +68,7 @@ export const networks: Record<NetworkName, NetworkInfo> = {
     label: 'zkSync',
     layer: 'L2',
     technology: networkTechnologies.zkRollups,
+    token: tokens.eth,
     tps: {
       max: 'up to 3k',
       24: '??',
@@ -80,6 +83,7 @@ export const networks: Record<NetworkName, NetworkInfo> = {
     layer: 'L2',
     technology: networkTechnologies.sidechain,
     token: tokens.matic,
+    govToken: tokens.matic,
     tps: {
       max: 'up to 65k',
       24: '??',
@@ -94,6 +98,7 @@ export const networks: Record<NetworkName, NetworkInfo> = {
     layer: 'L2',
     technology: networkTechnologies.sidechain,
     token: tokens.xdai,
+    govToken: tokens.gno,
     tps: {
       max: '??',
       24: '??',

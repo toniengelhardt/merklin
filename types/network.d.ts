@@ -11,7 +11,8 @@ declare interface Network {
   label: string
   layer: NetworkLayer
   technology: NetworkTechnology
-  token?: Token
+  token: Token // Native (utility) token of the Network.
+  govToken?: Token // Potential governance token of the Network.
 }
 
 declare interface NetworkData {

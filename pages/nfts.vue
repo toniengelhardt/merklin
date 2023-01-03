@@ -12,7 +12,7 @@ const props = defineProps<{
         Concept
       </h2>
       <p text-dim>
-        Detailed NFT analytics including price, collection, storage location, mutability, etc.
+        Detailed analytics for NFTs and SBTs, including storage location, mutability, etc.
       </p>
     </div>
   </div>

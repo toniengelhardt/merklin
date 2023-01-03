@@ -15,7 +15,7 @@ export const tokens: Record<TokenName, Token> = {
   },
   matic: {
     name: 'matic',
-    types: ['utility'],
+    types: ['utility', 'governance'],
     icon: 'polygon',
     ticker: 'MATIC',
     label: 'MATIC',

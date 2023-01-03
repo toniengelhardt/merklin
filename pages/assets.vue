@@ -12,7 +12,7 @@ const props = defineProps<{
         Concept
       </h2>
       <p text-dim>
-        Overview of token balances and DeFi positions.
+        Overview of all assets in the wallet.
       </p>
     </div>
   </div>

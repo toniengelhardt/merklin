@@ -29,7 +29,7 @@
     "@unocss/nuxt": "^0.48.0",
     "@unocss/transformer-directives": "^0.48.0",
     "@vitest/ui": "^0.26.3",
-    "@vueuse/nuxt": "^9.9.0",
+    "@vueuse/nuxt": "^9.10.0",
     "eslint": "^8.31.0",
     "nuxt": "^3.0.0",
     "nuxt-headlessui": "^1.0.4",
@@ -42,7 +42,7 @@
   "dependencies": {
     "@esbuild-plugins/node-globals-polyfill": "^0.1.1",
     "@pinia/nuxt": "^0.4.6",
-    "@wagmi/core": "^0.8.9",
+    "@wagmi/core": "^0.8.10",
     "buffer": "^6.0.3",
     "chart.js": "^4.1.1",
     "chartjs-adapter-date-fns": "^3.0.0",
