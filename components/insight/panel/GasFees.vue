@@ -5,7 +5,7 @@ const props = defineProps<{
 </script>
 
 <template>
-  <div panel>
+  <div panel md:h-61>
     <h2 panel-title>
       Gas burn
     </h2>

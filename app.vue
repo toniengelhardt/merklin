@@ -109,7 +109,7 @@ watchNetwork((network) => {
         <ActionBar v-if="!ui.mobile" />
         <div
           class="content"
-          flex-1 flex overflow-scroll box-border
+          flex-1 flex items-start overflow-scroll box-border
         >
           <NuxtPage v-if="wallet.address" />
           <Connect v-else />
