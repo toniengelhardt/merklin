@@ -2,9 +2,9 @@
 
 This is an attempt to build an open-source EVM wallet explorer (similar to [Zapper](https://zapper.fi/), [Zerion](https://app.zerion.io/), etc.) based on [Vue](https://vuejs.org) and [Nuxt](https://nuxt.com) and supercharge it with powerful analytics and visualizations.
 
-<img width="960" alt="MΞTAD🦧TA preview insights" src="https://user-images.githubusercontent.com/2703233/206712331-3f227ed3-cfbf-406d-8cdf-cc9b87e58066.png">
+<img width="1680" alt="MΞTADATA preview insights" src="https://user-images.githubusercontent.com/2703233/210439256-38d57caf-56a9-40b7-9ef5-5d1de79d2717.png">
 
-<img width="960" alt="MΞTAD🦧TA preview transactions" src="https://user-images.githubusercontent.com/2703233/206712383-f7bb3fc4-4a64-4c1a-b97e-42d063fc9a8a.png">
+<img width="1680" alt="MΞTADATA preview transactions" src="https://user-images.githubusercontent.com/2703233/210439333-6bb5ecfb-30ce-46f3-a261-4bafafd2c206.png">
 
 The idea is to focus primarily on on-chain analytics, i.a.
 
