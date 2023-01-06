@@ -57,6 +57,7 @@ const chainlinkPriceAddresses = {
   op_usd: '0x0D276FC14719f9292D5C1eA2198673d1f4269246',
   matic_usd: '0x7bac85a8a13a4bcd8abb3eb7d6b4d632c5a57676',
   dai_usd: '0xaed0c38402a5d19df6e4c03f4e2dced6e29c1ee9',
+  xdai_usd: '0xaed0c38402a5d19df6e4c03f4e2dced6e29c1ee9',
   gno_usd: '0xA614953dF476577E90dcf4e3428960e221EA4727',
 }
 
