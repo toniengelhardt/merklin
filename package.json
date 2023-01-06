@@ -26,8 +26,8 @@
     "@nuxt/test-utils": "^3.0.0",
     "@nuxtjs/color-mode": "^3.2.0",
     "@nuxtjs/plausible": "^0.2.0",
-    "@unocss/nuxt": "^0.48.1",
-    "@unocss/transformer-directives": "^0.48.1",
+    "@unocss/nuxt": "^0.48.2",
+    "@unocss/transformer-directives": "^0.48.2",
     "@vitest/ui": "^0.26.3",
     "@vueuse/nuxt": "^9.10.0",
     "eslint": "^8.31.0",
@@ -42,7 +42,7 @@
   "dependencies": {
     "@esbuild-plugins/node-globals-polyfill": "^0.1.1",
     "@pinia/nuxt": "^0.4.6",
-    "@wagmi/core": "^0.8.10",
+    "@wagmi/core": "^0.8.11",
     "buffer": "^6.0.3",
     "chart.js": "^4.1.2",
     "chartjs-adapter-date-fns": "^3.0.0",
@@ -55,6 +55,7 @@
     "process": "^0.11.10",
     "util": "^0.12.5",
     "vue-blockies": "^1.0.0",
-    "vue-chartjs": "^5.1.0"
+    "vue-chartjs": "^5.1.0",
+    "vue-cryptoicon": "0.18.0-a"
   }
 }

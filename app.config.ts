@@ -20,9 +20,11 @@ export default defineAppConfig({
       walletconnect: 'IconWalletConnect',
       injected: 'ph:syringe-duotone',
       // Networks:
+      bitcoin: 'logos:bitcoin',
       ethereum: 'logos:ethereum',
       arbitrum: 'IconArbitrum',
       optimism: 'IconOptimism',
+      op: 'IconOptimism',
       polygon: 'IconPolygon',
       zksync: 'IconZkSync',
       gnosis: 'IconGnosis',

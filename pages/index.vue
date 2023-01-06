@@ -7,7 +7,7 @@
             <!-- <span inline-block ml-12>gm</span> -->
             <span inline-block w-12 class="text-center text-1.5rem md:text-1.8rem">🪄</span>
           </h2>
-          <div md:mt-1 italic text-sm text-dim text-center leading-tight>
+          <div md:mt-3 italic text-sm text-dim text-center leading-tight>
             Ready for some magic?
           </div>
         </div>

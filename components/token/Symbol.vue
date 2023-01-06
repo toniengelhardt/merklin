@@ -8,7 +8,7 @@ const token = tokens[props.name]
 <template>
   <div flex items-center>
     <div flex-center w-6 h-6 bg-element rounded-full>
-      <Icon :name="token.icon" />
+      <TokenIcon :token="token" />
     </div>
     <div ml-6px>
       {{ token.label }}

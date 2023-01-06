@@ -3,7 +3,7 @@
  */
 export const useTokenPrice = (tokenName: TokenName) => {
   const priceStore = usePriceStore()
-  const identifier = tokenName + useCapitalize(useCurrency().name)
+  const identifier = `${tokenName}_${useCurrency().name}`
   return computed(() => priceStore[identifier as keyof typeof priceStore])
 }
 

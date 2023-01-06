@@ -50,48 +50,22 @@ const aggregatorV3InterfaceABI = [
   },
 ]
 
-// ETH/USD Chainlink contract
-const ethUsdChainlinkAddress = '0x5f4ec3df9cbd43714fe2740f5e3616155c5b8419'
-// MATIC/USD Chainlink contract
-const maticUsdChainlinkAddress = '0x7bac85a8a13a4bcd8abb3eb7d6b4d632c5a57676'
-// OP/USD Chainlink contract
-const optimismUsdAddress = '0x0d276fc14719f9292d5c1ea2198673d1f4269246'
-// xDai/USD Chainlink contract
-const daiChainlinkAddress = '0xaed0c38402a5d19df6e4c03f4e2dced6e29c1ee9'
-
-let ethUsdChainlinkContract: ethers.Contract
-let maticUsdChainlinkContract: ethers.Contract
-let optimismUsdContract: ethers.Contract
-let daiChainlinkContract: ethers.Contract
-
-export const useEthPriceFeed = async () => {
-  if (!ethUsdChainlinkContract) {
-    const provider = await useRpcProvider()
-    ethUsdChainlinkContract = new ethers.Contract(ethUsdChainlinkAddress, aggregatorV3InterfaceABI, provider)
-  }
-  return ethUsdChainlinkContract
+// Source: https://docs.chain.link/data-feeds/price-feeds/addresses/
+const chainlinkPriceAddresses = {
+  btc_usd: '0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c',
+  eth_usd: '0x5f4ec3df9cbd43714fe2740f5e3616155c5b8419',
+  op_usd: '0x0D276FC14719f9292D5C1eA2198673d1f4269246',
+  matic_usd: '0x7bac85a8a13a4bcd8abb3eb7d6b4d632c5a57676',
+  dai_usd: '0xaed0c38402a5d19df6e4c03f4e2dced6e29c1ee9',
+  gno_usd: '0xA614953dF476577E90dcf4e3428960e221EA4727',
 }
 
-export const useMaticPriceFeed = async () => {
-  if (!maticUsdChainlinkContract) {
-    const provider = await useRpcProvider()
-    maticUsdChainlinkContract = new ethers.Contract(maticUsdChainlinkAddress, aggregatorV3InterfaceABI, provider)
-  }
-  return maticUsdChainlinkContract
-}
+const chainlinkPriceContracts: Record<string, ethers.Contract> = {}
 
-export const useOptimismPriceFeed = async () => {
-  if (!optimismUsdContract) {
+export const usePriceFeed = async (marketPair: MarketPair) => {
+  if (!chainlinkPriceContracts[marketPair]) {
     const provider = await useRpcProvider()
-    optimismUsdContract = new ethers.Contract(optimismUsdAddress, aggregatorV3InterfaceABI, provider)
+    chainlinkPriceContracts[marketPair] = new ethers.Contract(chainlinkPriceAddresses[marketPair], aggregatorV3InterfaceABI, provider)
   }
-  return optimismUsdContract
-}
-
-export const useDaiPriceFeed = async () => {
-  if (!daiChainlinkContract) {
-    const provider = await useRpcProvider()
-    daiChainlinkContract = new ethers.Contract(daiChainlinkAddress, aggregatorV3InterfaceABI, provider)
-  }
-  return daiChainlinkContract
+  return chainlinkPriceContracts[marketPair]
 }

@@ -1,7 +1,7 @@
-declare type TokenName = 'eth' | 'op' | 'matic' | 'xdai' | 'gno'
+declare type TokenName = 'btc' | 'eth' | 'op' | 'matic' | 'dai' | 'xdai' | 'gno'
 declare type TokenTypes = ('utility' | 'governance' | 'stable' | 'security')[]
 declare type TokenIcon = typeof string
-declare type TokenTicker = 'ETH' | 'OP' | 'MATIC' | 'XDAI' | 'GNO'
+declare type TokenTicker = 'BTC' | 'ETH' | 'OP' | 'MATIC' | 'DAI' | 'XDAI' | 'GNO'
 declare type TokenPrice = BigNumber
 
 declare interface Token {

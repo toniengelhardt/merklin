@@ -82,7 +82,7 @@ export const useTransactions = async () => {
 export const useEthToCurrency = (value: number | undefined) => {
   if (value) {
     const priceStore = usePriceStore()
-    const conversionFactor = priceStore.ethUsd || 0
+    const conversionFactor = priceStore.eth_usd || 0
     return value * conversionFactor
   }
 }
