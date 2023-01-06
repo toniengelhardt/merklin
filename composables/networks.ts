@@ -10,9 +10,13 @@ export const useGasPrice = (networkName: NetworkName) => {
   })
 }
 
-export const useGasPriceFormatted = (networkName: NetworkName, naValue = 'N/A') => {
+export const useGasPriceFormatted = (networkName: NetworkName, naValue = 'N/A', includeUnit = false) => {
   const gp = useGasPrice(networkName)
-  return computed(() => gp.value ? `${gp.value} gwei` : naValue)
+  return computed(() => (
+    gp.value !== undefined && gp.value !== null
+      ? (+gp.value < 1 ? gp.value.toPrecision(1) : Math.round(gp.value)) + (includeUnit ? ' gwei' : '')
+      : naValue
+  ))
 }
 
 export const useTransactionCost = (networkName: NetworkName) => {

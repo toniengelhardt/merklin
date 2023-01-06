@@ -46,7 +46,7 @@ const networkStore = useNetworkStore()
             {{ network.label }}
           </div>
         </td>
-        <td>{{ networkStore[network.name].gasPrice || '?' }}</td>
+        <td>{{ useGasPriceFormatted(network.name, '?', false).value }}</td>
         <td nowrap>
           {{ useTransactionCostFormatted(network.name, '?').value }}
         </td>

@@ -25,7 +25,7 @@ export const useNetworkStore = defineStore('networks', {
         const provider = await useDefaultProvider('homestead')
         this.homestead.blocknumber = await provider!.getBlockNumber()
         const gp = await provider!.getGasPrice()
-        this.homestead.gasPrice = Math.round(+ethersUtils.formatUnits(gp, 'gwei'))
+        this.homestead.gasPrice = +ethersUtils.formatUnits(gp, 'gwei')
         this.homestead.status = 'connected'
       }
       catch {
@@ -36,9 +36,10 @@ export const useNetworkStore = defineStore('networks', {
     async updateOptimismNetwork() {
       try {
         const provider = await useDefaultProvider('optimism')
-        this.optimism.blocknumber = await provider!.getBlockNumber()
+        const x = await provider!.getBlockNumber()
+        this.optimism.blocknumber = x
         const gp = await provider!.getGasPrice()
-        this.optimism.gasPrice = Math.round(+ethersUtils.formatUnits(gp, 'gwei'))
+        this.optimism.gasPrice = +ethersUtils.formatUnits(gp, 'gwei')
         this.optimism.status = 'connected'
       }
       catch {
@@ -51,7 +52,7 @@ export const useNetworkStore = defineStore('networks', {
         const provider = await useDefaultProvider('arbitrum')
         this.arbitrum.blocknumber = await provider!.getBlockNumber()
         const gp = await provider!.getGasPrice()
-        this.arbitrum.gasPrice = Math.round(+ethersUtils.formatUnits(gp, 'gwei'))
+        this.arbitrum.gasPrice = +ethersUtils.formatUnits(gp, 'gwei')
         this.arbitrum.status = 'connected'
       }
       catch {
@@ -64,7 +65,7 @@ export const useNetworkStore = defineStore('networks', {
         const provider = await useDefaultProvider('matic')
         this.matic.blocknumber = await provider!.getBlockNumber()
         const gp = await provider!.getGasPrice()
-        this.matic.gasPrice = Math.round(+ethersUtils.formatUnits(gp, 'gwei'))
+        this.matic.gasPrice = +ethersUtils.formatUnits(gp, 'gwei')
         this.matic.status = 'connected'
       }
       catch {

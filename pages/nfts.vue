@@ -26,7 +26,7 @@ const props = defineProps<{
           class="inline-block text-base underline"
         >
           SBTs
-        </NuxtLink>, including storage location, mutability, etc.
+        </NuxtLink> (soulbound tokens), including storage location, mutability, etc.
       </p>
       <p text-dim>
         Inspiration:

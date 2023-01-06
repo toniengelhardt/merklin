@@ -23,8 +23,8 @@ export const appMenuItems = [
     icon: {
       name: 'nft',
     },
-    label: 'NFTs / SBTs',
-    title: 'NFTs and SBTs',
+    label: 'NFTs',
+    title: 'NFTs',
     link: '/nfts',
   },
   {

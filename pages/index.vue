@@ -5,15 +5,15 @@
         <div class="flex-1/2 md:flex-1" panel flex-center flex-col>
           <h2 w-full m-0 text-3xl text-center font-black>
             <!-- <span inline-block ml-12>gm</span> -->
-            <span inline-block w-12 class="text-center text-1.5rem md:text-1.8rem">🌴</span>
+            <span inline-block w-12 class="text-center text-1.5rem md:text-1.8rem">🪄</span>
           </h2>
           <div md:mt-1 italic text-sm text-dim text-center leading-tight>
-            Welcome to the jungle
+            Ready for some magic?
           </div>
         </div>
         <div class="flex-1/2 lt-md:ml-2 md:(flex-1 mt-4)" panel flex-center flex-col>
           <div mb-1 text-faint font-bold>
-            Wallet total
+            Total
           </div>
           <div text-4xl md:text-5xl font-black text-gradient-yellow-rose>
             $42
@@ -25,7 +25,7 @@
       <div panel md:h-61>
         <h2 panel-title flex justify-between>
           <span>Performance</span>
-          <span class="mx-1 text-1.5rem text-base">🦍</span>
+          <span class="mx-1 text-1.5rem text-base">🧞‍♂️</span>
         </h2>
         <div italic text-dim>
           Coming soon...
@@ -56,7 +56,7 @@
     </div>
     <div col-span-12 md:col-span-3 panel>
       <h2 panel-title>
-        D<span font-mono>0x</span>ing score<span ml-3 text-base>🐍</span>
+        D<span font-mono>0x</span>ing score<span ml-2 text-base>🐉</span>
       </h2>
       <div>
         Pseudonymity compromised?
@@ -67,7 +67,7 @@
     </div>
     <div col-span-12 md:col-span-3 panel>
       <h2 panel-title>
-        Airdrop detection<span ml-3 text-base>🍌</span>
+        Airdrop detection<span ml-2 text-base>🧚🏼‍♂️</span>
       </h2>
       <div>
         Similar to
