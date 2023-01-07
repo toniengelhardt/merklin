@@ -1,10 +1,11 @@
-# M Ξ T A D 🦧 T A
+# M Ξ R K L 🧙🏽‍♂️ N
+
+**Note:** I renamed the project from **m3tadata** to **merklin**. Not sure if this will be the final name, but for now it works I guess. You can find a preview of the app a [merklin.xyz](https://merklin.xyz). The theme changed, from jungle to magic 🪄.
 
 This is an attempt to build an open-source EVM wallet explorer (similar to [Zapper](https://zapper.fi/), [Zerion](https://app.zerion.io/), etc.) based on [Vue](https://vuejs.org) and [Nuxt](https://nuxt.com) and supercharge it with powerful analytics and visualizations.
 
-<img width="1680" alt="MΞTADATA preview insights" src="https://user-images.githubusercontent.com/2703233/210439256-38d57caf-56a9-40b7-9ef5-5d1de79d2717.png">
+<img width="49%" alt="Merklin Preview Insights" src="https://user-images.githubusercontent.com/2703233/211148722-a13ec34b-a16d-45dd-98f0-af4f4172ca38.png"> <img width="49%" alt="Merklin Preview Transactions" src="https://user-images.githubusercontent.com/2703233/211148727-b61ca5ba-043c-45f3-873f-49b96fd9140f.png">
 
-<img width="1680" alt="MΞTADATA preview transactions" src="https://user-images.githubusercontent.com/2703233/210439333-6bb5ecfb-30ce-46f3-a261-4bafafd2c206.png">
 
 The idea is to focus primarily on on-chain analytics, i.a.
 
@@ -18,17 +19,19 @@ The idea is to focus primarily on on-chain analytics, i.a.
 
 For now, only Ethereum and its L2 scaling solutions: [Ethereum](https://ethereum.org), [Arbitrum](https://arbitrum.io), [Optimism](https://www.optimism.io/), [Polygon](https://polygon.technology), [Gnosis](https://www.gnosis.io), [zkSync](https://zksync.io), etc.
 
-Adding Bitcoin later on would be amazing!
+Adding [Bitcoin](https://bitcoin.org) and [Lightning](https://lightning.network) later on would be amazing!
 
 ## Goals
 
 ### Powerful web app 
 
-Secure web app that connects to all the popular wallets, starting with [MetaMask](https://metamask.io) and [WalletConnect](https://walletconnect.com).
+Secure web app that connects to all the popular wallets, starting with [MetaMask](https://metamask.io) and [WalletConnect](https://walletconnect.com). Using the app however should be possible without connecting a wallet.
 
 ### Web-only
 
 No native apps! Native apps are not suitable for web3 as they are subject to App Store / Play Store T&Cs and lock out a big part of the global population. Instead, let's leverage the web platform to deliver native-like mobile apps (more on that in [this post](https://itnext.io/lets-build-a-native-like-web-app-nwa-22a553fee338)).
+
+To check which web APIs are available on a given device you can just open [this page](https://webapicheck.com).
 
 Related also, some wise words from [@jack](https://twitter.com/jack):
 
