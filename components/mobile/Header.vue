@@ -4,7 +4,7 @@
       <Network />
     </div>
     <div flex-1 flex justify-center>
-      <Wallet />
+      <AddressSelect />
     </div>
     <div>
       <AccountMenu />

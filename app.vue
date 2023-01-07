@@ -117,7 +117,7 @@ watchNetwork((network) => {
         </div>
       </main>
       <div v-if="ui.mobile" h-16>
-        <MobileNavigation v-if="wallet.address" />
+        <MobileNavigation />
       </div>
     </div>
     <teleport to="body">

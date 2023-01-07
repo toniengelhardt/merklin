@@ -56,6 +56,7 @@ export default defineAppConfig({
       block: 'ph:cube-duotone',
       network: 'ph:graph-duotone',
       blockchain: 'icon-park-twotone:blockchain',
+      token: 'ic:outline-generating-tokens',
       transaction: 'ph:arrows-left-right-duotone',
       nft: 'ph:hexagon-duotone',
       airdrop: 'ph:parachute-duotone',

@@ -9,7 +9,7 @@ const networkStore = useNetworkStore()
         <th width="100%">
           <div flex>
             <div w-6>
-              <Icon name="ph:poker-chip-duotone" text-faint />
+              <Icon name="blockchain" text-faint />
             </div>
             <div ml-6px text-left lt-md:hidden>
               Name

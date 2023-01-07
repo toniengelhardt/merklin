@@ -7,7 +7,7 @@ const networkStore = useNetworkStore()
   <div flex items-center>
     <Icon name="block" />
     <div ml-2 text-xs text-dim>
-      {{ wallet?.networkName && networkStore ? networkStore[wallet.networkName].blocknumber : '...' }}
+      {{ networkStore ? networkStore[wallet.networkName || 'homestead'].blocknumber : '...' }}
     </div>
     <div
       v-if="networkStore.homestead.status"

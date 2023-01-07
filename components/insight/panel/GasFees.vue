@@ -5,7 +5,7 @@ const addressStore = useAddressStore()
 <template>
   <div panel flex flex-col md:h-61>
     <h2 panel-title>
-      Gas burn
+      Gas bill
     </h2>
     <div py-2 flex-1 flex-center>
       <GasChartCumulativeFees v-if="addressStore.activeAddresses.length" w-full />
