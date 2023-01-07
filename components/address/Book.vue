@@ -1,5 +1,12 @@
 <script setup lang="ts">
 const addressStore = useAddressStore()
+
+const newAddressInput = ref<HTMLInputElement>()
+
+function addAddress(address: Address) {
+  addressStore.saveAddress(address)
+  newAddressInput.value!.value = ''
+}
 </script>
 
 <template>
@@ -24,9 +31,10 @@ const addressStore = useAddressStore()
       <div h-8 flex items-center>
         <Icon name="plus" w-5 text-faint />
         <input
+          ref="newAddressInput"
           placeholder="Add address..."
           flex-1 ml-2 bg-element border-none mr-1 px-3 py-1.5 rounded-md text-base
-          @keypress.enter="addressStore.saveAddress(($event.target as HTMLInputElement)?.value)"
+          @keypress.enter="addAddress(($event.target as HTMLInputElement)?.value)"
         >
       </div>
     </div>
