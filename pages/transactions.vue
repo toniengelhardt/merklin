@@ -1,15 +1,17 @@
 <script setup lang="ts">
-const wallet = useWalletStore()
+const addressStore = useAddressStore()
 </script>
 
 <template>
-  <div v-if="wallet.connected" class="page">
-    <TransactionPanelActivity col-span-12 md:col-span-8 />
-    <TransactionPanelAddresses col-span-12 md:col-span-4 />
-    <TransactionPanelHistory col-span-12 md:col-span-8 />
-    <TransactionPanelInsights col-span-12 md:col-span-4 max-h-60 />
+  <div class="page">
+    <template v-if="addressStore.activeAddresses.length">
+      <TransactionPanelActivity col-span-12 md:col-span-8 />
+      <TransactionPanelAddresses col-span-12 md:col-span-4 />
+      <TransactionPanelHistory col-span-12 md:col-span-8 />
+      <TransactionPanelInsights col-span-12 md:col-span-4 max-h-60 />
+    </template>
+    <PanelSelectAddress v-else col-span-12 md:col-span-4 md:h-61 />
   </div>
-  <Loading v-else />
 </template>
 
 <style>

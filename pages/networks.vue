@@ -20,21 +20,16 @@
           </div>
           <div class="value">
             {{ network.layer }}
-          </div>
-        </div>
-        <div class="item">
-          <div class="label">
-            Technology:
-          </div>
-          <div class="value">
-            <NuxtLink
-              :to="network.technology.link"
-              :title="network.technology.label"
-              target="_blank"
-              underline
-            >
-              {{ network.technology.label }}
-            </NuxtLink> <Icon name="external" />
+            <small text-dim>
+              (<NuxtLink
+                :to="network.technology.link"
+                :title="network.technology.label"
+                target="_blank"
+                underline
+              >
+                {{ network.technology.label }}
+              </NuxtLink>)
+            </small>
           </div>
         </div>
         <div class="item">
@@ -73,7 +68,7 @@
             Gas price:
           </div>
           <div class="value">
-            {{ useGasPriceFormatted(network.name).value }}
+            {{ useGasPriceFormatted(network.name, '--', true).value }}
           </div>
         </div>
         <div class="item">

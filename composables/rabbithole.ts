@@ -65,11 +65,11 @@ export const useEtherscanProvider = async () => {
 }
 
 export const useTransactions = async () => {
-  const wallet = useWalletStore()
-  if (wallet.address && wallet.network) {
+  const addressStore = useAddressStore()
+  if (addressStore.activeAddresses.length) {
     console.log('Fetching transactions...')
     const etherscanProvider = await useEtherscanProvider()
-    const transactions: TransactionResponse[] = await etherscanProvider.getHistory(wallet.address)
+    const transactions: TransactionResponse[] = await etherscanProvider.getHistory(addressStore.activeAddresses[0])
     return transactions
   }
   return Promise.resolve()

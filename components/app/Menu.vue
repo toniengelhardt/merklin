@@ -24,7 +24,7 @@
       </p>
     </div>
   </div>
-  <div h-12 flex justify-between items-center text-center px-6>
+  <div h-12 flex justify-between items-center text-sm text-center px-6>
     <NuxtLink
       href="https://nuxt.com"
       target="_blank"

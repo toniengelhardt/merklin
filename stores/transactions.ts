@@ -11,13 +11,15 @@ export const useTransactionStore = defineStore('transactions', {
   },
   actions: {
     async loadTransactions() {
+      const addressStore = useAddressStore()
+      const address = addressStore.activeAddresses.length ? addressStore.activeAddresses[0] : undefined
       const transactions = await useTransactions()
-      if (transactions !== undefined) {
-        const wallet = useWalletStore()
+      if (address && transactions !== undefined) {
+        // const wallet = useWalletStore()
         let prevDate: DateString | undefined
         const items: TransactionItem[] = transactions.map((transaction) => {
           const type = (
-            transaction.to?.toLowerCase() === wallet.address?.toLocaleLowerCase()
+            transaction.to?.toLowerCase() === address.toLocaleLowerCase()
               ? 'receive'
               : transaction.value._hex !== '0x00'
                 ? 'send'
