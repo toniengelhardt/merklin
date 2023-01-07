@@ -3,9 +3,24 @@ const addressStore = useAddressStore()
 
 const newAddressInput = ref<HTMLInputElement>()
 
+function selectAddress(address: Address) {
+  if (addressStore.activeAddresses.indexOf(address) === -1) {
+    addressStore.selectAddress(address)
+  } else {
+    addressStore.deselectAddress(address)
+  }
+}
+
 function addAddress(address: Address) {
   addressStore.saveAddress(address)
   newAddressInput.value!.value = ''
+  if (addressStore.activeAddresses.length === 0) {
+    addressStore.selectAddress(address)
+  }
+}
+
+function removeAddress(address: Address) {
+  addressStore.deleteAddress(address)
 }
 </script>
 
@@ -18,15 +33,20 @@ function addAddress(address: Address) {
       <div
         v-for="address in addressStore.savedAddresses"
         :key="address"
-        flex items-center mb-2 cursor-pointer
-        @click="addressStore.selectAddress(address)"
+        flex items-center mb-2
+        @click="selectAddress(address)"
       >
         <div flex-center h-5 w-5 rounded>
           <Icon v-if="addressStore.activeAddresses.includes(address)" name="check" text-green />
           <Icon v-else name="key" text-faint />
         </div>
-        <AddressIcon :address="address" w-4 h-4 ml-2 rounded lt-md:hidden />
-        <AddressDisplay :address="address" ml-1 />
+        <div flex items-center flex-1 cursor-pointer>
+          <AddressIcon :address="address" w-4 h-4 ml-2 rounded lt-md:hidden />
+          <AddressDisplay :address="address" ml-1 />
+        </div>
+        <div flex-center h-5 w-5 ml-2 cursor-pointer @click.stop="removeAddress(address)">
+          <Icon name="delete" />
+        </div>
       </div>
       <div h-8 flex items-center>
         <Icon name="plus" w-5 text-faint />

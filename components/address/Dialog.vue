@@ -11,7 +11,11 @@ function close() {
 </script>
 
 <template>
-  <AppDialog :model-value="modelValue" @update:model-value="close()">
+  <AppDialog
+    :model-value="modelValue"
+    max-width="50rem"
+    @update:model-value="close()"
+  >
     <template #title>
       Address Book
     </template>

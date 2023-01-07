@@ -2,9 +2,9 @@
 <script setup lang="ts">
 withDefaults(defineProps<{
   modelValue: boolean
-  size?: 'sm' | 'md' | 'lg' | 'xl'
+  maxWidth?: string
 }>(), {
-  size: 'md',
+  maxWidth: '35rem',
 })
 const emit = defineEmits<{
   (event: 'update:modelValue', value: boolean): void
@@ -61,8 +61,9 @@ function close() {
             leave-to="opacity-0 scale-95"
           >
             <HeadlessDialogPanel
-              w-full max-w-xl transform overflow-hidden rounded-2xl bg-base
+              w-full transform overflow-hidden rounded-2xl bg-base
               p-4 shadow-xl transition-all
+              :style="{ 'max-width': maxWidth }"
             >
               <HeadlessDialogTitle mt-0>
                 <div flex>

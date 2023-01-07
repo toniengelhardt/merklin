@@ -53,6 +53,7 @@ export default defineAppConfig({
       obscured: 'ph:eye-closed-duotone',
       harddrives: 'ph:hard-drives-duotone',
       key: 'ph:key-duotone',
+      delete: 'ph:trash-duotone',
       // Blockchain:
       wallet: 'ph:cardholder-duotone',
       gas: 'ph:gas-pump-duotone',
