@@ -7,7 +7,7 @@
   "license": "MIT",
   "packageManager": "pnpm@7.19.0",
   "scripts": {
-    "dev": "nuxt dev --https",
+    "dev": "nuxt dev",
     "build": "nuxt build",
     "generate": "nuxt generate",
     "preview": "nuxt preview",

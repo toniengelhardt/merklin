@@ -1,5 +1,3 @@
-import * as fs from 'fs'
-import { fileURLToPath } from 'url'
 import GlobalPolyFill from '@esbuild-plugins/node-globals-polyfill'
 
 const appTitle = 'Merklin'
@@ -102,11 +100,6 @@ export default defineNuxtConfig({
       source: 'public/icon.png',
       maskableSource: 'public/icon.maskable.png',
       maskablePadding: 0,
-      splash: {
-        backgroundColor: '#000000',
-        devices: [],
-        targetDir: 'splash',
-      },
     },
   },
   colorMode: {
