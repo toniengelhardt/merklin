@@ -36,8 +36,7 @@ export const useNetworkStore = defineStore('networks', {
     async updateOptimismNetwork() {
       try {
         const provider = await useDefaultProvider('optimism')
-        const x = await provider!.getBlockNumber()
-        this.optimism.blocknumber = x
+        this.optimism.blocknumber = await provider!.getBlockNumber()
         const gp = await provider!.getGasPrice()
         this.optimism.gasPrice = +ethersUtils.formatUnits(gp, 'gwei')
         this.optimism.status = 'connected'

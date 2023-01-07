@@ -15,6 +15,7 @@ window.global = window
 const intervals: ReturnType<typeof useIntervalFn>[] = []
 
 const ui = useUIStore()
+const addressStore = useAddressStore()
 const wallet = useWalletStore()
 const { updateNetworkData } = useNetworkStore()
 const { updatePriceData } = usePriceStore()
@@ -59,15 +60,16 @@ function onVisibilityChange() {
 /**
  * Called when either the account or the network changes.
  */
-function onWalletChange() {
+function onAddressChange() {
   if (wallet.address && wallet.networkName) {
     loadTransactions()
-    startDataFeeds()
   }
 }
 
 onMounted(() => {
   setMobile()
+  startDataFeeds()
+  loadTransactions()
   useEventListener(window.visualViewport, 'resize', useThrottleFn(() => setMobile(), 100))
   useEventListener(window.document, 'visibilitychange', onVisibilityChange)
 })
@@ -75,12 +77,12 @@ onMounted(() => {
 watchAccount((account) => {
   console.log('Account changed:', account.address)
   wallet.account = account
-  onWalletChange()
+  onAddressChange()
 })
 watchNetwork((network) => {
   console.log('Network changed:', network.chain?.network, network.chain?.name)
   wallet.network = network
-  onWalletChange()
+  onAddressChange()
 })
 </script>
 
@@ -111,14 +113,16 @@ watchNetwork((network) => {
           class="content"
           flex-1 flex items-start overflow-scroll box-border
         >
-          <NuxtPage v-if="wallet.address" />
-          <Connect v-else />
+          <NuxtPage />
         </div>
       </main>
       <div v-if="ui.mobile" h-16>
         <MobileNavigation v-if="wallet.address" />
       </div>
     </div>
+    <teleport to="body">
+      <AddressDialog v-model="ui.addressDialogOpen" />
+    </teleport>
   </div>
 </template>
 

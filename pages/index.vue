@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const addressStore = useAddressStore()
+</script>
+
 <template>
   <div class="page">
     <div col-span-12 md:col-span-3>
@@ -5,19 +9,20 @@
         <div class="flex-1/2 md:flex-1" panel flex-center flex-col>
           <h2 w-full m-0 text-3xl text-center font-black>
             <!-- <span inline-block ml-12>gm</span> -->
-            <span inline-block w-12 class="text-center text-1.5rem md:text-1.8rem">🪄</span>
+            <span inline-block w-12 class="text-center text-1.5rem md:text-1.8rem">🔮</span>
           </h2>
-          <div md:mt-3 italic text-sm text-dim text-center leading-tight>
-            Ready for some magic?
+          <div md:mt-2 italic text-sm text-dim text-center leading-tight>
+            sim sala gm
           </div>
         </div>
         <div class="flex-1/2 lt-md:ml-2 md:(flex-1 mt-4)" panel flex-center flex-col>
           <div mb-1 text-faint font-bold>
             Total
           </div>
-          <div text-4xl md:text-5xl font-black text-gradient-yellow-rose>
-            $42
+          <div v-if="addressStore.activeAddresses.length" text-4xl md:text-5xl font-black text-gradient-yellow-rose>
+            <span>$42</span>
           </div>
+          <AppNoAddress v-else />
         </div>
       </div>
     </div>

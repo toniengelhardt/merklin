@@ -18,8 +18,8 @@ const transactionStore = useTransactionStore()
 const items = $computed(() => transactionStore.transactionItems)
 const data = $computed(() => items ? generateData(items) : undefined)
 
-const currencyMin = $computed(() => useEthToCurrency(data ? data[0].y : undefined))
-const currencyMax = $computed(() => useEthToCurrency(data ? data[data.length - 1].y : undefined))
+const currencyMin = $computed(() => useEthToCurrency(data?.length ? data[0].y : undefined))
+const currencyMax = $computed(() => useEthToCurrency(data?.length ? data[data.length - 1].y : undefined))
 
 const lineColors = $computed(() => (
   colorMode.value === 'light'
