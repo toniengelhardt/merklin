@@ -4,7 +4,7 @@ const addressStore = useAddressStore()
 const newAddressInput = ref<HTMLInputElement>()
 
 function selectAddress(address: Address) {
-  if (addressStore.activeAddresses.indexOf(address) === -1) {
+  if (addressStore.activeAddresses.includes(address)) {
     addressStore.selectAddress(address)
   } else {
     addressStore.deselectAddress(address)

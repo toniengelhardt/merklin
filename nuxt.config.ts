@@ -127,9 +127,9 @@ export default defineNuxtConfig({
       maskablePadding: 0,
     },
   },
-  ogImage: {
-    host: process.env.SITE_URL || 'https://app.merklin.xyz',
-  },
+  // ogImage: {
+  //   host: process.env.SITE_URL || 'https://app.merklin.xyz',
+  // },
   colorMode: {
     classSuffix: '',
   },

@@ -46,7 +46,7 @@ export const useAddressStore = defineStore('addresses', {
       if (activeIdx !== -1) {
         this.activeAddresses.splice(activeIdx, 1)
       }
-    }
+    },
   },
   persist: {
     paths: [

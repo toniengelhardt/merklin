@@ -2,7 +2,6 @@
 defineProps<{
   address: Address
 }>()
-
 </script>
 
 <template>
