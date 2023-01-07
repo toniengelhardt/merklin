@@ -37,6 +37,7 @@ export default defineAppConfig({
       dashboard: 'ph:squares-four-duotone',
       insights: 'ph:projector-screen-chart-duotone',
       assets: 'ph-chart-pie-slice-duotone',
+      settings: 'ph:gear-duotone',
       // App elements:
       loading: 'line-md:loading-twotone-loop',
       addressbook: 'ph:address-book-duotone',
@@ -50,6 +51,8 @@ export default defineAppConfig({
       warning: 'ph:warning-duotone',
       visible: 'ph:eye-duotone',
       obscured: 'ph:eye-closed-duotone',
+      harddrives: 'ph:hard-drives-duotone',
+      key: 'ph:key-duotone',
       // Blockchain:
       wallet: 'ph:cardholder-duotone',
       gas: 'ph:gas-pump-duotone',

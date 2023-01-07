@@ -1,7 +1,7 @@
 import GlobalPolyFill from '@esbuild-plugins/node-globals-polyfill'
 
 const appTitle = 'Merklin'
-const appDescription = 'Open-source EVM explorer made with Vue, Nuxt, and Ethers'
+const appDescription = 'Open-source web-only EVM explorer made with Vue, Nuxt, and Ethers'
 const appUrl = 'https://app.merklin.xyz'
 
 export default defineNuxtConfig({

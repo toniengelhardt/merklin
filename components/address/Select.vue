@@ -9,9 +9,7 @@ const activeAddress = $computed(() => addressStore.activeAddresses.length ? addr
   <div btn-transparent px-4 @click="ui.addressDialogOpen = true">
     <Icon name="dropdown" text-xs text-dim mr-2 lt-md:hidden />
     <Icon name="addressbook" size="1.5rem" />
-    <div v-if="activeAddress" ml-2 flex text-sm text-faint class="text-obscure">
-      0x<span mx-0.5 text-base>{{ activeAddress.slice(2, 6) }}</span>...<span class="ml-0.5" text-base>{{ activeAddress.slice(-4) }}</span>
-    </div>
+    <AddressDisplay v-if="activeAddress" :address="activeAddress" ml-2 text-sm />
     <div v-else ml-2 text-dim>
       Select address
     </div>

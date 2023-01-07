@@ -1,3 +1,4 @@
+
 <script setup lang="ts">
 withDefaults(defineProps<{
   modelValue: boolean
@@ -68,8 +69,8 @@ function close() {
                   <div flex-1 flex items-center>
                     <slot name="title" />
                   </div>
-                  <a ref="closeBtnRef" w-8 text-center cursor-pointer @click="close()">
-                    <Icon name="cross" text-dim />
+                  <a ref="closeBtnRef" flex-center w-6 h-6 cursor-pointer @click="close()">
+                    <Icon name="cross" text-lg text-dim />
                   </a>
                 </div>
               </HeadlessDialogTitle>
