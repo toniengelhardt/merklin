@@ -23,7 +23,7 @@ Adding [Bitcoin](https://bitcoin.org) and [Lightning](https://lightning.network)
 
 ## Goals
 
-### Powerful web app 
+### Powerful web app
 
 Secure web app that connects to all the popular wallets, starting with [MetaMask](https://metamask.io) and [WalletConnect](https://walletconnect.com). Using the app however should be possible without connecting a wallet.
 
@@ -38,7 +38,7 @@ Related also, some wise words from [@jack](https://twitter.com/jack):
 <img width="554" alt="Screenshot 2022-12-02 at 16 13 33" src="https://user-images.githubusercontent.com/2703233/205336586-2517bfd2-ead1-4ace-8091-4f988e9b2df3.png">
 
 ## Principles
- 
+
 1. The idea is to learn and have fun.
 2. Let's stick with the fundamentals and focus on solving problems.
 3. The fundamentals are pseudonymity and censorship resistance.
@@ -77,9 +77,9 @@ Please make sure they pass!
 
 ## More
 
-Please don't be afraid to ask questions, you can start a thread under Discussions for topics related to m3tadata specifically or consult the `web3` channel in the [Nuxt Discord](https://discord.com/invite/ps2h6QT) for more general questions about web3 and Nuxt.
+Please don't be afraid to ask questions, you can start a thread under Discussions for topics related to Merklin specifically or consult the `web3` channel in the [Nuxt Discord](https://discord.com/invite/ps2h6QT) for more general questions about web3 and Nuxt.
 
-Development insights available on [RepoTracker](https://repo-tracker.com/r/gh/toniengelhardt/m3tadata).
+Development insights available on [RepoTracker](https://repo-tracker.com/r/gh/toniengelhardt/merklin).
 
 Feel free to play around and contribute. Discussions, Issues, PRs welcome!
 

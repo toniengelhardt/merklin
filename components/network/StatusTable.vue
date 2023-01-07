@@ -28,7 +28,7 @@ const networkStore = useNetworkStore()
         </th>
         <th>
           <div w-20>
-            tx/s (24h)
+            tx/s (2h)
           </div>
         </th>
         <th>

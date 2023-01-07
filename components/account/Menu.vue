@@ -14,13 +14,13 @@ const items = {
   repotracker: {
     icon: { name: 'repotracker' },
     label: 'Dev Stats',
-    link: 'https://repo-tracker.com/r/gh/toniengelhardt/m3tadata',
+    link: 'https://repo-tracker.com/r/gh/toniengelhardt/merklin',
     external: true,
   },
   plausible: {
     icon: { name: 'plausible' },
     label: 'Analytics',
-    link: 'https://plausible.io/m3tadata.vercel.app',
+    link: 'https://plausible.io/app.merklin.xyz',
     external: true,
   },
   github: {

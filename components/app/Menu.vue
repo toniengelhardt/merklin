@@ -61,7 +61,7 @@
       <Icon name="vercel" />
     </NuxtLink>
     <NuxtLink
-      to="https://github.com/toniengelhardt/m3tadata/releases"
+      to="https://github.com/toniengelhardt/merklin/releases"
       title="Releases on GitHub"
       text-xs text-dim hover:text-base decoration-none hover:decoration-none
     >

@@ -4,6 +4,11 @@ import EventEmitter from 'events'
 import { Buffer } from 'buffer'
 import { watchAccount, watchNetwork } from '@wagmi/core'
 
+// defineOgImage({
+//   component: 'OgImage',
+//   // backgroundImage: 'https://example.com/my-background-image.jpg',
+// })
+
 // Fix for WalletConnect issue.
 // https://stackoverflow.com/a/72978659/1384972
 window.Buffer = Buffer
@@ -15,7 +20,7 @@ window.global = window
 const intervals: ReturnType<typeof useIntervalFn>[] = []
 
 const ui = useUIStore()
-const addressStore = useAddressStore()
+// const addressStore = useAddressStore()
 const wallet = useWalletStore()
 const { updateNetworkData } = useNetworkStore()
 const { updatePriceData } = usePriceStore()
@@ -74,16 +79,16 @@ onMounted(() => {
   useEventListener(window.document, 'visibilitychange', onVisibilityChange)
 })
 
-watchAccount((account) => {
-  console.log('Account changed:', account.address)
-  wallet.account = account
-  onAddressChange()
-})
-watchNetwork((network) => {
-  console.log('Network changed:', network.chain?.network, network.chain?.name)
-  wallet.network = network
-  onAddressChange()
-})
+// watchAccount((account) => {
+//   console.log('Account changed:', account.address)
+//   wallet.account = account
+//   onAddressChange()
+// })
+// watchNetwork((network) => {
+//   console.log('Network changed:', network.chain?.network, network.chain?.name)
+//   wallet.network = network
+//   onAddressChange()
+// })
 </script>
 
 <template>

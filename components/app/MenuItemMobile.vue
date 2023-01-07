@@ -15,9 +15,9 @@ const props = defineProps<{
 </template>
 
 <style scoped>
-.router-link-active {
+/* .router-link-active {
   @apply bg-element;
-}
+} */
 .router-link-active > .icon {
   @apply text-base;
 }

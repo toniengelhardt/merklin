@@ -14,7 +14,7 @@ export default defineNuxtConfig({
       pocketApiKey: process.env.POCKET_API_KEY,
       ankrApiKey: process.env.ANKR_API_KEY,
       jsonRpcUrl: process.env.ETH_RPC_URL || 'https://eth-mainnet.g.alchemy.com/v2/n5Vj8wE2BHWCtpxqeIZZRJFMVyvifuYv',
-      repoUrl: 'https://github.com/toniengelhardt/m3tadata',
+      repoUrl: 'https://github.com/toniengelhardt/merklin',
       twitterUrl: '',
       discordUrl: '',
     },
@@ -28,6 +28,7 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     'nuxt-headlessui',
     'nuxt-icon',
+    // 'nuxt-og-image',
     'nuxt-security',
   ],
   imports: {
@@ -36,7 +37,20 @@ export default defineNuxtConfig({
     ],
   },
   experimental: {
+    // componentIslands: true,
     reactivityTransform: true,
+  },
+  devServer: {
+    host: process.env.HOST || 'localhost',
+    port: process.env.PORT ? +process.env.PORT : 3000,
+  },
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      routes: [
+        '/',
+      ],
+    },
   },
   vite: {
     resolve: {
@@ -67,6 +81,17 @@ export default defineNuxtConfig({
   css: [
     'assets/css/style.css',
   ],
+  app: {
+    head: {
+      htmlAttrs: {
+        lang: 'en',
+        translate: 'no',
+      },
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico', key: 'favicon' },
+      ],
+    },
+  },
   pwa: {
     manifest: {
       id: '/?standalone=true',
@@ -80,7 +105,7 @@ export default defineNuxtConfig({
       scope: '/',
       categories: ['utilities'],
       theme_color: '#18181b',
-      background_color: '#18181b',
+      background_color: '#000000',
     },
     meta: {
       name: appTitle,
@@ -102,25 +127,13 @@ export default defineNuxtConfig({
       maskablePadding: 0,
     },
   },
+  ogImage: {
+    host: process.env.SITE_URL || 'https://app.merklin.xyz',
+  },
   colorMode: {
     classSuffix: '',
   },
   plausible: {
     domain: process.env.PLAUSIBLE_DOMAIN || '',
-  },
-  app: {
-    head: {
-      htmlAttrs: {
-        lang: 'en',
-        translate: 'no',
-      },
-      link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico', key: 'favicon' },
-      ],
-    },
-  },
-  devServer: {
-    host: process.env.HOST || 'localhost',
-    port: process.env.PORT ? +process.env.PORT : 3000,
   },
 })
