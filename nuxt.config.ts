@@ -1,8 +1,8 @@
 import GlobalPolyFill from '@esbuild-plugins/node-globals-polyfill'
 
-const appTitle = 'm3tadata'
+const appTitle = 'Merklin'
 const appDescription = 'Open-source wallet explorer based on Vue/Nuxt'
-const appUrl = 'https://m3tadata.vercel.app'
+const appUrl = 'https://app.merklin.xyz'
 
 export default defineNuxtConfig({
   ssr: false,
