@@ -92,7 +92,7 @@ export default defineNuxtConfig({
       ogTitle: appTitle,
       ogDescription: appDescription,
       ogUrl: appUrl,
-      // theme_color: '#000000',
+      theme_color: false,
     },
     // icon: {
     //   maskablePadding: 0,

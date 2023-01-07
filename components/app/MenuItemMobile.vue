@@ -8,7 +8,7 @@ const props = defineProps<{
   <NuxtLink
     :to="item.link"
     :title="item.title"
-    class="flex items-center h-12 px-3 text-dim radius-base decoration-none"
+    class="flex-center h-10 w-10 text-dim radius-base decoration-none"
   >
     <Icon :name="item.icon.name" size="1.5rem" />
   </NuxtLink>

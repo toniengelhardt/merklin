@@ -87,7 +87,8 @@ watchNetwork((network) => {
 </script>
 
 <template>
-  <div
+  <div>Hello</div>
+  <!-- <div
     class="no-translate"
     :class="{ obscure: ui.obscure }"
     relative bg-base
@@ -123,7 +124,7 @@ watchNetwork((network) => {
     <teleport to="body">
       <AddressDialog v-model="ui.addressDialogOpen" />
     </teleport>
-  </div>
+  </div> -->
 </template>
 
 <style lang="pcss">
@@ -144,7 +145,7 @@ watchNetwork((network) => {
 }
 @media (max-width: 639px) {
   .content {
-    max-height: calc(100svh - 8rem);
+    max-height: calc(100svh - 7rem);
   }
   /* Hack for padding bug. */
   .page:before,

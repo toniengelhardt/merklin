@@ -4,7 +4,7 @@
       <Icon name="addressbook" />
     </p>
     <p m-0 mt-3 italic text-dim>
-      No address selected...
+      Select address...
     </p>
   </div>
 </template>
