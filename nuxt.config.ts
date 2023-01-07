@@ -81,6 +81,8 @@ export default defineNuxtConfig({
       start_url: '/?standalone=true',
       scope: '/',
       categories: ['utilities'],
+      theme_color: '#18181b',
+      background_color: '#18181b',
     },
     meta: {
       name: appTitle,
@@ -94,11 +96,18 @@ export default defineNuxtConfig({
       ogTitle: appTitle,
       ogDescription: appDescription,
       ogUrl: appUrl,
-      theme_color: false,
+      theme_color: undefined,
     },
-    // icon: {
-    //   maskablePadding: 0,
-    // },
+    icon: {
+      source: 'public/icon.png',
+      maskableSource: 'public/icon.png',
+      // maskablePadding: 0,
+      splash: {
+        backgroundColor: '#18181b',
+        devices: [],
+        targetDir: 'splash',
+      },
+    },
   },
   colorMode: {
     classSuffix: '',

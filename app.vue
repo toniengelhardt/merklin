@@ -101,7 +101,7 @@ watchNetwork((network) => {
       relative flex flex-col md:flex-row
       max-w-100vw overflow-x-hidden text-base z-1
     >
-      <div v-if="ui.mobile" h-16>
+      <div v-if="ui.mobile" h-14>
         <MobileHeader />
       </div>
       <div v-else flex flex-col w-70 bg-surface>
@@ -116,7 +116,7 @@ watchNetwork((network) => {
           <NuxtPage />
         </div>
       </main>
-      <div v-if="ui.mobile" h-16>
+      <div v-if="ui.mobile" h-14>
         <MobileNavigation />
       </div>
     </div>
