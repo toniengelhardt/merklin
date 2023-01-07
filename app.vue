@@ -87,8 +87,7 @@ watchNetwork((network) => {
 </script>
 
 <template>
-  <div>Hello</div>
-  <!-- <div
+  <div
     class="no-translate"
     :class="{ obscure: ui.obscure }"
     relative bg-base
@@ -124,7 +123,7 @@ watchNetwork((network) => {
     <teleport to="body">
       <AddressDialog v-model="ui.addressDialogOpen" />
     </teleport>
-  </div> -->
+  </div>
 </template>
 
 <style lang="pcss">

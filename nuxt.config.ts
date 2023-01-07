@@ -1,3 +1,5 @@
+import * as fs from 'fs'
+import { fileURLToPath } from 'url'
 import GlobalPolyFill from '@esbuild-plugins/node-globals-polyfill'
 
 const appTitle = 'Merklin'
@@ -114,5 +116,9 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico', key: 'favicon' },
       ],
     },
+  },
+  devServer: {
+    host: process.env.HOST || 'localhost',
+    port: process.env.PORT ? +process.env.PORT : 3000,
   },
 })
