@@ -100,10 +100,10 @@ export default defineNuxtConfig({
     },
     icon: {
       source: 'public/icon.png',
-      maskableSource: 'public/icon.png',
-      // maskablePadding: 0,
+      maskableSource: 'public/icon.maskable.png',
+      maskablePadding: 0,
       splash: {
-        backgroundColor: '#18181b',
+        backgroundColor: '#000000',
         devices: [],
         targetDir: 'splash',
       },
