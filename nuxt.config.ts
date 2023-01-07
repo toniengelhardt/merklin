@@ -1,7 +1,7 @@
 import GlobalPolyFill from '@esbuild-plugins/node-globals-polyfill'
 
 const appTitle = 'Merklin'
-const appDescription = 'Open-source wallet explorer based on Vue/Nuxt'
+const appDescription = 'Open-source EVM explorer made with Vue, Nuxt, and Ethers'
 const appUrl = 'https://app.merklin.xyz'
 
 export default defineNuxtConfig({
@@ -92,11 +92,11 @@ export default defineNuxtConfig({
       ogTitle: appTitle,
       ogDescription: appDescription,
       ogUrl: appUrl,
-      theme_color: '#000000',
+      // theme_color: '#000000',
     },
-    icon: {
-      maskablePadding: 0,
-    },
+    // icon: {
+    //   maskablePadding: 0,
+    // },
   },
   colorMode: {
     classSuffix: '',
