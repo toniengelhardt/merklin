@@ -12,7 +12,7 @@ The idea is to focus primarily on on-chain analytics, i.a.
 - Detailed insights of wallet activity
 - Funds spent on gas
 - Ingoing/outgoing addresses and transaction frequency
-- Asset distribution accross networks
+- Asset distribution across networks
 - NFT mutability and location
 - D0xing score
 - Network overview and comparison
@@ -26,7 +26,7 @@ Adding [Bitcoin](https://bitcoin.org) and [Lightning](https://lightning.network)
 
 ### Powerful web app
 
-Secure web app that connects to all the popular wallets, starting with [MetaMask](https://metamask.io) and [WalletConnect](https://walletconnect.com). Inpecting wallets should be possible without connecting to a wallet though.
+Secure web app that connects to all the popular wallets, starting with [MetaMask](https://metamask.io) and [WalletConnect](https://walletconnect.com). Inspecting wallets should be possible without connecting to a wallet though.
 
 ### Web-only
 
