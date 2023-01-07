@@ -2,7 +2,7 @@
 
 **Note:** I renamed the project from **m3tadata** to **merklin**. Not sure if this will be the final name, but for now it works I guess. You can find a preview of the app a [merklin.xyz](https://merklin.xyz). The theme changed, from jungle to magic 🪄.
 
-This is an attempt to build an open-source EVM wallet explorer (similar to [Zapper](https://zapper.fi/), [Zerion](https://app.zerion.io/), etc.) based on [Vue](https://vuejs.org) and [Nuxt](https://nuxt.com) and supercharge it with powerful analytics and visualizations.
+This is an attempt to build an open-source web-only EVM explorer (similar to [Zapper](https://zapper.fi/), [Zerion](https://app.zerion.io/), etc.) based on [Vue](https://vuejs.org) and [Nuxt](https://nuxt.com), and supercharge it with powerful analytics and visualizations.
 
 <img width="49%" alt="Merklin Preview Insights" src="https://user-images.githubusercontent.com/2703233/211148722-a13ec34b-a16d-45dd-98f0-af4f4172ca38.png"> <img width="49%" alt="Merklin Preview Transactions" src="https://user-images.githubusercontent.com/2703233/211148727-b61ca5ba-043c-45f3-873f-49b96fd9140f.png">
 
@@ -12,12 +12,13 @@ The idea is to focus primarily on on-chain analytics, i.a.
 - Detailed insights of wallet activity
 - Funds spent on gas
 - Ingoing/outgoing addresses and transaction frequency
-- Asset distribution between EVM networks
+- Asset distribution accross networks
+- NFT mutability and location
 - D0xing score
 - Network overview and comparison
 - etc.
 
-For now, only Ethereum and its L2 scaling solutions: [Ethereum](https://ethereum.org), [Arbitrum](https://arbitrum.io), [Optimism](https://www.optimism.io/), [Polygon](https://polygon.technology), [Gnosis](https://www.gnosis.io), [zkSync](https://zksync.io), etc.
+For now, only Ethereum and L2 scaling solutions: [Ethereum](https://ethereum.org), [Arbitrum](https://arbitrum.io), [Optimism](https://www.optimism.io/), [Polygon](https://polygon.technology), [Gnosis](https://www.gnosis.io), [zkSync](https://zksync.io), etc.
 
 Adding [Bitcoin](https://bitcoin.org) and [Lightning](https://lightning.network) later on would be amazing!
 
@@ -25,11 +26,11 @@ Adding [Bitcoin](https://bitcoin.org) and [Lightning](https://lightning.network)
 
 ### Powerful web app 
 
-Secure web app that connects to all the popular wallets, starting with [MetaMask](https://metamask.io) and [WalletConnect](https://walletconnect.com). Using the app however should be possible without connecting a wallet.
+Secure web app that connects to all the popular wallets, starting with [MetaMask](https://metamask.io) and [WalletConnect](https://walletconnect.com). Inpecting wallets should be possible without connecting to a wallet though.
 
 ### Web-only
 
-No native apps! Native apps are not suitable for web3 as they are subject to App Store / Play Store T&Cs and lock out a big part of the global population. Instead, let's leverage the web platform to deliver native-like mobile apps (more on that in [this post](https://itnext.io/lets-build-a-native-like-web-app-nwa-22a553fee338)).
+No native apps! Native apps are not suitable for web3 as they are subject to App Store / Play Store T&Cs and lock out a big part of the global population. Instead, let's leverage the web platform to deliver native-like mobile experiences (more on that in [this post](https://itnext.io/lets-build-a-native-like-web-app-nwa-22a553fee338)).
 
 To check which web APIs are available on a given device you can just open [this page](https://webapicheck.com).
 
@@ -83,4 +84,4 @@ Development insights available on [RepoTracker](https://repo-tracker.com/r/gh/to
 
 Feel free to play around and contribute. Discussions, Issues, PRs welcome!
 
-Here's a [list](https://github.com/toniengelhardt/web3-vue-and-nuxt-projects) of web3 projects built with Vue/Nuxt.
+Here's a [list](https://github.com/toniengelhardt/web3-vue-and-nuxt-projects) of other web3 projects built with Vue/Nuxt.
