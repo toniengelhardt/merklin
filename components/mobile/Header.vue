@@ -1,13 +1,13 @@
 <template>
   <div h-14 flex items-center px-3 bg-base box-border>
-    <div flex-center w-10 h-10 text-2xl>
-      <Network />
+    <div>
+      <BrandIcon />
     </div>
     <div flex-1 flex justify-center>
       <AddressSelect />
     </div>
-    <div>
-      <AccountMenu />
+    <div flex-center w-10 h-10 text-2xl>
+      <Network />
     </div>
   </div>
 </template>

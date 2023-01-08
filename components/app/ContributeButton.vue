@@ -1,7 +1,7 @@
 <template>
   <NuxtLink
     :to="$config.repoUrl"
-    title="MΞTADATA repository on GitHub"
+    title="Merklin repository on GitHub"
     target="_blank"
     btn-default h-6 px-2 text-xs rounded
   >

@@ -1,4 +1,12 @@
 <script setup lang="ts">
+withDefaults(defineProps<{
+  orientation?: 'left' | 'right'
+  direction: 'up' | 'down'
+  toggleClass?: string
+}>(), {
+  orientation: 'left',
+  direction: 'down',
+})
 const config = useRuntimeConfig()
 const items = {
   /* disconnect: {
@@ -31,7 +39,7 @@ const items = {
   github: {
     icon: { name: 'github' },
     label: 'Contribute',
-    title: 'MΞTADATA repository on GitHub',
+    title: 'Merklin repository on GitHub',
     link: config.public.repoUrl,
     external: true,
   },
@@ -50,9 +58,10 @@ const items = {
 
 <template>
   <Menu
-    orientation="left"
+    :orientation="orientation"
+    :direction="direction"
     :toggle-icon="{ name: 'menu', size: '1.4rem' }"
-    toggle-class="btn-transparent"
+    :toggle-class="'btn-transparent ' + toggleClass"
   >
     <MenuItem v-slot="{ active }">
       <ObscureToggle :class="[active ? 'bg-element' : undefined]" @click.prevent />
@@ -65,7 +74,6 @@ const items = {
     <MenuItem :item="items.github" />
     <MenuItem :item="items.repotracker" />
     <MenuItem :item="items.plausible" />
-    <!-- <MenuItem :item="items.web3VueNuxtProjects" /> -->
     <!-- <MenuItem :item="items.twitter" />
     <MenuItem :item="items.discord" /> -->
   </Menu>
