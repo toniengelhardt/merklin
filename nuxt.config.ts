@@ -100,7 +100,7 @@ export default defineNuxtConfig({
       short_name: appTitle,
       description: appDescription,
       display: 'standalone',
-      orientation: 'any',
+      orientation: 'portrait',
       lang: 'en',
       start_url: '/?standalone=true',
       scope: '/',

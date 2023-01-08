@@ -39,10 +39,10 @@ const networkStore = useNetworkStore()
       </tr>
       <tr v-for="(network, idx) in networkList" :key="idx">
         <td flex items-center>
-          <div flex-center w-6 h-6 bg-element rounded-full>
-            <Icon :name="network.icon" />
+          <div flex-center w-6 h-6 rounded-full>
+            <Icon :name="network.icon" size="1.2rem" />
           </div>
-          <div lt-md:hidden ml-6px text-size-base>
+          <div lt-md:hidden ml-2 text-size-base>
             {{ network.label }}
           </div>
         </td>

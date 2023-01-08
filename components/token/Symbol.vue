@@ -10,7 +10,7 @@ const token = tokens[props.name]
     <div flex-center w-6 h-6 bg-element rounded-full>
       <TokenIcon :token="token" />
     </div>
-    <div ml-6px>
+    <div ml-2>
       {{ token.label }}
     </div>
   </div>
