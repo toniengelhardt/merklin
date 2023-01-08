@@ -61,7 +61,7 @@ const items = {
     :orientation="orientation"
     :direction="direction"
     :toggle-icon="{ name: 'menu', size: '1.4rem' }"
-    :toggle-class="'btn-transparent ' + toggleClass"
+    :toggle-class="`btn-transparent ${toggleClass}`"
   >
     <MenuItem v-slot="{ active }">
       <ObscureToggle :class="[active ? 'bg-element' : undefined]" @click.prevent />

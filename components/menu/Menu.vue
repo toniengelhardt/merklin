@@ -45,7 +45,7 @@ withDefaults(defineProps<{
         radius-base bg-base shadow-lg ring-0 ring-zinc-900 ring-opacity-5
         focus:outline-none z-12
         :class="orientation === 'left' ? 'right-0 origin-top-right' : 'orientation-top-left'"
-        :style="direction === 'up' ? { 'transform': 'translateY(calc(-100% - 3.5rem))' } : {}"
+        :style="direction === 'up' ? { transform: 'translateY(calc(-100% - 3.5rem))' } : {}"
       >
         <div p-1>
           <slot />
