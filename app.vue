@@ -149,7 +149,7 @@ onMounted(() => {
 }
 @media (max-width: 639px) {
   .content {
-    max-height: calc(100svh - 7rem env(safe-area-inset-bottom));
+    max-height: calc(100svh - 7rem - env(safe-area-inset-bottom));
   }
   /* Hack for padding bug. */
   .page:before,
