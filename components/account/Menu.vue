@@ -1,7 +1,7 @@
 <script setup lang="ts">
 withDefaults(defineProps<{
   orientation?: 'left' | 'right'
-  direction: 'up' | 'down'
+  direction?: 'up' | 'down'
   toggleClass?: string
 }>(), {
   orientation: 'left',
