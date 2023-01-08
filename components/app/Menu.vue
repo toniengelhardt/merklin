@@ -14,7 +14,7 @@
   <div px-6 text-xs>
     <div py-4 border-b-0 border-base>
       <p flex items-center text-sm m-0>
-        <b>Disclaimer</b><span ml-2 text-lg>🐰</span>
+        <b>Disclaimer</b><span ml-1 text-lg>🧌</span>
       </p>
       <p m-0 mt-1 text-dim>
         This project is work in progress and the presented data might not be correct. Use at your own risk!

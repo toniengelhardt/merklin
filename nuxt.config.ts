@@ -15,6 +15,7 @@ export default defineNuxtConfig({
       ankrApiKey: process.env.ANKR_API_KEY,
       jsonRpcUrl: process.env.ETH_RPC_URL || 'https://eth-mainnet.g.alchemy.com/v2/n5Vj8wE2BHWCtpxqeIZZRJFMVyvifuYv',
       repoUrl: 'https://github.com/toniengelhardt/merklin',
+      feedbackEmail: 'gm@merklin.xyz',
       twitterUrl: '',
       discordUrl: '',
     },

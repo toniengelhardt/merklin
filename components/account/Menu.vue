@@ -30,6 +30,11 @@ const items = {
     label: 'Settings',
     link: '/settings',
   },
+  feedback: {
+    icon: { name: 'feedback' },
+    label: 'Feedback',
+    link: `mailto:${config.public.feedbackEmail}`,
+  },
   repotracker: {
     icon: { name: 'repotracker' },
     label: 'Repo Insights',
@@ -76,6 +81,7 @@ const items = {
       <ThemeToggle :class="[active ? 'bg-element' : undefined]" @click.prevent />
     </MenuItem>
     <MenuItem :item="items.settings" />
+    <MenuItem :item="items.feedback" />
     <MenuDivider />
     <MenuItem :item="items.github" />
     <MenuItem :item="items.repotracker" />
