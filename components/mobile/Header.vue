@@ -1,5 +1,5 @@
 <template>
-  <div h-14 flex items-center px-3 bg-base box-border border-b-solid border-base>
+  <div h-14 flex items-center px-3 bg-base box-border border-b-solid border-b-1 border-base>
     <div flex="~ 1/3" w-10 h-10>
       <AddressSelect />
     </div>
@@ -13,7 +13,7 @@
       </NuxtLink>
     </div>
     <div flex="~ 1/3" justify-end>
-      <GasPrice mr-2 />
+      <!-- <GasPrice mr-2 /> -->
       <Network w-10 />
     </div>
   </div>

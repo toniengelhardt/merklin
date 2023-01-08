@@ -2,7 +2,7 @@
 import process from 'process'
 import EventEmitter from 'events'
 import { Buffer } from 'buffer'
-import { watchAccount, watchNetwork } from '@wagmi/core'
+// import { watchAccount, watchNetwork } from '@wagmi/core'
 
 // defineOgImage({
 //   component: 'OgImage',
@@ -109,7 +109,7 @@ onMounted(() => {
       <div v-if="ui.mobile" h-14>
         <MobileHeader />
       </div>
-      <div v-else flex flex-col w-70 bg-surface>
+      <div v-else flex flex-col w-70 bg-base>
         <AppMenu />
       </div>
       <main flex-1 flex flex-col>

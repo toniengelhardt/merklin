@@ -84,6 +84,7 @@ export default defineNuxtConfig({
   ],
   app: {
     head: {
+      viewport: 'width=device-width, initial-scale=1, user-scalable=no',
       htmlAttrs: {
         lang: 'en',
         translate: 'no',
@@ -106,7 +107,7 @@ export default defineNuxtConfig({
       scope: '/',
       categories: ['utilities'],
       theme_color: '#18181b',
-      background_color: '#000000',
+      background_color: '#18181b',
     },
     meta: {
       name: appTitle,

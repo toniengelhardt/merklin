@@ -20,9 +20,9 @@ defineProps<{
   @apply bg-element;
 }
 .router-link-active > .icon {
-  @apply text-yellow-600;
+  @apply text-base; /* text-yellow-600; */
 }
 .router-link-active > .gradient {
-  @apply bg-gradient-to-r from-yellow-600 to-yellow-400 text-transparent bg-clip-text;
+  @apply text-base; /* bg-gradient-to-r from-yellow-600 to-yellow-400 text-transparent bg-clip-text; */
 }
 </style>
