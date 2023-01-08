@@ -37,7 +37,7 @@ export const appMenuItems = [
   },
   {
     icon: {
-      name: 'blockchain',
+      name: 'network',
     },
     label: 'Networks',
     title: 'Networks',

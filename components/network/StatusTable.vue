@@ -4,12 +4,12 @@ const networkStore = useNetworkStore()
 
 <template>
   <div v-if="networkStore">
-    <table>
+    <table border-0>
       <tr>
         <th width="100%">
           <div flex>
-            <div w-6>
-              <Icon name="blockchain" text-faint />
+            <div w-6 border-1>
+              <Icon name="network" text-faint />
             </div>
             <div ml-6px text-left lt-md:hidden>
               Name
@@ -39,8 +39,8 @@ const networkStore = useNetworkStore()
       </tr>
       <tr v-for="(network, idx) in networkList" :key="idx">
         <td flex items-center>
-          <div flex-center w-6 h-6 rounded-full>
-            <Icon :name="network.icon" size="1.2rem" />
+          <div flex-center w-6 h-6 rounded-full bg-element>
+            <Icon :name="network.icon" />
           </div>
           <div lt-md:hidden ml-2 text-size-base>
             {{ network.label }}

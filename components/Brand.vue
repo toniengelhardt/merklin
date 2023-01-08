@@ -3,9 +3,12 @@
     <NuxtLink
       to="/"
       title="Insights"
-      text-xl font-black text-dim tracking-wide leading-none
+      flex items-center text-xl font-black text-faint tracking-wide leading-none
     >
-      M<span px-2px text-faint>Ξ</span>RKL<span inline-block ml-0.5 text-base text-2xl text-center>🧙🏽‍♂️</span>N
+      <div flex-center>
+        <img src="/icon.png" width="24" height="24" />
+      </div>
+      <div ml-2>M<span px-2px text-dim>Ξ</span>RKLIN</div>
     </NuxtLink>
   </div>
 </template>

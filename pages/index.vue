@@ -11,13 +11,14 @@ const addressStore = useAddressStore()
             <!-- <span inline-block ml-12>gm</span> -->
             <span inline-block w-12 class="text-center text-1.5rem md:text-1.8rem">🔮</span>
           </h2>
-          <div md:mt-2 italic text-sm text-center leading-tight>
+          <div md:mt-2 text-sm text-center leading-tight>
             sim sala gm
           </div>
         </div>
         <div class="flex-1/2 lt-md:ml-2 md:(flex-1 mt-4)" panel flex-center flex-col>
-          <div v-if="addressStore.activeAddresses.length" flex text-4xl md:text-5xl>
-            <span font-bold text-faint>$</span><span ml-1.5 font-black text-gradient-yellow-rose>42</span><span ml-1.5 text-faint>,-</span>
+          <div v-if="addressStore.activeAddresses.length" flex items-end text-3xl md:text-5xl text-gradient-yellow-rose>
+            <span font-bold>$</span>
+            <span ml-1.5 font-black>42</span>
           </div>
           <AppNoAddress v-else />
         </div>

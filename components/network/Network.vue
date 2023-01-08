@@ -10,11 +10,11 @@ const otherNetworks = $computed(() => networkList.filter(network => network !== 
     orientation="left"
     :toggle-icon="{ name: activeNetwork.icon, size: '1.3rem' }"
     :toggle-label="true || ui.mobile ? undefined : (activeNetwork.label || 'N/A')"
-    :toggle-class="`btn-transparent ${ui.mobile ? 'w-10 h-10 flex-center p-0' : 'px-4'}`"
+    toggle-class="btn-transparent w-10 h-10 flex-center p-0"
   >
-    <template v-if="!ui.mobile" #before>
+    <!-- <template v-if="!ui.mobile" #before>
       <Icon name="dropdown" class="text-xs text-dim" mr-1.5 />
-    </template>
+    </template> -->
     <MenuItem
       v-for="network in otherNetworks"
       :key="network.name"

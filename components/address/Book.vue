@@ -41,8 +41,8 @@ function removeAddress(address: Address) {
           <Icon v-else name="safe" text-faint />
         </div>
         <div flex items-center flex-1 cursor-pointer>
-          <AddressIcon :address="address" w-4 h-4 ml-2 rounded lt-md:hidden />
-          <AddressDisplay :address="address" ml-1 />
+          <AddressIcon :address="address" w-4 h-4 ml-2 rounded-md lt-md:hidden border-solid border-zinc-400 />
+          <AddressDisplay :address="address" ml-1.5 />
         </div>
         <div flex-center h-5 w-5 ml-2 cursor-pointer @click.stop="removeAddress(address)">
           <Icon name="delete" />
