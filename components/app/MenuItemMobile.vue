@@ -8,7 +8,7 @@ defineProps<{
   <NuxtLink
     :to="item.link"
     :title="item.title"
-    class="flex-center h-10 w-10 text-dim radius-base decoration-none"
+    class="flex-center h-10 w-10 text-dim radius-base decoration-none select-none"
   >
     <Icon :name="item.icon.name" size="1.5rem" />
   </NuxtLink>

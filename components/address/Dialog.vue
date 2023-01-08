@@ -20,10 +20,10 @@ function close() {
       Address Book
     </template>
     <div flex lt-md:flex-col mb-2>
-      <div flex="1/2" shrink-0 md:pr-2 box-border>
+      <div flex="1/2" shrink-0 lt-md:mt-2 md:pr-2 box-border>
         <Wallet />
       </div>
-      <div flex="1/2" shrink-0 lt-md:mt-4 md:pl-2 box-border>
+      <div flex="1/2" shrink-0 lt-md:mt-6 md:pl-2 box-border>
         <AddressBook />
       </div>
     </div>

@@ -49,7 +49,7 @@ function close() {
         <div fixed inset-0 bg-black bg-opacity-40 />
       </HeadlessTransitionChild>
       <div fixed inset-0 overflow-y-auto>
-        <div flex min-h-full items-center justify-center p-4>
+        <div flex h-full items-center justify-center p-4 box-border>
           <HeadlessTransitionChild
             as="template"
             enter="duration-300 ease-out"

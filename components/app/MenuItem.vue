@@ -8,7 +8,7 @@ defineProps<{
   <NuxtLink
     :to="item.link"
     :title="item.title"
-    class="flex items-center h-12 px-3 text-lg text-dim font-bold hover:bg-element radius-base decoration-none"
+    class="flex items-center h-12 px-3 text-lg text-dim font-bold hover:bg-element radius-base decoration-none select-none"
   >
     <Icon :name="item.icon.name" size="1.5rem" />
     <span class="gradient ml-2">{{ item.label }}</span>

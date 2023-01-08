@@ -10,21 +10,6 @@ withDefaults(defineProps<{
 const config = useRuntimeConfig()
 const ui = useUIStore()
 const items = {
-  /* disconnect: {
-    icon: { name: 'disconnect' },
-    label: 'Disconnect',
-  }, */
-  /* web3VueNuxtProjects: {
-    icon: { name: 'vue' },
-    label: 'Vue web3 projects',
-    link: 'https://github.com/toniengelhardt/web3-vue-and-nuxt-projects',
-    external: true,
-  }, */
-  networks: {
-    icon: { name: 'blockchain' },
-    label: 'Networks',
-    link: '/networks',
-  },
   settings: {
     icon: { name: 'settings' },
     label: 'Settings',
@@ -88,9 +73,5 @@ const items = {
     <MenuItem :item="items.plausible" />
     <!-- <MenuItem :item="items.twitter" />
     <MenuItem :item="items.discord" /> -->
-    <template v-if="ui.mobile">
-      <MenuDivider />
-      <MenuItem :item="items.networks" />
-    </template>
   </Menu>
 </template>

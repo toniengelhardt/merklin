@@ -5,27 +5,11 @@ export const appVersion = version
 export const appMenuItems = [
   {
     icon: {
-      name: 'insights',
+      name: 'home',
     },
-    label: 'Insights',
-    title: 'Insights',
+    label: 'Overview',
+    title: 'Overview',
     link: '/',
-  },
-  {
-    icon: {
-      name: 'assets',
-    },
-    label: 'Assets',
-    title: 'Assets',
-    link: '/assets',
-  },
-  {
-    icon: {
-      name: 'nft',
-    },
-    label: 'NFTs',
-    title: 'NFTs',
-    link: '/nfts',
   },
   {
     icon: {
@@ -34,6 +18,22 @@ export const appMenuItems = [
     label: 'Transactions',
     title: 'Transactions',
     link: '/transactions',
+  },
+  /*{
+    icon: {
+      name: 'assets',
+    },
+    label: 'Assets',
+    title: 'Assets',
+    link: '/assets',
+  }, */
+  {
+    icon: {
+      name: 'nft',
+    },
+    label: 'NFTs',
+    title: 'NFTs',
+    link: '/nfts',
   },
   {
     icon: {

@@ -6,10 +6,10 @@ const props = defineProps<{
 
 <template>
   <div>
-    <h4 flex items-center m-0>
+    <h3 flex items-center m-0>
       <Icon name="wallet" /><span ml-2>Wallet</span>
-    </h4>
-    <div mt-2>
+    </h3>
+    <div mt-4>
       <a btn-default flex-inline h-8 px-6 text-sm rounded-md>
         Connect (TBD)
       </a>

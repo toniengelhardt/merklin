@@ -34,7 +34,7 @@ export default defineAppConfig({
       dark: 'ph:moon-bold',
       system: 'ph:circle-half-bold',
       // App modules:
-      dashboard: 'ph:squares-four',
+      home: 'ph:magic-wand-bold',
       insights: 'ph:projector-screen-chart-bold',
       assets: 'ph-chart-pie-slice-bold',
       settings: 'ph:gear-bold',
@@ -53,6 +53,7 @@ export default defineAppConfig({
       obscured: 'ph:eye-closed-bold',
       harddrives: 'ph:hard-drives-bold',
       key: 'ph:key-bold',
+      safe: 'mdi:safe-square-outline',
       delete: 'ph:trash-bold',
       feedback: 'ph:megaphone-simple-bold',
       // Blockchain:
