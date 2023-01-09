@@ -18,28 +18,26 @@ const addressStore = useAddressStore()
         <div class="flex-1/2 lt-md:ml-2 md:(flex-1 mt-4)" panel flex-center flex-col>
           <div v-if="addressStore.activeAddresses.length" flex items-end text-3xl md:text-5xl text-gradient-yellow-rose>
             <span font-bold>$</span>
-            <span ml-1.5 font-black>42</span>
+            <span font-black>42</span>
           </div>
           <AppNoAddress v-else />
         </div>
       </div>
     </div>
     <div col-span-12 md:col-span-9>
-      <div panel md:h-61>
-        <h2 panel-title flex justify-between>
-          <span>Performance</span>
-          <span class="mx-1 text-1.5rem text-base">🧞‍♂️</span>
-        </h2>
-        <div italic text-dim>
-          Coming soon...
-        </div>
-      </div>
+      <InsightPanelPerformance />
     </div>
     <div col-span-12 md:col-span-8>
-      <InsightPanelGasFees />
+      <TransactionPanelActivity />
+    </div>
+    <div col-span-12 md:col-span-4>
+      <TransactionPanelAddresses />
     </div>
     <div col-span-12 md:col-span-4 panel>
       <PriceFeed />
+    </div>
+    <div col-span-12 md:col-span-8>
+      <InsightPanelGasFees />
     </div>
     <!-- <div col-span-12 md:col-span-4 panel h-61>
       <h2 panel-title>
@@ -95,5 +93,6 @@ const addressStore = useAddressStore()
         Coming soon...
       </div>
     </div>
+    <div col-span-12 h-0 lt-md:hidden><!-- Fix missing padding --></div>
   </div>
 </template>

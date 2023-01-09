@@ -87,7 +87,7 @@ const gasCostDisplay = $computed(() => gasCost?.toPrecision(2))
           </div>
         </div>
       </div>
-      <div flex mt-3>
+      <div flex mt-3 lt-md:hidden>
         <div flex flex-col>
           <div text-xs text-faint>
             Hash
