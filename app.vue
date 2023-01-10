@@ -92,44 +92,42 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="scrollable-element">
+  <div
+    class="no-translate"
+    :class="{ obscure: ui.obscure }"
+    relative bg-base
+  >
     <div
-      class="no-translate"
-      :class="{ obscure: ui.obscure }"
-      relative bg-base
+      class="bg-gradient"
+      absolute top-0 left-0 bottom-0 right-0 z-0
+    />
+    <div
+      class="container"
+      relative flex flex-col md:flex-row
+      max-w-100vw overflow-x-hidden text-base z-1
     >
-      <div
-        class="bg-gradient"
-        absolute top-0 left-0 bottom-0 right-0 z-0
-      />
-      <div
-        class="container"
-        relative flex flex-col md:flex-row
-        max-w-100vw overflow-x-hidden text-base z-1
-      >
-        <div v-if="ui.mobile" h-14>
-          <MobileHeader />
-        </div>
-        <div v-else flex flex-col w-70 bg-base>
-          <AppMenu />
-        </div>
-        <main flex-1 flex flex-col>
-          <ActionBar v-if="!ui.mobile" />
-          <div
-            class="content"
-            flex-1 flex items-start overflow-scroll box-border
-          >
-            <NuxtPage />
-          </div>
-        </main>
-        <div v-if="ui.mobile" h-14>
-          <MobileNavigation />
-        </div>
+      <div v-if="ui.mobile" h-14>
+        <MobileHeader />
       </div>
-      <teleport to="body">
-        <AddressDialog v-model="ui.addressDialogOpen" />
-      </teleport>
+      <div v-else flex flex-col w-70 bg-base>
+        <AppMenu />
+      </div>
+      <main flex-1 flex flex-col>
+        <ActionBar v-if="!ui.mobile" />
+        <div
+          class="content"
+          flex-1 flex items-start overflow-scroll box-border
+        >
+          <NuxtPage />
+        </div>
+      </main>
+      <div v-if="ui.mobile" h-14>
+        <MobileNavigation />
+      </div>
     </div>
+    <teleport to="body">
+      <AddressDialog v-model="ui.addressDialogOpen" />
+    </teleport>
   </div>
 </template>
 
