@@ -10,6 +10,7 @@ const props = defineProps<{
 const colors: Colors = theme.colors!
 
 const colorMode = useColorMode()
+const ui = useUIStore()
 
 const histData = $computed(() => generateHistograms(props.items))
 const maxVal = $computed(() => {
@@ -29,7 +30,7 @@ const chartData = computed<ChartData<any> | undefined>(() => (
             label: 'Sent',
             type: 'bar',
             data: histData.sent,
-            backgroundColor: (colors.orange as Colors)['500'],
+            backgroundColor: colorMode.value === 'light' ? (colors.orange as Colors)['500'] : (colors.orange as Colors)['500'],
             stack: 'bars',
             order: 2,
           },
@@ -37,7 +38,7 @@ const chartData = computed<ChartData<any> | undefined>(() => (
             label: 'Received',
             type: 'bar',
             data: histData.received,
-            backgroundColor: (colors.green as Colors)['500'],
+            backgroundColor: colorMode.value === 'light' ? (colors.green as Colors)['500'] : (colors.green as Colors)['500'],
             stack: 'bars',
             order: 2,
           },
@@ -49,6 +50,8 @@ const chartData = computed<ChartData<any> | undefined>(() => (
 const chartOptions = computed<ChartOptions<any> | undefined>(() => (
   histData && maxVal
     ? ({
+        responsive: true,
+        maintainAspectRatio: false,
         layout: {
           padding: 0,
         },
@@ -86,8 +89,8 @@ const chartOptions = computed<ChartOptions<any> | undefined>(() => (
           },
           y: {
             stacked: false,
-            min: -maxVal - 1,
-            max: maxVal + 1,
+            min: -maxVal,
+            max: maxVal,
             border: {
               display: false,
             },
@@ -116,6 +119,9 @@ const chartOptions = computed<ChartOptions<any> | undefined>(() => (
           },
           title: {
             display: false,
+          },
+          tooltips: {
+            enabled: !ui.mobile,
           },
         },
       })

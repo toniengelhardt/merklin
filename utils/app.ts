@@ -19,14 +19,6 @@ export const appMenuItems = [
     title: 'Transactions',
     link: '/transactions',
   },
-  /* {
-    icon: {
-      name: 'assets',
-    },
-    label: 'Assets',
-    title: 'Assets',
-    link: '/assets',
-  }, */
   {
     icon: {
       name: 'nft',

@@ -4,32 +4,32 @@ import type { ChartData, ChartOptions, ScatterDataPoint } from 'chart.js'
 import { utils as ethersUtils } from 'ethers'
 
 const props = withDefaults(defineProps<{
-  unit?: EtherUnit
+  unit?: 'eth' | 'currency'
 }>(), {
-  unit: 'ether',
+  unit: 'currency',
 })
 
 const colors = theme.colors!
 
 const colorMode = useColorMode()
-const currency = useCurrency()
+const ui = useUIStore()
 const transactionStore = useTransactionStore()
 
 const items = $computed(() => transactionStore.transactionItems)
-const data = $computed(() => items ? generateData(items) : undefined)
+const data = $computed(() => items ? generateData(items, props.unit) : undefined)
 
 const currencyMin = $computed(() => useEthToCurrency(data?.length ? data[0].y : undefined))
 const currencyMax = $computed(() => useEthToCurrency(data?.length ? data[data.length - 1].y : undefined))
 
-const lineColors = $computed(() => (
-  colorMode.value === 'light'
-    ? [(colors.purple as Colors)['500'], (colors.blue as Colors)['500'], (colors.sky as Colors)['500']]
-    : [(colors.purple as Colors)['500'], (colors.blue as Colors)['500'], (colors.sky as Colors)['500']]
-))
+// const lineColors = $computed(() => (
+//   colorMode.value === 'light'
+//     ? [(colors.purple as Colors)['500'], (colors.blue as Colors)['500'], (colors.sky as Colors)['500']]
+//     : [(colors.purple as Colors)['500'], (colors.blue as Colors)['500'], (colors.sky as Colors)['500']]
+// ))
 const fillColors = $computed(() => (
   colorMode.value === 'light'
-    ? [(colors.purple as Colors)['200'], (colors.blue as Colors)['200'], (colors.sky as Colors)['200']]
-    : [(colors.purple as Colors)['800'], (colors.blue as Colors)['800'], (colors.sky as Colors)['800']]
+    ? [(colors.yellow as Colors)['400'], (colors.orange as Colors)['400'], (colors.rose as Colors)['400']] // orig: 200
+    : [(colors.yellow as Colors)['500'], (colors.orange as Colors)['500'], (colors.rose as Colors)['600']] // orig: 800
 ))
 
 type ChartDataType = ChartData<any, (number | ScatterDataPoint | null)[], unknown>
@@ -41,7 +41,7 @@ const chartData = $computed<ChartDataType | undefined>(() => (
             label: 'Ethereum (L1)',
             data,
             borderWidth: 2,
-            borderColor: (context: any) => generateChartGradient(context, lineColors),
+            borderColor: 'rgba(0,0,0,0)', // (context: any) => generateChartGradient(context, lineColors),
             backgroundColor: 'transparent',
             pointBorderColor: 'transparent',
             pointBackgroundColor: 'transparent',
@@ -59,6 +59,8 @@ const chartData = $computed<ChartDataType | undefined>(() => (
 const chartOptions = $computed<ChartOptions<any> | undefined>(() => (
   data
     ? ({
+        responsive: true,
+        maintainAspectRatio: false,
         layout: {
           padding: 0,
         },
@@ -91,11 +93,14 @@ const chartOptions = $computed<ChartOptions<any> | undefined>(() => (
             },
           },
           y: {
-            title: {
+            /* title: {
               display: true,
               text: 'ETH Ξ',
-            },
+            }, */
             stacked: false,
+            border: {
+              display: false,
+            },
             min: data[0].y,
             max: data[data.length - 1].y,
             ticks: {
@@ -106,18 +111,18 @@ const chartOptions = $computed<ChartOptions<any> | undefined>(() => (
               color: colorMode.value === 'light' ? (colors.zinc as Colors)[200] : (colors.zinc as Colors)[800],
             },
           },
-          currency: {
-            title: {
-              display: true,
-              text: `${currency.ticker} ${currency.symbol}`,
-            },
-            position: 'right',
-            min: currencyMin,
-            max: currencyMax,
-            ticks: {
-              color: (colors.zinc as Colors)[500],
-            },
-          },
+          // currency: {
+          //   title: {
+          //     display: true,
+          //     text: `${currency.ticker} ${currency.symbol}`,
+          //   },
+          //   position: 'right',
+          //   min: currencyMin,
+          //   max: currencyMax,
+          //   ticks: {
+          //     color: (colors.zinc as Colors)[500],
+          //   },
+          // },
         },
         plugins: {
           legend: {
@@ -126,16 +131,20 @@ const chartOptions = $computed<ChartOptions<any> | undefined>(() => (
           title: {
             display: false,
           },
+          tooltips: {
+            enabled: !ui.mobile,
+          },
         },
       })
     : undefined
 ))
 
-function generateData(items: TransactionItem[]) {
+function generateData(items: TransactionItem[], unit: 'eth' | 'currency') {
   let cum = 0
   return items.reduce((list: { x: DatetimeString; y: number }[], item) => {
     if (item.timestamp) {
-      cum += +ethersUtils.formatUnits(item.transaction.gasLimit * item.transaction.gasPrice, props.unit)
+      const val = +ethersUtils.formatUnits(item.transaction.gasLimit * item.transaction.gasPrice, 'ether')
+      cum += unit === 'eth' ? val : (useEthToCurrency(val) || 0)
       list.push({
         x: item.timestamp.toISOString(),
         y: cum,
