@@ -160,18 +160,9 @@ onMounted(() => {
     width: 100%;
   }
 
-  :root {
-  --scrollbar-width: 0;
-}
-
-::-webkit-scrollbar {
-  width: var(--scrollbar-width);
-}
-
-.scrollable-element {
-  -ms-overflow-style: none;
-  overflow: -moz-scrollbars-none;
-  scrollbar-width: var(--scrollbar-width);
+  ::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
 }
 </style>
