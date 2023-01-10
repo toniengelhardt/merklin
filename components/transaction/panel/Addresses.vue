@@ -6,23 +6,33 @@ const items = $computed(() => transactionStore.transactionItems)
 const addressCounts = $computed(() => {
   if (items) {
     const inDict = {}
+    let inCount = 0
     const outDict = {}
+    let outCount = 0
     items.forEach((item) => {
       if (item.type === 'send') {
         dictIncrement(outDict, item.transaction.to)
+        outCount += 1
       }
       else if (item.type === 'receive') {
         dictIncrement(inDict, item.transaction.from)
+        inCount += 1
       }
     })
+    const uniqueIn = Object.keys(inDict).length
+    const uniqueOut = Object.keys(outDict).length
     return {
-      in: Object.keys(inDict).length,
-      out: Object.keys(outDict).length,
+      in: uniqueIn,
+      inRepRate: 1 - uniqueIn / inCount,
+      out: uniqueOut,
+      outRepRate: 1 - uniqueOut / outCount,
     }
   }
   return {
     in: undefined,
+    inRepRate: 0,
     out: undefined,
+    outRepRate: 0,
   }
 })
 </script>
@@ -48,7 +58,7 @@ const addressCounts = $computed(() => {
                 Rep. rate
               </div>
               <div>
-                0%
+                {{ formatPercent(addressCounts.inRepRate) }}
               </div>
             </div>
           </div>
@@ -73,7 +83,7 @@ const addressCounts = $computed(() => {
                 Rep. rate
               </div>
               <div>
-                0%
+                {{ formatPercent(addressCounts.inRepRate) }}
               </div>
             </div>
           </div>
