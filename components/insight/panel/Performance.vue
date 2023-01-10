@@ -13,7 +13,9 @@ const addressStore = useAddressStore()
         <div text-2xl md:text-4xl>
           🐰
         </div>
-        <div text-sm text-faint italic>Under construction...</div>
+        <div text-sm text-faint italic>
+          Under construction...
+        </div>
       </div>
       <AppNoAddress v-else />
     </div>

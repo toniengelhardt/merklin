@@ -19,7 +19,7 @@ export const appMenuItems = [
     title: 'Transactions',
     link: '/transactions',
   },
-  /*{
+  /* {
     icon: {
       name: 'assets',
     },
