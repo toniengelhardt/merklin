@@ -17,7 +17,7 @@ const transactionStore = useTransactionStore()
 
 const items = $computed(() => transactionStore.transactionItems)
 const data = $computed(() => items ? generateData(items, props.unit) : undefined)
-const max = $computed(() => Math.max(...(data?.map(d => d.y) || [])))
+const max = $computed(() => Math.ceil(Math.max(...(data?.map(d => d.y) || []))))
 
 const fillColors = $computed(() => (
   colorMode.value === 'light'
