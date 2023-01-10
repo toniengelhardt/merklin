@@ -92,42 +92,44 @@ onMounted(() => {
 </script>
 
 <template>
-  <div
-    class="no-translate"
-    :class="{ obscure: ui.obscure }"
-    relative bg-base
-  >
+  <div class="scrollable-element">
     <div
-      class="bg-gradient"
-      absolute top-0 left-0 bottom-0 right-0 z-0
-    />
-    <div
-      class="container"
-      relative flex flex-col md:flex-row
-      max-w-100vw overflow-x-hidden text-base z-1
+      class="no-translate"
+      :class="{ obscure: ui.obscure }"
+      relative bg-base
     >
-      <div v-if="ui.mobile" h-14>
-        <MobileHeader />
-      </div>
-      <div v-else flex flex-col w-70 bg-base>
-        <AppMenu />
-      </div>
-      <main flex-1 flex flex-col>
-        <ActionBar v-if="!ui.mobile" />
-        <div
-          class="content"
-          flex-1 flex items-start overflow-scroll box-border
-        >
-          <NuxtPage />
+      <div
+        class="bg-gradient"
+        absolute top-0 left-0 bottom-0 right-0 z-0
+      />
+      <div
+        class="container"
+        relative flex flex-col md:flex-row
+        max-w-100vw overflow-x-hidden text-base z-1
+      >
+        <div v-if="ui.mobile" h-14>
+          <MobileHeader />
         </div>
-      </main>
-      <div v-if="ui.mobile" h-14>
-        <MobileNavigation />
+        <div v-else flex flex-col w-70 bg-base>
+          <AppMenu />
+        </div>
+        <main flex-1 flex flex-col>
+          <ActionBar v-if="!ui.mobile" />
+          <div
+            class="content"
+            flex-1 flex items-start overflow-scroll box-border
+          >
+            <NuxtPage />
+          </div>
+        </main>
+        <div v-if="ui.mobile" h-14>
+          <MobileNavigation />
+        </div>
       </div>
+      <teleport to="body">
+        <AddressDialog v-model="ui.addressDialogOpen" />
+      </teleport>
     </div>
-    <teleport to="body">
-      <AddressDialog v-model="ui.addressDialogOpen" />
-    </teleport>
   </div>
 </template>
 
@@ -159,5 +161,19 @@ onMounted(() => {
     height: 1px;
     width: 100%;
   }
+
+  :root {
+  --scrollbar-width: 0;
+}
+
+::-webkit-scrollbar {
+  width: var(--scrollbar-width);
+}
+
+.scrollable-element {
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+  scrollbar-width: var(--scrollbar-width);
+}
 }
 </style>

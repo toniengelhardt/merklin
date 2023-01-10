@@ -93,6 +93,8 @@ const addressStore = useAddressStore()
         Coming soon...
       </div>
     </div>
-    <div col-span-12 h-0 lt-md:hidden><!-- Fix missing padding --></div>
+    <div col-span-12 h-0 lt-md:hidden>
+      <!-- Fix missing padding -->
+    </div>
   </div>
 </template>
