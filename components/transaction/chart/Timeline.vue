@@ -120,7 +120,7 @@ const chartOptions = computed<ChartOptions<any> | undefined>(() => (
           title: {
             display: false,
           },
-          tooltips: {
+          tooltip: {
             enabled: !ui.mobile,
           },
         },

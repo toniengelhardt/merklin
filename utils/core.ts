@@ -12,3 +12,12 @@ export function dictIncrement(dict: { [key: string | number]: any }, key: number
     dict[key] = 1
   }
 }
+
+/**
+ * Formats a number to percent.
+ * @param value: number to format.
+ */
+export function formatPercent(value: number) {
+  const fvalue = value * 100
+  return `${fvalue < 1 ? fvalue.toPrecision(1) : fvalue.toFixed(0)}%`
+}
