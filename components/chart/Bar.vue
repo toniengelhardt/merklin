@@ -21,15 +21,6 @@ const props = withDefaults(defineProps<{
 
 const ui = useUIStore()
 
-const defaultOptions = {
-  responsive: true,
-  maintainAspectRatio: false,
-}
-const mergedOptions = $computed(() => Object.assign(defaultOptions, props.chartOptions))
-
-const defaultPlugins: any[] = []
-const mergedPlugins = $computed(() => [...defaultPlugins, ...props.plugins])
-
 const mergedHeight = $computed(() => props.height || (ui.mobile ? '8rem' : '12rem'))
 </script>
 
@@ -38,7 +29,7 @@ const mergedHeight = $computed(() => props.height || (ui.mobile ? '8rem' : '12re
     <BarChart
       :chart-id="chartId"
       :data="chartData"
-      :options="mergedOptions"
+      :options="chartOptions"
       :class="cssClasses"
       :style="styles"
       :plugins="[]"

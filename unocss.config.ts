@@ -27,6 +27,7 @@ export default defineConfig({
     'text-gradient-yellow': 'bg-gradient-to-r from-yellow-600 to-yellow-400 text-transparent bg-clip-text',
     'text-gradient-yellow-rose': 'bg-gradient-to-r from-yellow-400 to-rose-400 text-transparent bg-clip-text',
     'text-gradient-purple': 'bg-gradient-to-r from-purple-600 to-purple-400 text-transparent bg-clip-text',
+    'text-gradient-green': 'bg-gradient-to-r from-green-600 to-green-400 text-transparent bg-clip-text',
     'text-address': 'self-start font-mono',
     'text-value': 'self-start font-mono',
     'text-currency': 'self-start text-value text-faint',

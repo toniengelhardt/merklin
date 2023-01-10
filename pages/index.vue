@@ -16,9 +16,9 @@ const addressStore = useAddressStore()
           </div>
         </div>
         <div class="flex-1/2 lt-md:ml-2 md:(flex-1 mt-4)" panel flex-center flex-col>
-          <div v-if="addressStore.activeAddresses.length" flex items-end text-3xl md:text-5xl text-gradient-yellow-rose>
+          <div v-if="addressStore.activeAddresses.length" flex items-end text-3xl md:text-5xl text-gradient-green>
             <span font-bold>$</span>
-            <span font-black>42</span>
+            <span font-black>--</span>
           </div>
           <AppNoAddress v-else />
         </div>
@@ -93,6 +93,8 @@ const addressStore = useAddressStore()
         Coming soon...
       </div>
     </div>
-    <div col-span-12 h-0 lt-md:hidden><!-- Fix missing padding --></div>
+    <div col-span-12 h-0 lt-md:hidden>
+      <!-- Fix missing padding -->
+    </div>
   </div>
 </template>

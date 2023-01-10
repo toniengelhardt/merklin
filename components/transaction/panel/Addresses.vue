@@ -40,7 +40,7 @@ const addressCounts = $computed(() => {
             <div flex-center h-10 mt-2 text-xs text-dim>
               Incoming
             </div>
-            <div flex-center w-12 h-12 bg-green-500:10 text-green-500 rounded-xl>
+            <div flex-center w-12 h-12 bg-blue-500:10 text-blue-500 font-bold rounded-xl>
               {{ addressCounts.in }}
             </div>
             <div flex-center flex-col h-12 text-xs>
@@ -65,7 +65,7 @@ const addressCounts = $computed(() => {
             <div flex-center h-10 mt-2 text-xs text-dim>
               Outgoing
             </div>
-            <div flex-center w-12 h-12 bg-orange-500:10 text-orange-500 rounded-xl>
+            <div flex-center w-12 h-12 bg-purple-500:10 text-purple-500 font-bold rounded-xl>
               {{ addressCounts.out }}
             </div>
             <div flex-center flex-col h-12 text-xs>

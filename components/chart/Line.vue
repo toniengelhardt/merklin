@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { ChartData, ChartOptions } from 'chart.js'
 
-const props = withDefaults(defineProps<{
+withDefaults(defineProps<{
   chartId?: string
   chartData: ChartData
   chartOptions?: ChartOptions
@@ -18,15 +18,6 @@ const props = withDefaults(defineProps<{
   styles: () => {},
   plugins: () => {},
 })
-
-const defaultOptions = {
-  responsive: true,
-  maintainAspectRatio: false,
-}
-const mergedOptions = $computed(() => Object.assign(defaultOptions, props.chartOptions))
-
-const defaultPlugins: any[] = []
-const mergedPlugins = $computed(() => [...defaultPlugins, ...props.plugins])
 </script>
 
 <template>
@@ -34,7 +25,7 @@ const mergedPlugins = $computed(() => [...defaultPlugins, ...props.plugins])
     <LineChart
       :chart-id="chartId"
       :data="chartData"
-      :options="mergedOptions"
+      :options="chartOptions"
       :class="cssClasses"
       :style="styles"
       :plugins="[]"
