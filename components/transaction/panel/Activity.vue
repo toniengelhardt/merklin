@@ -54,7 +54,7 @@ const counts = $computed(() => {
     </div>
     <div flex-1 flex-center>
       <template v-if="addressStore.activeAddresses.length">
-        <TransactionChartTimeline v-if="items && items.length" :items="items" flex-1 flex-center />
+        <TransactionChartActivity v-if="items && items.length" :items="items" flex-1 flex-center />
         <AppNoTransactions v-else />
       </template>
       <AppNoAddress v-else />

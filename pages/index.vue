@@ -1,5 +1,20 @@
 <script setup lang="ts">
+import { utils as ethersUtils } from 'ethers'
 const addressStore = useAddressStore()
+const transactionStore = useTransactionStore()
+
+const assetTotal = $computed(() => {
+  if (transactionStore.transactionItems) {
+    return Math.round(transactionStore.transactionItems.reduce((total, item) => {
+      if (item.timestamp && ['send', 'receive'].includes(item.type)) {
+        const val = +ethersUtils.formatUnits(item.transaction.value, 'ether')
+        total += (item.type === 'send' ? -1 : 1) * (useEthToCurrency(val) || 0)
+      }
+      return total
+    }, 0))
+  }
+  return undefined
+})
 </script>
 
 <template>
@@ -18,7 +33,7 @@ const addressStore = useAddressStore()
         <div class="flex-1/2 lt-md:ml-2 md:(flex-1 mt-4)" panel flex-center flex-col>
           <div v-if="addressStore.activeAddresses.length" flex items-end text-3xl md:text-5xl text-gradient-green>
             <span font-bold>$</span>
-            <span font-black>--</span>
+            <span font-black>{{ assetTotal }}</span>
           </div>
           <AppNoAddress v-else />
         </div>

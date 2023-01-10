@@ -39,8 +39,9 @@ const addressCounts = $computed(() => {
 
 <template>
   <div panel flex flex-col md:h-61>
-    <h2 panel-title>
-      Addresses
+    <h2 panel-title flex justify-between>
+      <span>Addresses</span>
+      <span class="mx-1 text-1.5rem text-base">🧜🏻‍♀️</span>
     </h2>
     <template v-if="addressStore.activeAddresses.length">
       <template v-if="items?.length">
@@ -50,7 +51,7 @@ const addressCounts = $computed(() => {
             <div flex-center h-10 mt-2 text-xs text-dim>
               Incoming
             </div>
-            <div flex-center w-12 h-12 bg-blue-500:10 text-blue-500 font-bold rounded-xl>
+            <div flex-center w-12 h-12 bg-sky-500:10 text-sky-500 font-bold rounded-xl>
               {{ addressCounts.in }}
             </div>
             <div flex-center flex-col h-12 text-xs>
@@ -75,7 +76,7 @@ const addressCounts = $computed(() => {
             <div flex-center h-10 mt-2 text-xs text-dim>
               Outgoing
             </div>
-            <div flex-center w-12 h-12 bg-purple-500:10 text-purple-500 font-bold rounded-xl>
+            <div flex-center w-12 h-12 bg-pink-300:10 text-pink-300 font-bold rounded-xl>
               {{ addressCounts.out }}
             </div>
             <div flex-center flex-col h-12 text-xs>

@@ -158,8 +158,11 @@ function generateHistograms(items: TransactionItem[]): {
 
   items.forEach((item) => {
     if (item.timestamp) {
-      normalizeDate(item.timestamp)
-      const _timestamp = item.timestamp.toISOString()
+      // Note: it's important to truly clone the date object here since the
+      // normalizeDate function mutates the item in place.
+      const nts = new Date(item.timestamp.valueOf())
+      normalizeDate(nts)
+      const _timestamp = nts.toISOString()
       if (valueDict[_timestamp]) {
         if (item.type === 'send') {
           valueDict[_timestamp].sent -= 1
