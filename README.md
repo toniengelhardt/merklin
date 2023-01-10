@@ -1,11 +1,8 @@
 # M Ξ R K L 🧙🏽‍♂️ N
 
-**Note:** I renamed the project from **m3tadata** to **merklin**. Not sure if this will be the final name, but for now it works I guess. You can find a preview of the app a [merklin.xyz](https://merklin.xyz). The theme changed, from jungle to magic 🪄.
-
 This is an attempt to build an open-source web-only EVM explorer (similar to [Zapper](https://zapper.fi/), [Zerion](https://app.zerion.io/), etc.) based on [Vue](https://vuejs.org) and [Nuxt](https://nuxt.com), and supercharge it with powerful analytics and visualizations.
 
-<img width="49%" alt="Merklin Preview Insights" src="https://user-images.githubusercontent.com/2703233/211148722-a13ec34b-a16d-45dd-98f0-af4f4172ca38.png"> <img width="49%" alt="Merklin Preview Transactions" src="https://user-images.githubusercontent.com/2703233/211148727-b61ca5ba-043c-45f3-873f-49b96fd9140f.png">
-
+<img width="1280" alt="Merklin Preview" src="https://user-images.githubusercontent.com/2703233/211625431-b588e175-72ab-406f-b6ec-6ad6414b2440.png">
 
 The idea is to focus primarily on on-chain analytics, i.a.
 
