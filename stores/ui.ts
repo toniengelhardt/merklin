@@ -5,6 +5,7 @@ export const useUIStore = defineStore('ui', {
     mobile?: boolean
     obscure: boolean
     addressDialogOpen: boolean
+    performanceChartUnit: 'eth' | 'currency'
     activityChartTimeframe: '30d' | '3m' | '1y' | 'max'
     gasBurnChartUnit: 'eth' | 'currency'
   } => {
@@ -12,6 +13,7 @@ export const useUIStore = defineStore('ui', {
       mobile: undefined,
       obscure: false,
       addressDialogOpen: false,
+      performanceChartUnit: 'currency',
       activityChartTimeframe: '1y',
       gasBurnChartUnit: 'currency',
     }
@@ -21,6 +23,7 @@ export const useUIStore = defineStore('ui', {
   persist: {
     paths: [
       'obscure',
+      'performanceChartUnit',
       'activityTimeframe',
       'gasBurnChartUnit',
     ],
