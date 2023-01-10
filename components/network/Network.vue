@@ -9,7 +9,6 @@ const otherNetworks = $computed(() => networkList.filter(network => network !== 
   <Menu
     orientation="left"
     :toggle-icon="{ name: activeNetwork.icon, size: '1.3rem' }"
-    :toggle-label="true || ui.mobile ? undefined : (activeNetwork.label || 'N/A')"
     toggle-class="btn-transparent w-10 h-10 flex-center p-0"
   >
     <!-- <template v-if="!ui.mobile" #before>

@@ -3,7 +3,7 @@ withDefaults(defineProps<{
   address: Address
   format?: 'short' | 'long'
 }>(), {
-  format: 'long'
+  format: 'long',
 })
 </script>
 

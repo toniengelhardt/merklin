@@ -56,7 +56,9 @@ function removeAddress(address: Address) {
           @keypress.enter="addAddress(($event.target as HTMLInputElement)?.value)"
         >
       </div>
-      <p mx-7 my-0 text-xs text-faint>Past address and hit 'Enter'.</p>
+      <p mx-7 my-0 text-xs text-faint>
+        Past address and hit 'Enter'.
+      </p>
     </div>
   </div>
 </template>
