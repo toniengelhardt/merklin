@@ -159,5 +159,10 @@ onMounted(() => {
     height: 1px;
     width: 100%;
   }
+
+  ::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
 }
 </style>
