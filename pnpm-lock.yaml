@@ -4,7 +4,7 @@ specifiers:
   '@actions/core': ^1.10.0
   '@antfu/eslint-config': ^0.34.1
   '@esbuild-plugins/node-globals-polyfill': ^0.1.1
-  '@kevinmarrec/nuxt-pwa': 0.14.0
+  '@kevinmarrec/nuxt-pwa': 0.14.1
   '@nuxt/test-utils': ^3.0.0
   '@nuxtjs/color-mode': ^3.2.0
   '@nuxtjs/plausible': ^0.2.0
@@ -13,7 +13,7 @@ specifiers:
   '@unocss/transformer-directives': ^0.48.3
   '@vitest/ui': ^0.27.0
   '@vueuse/nuxt': ^9.10.0
-  '@wagmi/core': ^0.8.13
+  '@wagmi/core': ^0.8.14
   buffer: ^6.0.3
   chart.js: ^4.1.2
   chartjs-adapter-date-fns: ^3.0.0
@@ -41,7 +41,7 @@ specifiers:
 dependencies:
   '@esbuild-plugins/node-globals-polyfill': 0.1.1
   '@pinia/nuxt': 0.4.6_typescript@4.9.4
-  '@wagmi/core': 0.8.13_c4tpmuajjwy7vjodfmym27ncri
+  '@wagmi/core': 0.8.14_c4tpmuajjwy7vjodfmym27ncri
   buffer: 6.0.3
   chart.js: 4.1.2
   chartjs-adapter-date-fns: 3.0.0_kluv2ktejb2igagp3yc56zuwiy
@@ -60,7 +60,7 @@ dependencies:
 devDependencies:
   '@actions/core': 1.10.0
   '@antfu/eslint-config': 0.34.1_iukboom6ndih5an6iafl45j2fe
-  '@kevinmarrec/nuxt-pwa': 0.14.0
+  '@kevinmarrec/nuxt-pwa': 0.14.1
   '@nuxt/test-utils': 3.0.0
   '@nuxtjs/color-mode': 3.2.0
   '@nuxtjs/plausible': 0.2.0
@@ -1258,8 +1258,8 @@ packages:
       '@pedrouid/environment': 1.0.1
     dev: false
 
-  /@kevinmarrec/nuxt-pwa/0.14.0:
-    resolution: {integrity: sha512-60YWkyFAgCZVl9BKwC5aKEv7l5s/SuGIP4jf1o4uiE1B5Mxpm4n5HFPmDdirMn+RX+Xe4LFjdB2vuxxcUt3fFw==}
+  /@kevinmarrec/nuxt-pwa/0.14.1:
+    resolution: {integrity: sha512-nvT7vgdvlCWjbbkGVjx011+6YB3/wduUPoCjbEEmHcrpRHoJxzPEWn57Wok0l9HiRIbTg6I51UUKGivcIaaohA==}
     dependencies:
       hasha: 5.2.2
       sharp: 0.31.3
@@ -2583,7 +2583,7 @@ packages:
     resolution: {integrity: sha512-q3qAq1MIksHut95gCHefA037FPXJGNlkGc6POYlwhVd42bLq+WaVZTxKYMsdfRrJ00UfTYjMisxrXVHDl7tGKA==}
     dev: false
 
-  /@wagmi/connectors/0.1.7_pp6aeweqtti6khciohi2nv2xqa:
+  /@wagmi/connectors/0.1.7_3vng7zpcskfzk27doxtcjxijr4:
     resolution: {integrity: sha512-c9xmxxAQHqMhHNcClFcqJyaiDEHmFcdHlWHybzPpUFV5uzqb0PwUxWq7bLh+1suV4k6AaFNDcr6Z3cuuip8NHw==}
     peerDependencies:
       '@wagmi/core': 0.8.x
@@ -2594,7 +2594,7 @@ packages:
     dependencies:
       '@coinbase/wallet-sdk': 3.6.3
       '@ledgerhq/connect-kit-loader': 1.0.2
-      '@wagmi/core': 0.8.13_c4tpmuajjwy7vjodfmym27ncri
+      '@wagmi/core': 0.8.14_c4tpmuajjwy7vjodfmym27ncri
       '@walletconnect/ethereum-provider': 1.8.0
       '@walletconnect/qrcode-modal': 1.8.0
       '@walletconnect/universal-provider': 2.2.0
@@ -2613,8 +2613,8 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@wagmi/core/0.8.13_c4tpmuajjwy7vjodfmym27ncri:
-    resolution: {integrity: sha512-9nbQvG34MwxCLki/wFg+5g4D2wQgHmdVsUHtdGlTYk1sjK87r1ygJ4nIBBq/upFmypGZQ5I83QvB9hNglAqICQ==}
+  /@wagmi/core/0.8.14_c4tpmuajjwy7vjodfmym27ncri:
+    resolution: {integrity: sha512-zhBaC8NJoEvzEY65CEXQWuqzsarKbi/dN/IAnYav57H1jU8de3/Ou2qb1Efilc3QG1yEuoCScgvf4o1Vjhe6VA==}
     peerDependencies:
       '@coinbase/wallet-sdk': '>=3.6.0'
       '@walletconnect/ethereum-provider': '>=1.7.5'
@@ -2626,11 +2626,11 @@ packages:
         optional: true
     dependencies:
       '@wagmi/chains': 0.1.9
-      '@wagmi/connectors': 0.1.7_pp6aeweqtti6khciohi2nv2xqa
+      '@wagmi/connectors': 0.1.7_3vng7zpcskfzk27doxtcjxijr4
       abitype: 0.2.5_typescript@4.9.4
       ethers: 5.7.2
       eventemitter3: 4.0.7
-      zustand: 4.2.0
+      zustand: 4.3.1
     transitivePeerDependencies:
       - '@babel/core'
       - '@react-native-async-storage/async-storage'
@@ -10061,8 +10061,8 @@ packages:
       readable-stream: 3.6.0
     dev: true
 
-  /zustand/4.2.0:
-    resolution: {integrity: sha512-eNwaDoD2FYVnMgtNxiMUhTJO780wonZUzJrPQTLYI0erSIMZF8cniWFW22kGQUECd8rdHRJ/ZJL2XO54c9Ttuw==}
+  /zustand/4.3.1:
+    resolution: {integrity: sha512-EVyo/eLlOTcJm/X5M00rwtbYFXwRVTaRteSvhtbTZUCQFJkNfIyHPiJ6Ke68MSWzcKHpPzvqNH4gC2ZS/sbNqw==}
     engines: {node: '>=12.7.0'}
     peerDependencies:
       immer: '>=9.0'
