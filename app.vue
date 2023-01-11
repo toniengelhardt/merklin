@@ -20,7 +20,7 @@ window.global = window
 const intervals: ReturnType<typeof useIntervalFn>[] = []
 
 const ui = useUIStore()
-// const addressStore = useAddressStore()
+const addressStore = useAddressStore()
 const wallet = useWalletStore()
 const { updateNetworkData } = useNetworkStore()
 const { updatePriceData } = usePriceStore()
@@ -77,6 +77,10 @@ onMounted(() => {
   loadTransactions()
   useEventListener(window.visualViewport, 'resize', useThrottleFn(() => setMobile(), 100))
   useEventListener(window.document, 'visibilitychange', onVisibilityChange)
+
+  if (!addressStore.activeAddresses.length) {
+    ui.addressDialogOpen = true
+  }
 })
 
 // watchAccount((account) => {

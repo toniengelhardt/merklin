@@ -40,3 +40,18 @@ export function inGwei(value: number): number {
 export function gweiToEth(value: number): number {
   return value / 1000000000
 }
+
+export const sampleAddresses = [
+  {
+    label: 'vitalik.eth',
+    address: '0xd8da6bf26964af9d7eed9e03e53415d37aa96045',
+  },
+  {
+    label: 'hayden.eth',
+    address: '0x50ec05ade8280758e2077fcbc08d878d4aef79c3',
+  },
+  {
+    label: 'Cozomo de Medici',
+    address: '0xCe90a7949bb78892F159F428D0dC23a8E3584d75',
+  },
+]

@@ -18,10 +18,6 @@ function addAddress(address: Address) {
     addressStore.selectAddress(address)
   }
 }
-
-function removeAddress(address: Address) {
-  addressStore.deleteAddress(address)
-}
 </script>
 
 <template>
@@ -44,7 +40,7 @@ function removeAddress(address: Address) {
           <AddressIcon :address="address" w-4 h-4 ml-2 rounded-md lt-md:hidden border-solid border-zinc-400 />
           <AddressDisplay :address="address" ml-1.5 />
         </div>
-        <div flex-center h-5 w-5 ml-2 cursor-pointer @click.stop="removeAddress(address)">
+        <div flex-center h-5 w-5 ml-2 cursor-pointer @click.stop="addressStore.deleteAddress(address)">
           <Icon name="delete" />
         </div>
       </div>
