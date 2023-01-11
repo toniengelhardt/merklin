@@ -4,9 +4,9 @@ const networkStore = useNetworkStore()
 </script>
 
 <template>
-  <div flex items-center>
+  <div flex items-center text-dim>
     <Icon name="block" />
-    <div ml-2 text-xs text-dim>
+    <div ml-2 text-xs>
       {{ networkStore ? networkStore[wallet.networkName || 'homestead'].blocknumber : '...' }}
     </div>
     <div
