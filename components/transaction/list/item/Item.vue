@@ -97,6 +97,26 @@ const gasCostDisplay = $computed(() => gasCost?.toPrecision(2))
           </div>
         </div>
       </div>
+      <div flex mt-4 mb-2 lt-md:hidden>
+        <div flex>
+          <NuxtLink
+            :to="`https://etherscan.io/tx/${item.transaction.hash}`"
+            target="_blank"
+            btn-default px-3 btn-xs
+            @click.stop
+          >
+            <span>Etherscan</span><Icon name="external" ml-0.5 />
+          </NuxtLink>
+          <NuxtLink
+            :to="`https://beaconcha.in/tx/${item.transaction.hash}`"
+            target="_blank"
+            btn-default px-3 btn-xs ml-2
+            @click.stop
+          >
+            <span>Beaconchain</span><Icon name="external" ml-0.5 />
+          </NuxtLink>
+        </div>
+      </div>
       <!-- <div flex mt-3>
         <div flex flex-col>
           <div text-xs text-faint>
