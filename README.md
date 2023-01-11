@@ -68,9 +68,9 @@ Ideally, all code that is not self-explanatory should have documentation in the 
 
 When opening a PR to `main`, GitHub actions will run the following checks:
 
-- Lint (ESLint)
-- Typecheck (vue-tsc)
-- Build and run tests (Vitest) for Linux, OS X, and Windows
+- Lint ([ESLint](https://eslint.org))
+- Typecheck ([vue-tsc](https://www.npmjs.com/package/vue-tsc))
+- Build and run tests ([Vitest](https://vitest.dev)) for Linux, OS X, and Windows
 
 Please make sure they pass!
 
@@ -84,4 +84,4 @@ Please don't be afraid to ask questions! You can start a thread under Discussion
 
 Development insights are available on [RepoTracker](https://repo-tracker.com/r/gh/toniengelhardt/merklin).
 
-Here's a [list](https://github.com/toniengelhardt/web3-vue-and-nuxt-projects) of web3 projects that already use Vue in their stack.
+Here's a [list of web3 projects](https://github.com/toniengelhardt/web3-vue-and-nuxt-projects) that already use Vue in their stack.
