@@ -121,7 +121,7 @@ export default defineNuxtConfig({
       ogTitle: appTitle,
       ogDescription: appDescription,
       ogUrl: appUrl,
-      theme_color: undefined,
+      theme_color: false,
     },
     icon: {
       source: 'public/icon.png',
