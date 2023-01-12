@@ -61,68 +61,38 @@ const chartOptions = $computed<ChartOptions<any> | undefined>(() => (
     ? ({
         responsive: true,
         maintainAspectRatio: false,
-        layout: {
-          padding: 0,
-        },
         interaction: {
           intersect: false,
           mode: 'index',
         },
         scales: {
           x: {
-            stacked: true,
             type: 'time',
-            time: {
-              unit: 'month',
-              min: data[0].x,
-              max: data[data.length - 1].x,
-              displayFormats: {
-                day: 'MMM',
-              },
+            border: {
+              display: false,
             },
             ticks: {
               color: (colors.zinc as Colors)[500],
               maxRotation: 0,
-              callback: formatTicksMonthly,
             },
             grid: {
-              display: false,
-              drawBorder: false,
-              tickLength: 0,
-              color: colorMode.value === 'light' ? 'rgba(0,0,0,.05)' : 'rgba(255,255,255,.05)',
+              color: 'rgba(0,0,0,0)',
+              tickColor: colorMode.value === 'light' ? (theme.colors as any).zinc[200] : (theme.colors as any).zinc[800],
             },
           },
           y: {
-            /* title: {
-              display: true,
-              text: 'ETH Ξ',
-            }, */
-            stacked: false,
             border: {
               display: false,
             },
-            min: data[0].y,
-            max: data[data.length - 1].y,
             ticks: {
               color: (colors.zinc as Colors)[500],
+              callback: formatTicksCurrency,
             },
             grid: {
-              tickLength: 0,
+              tickColor: 'rgba(0,0,0,0)',
               color: colorMode.value === 'light' ? (colors.zinc as Colors)[200] : (colors.zinc as Colors)[800],
             },
           },
-          // currency: {
-          //   title: {
-          //     display: true,
-          //     text: `${currency.ticker} ${currency.symbol}`,
-          //   },
-          //   position: 'right',
-          //   min: currencyMin,
-          //   max: currencyMax,
-          //   ticks: {
-          //     color: (colors.zinc as Colors)[500],
-          //   },
-          // },
         },
         plugins: {
           legend: {

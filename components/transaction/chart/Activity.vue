@@ -52,43 +52,34 @@ const chartOptions = computed<ChartOptions<any> | undefined>(() => (
     ? ({
         responsive: true,
         maintainAspectRatio: false,
-        layout: {
-          padding: 0,
-        },
         interaction: {
           intersect: false,
           mode: 'index',
         },
         scales: {
           x: {
-            stacked: true,
             type: 'time',
-            time: {
-              unit: 'month',
-              min: histData.labels[0],
-              max: histData.labels[lastIdx],
-              displayFormats: {
-                day: 'MMM',
-              },
-            },
+            // time: {
+            //   unit: 'month',
+            //   min: histData.labels[0],
+            //   max: histData.labels[lastIdx],
+            //   displayFormats: {
+            //     day: 'MMM',
+            //   },
+            // },
             border: {
               display: false,
             },
             ticks: {
-              // source: 'labels',
               color: 'grey',
               maxRotation: 0,
-              callback: formatTicksMonthly,
             },
             grid: {
-              display: false,
-              drawBorder: false,
-              tickLength: 0,
-              color: colorMode.value === 'light' ? 'rgba(0,0,0,.05)' : 'rgba(255,255,255,.05)',
+              tickColor: colorMode.value === 'light' ? (theme.colors as any).zinc[200] : (theme.colors as any).zinc[800],
+              color: 'rgba(0,0,0,0)',
             },
           },
           y: {
-            stacked: false,
             min: -maxVal,
             max: maxVal,
             border: {
@@ -102,13 +93,11 @@ const chartOptions = computed<ChartOptions<any> | undefined>(() => (
             grid: {
               tickColor: 'transparent',
               tickLength: 0,
-              drawBorder: false,
               color: (item: any) => {
-                const base = colorMode.value === 'light' ? '0,0,0' : '255,255,255'
-                if (item.tick.value === 0)
-                  return `rgba(${base},.2)`
-
-                return `rgba(${base},.05)`
+                if (item.tick.value === 0) {
+                  return colorMode.value === 'light' ? (theme.colors as any).zinc[400] : (theme.colors as any).zinc[500]
+                }
+                return colorMode.value === 'light' ? (theme.colors as any).zinc[200] : (theme.colors as any).zinc[800]
               },
             },
           },

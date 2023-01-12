@@ -28,6 +28,17 @@ export function formatTicksMonthly(value: number): string | string[] {
 }
 
 /**
+ * Used as callback for chart.js ticks.
+ * Output format is compact notation for monetary values, e.g. 1.5k, 2.2M, etc.
+ * @param value: timestamp.
+ * @param idx: index of the tick.
+ */
+export function formatTicksCurrency(value: number): string | string[] {
+  const fvalue = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', compactDisplay: 'long' }).format(value)
+  return fvalue.replace('$', '')
+}
+
+/**
  * Line chart gradient.
  * Source: https://www.chartjs.org/docs/latest/samples/advanced/linear-gradient.html
  */

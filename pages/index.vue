@@ -15,6 +15,11 @@ const assetTotal = $computed(() => {
   }
   return undefined
 })
+const assetTotalFormatted = $computed(() => (
+  assetTotal
+    ? new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', compactDisplay: 'long' }).format(assetTotal)
+    : '--'
+))
 </script>
 
 <template>
@@ -32,8 +37,7 @@ const assetTotal = $computed(() => {
         </div>
         <div class="flex-1/2 lt-md:ml-2 md:(flex-1 mt-4)" panel flex-center flex-col>
           <div v-if="addressStore.activeAddresses.length" flex items-end text-3xl md:text-5xl text-gradient-green>
-            <span font-bold>$</span>
-            <span font-black>{{ assetTotal }}</span>
+            <span font-black>{{ assetTotalFormatted }}</span>
           </div>
           <AppNoAddress v-else />
         </div>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { theme } from '@unocss/preset-mini'
-import type { ChartData, ChartOptions, ScatterDataPoint } from 'chart.js'
+import type { ChartData, ChartOptions, LineOptions, ScatterDataPoint } from 'chart.js'
 import { utils as ethersUtils } from 'ethers'
 
 const props = withDefaults(defineProps<{
@@ -17,11 +17,11 @@ const transactionStore = useTransactionStore()
 
 const items = $computed(() => transactionStore.transactionItems)
 const data = $computed(() => items ? generateData(items, props.unit) : undefined)
-const max = $computed(() => Math.ceil(Math.max(...(data?.map(d => d.y) || []))))
+const max = $computed(() => Math.max(...(data?.map(d => d.y) || [])))
 
 const fillColors = $computed(() => (
   colorMode.value === 'light'
-    ? [(colors.yellow as Colors)['400'], (colors.orange as Colors)['400'], (colors.rose as Colors)['400']] // orig: 200
+    ? [(colors.sky as Colors)['400'], (colors.blue as Colors)['400'], (colors.purple as Colors)['400']] // orig: 200
     : [(colors.sky as Colors)['500'], (colors.blue as Colors)['500'], (colors.purple as Colors)['600']] // orig: 800
 ))
 
@@ -54,9 +54,6 @@ const chartOptions = $computed<ChartOptions<any> | undefined>(() => (
     ? ({
         responsive: true,
         maintainAspectRatio: false,
-        layout: {
-          padding: 0,
-        },
         interaction: {
           intersect: false,
           mode: 'index',
@@ -64,37 +61,30 @@ const chartOptions = $computed<ChartOptions<any> | undefined>(() => (
         scales: {
           x: {
             type: 'time',
-            // time: {
-            //   unit: 'month',
-            //   min: data[0].x,
-            //   max: data[data.length - 1].x,
-            //   displayFormats: {
-            //     day: 'MMM',
-            //   },
-            // },
-            ticks: {
-              color: (colors.zinc as Colors)[500],
-              maxRotation: 0,
-              callback: formatTicksMonthly,
-            },
-            grid: {
-              display: false,
-              drawBorder: false,
-              tickLength: 0,
-              color: colorMode.value === 'light' ? 'rgba(0,0,0,.05)' : 'rgba(255,255,255,.05)',
-            },
-          },
-          y: {
             border: {
               display: false,
             },
-            min: 0,
-            max,
             ticks: {
               color: (colors.zinc as Colors)[500],
+              maxRotation: 0,
             },
             grid: {
-              tickLength: 0,
+              color: 'rgba(0,0,0,0)',
+              tickColor: colorMode.value === 'light' ? (theme.colors as any).zinc[200] : (theme.colors as any).zinc[800],
+            },
+          },
+          y: {
+            min: 0,
+            // max,
+            border: {
+              display: false,
+            },
+            ticks: {
+              color: (colors.zinc as Colors)[500],
+              callback: formatTicksCurrency,
+            },
+            grid: {
+              tickColor: 'rgba(0,0,0,0)',
               color: colorMode.value === 'light' ? (colors.zinc as Colors)[200] : (colors.zinc as Colors)[800],
             },
           },

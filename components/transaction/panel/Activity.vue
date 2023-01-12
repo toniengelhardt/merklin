@@ -30,7 +30,7 @@ const counts = $computed(() => {
       <div v-if="items && items.length" flex="~ 2/3" lt-md:justify-between>
         <div flex md:flex="1/3" justify-center items-center>
           <div flex items-center md:ml-2 text-xs text-dim>
-            <div w-2 h-2 bg-green-500 rounded-full mr-1 />In ({{ counts?.received || '?' }})
+            <div w-2 h-2 bg-green-500 rounded-full mr-1 lt-md:ml-1 />In ({{ counts?.received || '?' }})
           </div>
           <div flex items-center ml-4 text-xs text-dim>
             <div w-2 h-2 bg-orange-500 rounded-full mr-1 />Out ({{ counts?.sent || '?' }})
