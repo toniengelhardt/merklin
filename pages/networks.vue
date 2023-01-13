@@ -9,11 +9,11 @@
         <div class="icon-container">
           <Icon :name="network.icon" size="1.5rem" />
         </div>
-        <div flex-1 ml-3 text-2xl>
+        <div flex-1 ml-2 text-xl font-semibold>
           {{ network.label }}
         </div>
       </div>
-      <div mt-3>
+      <div mt-3 text-sm>
         <div class="item">
           <div class="label">
             Layer:
@@ -114,7 +114,7 @@
   @apply flex mb-1;
 }
 .icon-container {
-  @apply flex justify-center items-center w-12 h-12 bg-element rounded-xl;
+  @apply flex justify-center items-center;
 }
 .label {
   @apply text-dim;
