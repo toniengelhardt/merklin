@@ -30,7 +30,7 @@ function close() {
       Address Book
     </template>
     <div mb-4 text-dim>
-      Click on an address to select it and show insights.
+      Click on an address to get insights.
     </div>
     <div flex lt-md:flex-col mb-2>
       <div flex="1/2" shrink-0 lt-md:mt-2 md:pr-2 box-border>

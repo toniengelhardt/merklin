@@ -1,3 +1,11 @@
+export const useBlockNumber = (networkName: NetworkName, naValue = 'N/A') => {
+  const networkStore = useNetworkStore()
+  return computed(() => {
+    const network = networkStore[networkName as keyof typeof networkStore] as NetworkData | undefined
+    return network?.blocknumber || naValue
+  })
+}
+
 /**
  * Returns gas price for the network in gwei.
  * @param networkName

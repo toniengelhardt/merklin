@@ -48,12 +48,12 @@ function addAddress(address: Address) {
         <input
           ref="newAddressInput"
           placeholder="Add address 0x..."
-          flex-1 ml-4 bg-element border-none mr-7 px-3 py-1.5 rounded-md text-base
+          flex-1 ml-4 bg-element border-none mr-7 px-3 py-2 rounded-md text-base
           @keypress.enter="addAddress(($event.target as HTMLInputElement)?.value)"
         >
       </div>
       <p mx-7 my-0 text-xs text-faint>
-        Past address and hit 'Enter'.
+        Input/paste address and hit 'Enter'.
       </p>
     </div>
   </div>

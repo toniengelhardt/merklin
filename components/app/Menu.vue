@@ -1,8 +1,11 @@
 <template>
-  <div flex items-center h-16 px-6>
+  <div flex justify-between items-center h-14 pl-4 pr-2>
     <Brand />
+    <AccountMenu orientation="right" toggle-class="text-dim" />
   </div>
-  <div flex-1 px-3>
+  <AddressSelect mx-2 />
+  <!-- <Network mx-2 mt-2 /> -->
+  <div flex-1 mt-2 px-2>
     <div grid gap-1>
       <AppMenuItem
         v-for="(item, idx) in appMenuItems"
@@ -11,20 +14,23 @@
       />
     </div>
   </div>
-  <div px-6 text-xs>
+  <div px-4 text-xs>
     <div py-4 border-b-0 border-base>
       <p flex items-center text-sm m-0>
         <b>Disclaimer</b><span ml-1 text-lg>🧌</span>
       </p>
       <p m-0 mt-1 text-dim>
-        This project is work in progress and the presented data might not be correct. Use at your own risk!
+        This project is work in progress and the presented data might not be correct.
       </p>
-      <p flex items-center m-0 mt-2>
+      <p m-0 mt-1 text-dim>
+        Use at your own risk!
+      </p>
+      <p flex items-center m-0 mt-3 font-bold>
         <AppContributeButton />
       </p>
     </div>
   </div>
-  <div h-12 flex justify-between items-center text-sm text-center px-6>
+  <div flex justify-between items-center text-sm text-center px-4 py-3>
     <NuxtLink
       href="https://nuxt.com"
       target="_blank"

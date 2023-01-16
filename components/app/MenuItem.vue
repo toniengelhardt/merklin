@@ -8,21 +8,23 @@ defineProps<{
   <NuxtLink
     :to="item.link"
     :title="item.title"
-    class="flex items-center h-12 px-3 text-lg text-dim font-bold hover:bg-element radius-base decoration-none select-none"
+    class="flex items-center h-10 px-2 text-lg text-dim font-bold hover:bg-element rounded-lg decoration-none select-none"
   >
-    <Icon :name="item.icon.name" size="1.5rem" />
+    <span flex-center w-6>
+      <Icon :name="item.icon.name" size="1.25rem" />
+    </span>
     <span class="gradient ml-2">{{ item.label }}</span>
   </NuxtLink>
 </template>
 
 <style scoped>
-.router-link-active {
+/* .router-link-active {
   @apply bg-element;
-}
-.router-link-active > .icon {
-  @apply text-base; /* text-yellow-600; */
+} */
+.router-link-active > * > .icon {
+  @apply text-yellow-600;
 }
 .router-link-active > .gradient {
-  @apply text-base; /* bg-gradient-to-r from-yellow-600 to-yellow-400 text-transparent bg-clip-text; */
+  @apply text-gradient-yellow;
 }
 </style>

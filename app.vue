@@ -117,7 +117,6 @@ onMounted(() => {
         <AppMenu />
       </div>
       <main flex-1 flex flex-col>
-        <ActionBar v-if="!ui.mobile" />
         <div
           class="content"
           flex-1 flex items-start overflow-scroll box-border
@@ -131,6 +130,7 @@ onMounted(() => {
     </div>
     <teleport to="body">
       <AddressDialog v-model="ui.addressDialogOpen" />
+      <NetworkDialog v-model="ui.networkDialogOpen" />
     </teleport>
   </div>
 </template>

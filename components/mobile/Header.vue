@@ -14,7 +14,7 @@
     </div>
     <div flex="~ 1/3" justify-end>
       <!-- <GasPrice mr-2 /> -->
-      <Network w-10 />
+      <!-- <Network w-10 /> -->
     </div>
   </div>
 </template>

@@ -3,6 +3,7 @@ import { defineStore } from 'pinia'
 
 export const useNetworkStore = defineStore('networks', {
   state: (): {
+    activeNetworks: Network[] | undefined
     homestead: NetworkData
     optimism: NetworkData
     arbitrum: NetworkData
@@ -11,6 +12,7 @@ export const useNetworkStore = defineStore('networks', {
     zksync: NetworkData
   } => {
     return {
+      activeNetworks: undefined,
       homestead: {},
       optimism: {},
       arbitrum: {},

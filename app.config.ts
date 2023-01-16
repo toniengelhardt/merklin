@@ -58,7 +58,7 @@ export default defineAppConfig({
       feedback: 'ph:megaphone-simple-bold',
       // Blockchain:
       wallet: 'ph:cardholder-bold',
-      gas: 'ic:outline-oil-barrel',
+      gas: 'ri:gas-station-line',
       block: 'ph:cube-bold',
       network: 'ph:graph-bold',
       blockchain: 'icon-park-outline:blockchain',

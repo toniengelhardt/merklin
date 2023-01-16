@@ -56,7 +56,7 @@ const items = {
   <Menu
     :orientation="orientation"
     :direction="direction"
-    :toggle-icon="{ name: 'menu', size: '1.4rem' }"
+    :toggle-icon="{ name: 'menu', size: ui.mobile ? '1.4rem' : '1.2rem' }"
     :toggle-class="`btn-transparent ${toggleClass}`"
   >
     <MenuItem v-slot="{ active }">
