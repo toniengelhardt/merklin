@@ -7,9 +7,9 @@ const activeAddress = $computed(() => addressStore.activeAddresses.length ? addr
 
 <template>
   <div
-    flex items-center h-10 lt-md:(justify-center w-10)
-    md:(px-2 border-solid border-1 border-base hover:border-highlight rounded-lg)
-    box-border cursor-pointer
+    flex items-center h-10 lt-md:justify-center lt-md:w-10
+    md:px-2 md:border-solid md:border-1 md:border-base md:hover:border-highlight
+    md:rounded-lg box-border cursor-pointer
     @click="ui.addressDialogOpen = true"
   >
     <template v-if="activeAddress">
