@@ -9,11 +9,16 @@ const networkStore = useNetworkStore()
         <th width="100%">
           <div flex>
             <div w-6 border-1>
-              <Icon name="network" text-faint />
+              <Icon name="network" />
             </div>
             <div ml-6px text-left lt-md:hidden>
               Name
             </div>
+          </div>
+        </th>
+        <th lt-md:hidden>
+          <div w-24>
+            <Icon name="block" />
           </div>
         </th>
         <th>
@@ -28,12 +33,12 @@ const networkStore = useNetworkStore()
         </th>
         <th>
           <div w-20>
-            tx/s (2h)
+            tx/s
           </div>
         </th>
         <th>
-          <div w-14>
-            status
+          <div w-8>
+            <Icon name="ph:plugs-bold" />
           </div>
         </th>
       </tr>
@@ -45,6 +50,9 @@ const networkStore = useNetworkStore()
           <div lt-md:hidden ml-2 text-size-base>
             {{ network.label }}
           </div>
+        </td>
+        <td lt-md:hidden>
+          {{ useBlockNumber(network.name, '?').value }}
         </td>
         <td>{{ useGasPriceFormatted(network.name, '?', false).value }}</td>
         <td nowrap>

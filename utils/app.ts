@@ -7,8 +7,8 @@ export const appMenuItems = [
     icon: {
       name: 'home',
     },
-    label: 'Overview',
-    title: 'Overview',
+    label: 'Insights',
+    title: 'Insights',
     link: '/',
   },
   {

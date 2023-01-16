@@ -36,7 +36,11 @@ const assetTotalFormatted = $computed(() => (
           </div>
         </div>
         <div class="flex-1/2 lt-md:ml-2 md:(flex-1 mt-4)" panel flex-center flex-col>
-          <div v-if="addressStore.activeAddresses.length" flex items-end text-3xl md:text-5xl text-gradient-green>
+          <div
+            v-if="addressStore.activeAddresses.length"
+            flex items-end text-3xl md:text-5xl text-gradient-green
+            class="text-obscure"
+          >
             <span font-black>{{ assetTotalFormatted }}</span>
           </div>
           <AppNoAddress v-else />
@@ -112,8 +116,8 @@ const assetTotalFormatted = $computed(() => (
         Coming soon...
       </div>
     </div>
-    <div col-span-12 h-0 lt-md:hidden>
-      <!-- Fix missing padding -->
-    </div>
+    <!-- <div col-span-12 h-0 lt-md:hidden>
+      Fix missing padding
+    </div> -->
   </div>
 </template>

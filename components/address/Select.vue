@@ -6,17 +6,32 @@ const activeAddress = $computed(() => addressStore.activeAddresses.length ? addr
 </script>
 
 <template>
-  <div btn-transparent md:btn-default md:px-3 @click="ui.addressDialogOpen = true">
-    <!-- <Icon v-if="!ui.mobile" name="dropdown" text-xs text-dim mr-2 /> -->
+  <div
+    flex items-center h-10 lt-md:justify-center lt-md:w-10
+    md:px-2 md:border-solid md:border-1 md:border-base md:hover:border-highlight
+    md:rounded-lg box-border cursor-pointer
+    @click="ui.addressDialogOpen = true"
+  >
     <template v-if="activeAddress">
-      <AddressIcon :address="activeAddress" flex w-6 h-6 md:w-5 md:h-5 p-1px rounded-full md:rounded-lg border-solid border-zinc-400 />
-      <AddressDisplay :address="activeAddress" :format="ui.mobile ? 'short' : 'long'" ml-2 mr-0.5 lt-md:hidden />
+      <AddressIcon
+        :address="activeAddress"
+        flex w-8 h-8 md:(w-6 h-6) p-1px border-solid border-1 border-highlight
+        rounded-full md:rounded-md box-border
+      />
+      <AddressDisplay
+        :address="activeAddress"
+        :format="ui.mobile ? 'short' : 'long'"
+        flex-1 ml-2 lt-md:hidden
+      />
     </template>
     <template v-else>
       <Icon name="addressbook" size="1.5rem" text-dim />
-      <div ml-2 mr-1 text-dim lt-md:hidden>
+      <div flex-1 ml-2 mr-1 text-dim lt-md:hidden>
         Select address
       </div>
     </template>
+    <div flex-center w-6 h-6 text-dim lt-md:hidden>
+      <Icon name="dropdown" size="0.75rem" />
+    </div>
   </div>
 </template>
