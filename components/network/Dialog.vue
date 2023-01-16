@@ -8,10 +8,10 @@ const ui = useUIStore()
 const networkStore = useNetworkStore()
 
 function selectNetwork(address: Address) {
-  if (!addressStore.activeAddresses.includes(address)) {
-    addressStore.selectAddress(address)
-    ui.addressDialogOpen = false
-  }
+  // if (!addressStore.activeAddresses.includes(address)) {
+  //   addressStore.selectAddress(address)
+  //   ui.addressDialogOpen = false
+  // }
 }
 
 function close() {
