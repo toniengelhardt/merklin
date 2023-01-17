@@ -23,6 +23,7 @@ const transactionStore = useTransactionStore()
         <GasChartCumulativeGasFees
           v-if="transactionStore.transactionItems?.length"
           :unit="ui.gasBurnChartOptions.unit"
+          :timeframe="ui.gasBurnChartOptions.timeframe"
           w-full
         />
         <AppNoTransactions v-else />
