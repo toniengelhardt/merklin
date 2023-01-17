@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import { theme } from '@unocss/preset-mini'
-import type { ChartData, ChartOptions, LineOptions, ScatterDataPoint } from 'chart.js'
+import type { ChartData, ChartOptions, ScatterDataPoint } from 'chart.js'
 import { utils as ethersUtils } from 'ethers'
 
 const props = withDefaults(defineProps<{
-  unit?: 'eth' | 'currency'
+  unit?: ChartUnitOption
+  timeframe?: ChartTimeframeOption
 }>(), {
   unit: 'currency',
+  timeframe: 'all',
 })
 
 const colors = theme.colors!
@@ -17,12 +19,13 @@ const transactionStore = useTransactionStore()
 
 const items = $computed(() => transactionStore.transactionItems)
 const data = $computed(() => items ? generateData(items, props.unit) : undefined)
-const max = $computed(() => Math.max(...(data?.map(d => d.y) || [])))
+
+// const yMax = $computed(() => Math.max(...(data?.map(d => d.y) || [])))
 
 const fillColors = $computed(() => (
   colorMode.value === 'light'
-    ? [(colors.sky as Colors)['400'], (colors.blue as Colors)['400'], (colors.purple as Colors)['400']] // orig: 200
-    : [(colors.sky as Colors)['500'], (colors.blue as Colors)['500'], (colors.purple as Colors)['600']] // orig: 800
+    ? [(colors.sky as Colors)['400'], (colors.blue as Colors)['400'], (colors.purple as Colors)['400']]
+    : [(colors.sky as Colors)['500'], (colors.blue as Colors)['500'], (colors.purple as Colors)['600']]
 ))
 
 type ChartDataType = ChartData<any, (number | ScatterDataPoint | null)[], unknown>
@@ -61,6 +64,8 @@ const chartOptions = $computed<ChartOptions<any> | undefined>(() => (
         scales: {
           x: {
             type: 'time',
+            min: useTimeframeMin(props.timeframe).value,
+            max: new Date(),
             border: {
               display: false,
             },
@@ -74,8 +79,6 @@ const chartOptions = $computed<ChartOptions<any> | undefined>(() => (
             },
           },
           y: {
-            // min: 0,
-            // max,
             border: {
               display: false,
             },
@@ -106,7 +109,7 @@ const chartOptions = $computed<ChartOptions<any> | undefined>(() => (
 
 function generateData(items: TransactionItem[], unit: 'eth' | 'currency') {
   let cum = 0
-  return items.reduce((list: { x: DatetimeString; y: number }[], item) => {
+  const data = items.reduce((list: { x: DatetimeString; y: number }[], item) => {
     if (item.timestamp && ['send', 'receive'].includes(item.type)) {
       const val = +ethersUtils.formatUnits(item.transaction.value, 'ether')
       cum += (item.type === 'send' ? -1 : 1) * (unit === 'eth' ? val : (useEthToCurrency(val) || 0))
@@ -117,6 +120,11 @@ function generateData(items: TransactionItem[], unit: 'eth' | 'currency') {
     }
     return list
   }, [])
+  data.push({
+    x: new Date().toISOString(),
+    y: cum,
+  })
+  return data
 }
 </script>
 

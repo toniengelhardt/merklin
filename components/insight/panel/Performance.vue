@@ -20,6 +20,7 @@ const transactionStore = useTransactionStore()
         <AssetChartPerformance
           v-if="transactionStore.transactionItems?.length"
           :unit="ui.performanceChartOptions.unit"
+          :timeframe="ui.performanceChartOptions.timeframe"
           w-full
         />
         <AppNoTransactions v-else />
