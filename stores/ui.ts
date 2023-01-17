@@ -1,33 +1,52 @@
 import { defineStore } from 'pinia'
 
+export interface UIState {
+  mobile?: boolean
+  obscure: boolean
+  addressDialogOpen: boolean
+  networkDialogOpen: boolean
+  performanceChartOptions: {
+    unit: ChartUnitOption
+    timeframe: ChartTimeframeOption
+  }
+  activityChartOptions: {
+    timeframe: ChartTimeframeOption
+  }
+  gasBurnChartOptions: {
+    unit: ChartUnitOption
+    timeframe: ChartTimeframeOption
+  }
+}
+
+export const defaultUIState: UIState = {
+  obscure: false,
+  addressDialogOpen: false,
+  networkDialogOpen: false,
+  performanceChartOptions: {
+    unit: 'currency',
+    timeframe: '1y',
+  },
+  activityChartOptions: {
+    timeframe: '1y',
+  },
+  gasBurnChartOptions: {
+    unit: 'currency',
+    timeframe: '1y',
+  },
+}
+
 export const useUIStore = defineStore('ui', {
-  state: (): {
-    mobile?: boolean
-    obscure: boolean
-    addressDialogOpen: boolean
-    networkDialogOpen: boolean
-    performanceChartUnit: 'eth' | 'currency'
-    activityChartTimeframe: '30d' | '3m' | '1y' | 'max'
-    gasBurnChartUnit: 'eth' | 'currency'
-  } => {
-    return {
-      mobile: undefined,
-      obscure: false,
-      addressDialogOpen: false,
-      networkDialogOpen: false,
-      performanceChartUnit: 'currency',
-      activityChartTimeframe: '1y',
-      gasBurnChartUnit: 'currency',
-    }
-  },
-  actions: {
-  },
+  state: (): UIState => { return defaultUIState },
   persist: {
     paths: [
       'obscure',
-      'performanceChartUnit',
-      'activityTimeframe',
-      'gasBurnChartUnit',
+      'performanceChartOptions',
+      'activityChartOptions',
+      'gasBurnChartOptions',
     ],
+    // afterRestore: ({ store }) => {
+    //   console.log('After restore', store)
+    //   store = Object.assign(defaultUIState, store)
+    // },
   },
 })

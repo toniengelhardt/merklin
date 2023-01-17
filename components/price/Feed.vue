@@ -2,12 +2,12 @@
   <div>
     <h2 panel-title flex justify-between mb-4>
       <span>Price feed</span>
-      <span class="mx-1 text-1.5rem text-base">🧞‍♂️</span>
+      <!-- <span class="mx-1 text-1.5rem text-base">🧞‍♂️</span> -->
     </h2>
     <div
       v-for="token in tokenList"
       :key="token.ticker"
-      flex justify-between mb-2
+      flex justify-between not-last:mb-2
     >
       <div flex>
         <TokenSymbol :name="token.name" />

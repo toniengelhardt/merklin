@@ -1,4 +1,7 @@
 :root {
+  --gradient-green: 65, 184, 131;
+  --gradient-blue: 217, 70, 239;
+  --gradient-purple: 14, 165, 233;
 }
 
 html,

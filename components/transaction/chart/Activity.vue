@@ -3,9 +3,12 @@ import type { ChartData, ChartOptions } from 'chart.js'
 import { theme } from '@unocss/preset-mini'
 import { normalizeDate } from '~/utils/dates'
 
-const props = defineProps<{
+const props = withDefaults(defineProps<{
   items: TransactionItem[]
-}>()
+  timeframe?: ChartTimeframeOption
+}>(), {
+  timeframe: 'all',
+})
 
 const colors: Colors = theme.colors!
 
@@ -13,13 +16,11 @@ const colorMode = useColorMode()
 const ui = useUIStore()
 
 const histData = $computed(() => generateHistograms(props.items))
-const maxVal = $computed(() => {
-  return histData
-    ? Math.max(Math.abs(Math.min(...histData.sent)), Math.max(...histData.received))
+const maxVal = $computed(() => (
+  histData
+    ? Math.max(Math.abs(Math.min(...histData.sent)), Math.max(...histData.received), 1)
     : undefined
-})
-
-const lastIdx = histData.labels.length - 1
+))
 
 const chartData = computed<ChartData<any> | undefined>(() => (
   histData
@@ -27,18 +28,18 @@ const chartData = computed<ChartData<any> | undefined>(() => (
         labels: histData.labels,
         datasets: [
           {
-            label: 'Sent',
-            type: 'bar',
-            data: histData.sent,
-            backgroundColor: colorMode.value === 'light' ? (colors.orange as Colors)['500'] : (colors.orange as Colors)['500'],
-            stack: 'bars',
-            order: 2,
-          },
-          {
             label: 'Received',
             type: 'bar',
             data: histData.received,
             backgroundColor: colorMode.value === 'light' ? (colors.green as Colors)['500'] : (colors.green as Colors)['500'],
+            stack: 'bars',
+            order: 2,
+          },
+          {
+            label: 'Sent',
+            type: 'bar',
+            data: histData.sent,
+            backgroundColor: colorMode.value === 'light' ? (colors.orange as Colors)['500'] : (colors.orange as Colors)['500'],
             stack: 'bars',
             order: 2,
           },
@@ -59,14 +60,8 @@ const chartOptions = computed<ChartOptions<any> | undefined>(() => (
         scales: {
           x: {
             type: 'time',
-            // time: {
-            //   unit: 'month',
-            //   min: histData.labels[0],
-            //   max: histData.labels[lastIdx],
-            //   displayFormats: {
-            //     day: 'MMM',
-            //   },
-            // },
+            min: useTimeframeMin(props.timeframe).value,
+            max: new Date(),
             border: {
               display: false,
             },
@@ -111,6 +106,16 @@ const chartOptions = computed<ChartOptions<any> | undefined>(() => (
           },
           tooltip: {
             enabled: !ui.mobile,
+            callbacks: {
+              title: (ctx: any) => {
+                return ctx[0].label.split(', ').slice(0, 2).join(', ')
+              },
+              label: (ctx: any) => {
+                const label = ctx.datasetIndex === 0 ? ' tx in' : ' tx out'
+                const value = Math.abs(ctx.parsed.y)
+                return `${value}${label}`
+              },
+            },
           },
         },
       })
@@ -122,19 +127,40 @@ function generateHistograms(items: TransactionItem[]): {
   sent: number[]
   received: number[]
 } {
-  const numDays = 365
-
+  const now = new Date()
+  let firstItemWithTimestamp
+  let numDays
+  for (let i = 0; i < items.length; i++) {
+    if (items[i].timestamp) {
+      firstItemWithTimestamp = items[i]
+      break
+    }
+  }
+  switch (props.timeframe) {
+    case '30d':
+      numDays = 30
+      break
+    case '3m':
+      numDays = 90
+      break
+    case '1y':
+      numDays = 365
+      break
+    default:
+      if (firstItemWithTimestamp) {
+        numDays = Math.ceil((now.getTime() - firstItemWithTimestamp!.timestamp.getTime()) / (1000 * 60 * 60 * 24))
+      } else {
+        numDays = 365
+      }
+  }
   const labels: Date[] = []
   const sent: number[] = []
   const received: number[] = []
   const today = normalizeDate(new Date())
-
   const minDate = normalizeDate(new Date())
   minDate.setDate(minDate.getDate() - numDays)
-
   // Init value dict to generate histogram.
   const valueDict: { [key: string]: { [key: string]: number } } = {}
-
   const date = today
   for (let i = 0; i < numDays; i++) {
     labels.unshift(new Date(date.getTime()))
@@ -144,7 +170,6 @@ function generateHistograms(items: TransactionItem[]): {
     }
     date.setDate(date.getDate() - 1)
   }
-
   items.forEach((item) => {
     if (item.timestamp) {
       // Note: it's important to truly clone the date object here since the
@@ -162,7 +187,6 @@ function generateHistograms(items: TransactionItem[]): {
       }
     }
   })
-
   labels.forEach((label) => {
     const sentCount = valueDict[label.toISOString()].sent
     const receivedCount = valueDict[label.toISOString()].received

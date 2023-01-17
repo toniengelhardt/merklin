@@ -71,7 +71,7 @@ const assetTotalFormatted = $computed(() => (
       </div>
     </div> -->
     <div col-span-12 md:col-span-6 panel min-h-61>
-      <h2 panel-title>
+      <h2 panel-title mb-4>
         Network status
       </h2>
       <div>
@@ -79,7 +79,7 @@ const assetTotalFormatted = $computed(() => (
       </div>
     </div>
     <div col-span-12 md:col-span-3 panel>
-      <h2 panel-title>
+      <h2 panel-title mb-4>
         D<span font-mono>0x</span>ing score<span ml-2 text-base>🧟</span>
       </h2>
       <div>
@@ -90,8 +90,8 @@ const assetTotalFormatted = $computed(() => (
       </div>
     </div>
     <div col-span-12 md:col-span-3 panel>
-      <h2 panel-title>
-        Airdrop detection<span ml-2 text-base>🧚🏼‍♀️</span>
+      <h2 panel-title mb-4>
+        Airdrop detection<span ml-2 text-base>🧞‍♂️</span>
       </h2>
       <div>
         Similar to

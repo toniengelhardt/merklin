@@ -6,35 +6,21 @@ const transactionStore = useTransactionStore()
 
 <template>
   <div panel flex flex-col md:h-61>
-    <div flex justify-between mb-2>
-      <h2 flex="1/2" panel-title>
+    <div flex justify-between mb-4>
+      <h2 flex-1 panel-title>
         Gas burn
       </h2>
-      <div
-        v-if="addressStore.activeAddresses.length && transactionStore.transactionItems?.length"
-        flex="~ 1/2" justify-end items-center mb-2 text-sm text-dim font-bold
-      >
-        <div
-          flex-center px-2 h-6 rounded-md mr-2 cursor-pointer
-          :class="ui.gasBurnChartUnit === 'eth' ? 'bg-element text-base' : undefined"
-          @click="ui.gasBurnChartUnit = 'eth'"
-        >
-          <span>Ξ</span><span ml-1>ETH</span>
-        </div>
-        <div
-          flex-center px-2 h-6 rounded-md mr-1 cursor-pointer
-          :class="ui.gasBurnChartUnit === 'currency' ? 'bg-element text-base' : undefined"
-          @click="ui.gasBurnChartUnit = 'currency'"
-        >
-          <span>$</span><span ml-1>USD</span>
-        </div>
+      <div flex-center>
+        <ChartOptionTimeframe v-model="ui.gasBurnChartOptions.timeframe" mr-2 />
+        <ChartOptionUnit v-model="ui.gasBurnChartOptions.unit" />
       </div>
     </div>
     <div flex-1 flex-center>
       <template v-if="addressStore.activeAddresses.length">
         <GasChartCumulativeGasFees
           v-if="transactionStore.transactionItems?.length"
-          :unit="ui.gasBurnChartUnit"
+          :unit="ui.gasBurnChartOptions.unit"
+          :timeframe="ui.gasBurnChartOptions.timeframe"
           w-full
         />
         <AppNoTransactions v-else />
