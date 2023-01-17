@@ -32,7 +32,6 @@ const chartData = $computed<ChartDataType | undefined>(() => (
     ? ({
         datasets: [
           {
-            label: 'Ethereum (L1)',
             data,
             borderWidth: 2,
             borderColor: 'rgba(0,0,0,0)', // (context: any) => generateChartGradient(context, lineColors),

@@ -34,7 +34,6 @@ const chartData = $computed<ChartDataType | undefined>(() => (
     ? ({
         datasets: [
           {
-            label: 'Total',
             data,
             borderWidth: 2,
             borderColor: 'rgba(255, 255, 255, 0)',

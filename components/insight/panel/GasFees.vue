@@ -10,10 +10,7 @@ const transactionStore = useTransactionStore()
       <h2 flex-1 panel-title>
         Gas burn
       </h2>
-      <div
-        v-if="addressStore.activeAddresses.length && transactionStore.transactionItems?.length"
-        flex-center text-sm text-dim font-bold
-      >
+      <div flex-center>
         <ChartOptionTimeframe v-model="ui.gasBurnChartOptions.timeframe" mr-2 />
         <ChartOptionUnit v-model="ui.gasBurnChartOptions.unit" />
       </div>
