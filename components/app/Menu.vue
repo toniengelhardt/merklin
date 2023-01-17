@@ -31,41 +31,47 @@
     </div>
   </div>
   <div flex justify-between items-center text-sm text-center px-4 py-3>
-    <NuxtLink
-      href="https://nuxt.com"
-      target="_blank"
-      title="Nuxt"
-    >
-      <Icon name="nuxt" />
-    </NuxtLink>
-    <NuxtLink
-      href="https://vitejs.dev"
-      target="_blank"
-      title="Vite"
-    >
-      <Icon name="vite" />
-    </NuxtLink>
-    <NuxtLink
-      href="https://uno.antfu.me"
-      target="_blank"
-      title="UnoCSS"
-    >
-      <Icon name="unocss" dark:invert />
-    </NuxtLink>
-    <NuxtLink
-      href="https://headlessui.com"
-      target="_blank"
-      title="Headless UI"
-    >
-      <Icon name="headless" />
-    </NuxtLink>
-    <NuxtLink
-      href="https://vercel.com"
-      target="_blank"
-      title="Vercel"
-    >
-      <Icon name="vercel" />
-    </NuxtLink>
+    <div flex-center>
+      <NuxtLink
+        href="https://nuxt.com"
+        target="_blank"
+        title="Nuxt"
+      >
+        <Icon name="nuxt" />
+      </NuxtLink>
+      <NuxtLink
+        href="https://vitejs.dev"
+        target="_blank"
+        title="Vite"
+        ml-4
+      >
+        <Icon name="vite" />
+      </NuxtLink>
+      <NuxtLink
+        href="https://uno.antfu.me"
+        target="_blank"
+        title="UnoCSS"
+        ml-4
+      >
+        <Icon name="unocss" dark:invert />
+      </NuxtLink>
+      <NuxtLink
+        href="https://headlessui.com"
+        target="_blank"
+        title="Headless UI"
+        ml-4
+      >
+        <Icon name="headless" />
+      </NuxtLink>
+      <NuxtLink
+        href="https://vercel.com"
+        target="_blank"
+        title="Vercel"
+        ml-4
+      >
+        <Icon name="vercel" />
+      </NuxtLink>
+    </div>
     <NuxtLink
       to="https://github.com/toniengelhardt/merklin/releases"
       title="Releases on GitHub"

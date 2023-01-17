@@ -31,7 +31,7 @@ const chartData = $computed<ChartDataType | undefined>(() => (
     ? ({
         datasets: [
           {
-            label: 'Ethereum (L1)',
+            label: 'Total',
             data,
             borderWidth: 2,
             borderColor: 'rgba(255, 255, 255, 0)',
