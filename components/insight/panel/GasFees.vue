@@ -6,7 +6,7 @@ const transactionStore = useTransactionStore()
 
 <template>
   <div panel flex flex-col md:h-61>
-    <div flex justify-between mb-2>
+    <div flex justify-between mb-4>
       <h2 flex-1 panel-title>
         Gas burn
       </h2>

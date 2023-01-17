@@ -17,5 +17,9 @@
 .mobile-navigation {
   height: calc(3.5rem + env(safe-area-inset-bottom));
   padding-bottom: env(safe-area-inset-bottom);
+  /* border-top: 1px solid;
+  border-image-slice: 1;
+  border-width: 1px;
+  border-image-source: linear-gradient(to left, rgba(var(--gradient-blue), 0.35) 0%, rgba(var(--gradient-blue), 0.35) 10%, rgba(var(--gradient-purple), 0.35)); */
 }
 </style>

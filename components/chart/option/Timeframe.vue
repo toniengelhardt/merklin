@@ -12,8 +12,8 @@ const options = [{
   value: '1y',
   label: '1y',
 }, {
-  value: 'max',
-  label: 'max',
+  value: 'all',
+  label: 'All',
 }]
 </script>
 

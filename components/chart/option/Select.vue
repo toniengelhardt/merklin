@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { emit } from 'process'
-
 const props = defineProps<{
   modelValue: string
   options: ChartOptionsItem[]
@@ -8,13 +6,12 @@ const props = defineProps<{
 defineEmits(['update:modelValue'])
 
 const selectedOption = $computed(() => props.options.find(option => option.value === props.modelValue) || props.options[0])
-const availableOptions = $computed(() => props.options.filter(option => option.value !== props.modelValue))
 </script>
 
 <template>
   <HeadlessMenu as="div" relative>
     <HeadlessMenuButton
-      flex items-center px-2 py-0.75 bg-base text-dim border-solid border-1 border-base
+      flex items-center px-2 py-1 bg-element text-dim border-1 border-base
       hover:border-highlight rounded-md cursor-pointer
     >
       <Icon name="dropdown" size="0.5rem" text-faint />
@@ -32,11 +29,11 @@ const availableOptions = $computed(() => props.options.filter(option => option.v
     >
       <HeadlessMenuItems
         absolute w-max-content mt-1 divide-y divide-gray-100
-        bg-base border-solid border-1 border-base rounded-md shadow-lg
+        bg-base rounded-md shadow-lg
         ring-0 ring-zinc-900 ring-opacity-5
         focus:outline-none z-12 right-0 origin-top-right
       >
-        <div p-1px>
+        <div p-0.5>
           <HeadlessMenuItem
             v-for="option in options"
             :key="option.value"

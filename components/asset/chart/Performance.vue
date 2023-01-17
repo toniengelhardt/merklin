@@ -74,7 +74,7 @@ const chartOptions = $computed<ChartOptions<any> | undefined>(() => (
             },
           },
           y: {
-            min: 0,
+            // min: 0,
             // max,
             border: {
               display: false,

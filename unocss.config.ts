@@ -13,7 +13,7 @@ export default defineConfig({
     'flex-col-center': 'flex-center flex-col',
     'page': 'w-full px-2 md:p-4 grid grid-cols-12 gap-2 md:gap-4 align-start',
     'bg-base': 'bg-zinc-50 dark:bg-zinc-900',
-    'bg-surface': 'bg-white/85 dark:bg-zinc-900/85',
+    'bg-surface': 'bg-zinc-100 dark:bg-zinc-800',
     'bg-element': 'bg-zinc-900/5 dark:bg-white/5',
     'bg-element-active': 'bg-zinc-900/10 dark:bg-white/10',
     'bg-action': 'bg-zinc-900/10 dark:bg-white/10',

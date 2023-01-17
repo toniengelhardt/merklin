@@ -39,7 +39,7 @@ const addressCounts = $computed(() => {
 
 <template>
   <div panel flex flex-col md:h-61>
-    <h2 panel-title flex justify-between>
+    <h2 panel-title flex justify-between mb-2>
       <span>Addresses</span>
       <!-- <span class="mx-1 text-1.5rem text-base">🧜🏻‍♀️</span> -->
     </h2>
