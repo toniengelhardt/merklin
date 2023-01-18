@@ -1,6 +1,9 @@
+// import fs from 'fs'
+// import { fileURLToPath } from 'node:url'
+
 import GlobalPolyFill from '@esbuild-plugins/node-globals-polyfill'
 
-const appTitle = 'Merklin — PWA'
+const appTitle = 'Merklin'
 const appDescription = 'Open-source web-only EVM wallet explorer made with Vue, Nuxt, and Ethers'
 const appUrl = 'https://app.merklin.xyz'
 
@@ -44,6 +47,10 @@ export default defineNuxtConfig({
   devServer: {
     host: process.env.HOST || 'localhost',
     port: process.env.PORT ? +process.env.PORT : 3000,
+    // https: {
+    //   key: fs.readFileSync(fileURLToPath(new URL('./localhost-key.pem', import.meta.url))),
+    //   cert: fs.readFileSync(fileURLToPath(new URL('./localhost.pem', import.meta.url))),
+    // },
   },
   nitro: {
     prerender: {
@@ -84,7 +91,7 @@ export default defineNuxtConfig({
   ],
   app: {
     head: {
-      viewport: 'width=device-width, initial-scale=1, user-scalable=no',
+      viewport: 'viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no',
       htmlAttrs: {
         lang: 'en',
         translate: 'no',

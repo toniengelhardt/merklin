@@ -15,8 +15,8 @@
 
 <style scoped>
 .mobile-navigation {
-  height: calc(3.5rem + env(safe-area-inset-bottom));
-  padding-bottom: env(safe-area-inset-bottom);
+  height: calc(3.5rem + var(--sab));
+  padding-bottom: var(--sab);
   /* border-top: 1px solid;
   border-image-slice: 1;
   border-width: 1px;

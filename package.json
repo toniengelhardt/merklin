@@ -8,6 +8,7 @@
   "packageManager": "pnpm@7.19.0",
   "scripts": {
     "dev": "nuxt dev",
+    "sdev": "nuxt dev --https --ssl-cert localhost.pem ssl-key localhost-key.pem",
     "build": "nuxt build",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
