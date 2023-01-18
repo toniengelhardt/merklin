@@ -124,9 +124,7 @@ onMounted(() => {
           <NuxtPage />
         </div>
       </main>
-      <div v-if="ui.mobile" h-14>
-        <MobileNavigation />
-      </div>
+      <MobileNavigation v-if="ui.mobile" />
     </div>
     <teleport to="body">
       <AddressDialog v-model="ui.addressDialogOpen" />
@@ -150,7 +148,7 @@ onMounted(() => {
 }
 @media (max-width: 639px) {
   .content {
-    max-height: calc(100svh - 7rem - env(safe-area-inset-bottom));
+    max-height: calc(100svh - 7rem - var(--sab));
   }
   /* Hack for padding bug. */
   .page:before,

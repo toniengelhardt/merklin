@@ -2,6 +2,11 @@
   --gradient-green: 65, 184, 131;
   --gradient-blue: 217, 70, 239;
   --gradient-purple: 14, 165, 233;
+
+  --sat: env(safe-area-inset-top);
+  --sar: env(safe-area-inset-right);
+  --sab: env(safe-area-inset-bottom);
+  --sal: env(safe-area-inset-left);
 }
 
 html,
@@ -11,10 +16,18 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol";
-
   overscroll-behavior: auto;
   scrollbar-width: none !important; /* Firefox */
   -ms-overflow-style: none !important; /* IE and Edge */
+}
+
+@supports (-webkit-touch-callout: none) {
+  html,
+  body {
+    /* CSS specific to iOS devices */
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
 }
 
 html::-webkit-scrollbar,
