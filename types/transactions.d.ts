@@ -8,5 +8,5 @@ declare interface TransactionItem {
   date: DateString | undefined,
   firstForDate: boolean,
   type: TransactionItemType,
-  transaction: TransactionResponse,
+  transaction: import('@ethersproject/abstract-provider').TransactionResponse,
 }

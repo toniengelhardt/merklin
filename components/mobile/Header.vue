@@ -9,12 +9,11 @@
         title="Insights"
         flex p-0 text-1.5rem
       >
-        <img src="/icon.png" width="54" height="54" flex>
+        <img src="/icon.png" alt="Merklin logo" width="54" height="54" flex>
       </NuxtLink>
     </div>
     <div flex="~ 1/3" justify-end>
-      <!-- <GasPrice mr-2 /> -->
-      <!-- <Network w-10 /> -->
+      <AppLoadingIndicator w-10 h-10 />
     </div>
   </div>
 </template>

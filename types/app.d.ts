@@ -1,3 +1,5 @@
+declare type ActionId = string // uuid4.
+
 declare type ItemIcon = {
   name: string,
   size?: string,

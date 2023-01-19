@@ -1,6 +1,7 @@
 <template>
-  <div flex justify-between items-center h-14 pl-4 pr-2>
-    <Brand />
+  <div flex items-center h-14 pl-4 pr-2>
+    <Brand flex-1 />
+    <AppLoadingIndicator />
     <AccountMenu orientation="right" toggle-class="text-dim" />
   </div>
   <AddressSelect mx-2 />

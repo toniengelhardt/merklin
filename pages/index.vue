@@ -1,27 +1,3 @@
-<script setup lang="ts">
-import { utils as ethersUtils } from 'ethers'
-const addressStore = useAddressStore()
-const transactionStore = useTransactionStore()
-
-const assetTotal = $computed(() => {
-  if (transactionStore.transactionItems) {
-    return Math.round(transactionStore.transactionItems.reduce((total, item) => {
-      if (item.timestamp && ['send', 'receive'].includes(item.type)) {
-        const val = +ethersUtils.formatUnits(item.transaction.value, 'ether')
-        total += (item.type === 'send' ? -1 : 1) * (useEthToCurrency(val) || 0)
-      }
-      return total
-    }, 0))
-  }
-  return undefined
-})
-const assetTotalFormatted = $computed(() => (
-  assetTotal
-    ? new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', compactDisplay: 'long' }).format(assetTotal)
-    : '--'
-))
-</script>
-
 <template>
   <div class="page">
     <div col-span-12 md:col-span-3>
@@ -36,14 +12,7 @@ const assetTotalFormatted = $computed(() => (
           </div>
         </div>
         <div class="flex-1/2 lt-md:ml-2 md:(flex-1 mt-4)" panel flex-center flex-col>
-          <div
-            v-if="addressStore.activeAddresses.length"
-            flex items-end text-3xl md:text-5xl text-gradient-green
-            class="text-obscure"
-          >
-            <span font-black>{{ assetTotalFormatted }}</span>
-          </div>
-          <AppNoAddress v-else />
+          <InsightPanelTotal />
         </div>
       </div>
     </div>

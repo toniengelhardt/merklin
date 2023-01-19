@@ -11,7 +11,7 @@ export default defineConfig({
   shortcuts: {
     'flex-center': 'flex justify-center items-center',
     'flex-col-center': 'flex-center flex-col',
-    'page': 'w-full px-2 md:p-4 grid grid-cols-12 gap-2 md:gap-4 align-start',
+    'page': 'w-full p-2 md:p-4 grid grid-cols-12 gap-2 md:gap-4 align-start',
     'bg-base': 'bg-zinc-50 dark:bg-zinc-900',
     'bg-surface': 'bg-zinc-100 dark:bg-zinc-800',
     'bg-element': 'bg-zinc-900/5 dark:bg-white/5',

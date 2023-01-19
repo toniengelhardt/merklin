@@ -2,7 +2,6 @@
 import process from 'process'
 import EventEmitter from 'events'
 import { Buffer } from 'buffer'
-// import { watchAccount, watchNetwork } from '@wagmi/core'
 
 // defineOgImage({
 //   component: 'OgImage',
@@ -21,7 +20,6 @@ const intervals: ReturnType<typeof useIntervalFn>[] = []
 
 const ui = useUIStore()
 const addressStore = useAddressStore()
-const wallet = useWalletStore()
 const { updateNetworkData } = useNetworkStore()
 const { updatePriceData } = usePriceStore()
 const { loadTransactions } = useTransactionStore()
@@ -33,6 +31,11 @@ function setMobile() {
   // Note: check if the trailing flag could be used instead:
   // https://github.com/vueuse/vueuse/blob/main/packages/shared/useThrottleFn/index.ts
   setTimeout(() => ui.mobile = window.innerWidth < 1024, 15)
+}
+
+function clearActions() {
+  // When the page loads there should be no open requests.
+  ui.actionQueue = []
 }
 
 function startDataFeeds() {
@@ -50,9 +53,7 @@ function pauseDataFeeds() {
   intervals.forEach(interval => interval.pause())
 }
 
-/**
- * Called when the tab changes visibility.
- */
+/** Called when the tab changes visibility. */
 function onVisibilityChange() {
   // Pause data feeds when the tab is not visible to save requests.
   if (document.visibilityState === 'visible') {
@@ -62,37 +63,21 @@ function onVisibilityChange() {
   }
 }
 
-/**
- * Called when either the account or the network changes.
- */
-function onAddressChange() {
-  if (wallet.address && wallet.networkName) {
-    loadTransactions()
-  }
-}
-
 onMounted(() => {
   setMobile()
+  clearActions()
   startDataFeeds()
   loadTransactions()
+
+  // Event listeners.
   useEventListener(window.visualViewport, 'resize', useThrottleFn(() => setMobile(), 100))
   useEventListener(window.document, 'visibilitychange', onVisibilityChange)
 
+  // If the page loads and no account is selected, open the address book.
   if (!addressStore.activeAddresses.length) {
     ui.addressDialogOpen = true
   }
 })
-
-// watchAccount((account) => {
-//   console.log('Account changed:', account.address)
-//   wallet.account = account
-//   onAddressChange()
-// })
-// watchNetwork((network) => {
-//   console.log('Network changed:', network.chain?.network, network.chain?.name)
-//   wallet.network = network
-//   onAddressChange()
-// })
 </script>
 
 <template>
@@ -149,14 +134,6 @@ onMounted(() => {
 @media (max-width: 639px) {
   .content {
     max-height: calc(100svh - 7rem - var(--sab));
-  }
-  /* Hack for padding bug. */
-  .page:before,
-  .page:after {
-    content: '';
-    display: block;
-    height: 1px;
-    width: 100%;
   }
 }
 </style>

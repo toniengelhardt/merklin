@@ -51,7 +51,7 @@ export const sampleAddresses = [
     address: '0x50ec05ade8280758e2077fcbc08d878d4aef79c3',
   },
   {
-    label: 'Cozomo de Medici',
+    label: 'cozomo_de_medici',
     address: '0xCe90a7949bb78892F159F428D0dC23a8E3584d75',
   },
 ]
