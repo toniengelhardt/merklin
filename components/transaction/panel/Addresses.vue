@@ -10,7 +10,7 @@ const addressCounts = $computed(() => {
     const outDict = {}
     let outCount = 0
     items.forEach((item) => {
-      if (item.type === 'send') {
+      if (item.type === 'send' && item.transaction.to) {
         dictIncrement(outDict, item.transaction.to)
         outCount += 1
       }
