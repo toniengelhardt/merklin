@@ -21,8 +21,7 @@ export const useTransactionStore = defineStore('transactions', {
       if (address) {
         const transactions = await useTransactions()
         if (transactions !== undefined) {
-          // let prevDate: DateString | undefined
-          const items: TransactionItem[] = transactions.reverse().map((transaction) => {
+          const items: TransactionItem[] = transactions.map((transaction) => {
             const type = getTransactionType(transaction, address)
             const timestamp = transaction.timestamp
               ? new Date(transaction.timestamp * 1000)
@@ -30,12 +29,9 @@ export const useTransactionStore = defineStore('transactions', {
             const date = timestamp
               ? formatDate(timestamp)
               : undefined
-            // const firstForDate = date !== prevDate
-            // prevDate = date
             const item: TransactionItem = {
               timestamp,
               date,
-              // firstForDate,
               type,
               transaction,
             }
@@ -50,6 +46,9 @@ export const useTransactionStore = defineStore('transactions', {
     },
   },
   getters: {
+    transactionItemsReverse(state) {
+      return state.transactionItems?.slice().reverse()
+    },
     /** Returns total assets in [Wei]. */
     assetTotal(state) {
       if (state.transactionItems) {
