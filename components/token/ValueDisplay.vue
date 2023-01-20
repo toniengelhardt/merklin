@@ -10,7 +10,7 @@ const props = defineProps<{
   timestamp?: DatetimeString
 }>()
 
-const valueDisplay = $computed(() => (+ethersUtils.formatUnits(props.value, 'ether') * (props.multiplier || 0)).toPrecision(4))
+const valueDisplay = $computed(() => (+ethersUtils.formatUnits(props.value, 'ether') * (props.multiplier || 1)).toPrecision(4))
 const currencyDisplay = $computed(() => useEthToCurrencyFormatted(+ethersUtils.formatUnits(props.value, 'ether')))
 </script>
 
@@ -21,7 +21,7 @@ const currencyDisplay = $computed(() => useEthToCurrencyFormatted(+ethersUtils.f
     </div>
     <div flex flex-col text-sm leading-tight ml-2 md:ml-3>
       <div class="text-value">
-        {{ valueDisplay }}
+        {{ +valueDisplay > 0 ? '+' : '' }}{{ valueDisplay }}
       </div>
       <div class="text-currency">
         ~{{ currencyDisplay }}
