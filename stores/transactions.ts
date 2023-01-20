@@ -1,45 +1,37 @@
+import { BigNumber, utils as ethersUtils } from 'ethers'
 import { defineStore } from 'pinia'
+import { v4 as uuid4 } from 'uuid'
 import { formatDate } from '~/utils/dates'
 
 export const useTransactionStore = defineStore('transactions', {
   state: (): {
     transactionItems: TransactionItem[] | undefined
-  } => {
-    return {
-      transactionItems: undefined,
-    }
-  },
+  } => ({
+    transactionItems: undefined,
+  }),
   actions: {
     async loadTransactions() {
+      const ui = useUIStore()
       const addressStore = useAddressStore()
+      const actionId = uuid4()
+      ui.queueAction(actionId)
       const address = addressStore.activeAddresses.length
         ? addressStore.activeAddresses[0]
         : undefined
       if (address) {
         const transactions = await useTransactions()
         if (transactions !== undefined) {
-          // const wallet = useWalletStore()
-          let prevDate: DateString | undefined
           const items: TransactionItem[] = transactions.map((transaction) => {
-            const type = (
-              transaction.to?.toLowerCase() === address.toLocaleLowerCase()
-                ? 'receive'
-                : transaction.value._hex !== '0x00'
-                  ? 'send'
-                  : TransactionSignatureMap[transaction.data.slice(0, 10)]
-            ) as TransactionItemType
+            const type = getTransactionType(transaction, address)
             const timestamp = transaction.timestamp
               ? new Date(transaction.timestamp * 1000)
               : undefined
             const date = timestamp
               ? formatDate(timestamp)
               : undefined
-            const firstForDate = date !== prevDate
-            prevDate = date
             const item: TransactionItem = {
               timestamp,
               date,
-              firstForDate,
               type,
               transaction,
             }
@@ -50,6 +42,31 @@ export const useTransactionStore = defineStore('transactions', {
       } else {
         this.transactionItems = undefined
       }
+      ui.unqueueAction(actionId)
+    },
+  },
+  getters: {
+    transactionItemsReverse(state) {
+      return state.transactionItems?.slice().reverse()
+    },
+    /** Returns total assets in [Wei]. */
+    assetTotal(state) {
+      if (state.transactionItems) {
+        return state.transactionItems.reduce((total: BigNumber, item) => {
+          if (item.timestamp) {
+            if (item.type === 'send') {
+              total = total.sub(item.transaction.value)
+            } else if (item.type === 'receive') {
+              total = total.add(item.transaction.value)
+            }
+          }
+          return total
+        }, BigNumber.from('0'))
+      }
+      return undefined
+    },
+    assetTotalEth(): number | undefined {
+      return this.assetTotal ? +ethersUtils.formatUnits(this.assetTotal, 'ether') : undefined
     },
   },
   persist: {

@@ -6,7 +6,7 @@ declare type TransactionType = 0 | 1 | 2
 declare interface TransactionItem {
   timestamp: Date | undefined,
   date: DateString | undefined,
-  firstForDate: boolean,
+  // firstForDate: boolean,
   type: TransactionItemType,
-  transaction: TransactionResponse,
+  transaction: import('@ethersproject/abstract-provider').TransactionResponse,
 }

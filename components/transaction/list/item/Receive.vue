@@ -24,7 +24,7 @@ defineProps<{
           />
         </div>
         <div flex flex-col items-start w-26 md:w-36>
-          <div text-xs text-dim mb-1>
+          <div text-xs text-dim mb-0.5>
             from:
           </div>
           <Address :address="item.transaction.to" />

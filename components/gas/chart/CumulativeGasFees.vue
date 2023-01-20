@@ -76,6 +76,7 @@ const chartOptions = $computed<ChartOptions<any> | undefined>(() => (
             },
           },
           y: {
+            suggestedMin: 0,
             border: {
               display: false,
             },
@@ -107,8 +108,8 @@ const chartOptions = $computed<ChartOptions<any> | undefined>(() => (
 function generateData(items: TransactionItem[], unit: 'eth' | 'currency') {
   let cum = 0
   const data = items.reduce((list: { x: DatetimeString; y: number }[], item) => {
-    if (item.timestamp) {
-      const val = +ethersUtils.formatUnits(item.transaction.gasLimit * item.transaction.gasPrice, 'ether')
+    if (item.timestamp && item.transaction.gasLimit && item.transaction.gasPrice) {
+      const val = +ethersUtils.formatUnits(item.transaction.gasLimit.mul(item.transaction.gasPrice), 'ether')
       cum += unit === 'eth' ? val : (useEthToCurrency(val) || 0)
       list.push({
         x: item.timestamp.toISOString(),

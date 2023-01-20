@@ -69,9 +69,13 @@ function close() {
                   <div flex-1 flex items-center>
                     <slot name="title" />
                   </div>
-                  <a ref="closeBtnRef" flex-center w-6 h-6 cursor-pointer @click="close()">
+                  <div
+                    ref="closeBtnRef"
+                    flex-center w-6 h-6 cursor-pointer
+                    @click="close()"
+                  >
                     <Icon name="cross" text-lg text-dim />
-                  </a>
+                  </div>
                 </div>
               </HeadlessDialogTitle>
               <HeadlessDialogDescription>

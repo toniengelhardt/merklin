@@ -24,7 +24,7 @@ const counts = $computed(() => {
 
 <template>
   <div panel flex flex-col md:h-61>
-    <div flex justify-between mb-4>
+    <div flex justify-between mb-2 md:mb-4>
       <h2 flex="~ 1/3" items-center panel-title m-0>
         Activity
       </h2>

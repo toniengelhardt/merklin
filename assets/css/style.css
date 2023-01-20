@@ -1,8 +1,11 @@
 :root {
+  /* Background gradient. */
   --gradient-green: 65, 184, 131;
   --gradient-blue: 217, 70, 239;
   --gradient-purple: 14, 165, 233;
 
+  /* safe-area-inset-* variables. */
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/env */
   --sat: env(safe-area-inset-top);
   --sar: env(safe-area-inset-right);
   --sab: env(safe-area-inset-bottom);
@@ -21,10 +24,11 @@ body {
   -ms-overflow-style: none !important; /* IE and Edge */
 }
 
+/* CSS specific to iOS devices. */
 @supports (-webkit-touch-callout: none) {
   html,
   body {
-    /* CSS specific to iOS devices */
+    /* Avoid overscroll on iPhone. */
     overflow: hidden;
     overscroll-behavior: none;
   }
@@ -62,13 +66,6 @@ a:visited {
 .obscure .text-currency,
 .obscure .text-address {
   @apply blur-6;
-}
-
-.text-brand {
-  color: #00DC82; /* Nuxt primary */
-}
-.text-brand-alt {
-  color: #002E3B; /* Nuxt secondary */
 }
 
 .router-link-exact-active {

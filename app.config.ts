@@ -47,6 +47,7 @@ export default defineAppConfig({
       plus: 'ph:plus-bold',
       cross: 'ph:x-bold',
       check: 'ph:check-bold',
+      copy: 'ph:copy-bold',
       external: 'ph:arrow-square-out',
       warning: 'ph:warning-bold',
       visible: 'ph:eye-bold',
