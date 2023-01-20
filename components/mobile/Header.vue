@@ -1,5 +1,5 @@
 <template>
-  <div h-14 flex items-center px-6 bg-base box-border border-b-solid border-b-1 border-base>
+  <div h-14 flex items-center px-4 bg-base box-border border-b-solid border-b-1 border-base>
     <div flex="~ 1/3" w-10 h-10>
       <AddressSelect />
     </div>

@@ -12,7 +12,6 @@ const props = withDefaults(defineProps<{
   plugins?: any // Plugin<'bar'>{},
 }>(), {
   width: '100%',
-  height: undefined,
   chartId: 'bar-chart',
   cssClasses: '',
   styles: () => {},
@@ -21,7 +20,7 @@ const props = withDefaults(defineProps<{
 
 const ui = useUIStore()
 
-const mergedHeight = $computed(() => props.height || (ui.mobile ? '8rem' : '12rem'))
+const mergedHeight = $computed(() => props.height || (ui.mobile ? '10rem' : '12rem'))
 </script>
 
 <template>

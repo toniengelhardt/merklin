@@ -1,7 +1,7 @@
 <template>
   <div
     class="mobile-navigation"
-    flex justify-between items-center w-full px-6 bg-base
+    flex justify-between items-center w-full px-4 bg-base
     box-border border-t-solid border-t-1 border-base
   >
     <AppMenuItemMobile

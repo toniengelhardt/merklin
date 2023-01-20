@@ -3,12 +3,12 @@ const ui = useUIStore()
 </script>
 
 <template>
-  <div flex-center h-10 mr-2>
+  <div flex-center h-10>
     <Icon
       v-if="ui.loading"
       name="loading"
       :size="ui.mobile ? '1.75rem' : '1.25rem'"
-      text-green-500 dark:text-green-400
+      text-yellow-500 dark:text-yellow-400
     />
   </div>
 </template>

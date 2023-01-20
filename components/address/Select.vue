@@ -21,7 +21,7 @@ function copyAddress() {
     <template v-if="activeAddress">
       <AddressIcon
         :address="activeAddress"
-        flex w-8 h-8 md:(w-7 h-7) lt-md:p-1px border-solid lt-md:border-2 md:border-0 border-highlight
+        flex w-9 h-9 md:(w-7 h-7) lt-md:p-1px border-solid lt-md:border-2 md:border-0 border-highlight
         rounded-full md:rounded-md box-border
       />
       <AddressDisplay

@@ -24,6 +24,13 @@ body {
   -ms-overflow-style: none !important; /* IE and Edge */
 }
 
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  /* Chrome, Safari, Opera */
+  display: none !important;
+  -webkit-appearance: none !important;
+}
+
 /* CSS specific to iOS devices. */
 @supports (-webkit-touch-callout: none) {
   html,
@@ -32,15 +39,6 @@ body {
     overflow: hidden;
     overscroll-behavior: none;
   }
-}
-
-html::-webkit-scrollbar,
-body::-webkit-scrollbar {
-  /* Chrome, Safari, Opera */
-  width: 0;
-  height: 0;
-  display: none !important;
-  -webkit-appearance: none !important;
 }
 
 @media (min-width: 640px) {

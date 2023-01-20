@@ -20,8 +20,6 @@ const transactionStore = useTransactionStore()
 const items = $computed(() => transactionStore.transactionItems)
 const data = $computed(() => items ? generateData(items, props.unit) : undefined)
 
-// const yMax = $computed(() => Math.max(...(data?.map(d => d.y) || [])))
-
 const fillColors = $computed(() => (
   colorMode.value === 'light'
     ? [(colors.sky as Colors)['400'], (colors.blue as Colors)['400'], (colors.purple as Colors)['400']]

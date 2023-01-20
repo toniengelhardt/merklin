@@ -13,7 +13,7 @@
           {{ network.label }}
         </div>
       </div>
-      <div mt-3 text-sm>
+      <div mt-2 text-sm>
         <div class="item">
           <div class="label">
             Layer:
@@ -111,7 +111,10 @@
 
 <style scoped>
 .item {
-  @apply flex mb-1;
+  @apply flex;
+}
+.item:not(:last-child) {
+  @apply md:mb-1;
 }
 .icon-container {
   @apply flex justify-center items-center;

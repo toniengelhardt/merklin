@@ -39,7 +39,7 @@
         Follow oracles on prediction markets.
       </div>
     </div> -->
-    <div col-span-12 md:col-span-6 panel min-h-61>
+    <div col-span-12 md:col-span-6 panel md:min-h-61>
       <h2 panel-title mb-2 md:mb-4>
         Network status
       </h2>

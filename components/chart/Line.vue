@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { ChartData, ChartOptions } from 'chart.js'
 
-withDefaults(defineProps<{
+const props = withDefaults(defineProps<{
   chartId?: string
   chartData: ChartData
   chartOptions?: ChartOptions
@@ -12,16 +12,19 @@ withDefaults(defineProps<{
   plugins?: any // Plugin<'bar'>{},
 }>(), {
   width: '100%',
-  height: '12rem',
   chartId: 'line-chart',
   cssClasses: '',
   styles: () => {},
   plugins: () => {},
 })
+
+const ui = useUIStore()
+
+const mergedHeight = $computed(() => props.height || (ui.mobile ? '10rem' : '12rem'))
 </script>
 
 <template>
-  <div relative flex w-full :style="{ width, height }">
+  <div relative flex w-full :style="{ width, height: mergedHeight }">
     <LineChart
       :chart-id="chartId"
       :data="chartData"

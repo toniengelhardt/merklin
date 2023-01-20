@@ -39,9 +39,9 @@ const panels = $computed(() => {
       <div
         v-for="panel in panels"
         :key="panel.date"
-        panel pb-1 box-border
+        panel pb-0 box-border
       >
-        <div mb-2 md:mb-4 text-sm text-faint font-bold leading-none>
+        <div mb-2 md:mb-4 text-sm text-faint font-bold md:leading-none>
           {{ displayDate(new Date(panel.date)) }}
         </div>
         <div
