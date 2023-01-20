@@ -28,10 +28,26 @@ const lastTransactionAge = $computed(() => {
 
 <template>
   <div panel>
-    <h2 panel-title>
+    <h2 panel-title mb-2 md:mb-4>
       Insights
     </h2>
-    <div mt-4 grid grid-cols-2>
+    <div v-if="items?.length" grid grid-cols-2 gap-2 md:gap-4 pb-2>
+      <div>
+        <div class="insights-label">
+          Transaction count
+        </div>
+        <div class="insights-value">
+          {{ items?.length ?? 0 }}
+        </div>
+      </div>
+      <div>
+        <div class="insights-label">
+          Failure rate
+        </div>
+        <div class="insights-value">
+          N/A
+        </div>
+      </div>
       <div>
         <div class="insights-label">
           First transaction
@@ -48,6 +64,9 @@ const lastTransactionAge = $computed(() => {
           {{ lastTransactionAge }} ago
         </div>
       </div>
+    </div>
+    <div v-else text-dim italic>
+      No insights yet...
     </div>
   </div>
 </template>

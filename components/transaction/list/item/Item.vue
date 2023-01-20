@@ -8,13 +8,13 @@ const props = defineProps<{
 const expanded = $ref(false)
 
 const gasPriceDisplay = $computed(() => (
-  props.item
+  props.item?.transaction.gasPrice
     ? Math.round(+ethersUtils.formatUnits(props.item.transaction.gasPrice, 'gwei'))
     : undefined
 ))
 const gasCost = $computed(() => (
-  props.item
-    ? +ethersUtils.formatUnits(props.item.transaction.gasLimit * props.item.transaction.gasPrice, 'ether')
+  props.item?.transaction.gasLimit && props.item?.transaction.gasPrice
+    ? +ethersUtils.formatUnits(props.item.transaction.gasLimit.mul(props.item.transaction.gasPrice), 'ether')
     : undefined
 ))
 const gasCostDisplay = $computed(() => gasCost?.toPrecision(2))
@@ -23,9 +23,8 @@ const gasCostDisplay = $computed(() => gasCost?.toPrecision(2))
 <template>
   <div
     v-if="item"
-    flex flex-col lt-md:mx="-1rem" mb-2 bg-element px-3 md:radius-base cursor-pointer
-    border-1 border-transparent transition-border-color hover:border-base
-    :class="{ 'border-base': expanded, 'hover:border-highlight': expanded }"
+    flex flex-col cursor-pointer
+    border="solid light 0 t-1"
     @click="(expanded = !expanded)"
   >
     <div flex items-center h-14>
@@ -44,12 +43,11 @@ const gasCostDisplay = $computed(() => gasCost?.toPrecision(2))
         <slot name="details" />
       </div>
       <div lt-md:hidden flex items-center w-44 ml-3>
-        <Icon name="gas" size="1.2rem" mr-3 text-dim />
+        <Icon name="gas" size="1rem" mr-3 text-dim />
         <div flex flex-col text-sm leading-tight>
           <div flex items-center>
             <span class="text-value">{{ gasCostDisplay }}</span>
-            <span ml-1>Ξ</span>
-            <span ml-1 text-xs tracking-tighter>@ {{ gasPriceDisplay }} gwei</span>
+            <span ml-1 text-xs text-dim tracking-tighter>@ {{ gasPriceDisplay }} gwei</span>
           </div>
           <div class="text-currency">
             ~{{ useEthToCurrencyFormatted(gasCost) }}
@@ -59,7 +57,7 @@ const gasCostDisplay = $computed(() => gasCost?.toPrecision(2))
     </div>
     <div
       v-if="expanded"
-      flex flex-col py-3 ml-11 border-t-1 border-base
+      flex flex-col pb-2 md:py-2 ml-7 md:ml-11
     >
       <div flex>
         <div flex flex-col w-24>
@@ -117,16 +115,6 @@ const gasCostDisplay = $computed(() => gasCost?.toPrecision(2))
           </NuxtLink>
         </div>
       </div>
-      <!-- <div flex mt-3>
-        <div flex flex-col>
-          <div text-xs text-faint>
-            Data
-          </div>
-          <div text-sm text-dim>
-            {{ item.transaction.data }}
-          </div>
-        </div>
-      </div> -->
     </div>
   </div>
   <Loading v-else />

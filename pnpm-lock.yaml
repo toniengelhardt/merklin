@@ -26,7 +26,7 @@ specifiers:
   nuxt: 3.0.0
   nuxt-headlessui: 1.1.1
   nuxt-icon: ^0.2.6
-  nuxt-og-image: ^1.0.0-beta.5
+  nuxt-og-image: ^1.0.0-beta.13
   nuxt-security: ^0.10.1
   pinia-plugin-persistedstate: ^3.0.2
   playwright: ^1.29.2
@@ -76,7 +76,7 @@ devDependencies:
   nuxt: 3.0.0_7uibuqfxkfaozanbtbziikiqje
   nuxt-headlessui: 1.1.1
   nuxt-icon: 0.2.6
-  nuxt-og-image: 1.0.0-beta.5
+  nuxt-og-image: 1.0.0-beta.13
   playwright: 1.29.2
   typescript: 4.9.4
   vitest: 0.27.2_@vitest+ui@0.27.2
@@ -5983,6 +5983,15 @@ packages:
       universalify: 2.0.0
     dev: true
 
+  /fs-extra/8.1.0:
+    resolution: {integrity: sha512-yhlQgA6mnOJUKOsRUFsgJdQCvkKhcz8tlZG5HBQfReYZy46OwLcY+Zia0mtdHsOo9y/hP+CxMN0TU9QxoOtG4g==}
+    engines: {node: '>=6 <7 || >=8'}
+    dependencies:
+      graceful-fs: 4.2.10
+      jsonfile: 4.0.0
+      universalify: 0.1.2
+    dev: true
+
   /fs-memo/1.2.0:
     resolution: {integrity: sha512-YEexkCpL4j03jn5SxaMHqcO6IuWuqm8JFUYhyCep7Ao89JIYmB8xoKhK7zXXJ9cCaNXpyNH5L3QtAmoxjoHW2w==}
     dev: true
@@ -6921,6 +6930,20 @@ packages:
   /jsonc-parser/3.2.0:
     resolution: {integrity: sha512-gfFQZrcTc8CnKXp6Y4/CBT3fTc0OVuDofpre4aEeEpSBPV5X5v4+Vmx+8snU7RLPrNHPKSgLxGo9YuQzz20o+w==}
 
+  /jsonfile/4.0.0:
+    resolution: {integrity: sha512-m6F1R3z8jjlf2imQHS2Qez5sjKWQzbuuhuJ/FKYFRZvPE3PuHcSMVZzfsLhGVOkfd20obL5SWEBew5ShlquNxg==}
+    optionalDependencies:
+      graceful-fs: 4.2.10
+    dev: true
+
+  /jsonfile/5.0.0:
+    resolution: {integrity: sha512-NQRZ5CRo74MhMMC3/3r5g2k4fjodJ/wh8MxjFbCViWKFjxrnudWSY5vomh+23ZaXzAS7J3fBZIR2dV6WbmfM0w==}
+    dependencies:
+      universalify: 0.1.2
+    optionalDependencies:
+      graceful-fs: 4.2.10
+    dev: true
+
   /jsonfile/6.1.0:
     resolution: {integrity: sha512-5dgndWOriYSm5cnYaJNhalLNDKOqFwyDB/rr1E9ZsGciGvKPs8R2xYGCacuf3z6K1YKDz182fd+fY3cn3pMqXQ==}
     dependencies:
@@ -7705,8 +7728,8 @@ packages:
       - vue
     dev: true
 
-  /nuxt-og-image/1.0.0-beta.5:
-    resolution: {integrity: sha512-BhAVy8YTIDRPJPrfGUj4R5vQiqfQxXCJ6aVF0t34kcHnfbP+pzKq+kRRNa6dYK7js5mRBhHqtA0XSNUX2z1WXQ==}
+  /nuxt-og-image/1.0.0-beta.13:
+    resolution: {integrity: sha512-i/Ul3s7NP/V0e1BZd0tSaqV8l+B+xCeGqEzgJLkTuiabMSIM2xqTad2d3G2VsIzJYxplYm+nYjLlOxjW8yaapw==}
     dependencies:
       '@nuxt/kit': 3.0.0
       '@resvg/resvg-js': 2.2.0
@@ -7726,6 +7749,7 @@ packages:
       satori-html: 0.3.2
       sirv: 2.0.2
       tinyws: 0.1.0
+      twemoji: 14.0.2
       ufo: 1.0.1
     transitivePeerDependencies:
       - rollup
@@ -9682,6 +9706,19 @@ packages:
     engines: {node: '>=0.6.11 <=0.7.0 || >=0.7.3'}
     dev: true
 
+  /twemoji-parser/14.0.0:
+    resolution: {integrity: sha512-9DUOTGLOWs0pFWnh1p6NF+C3CkQ96PWmEFwhOVmT3WbecRC+68AIqpsnJXygfkFcp4aXbOp8Dwbhh/HQgvoRxA==}
+    dev: true
+
+  /twemoji/14.0.2:
+    resolution: {integrity: sha512-BzOoXIe1QVdmsUmZ54xbEH+8AgtOKUiG53zO5vVP2iUu6h5u9lN15NcuS6te4OY96qx0H7JK9vjjl9WQbkTRuA==}
+    dependencies:
+      fs-extra: 8.1.0
+      jsonfile: 5.0.0
+      twemoji-parser: 14.0.0
+      universalify: 0.1.2
+    dev: true
+
   /type-check/0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
     engines: {node: '>= 0.8.0'}
@@ -9863,6 +9900,11 @@ packages:
     resolution: {integrity: sha512-3faScn5I+hy9VleOq/qNbAd6pAx7iH5jYBMS9I1HgQVijz/4mv5Bvw5iw1sC/90CODiKo81G/ps8AJrISn687g==}
     dependencies:
       '@types/unist': 2.0.6
+    dev: true
+
+  /universalify/0.1.2:
+    resolution: {integrity: sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==}
+    engines: {node: '>= 4.0.0'}
     dev: true
 
   /universalify/2.0.0:

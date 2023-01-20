@@ -2,7 +2,7 @@
   <div class="page">
     <div col-span-12 md:col-span-3>
       <div col-span-1 flex flex-row md:flex-col h-full>
-        <div class="flex-1/2 md:flex-1" panel flex-center flex-col>
+        <div class="flex-1/2 md:flex-1" panel flex-center flex-col lt-md:min-h20>
           <h2 w-full m-0 text-3xl text-center font-black>
             <!-- <span inline-block ml-12>gm</span> -->
             <span inline-block w-12 class="text-center text-1.5rem md:text-1.8rem">🔮</span>
@@ -11,7 +11,7 @@
             sim sala gm
           </div>
         </div>
-        <div class="flex-1/2 lt-md:ml-2 md:(flex-1 mt-4)" panel flex-center flex-col>
+        <div class="flex-1/2 lt-md:ml-2 md:(flex-1 mt-4)" panel flex-center flex-col lt-md:min-h20>
           <InsightPanelTotal />
         </div>
       </div>
@@ -40,7 +40,7 @@
       </div>
     </div> -->
     <div col-span-12 md:col-span-6 panel min-h-61>
-      <h2 panel-title mb-4>
+      <h2 panel-title mb-2 md:mb-4>
         Network status
       </h2>
       <div>
@@ -48,7 +48,7 @@
       </div>
     </div>
     <div col-span-12 md:col-span-3 panel>
-      <h2 panel-title mb-4>
+      <h2 panel-title mb-2 md:mb-4>
         D<span font-mono>0x</span>ing score<span ml-2 text-base>🧟</span>
       </h2>
       <div>
@@ -59,7 +59,7 @@
       </div>
     </div>
     <div col-span-12 md:col-span-3 panel>
-      <h2 panel-title mb-4>
+      <h2 panel-title mb-2 md:mb-4>
         Airdrop detection<span ml-2 text-base>🧞‍♂️</span>
       </h2>
       <div>

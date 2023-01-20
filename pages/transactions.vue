@@ -4,10 +4,14 @@ const addressStore = useAddressStore()
 </script>
 
 <template>
-  <div class="page" flex-row-reverse>
+  <div class="page">
     <template v-if="addressStore.activeAddresses.length">
-      <TransactionPanelHistory col-span-12 md:col-span-8 />
-      <TransactionPanelInsights v-if="!ui.mobile" col-span-12 md:col-span-4 max-h-60 />
+      <div col-span-12 md:col-span-8>
+        <TransactionPanelHistory />
+      </div>
+      <div v-if="!ui.mobile" col-span-12 md:col-span-4>
+        <TransactionPanelInsights />
+      </div>
     </template>
     <PanelSelectAddress v-else col-span-12 md:col-span-4 md:h-61 />
   </div>
