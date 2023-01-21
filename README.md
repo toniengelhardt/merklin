@@ -1,9 +1,11 @@
 # M Ξ R K L 🧙🏽‍♂️ N
 
+__Website:__ [merklin.xyz](https://merklin.xyz) ([repo](https://github.com/toniengelhardt/merklin-website))
+
 Merklin is an attempt to build an open-source web-only ([PWA](https://web.dev/progressive-web-apps/)) [EVM](https://ethereum.org/en/developers/docs/evm) wallet explorer similar to [Zapper](https://zapper.fi/), [Zerion](https://app.zerion.io/), etc. It's made with [Nuxt 3](https://nuxt.com) and the goal is to provide an educational resource and to introduce [Vue](https://vuejs.org) to the [web3](https://ethereum.org/en/web3) stack.
 
 <div style="display:flex;">
-  <img width="76.4%" alt="Merklin Preview desktop" src="https://user-images.githubusercontent.com/2703233/211625431-b588e175-72ab-406f-b6ec-6ad6414b2440.png">
+  <img width="76.4%" alt="Merklin Preview desktop" src="https://user-images.githubusercontent.com/2703233/213878836-a1b509a5-264a-41a6-ad51-c7d7db6e696c.jpg">
   <img width="22.6%" alt="Merklin Preview mobile" src="https://user-images.githubusercontent.com/2703233/211804163-0251d023-51f0-4246-b4eb-7c7b6bec5da4.png">
 </div>
 
@@ -17,7 +19,7 @@ The idea is to focus primarily on on-chain analytics and visualization, i.a.
 - Network status and comparison
 - etc.
 
-For now, only [Ethereum](https://ethereum.org) and L2 scaling solutions: [Arbitrum](https://arbitrum.io), [Optimism](https://www.optimism.io), [Polygon](https://polygon.technology), [Gnosis](https://www.gnosis.io),  etc.
+For now, only [Ethereum](https://ethereum.org) and L2 scaling solutions: [Arbitrum](https://arbitrum.io), [Optimism](https://www.optimism.io), [zkSync](https://zksync.io), [Polygon](https://polygon.technology), [Gnosis](https://www.gnosis.io), etc.
 
 Adding the [Bitcoin](https://bitcoin.org) and [Lightning](https://lightning.network) networks is also very important, but that's for later.
 
