@@ -9,7 +9,7 @@
         title="Insights"
         flex p-0 text-1.5rem
       >
-        <img src="/icon.png" alt="Merklin logo" width="54" height="54" flex>
+        <img src="/icon.png" alt="MΞRKLIN logo" width="54" height="54" flex>
       </NuxtLink>
     </div>
     <div flex="~ 1/3" justify-end>
