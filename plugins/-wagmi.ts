@@ -3,7 +3,6 @@ import { arbitrum, mainnet, optimism, polygon } from '@wagmi/core/chains'
 import { alchemyProvider } from '@wagmi/core/providers/alchemy'
 import { infuraProvider } from '@wagmi/core/providers/infura'
 import { publicProvider } from '@wagmi/core/providers/public'
-import { defineNuxtPlugin } from '#app'
 
 // Check:
 // https://wagmi.sh/core/providers/configuring-chains

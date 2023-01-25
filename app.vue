@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import process from 'process'
-import EventEmitter from 'events'
-import { Buffer } from 'buffer'
+// import process from 'process'
+// import EventEmitter from 'events'
+// import { Buffer } from 'buffer'
 
 // defineOgImage({
 //   component: 'OgImage',
@@ -10,11 +10,11 @@ import { Buffer } from 'buffer'
 
 // Fix for WalletConnect issue.
 // https://stackoverflow.com/a/72978659/1384972
-window.Buffer = Buffer
-window.process = process
-// @ts-expect-error EventEmitter is not defined on the window object.
-window.EventEmitter = EventEmitter
-window.global = window
+// window.Buffer = Buffer
+// window.process = process
+// // @ts-expect-error EventEmitter is not defined on the window object.
+// window.EventEmitter = EventEmitter
+// window.global = window
 
 const intervals: ReturnType<typeof useIntervalFn>[] = []
 
