@@ -1,7 +1,7 @@
 // import fs from 'fs'
 // import { fileURLToPath } from 'node:url'
 
-import GlobalPolyFill from '@esbuild-plugins/node-globals-polyfill'
+// import GlobalPolyFill from '@esbuild-plugins/node-globals-polyfill'
 
 const appTitle = 'Merklin'
 const appDescription = 'Open-source web-only EVM wallet explorer made with Vue, Nuxt, and Ethers'
@@ -60,29 +60,29 @@ export default defineNuxtConfig({
       ],
     },
   },
-  vite: {
-    resolve: {
-      alias: {
-        process: 'process/browser',
-        stream: 'stream-browserify',
-        zlib: 'browserify-zlib',
-        util: 'util',
-      },
-    },
-    optimizeDeps: {
-      esbuildOptions: {
-        define: {
-          global: 'globalThis',
-        },
-        plugins: [
-          GlobalPolyFill({
-            process: true,
-            buffer: true,
-          }) as any, // fix weird type error
-        ],
-      },
-    },
-  },
+  // vite: {
+  //   resolve: {
+  //     alias: {
+  //       process: 'process/browser',
+  //       stream: 'stream-browserify',
+  //       zlib: 'browserify-zlib',
+  //       util: 'util',
+  //     },
+  //   },
+  //   optimizeDeps: {
+  //     esbuildOptions: {
+  //       define: {
+  //         global: 'globalThis',
+  //       },
+  //       plugins: [
+  //         GlobalPolyFill({
+  //           process: true,
+  //           buffer: true,
+  //         }) as any, // fix weird type error
+  //       ],
+  //     },
+  //   },
+  // },
   typescript: {
     shim: false,
   },
