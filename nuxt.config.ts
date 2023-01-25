@@ -33,7 +33,7 @@ export default defineNuxtConfig({
     'nuxt-headlessui',
     'nuxt-icon',
     // 'nuxt-og-image',
-    'nuxt-security',
+    // 'nuxt-security',
   ],
   imports: {
     dirs: [
