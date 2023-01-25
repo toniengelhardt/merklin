@@ -3,7 +3,7 @@
 
 // import GlobalPolyFill from '@esbuild-plugins/node-globals-polyfill'
 
-const appTitle = 'Merklin'
+const appTitle = 'MΞRKLIN'
 const appDescription = 'Open-source web-only EVM wallet explorer made with Vue, Nuxt, and Ethers'
 const appUrl = 'https://app.merklin.xyz'
 

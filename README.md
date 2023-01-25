@@ -1,10 +1,10 @@
 # M Ξ R K L 🧙🏽‍♂️ N
 
-Merklin is an attempt to build an open-source web-only ([PWA](https://web.dev/progressive-web-apps/)) [EVM](https://ethereum.org/en/developers/docs/evm) wallet explorer similar to [Zapper](https://zapper.fi/), [Zerion](https://app.zerion.io/), etc. It's made with [Nuxt 3](https://nuxt.com) and the goal is to provide an educational resource and to introduce [Vue](https://vuejs.org) to the [web3](https://ethereum.org/en/web3) stack.
+MΞRKLIN is an attempt to build an open-source web-only ([PWA](https://web.dev/progressive-web-apps/)) [EVM](https://ethereum.org/en/developers/docs/evm) wallet explorer similar to [Zapper](https://zapper.fi/), [Zerion](https://app.zerion.io/), etc. It's made with [Nuxt 3](https://nuxt.com) and the goal is to provide an educational resource and to introduce [Vue](https://vuejs.org) to the [web3](https://ethereum.org/en/web3) stack.
 
 <div style="display:flex;">
-  <img width="76.4%" alt="Merklin Preview desktop" src="https://user-images.githubusercontent.com/2703233/211625431-b588e175-72ab-406f-b6ec-6ad6414b2440.png">
-  <img width="22.6%" alt="Merklin Preview mobile" src="https://user-images.githubusercontent.com/2703233/211804163-0251d023-51f0-4246-b4eb-7c7b6bec5da4.png">
+  <img width="76.4%" alt="MΞRKLIN Preview desktop" src="https://user-images.githubusercontent.com/2703233/211625431-b588e175-72ab-406f-b6ec-6ad6414b2440.png">
+  <img width="22.6%" alt="MΞRKLIN Preview mobile" src="https://user-images.githubusercontent.com/2703233/211804163-0251d023-51f0-4246-b4eb-7c7b6bec5da4.png">
 </div>
 
 The idea is to focus primarily on on-chain analytics and visualization, i.a.
@@ -81,7 +81,7 @@ Please make sure they pass!
 
 Feel free to play around and contribute, open issues, report bugs, and give feedback. The best way to start is to drop a comment on an issue you want to work on, that way we can avoid overlap.
 
-Please don't be afraid to ask questions! You can start a thread under Discussions for topics related to Merklin specifically or consult the `web3` channel in the [Nuxt Discord](https://discord.com/invite/ps2h6QT) for more general questions about web3 and Nuxt. At some point we might also have our own Discord server.
+Please don't be afraid to ask questions! You can start a thread under Discussions for topics related to MΞRKLIN specifically or consult the `web3` channel in the [Nuxt Discord](https://discord.com/invite/ps2h6QT) for more general questions about web3 and Nuxt. At some point we might also have our own Discord server.
 
 ---
 

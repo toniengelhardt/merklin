@@ -35,7 +35,7 @@ const items = {
   github: {
     icon: { name: 'github' },
     label: 'Contribute',
-    title: 'Merklin repository on GitHub',
+    title: 'MΞRKLIN repository on GitHub',
     link: config.public.repoUrl,
     external: true,
   },
