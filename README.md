@@ -1,6 +1,6 @@
 # M Ξ R K L 🧙🏽‍♂️ N
 
-__Website:__ [merklin.xyz](https://merklin.xyz) ([repo](https://github.com/toniengelhardt/merklin-website))
+__Home:__ [merklin.xyz](https://merklin.xyz) ([repo](https://github.com/toniengelhardt/merklin-website))
 
 MΞRKLIN is an attempt to build an open-source web-only ([PWA](https://web.dev/progressive-web-apps/)) [EVM](https://ethereum.org/en/developers/docs/evm) wallet explorer similar to [Zapper](https://zapper.fi/), [Zerion](https://app.zerion.io/), etc. It's made with [Nuxt 3](https://nuxt.com) and the goal is to provide an educational resource and to introduce [Vue](https://vuejs.org) to the [web3](https://ethereum.org/en/web3) stack.
 
