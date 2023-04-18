@@ -2,20 +2,24 @@ import { defineStore } from 'pinia'
 
 export const usePriceStore = defineStore('prices', {
   state: (): {
+    btc_usd: TokenPrice | undefined
     eth_usd: TokenPrice | undefined
     op_usd: TokenPrice | undefined
     matic_usd: TokenPrice | undefined
     // matic_usd_hist: TokenPrice | undefined
     dai_usd: TokenPrice | undefined
     xdai_usd: TokenPrice | undefined
+    gno_usd: TokenPrice | undefined
   } => {
     return {
+      btc_usd: undefined,
       eth_usd: undefined,
       op_usd: undefined,
       matic_usd: undefined,
       // matic_usd_hist: undefined,
       dai_usd: undefined,
       xdai_usd: undefined,
+      gno_usd: undefined,
     }
   },
   actions: {
@@ -24,7 +28,7 @@ export const usePriceStore = defineStore('prices', {
       const roundData = await priceFeed.latestRoundData()
       const decimals = await priceFeed.decimals()
       const price = Number((roundData.answer.toString() / 10 ** decimals).toFixed(2))
-      this[marketPair as keyof typeof this] = price
+      this[marketPair] = price
 
       // Directly populate xdai price from dai price
       if (marketPair === 'dai_usd') {

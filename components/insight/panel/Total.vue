@@ -1,6 +1,9 @@
 <script setup lang="ts">
 const addressStore = useAddressStore()
 const transactionStore = useTransactionStore()
+const walletStore = useWalletStore()
+
+const balance = await walletStore.updateBalance()
 
 const assetTotal = $computed(() => {
   if (transactionStore.assetTotalEth) {
@@ -11,9 +14,10 @@ const assetTotal = $computed(() => {
         currency: 'USD',
         notation: 'compact',
         compactDisplay: 'long',
+        minimumFractionDigits: 2,
       },
     )
-      .format(useEthToCurrency(transactionStore.assetTotalEth) ?? 0)
+      .format(useEthToCurrency(Number(balance)) ?? 0)
   }
   return '--'
 })
