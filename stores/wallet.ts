@@ -1,6 +1,7 @@
 import type { GetAccountResult, GetNetworkResult, InjectedConnector } from '@wagmi/core'
 import type { MetaMaskConnector } from '@wagmi/core/connectors/metaMask'
 import type { WalletConnectConnector } from '@wagmi/core/connectors/walletConnect'
+import { ethers } from 'ethers'
 import { defineStore } from 'pinia'
 
 export const useWalletStore = defineStore('wallet', {
@@ -8,11 +9,13 @@ export const useWalletStore = defineStore('wallet', {
     connector: MetaMaskConnector | WalletConnectConnector | InjectedConnector | undefined
     account: GetAccountResult | undefined
     network: GetNetworkResult | undefined
+    balance: String | undefined
   } => {
     return {
       connector: undefined,
       account: undefined,
       network: undefined,
+      balance: undefined,
     }
   },
   getters: {
@@ -30,6 +33,12 @@ export const useWalletStore = defineStore('wallet', {
     },
   },
   actions: {
+    async updateBalance() {
+      const provider = useWeb3Provider()
+      const signer = (await provider).web3Signer
+      const balance = await signer.getBalance()
+      return (this.balance = ethers.utils.formatEther(balance))
+    },
     // async getAccount() {
     //   const { web3Provider, web3Signer } = await useWeb3Provider()
     //   // console.info('web3Provider:', web3Provider)
