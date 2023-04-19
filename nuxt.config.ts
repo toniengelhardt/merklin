@@ -28,6 +28,7 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@nuxtjs/plausible',
     '@pinia/nuxt',
+    '@pinia-plugin-persistedstate/nuxt',
     '@unocss/nuxt',
     '@vueuse/nuxt',
     'nuxt-headlessui',
@@ -39,10 +40,6 @@ export default defineNuxtConfig({
     dirs: [
       './stores',
     ],
-  },
-  experimental: {
-    // componentIslands: true,
-    reactivityTransform: true,
   },
   devServer: {
     host: process.env.HOST || 'localhost',

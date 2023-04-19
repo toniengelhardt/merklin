@@ -2,11 +2,11 @@
 import { formatDistanceToNow } from 'date-fns'
 
 const transactionStore = useTransactionStore()
-const items = $computed(() => transactionStore.transactionItems)
+const items = computed(() => transactionStore.transactionItems)
 
-const firstTransactionAge = $computed(() => {
-  if (items?.length) {
-    const firstTransaction = items.at(-1)
+const firstTransactionAge = computed(() => {
+  if (items.value?.length) {
+    const firstTransaction = items.value.at(-1)
     if (firstTransaction?.timestamp)
       return formatDistanceToNow(firstTransaction.timestamp)
 
@@ -14,9 +14,9 @@ const firstTransactionAge = $computed(() => {
   }
   return undefined
 })
-const lastTransactionAge = $computed(() => {
-  if (items?.length) {
-    const lastTransaction = items[0]
+const lastTransactionAge = computed(() => {
+  if (items.value?.length) {
+    const lastTransaction = items.value[0]
     if (lastTransaction?.timestamp)
       return formatDistanceToNow(lastTransaction.timestamp)
 

@@ -5,7 +5,7 @@ const props = defineProps<{
 }>()
 defineEmits(['update:modelValue'])
 
-const selectedOption = $computed(() => props.options.find(option => option.value === props.modelValue) || props.options[0])
+const selectedOption = computed(() => props.options.find(option => option.value === props.modelValue) || props.options[0])
 </script>
 
 <template>

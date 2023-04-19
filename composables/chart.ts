@@ -1,6 +1,6 @@
 import { addDays } from 'date-fns'
 
-export const useTimeframeMin = (timeframe: ChartTimeframeOption) => {
+export function useTimeframeMin(timeframe: ChartTimeframeOption) {
   const min = ref<Date | undefined>(undefined)
   if (timeframe) {
     let days

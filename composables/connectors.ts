@@ -9,7 +9,7 @@ let metaMaskConnector: MetaMaskConnector | undefined
 let walletConnectConnector: WalletConnectConnector | undefined
 let injectedConnector: InjectedConnector | undefined
 
-export const useMetaMaskConnector = () => {
+export function useMetaMaskConnector() {
   if (!metaMaskConnector) {
     metaMaskConnector = new MetaMaskConnector({
       chains,
@@ -18,19 +18,19 @@ export const useMetaMaskConnector = () => {
   return metaMaskConnector
 }
 
-export const useWalletConnectConnector = () => {
-  if (!walletConnectConnector) {
-    walletConnectConnector = new WalletConnectConnector({
-      chains,
-      options: {
-        qrcode: true,
-      },
-    })
-  }
-  return walletConnectConnector
-}
+// export function useWalletConnectConnector() {
+//   if (!walletConnectConnector) {
+//     walletConnectConnector = new WalletConnectConnector({
+//       chains,
+//       options: {
+//         showQrModal: true,
+//       },
+//     })
+//   }
+//   return walletConnectConnector
+// }
 
-export const useInjectedConnector = () => {
+export function useInjectedConnector() {
   if (!injectedConnector) {
     injectedConnector = new InjectedConnector({
       chains,
@@ -43,10 +43,10 @@ export const useInjectedConnector = () => {
   return injectedConnector
 }
 
-export const useConnectors = () => {
+export function useConnectors() {
   return {
     metamask: useMetaMaskConnector(),
-    walletconnect: useWalletConnectConnector(),
+    // walletconnect: useWalletConnectConnector(),
     injectedWallet: useInjectedConnector(),
   }
 }

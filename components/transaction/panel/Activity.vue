@@ -2,13 +2,13 @@
 const ui = useUIStore()
 const addressStore = useAddressStore()
 const transactionStore = useTransactionStore()
-const items = $computed(() => transactionStore.transactionItems)
+const items = computed(() => transactionStore.transactionItems)
 
-const counts = $computed(() => {
-  if (items) {
+const counts = computed(() => {
+  if (items.value) {
     let received = 0
     let sent = 0
-    items?.forEach((item) => {
+    items.value?.forEach((item) => {
       if (item.type === 'receive')
         received++
       else if (item.type === 'send')

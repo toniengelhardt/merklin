@@ -17,7 +17,7 @@ const network = 'homestead'
 /**
  * Wallet provider, e.g. MetaMask.
  */
-export const useWeb3Provider = async () => {
+export async function useWeb3Provider() {
   if (!web3Provider)
     web3Provider = new ethers.providers.Web3Provider((window as any).ethereum)
   if (!web3Signer)
@@ -30,7 +30,7 @@ export const useWeb3Provider = async () => {
  * https://docs.ethers.io/v5/api/providers/
  * Get free API keys and add them to your .env file (see .env.example).
  */
-export const useDefaultProvider = async (network: NetworkName) => {
+export async function useDefaultProvider(network: NetworkName) {
   if (!defaultProviders[network]) {
     const config = useRuntimeConfig()
     defaultProviders[network] = await ethers.getDefaultProvider(network, {
@@ -44,7 +44,7 @@ export const useDefaultProvider = async (network: NetworkName) => {
   return defaultProviders[network]
 }
 
-export const useRpcProvider = async () => {
+export async function useRpcProvider() {
   if (!rpcProvider) {
     const config = useRuntimeConfig()
     rpcProvider = new ethers.providers.JsonRpcProvider(config.public.jsonRpcUrl)
@@ -56,7 +56,7 @@ export const useRpcProvider = async () => {
  * Etherscan provider
  * The only one that has the transaction history.
  */
-export const useEtherscanProvider = async () => {
+export async function useEtherscanProvider() {
   if (!etherscanProvider) {
     const config = useRuntimeConfig()
     etherscanProvider = new ethers.providers.EtherscanProvider(network, config.public.etherscanApiKey)
@@ -64,7 +64,7 @@ export const useEtherscanProvider = async () => {
   return etherscanProvider
 }
 
-export const useTransactions = async () => {
+export async function useTransactions() {
   const addressStore = useAddressStore()
   if (addressStore.activeAddresses.length) {
     console.log('Fetching transactions...')
@@ -79,7 +79,7 @@ export const useTransactions = async () => {
  * TODO: Implement this!
  * Hardcoded for now for UI dev.
  */
-export const useEthToCurrency = (value: number | undefined) => {
+export function useEthToCurrency(value: number | undefined) {
   if (value) {
     const priceStore = usePriceStore()
     const conversionFactor = priceStore.eth_usd || 0
@@ -87,7 +87,7 @@ export const useEthToCurrency = (value: number | undefined) => {
   }
 }
 
-export const useEthToCurrencyFormatted = (value: number | undefined) => {
+export function useEthToCurrencyFormatted(value: number | undefined) {
   const cValue = useEthToCurrency(value)
   if (cValue) {
     return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(cValue)

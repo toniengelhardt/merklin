@@ -1,15 +1,15 @@
 <script setup lang="ts">
 const addressStore = useAddressStore()
 const transactionStore = useTransactionStore()
-const items = $computed(() => transactionStore.transactionItems)
+const items = computed(() => transactionStore.transactionItems)
 
-const addressCounts = $computed(() => {
-  if (items) {
+const addressCounts = computed(() => {
+  if (items.value) {
     const inDict = {}
     let inCount = 0
     const outDict = {}
     let outCount = 0
-    items.forEach((item) => {
+    items.value.forEach((item) => {
       if (item.type === 'send' && item.transaction.to) {
         dictIncrement(outDict, item.transaction.to)
         outCount += 1

@@ -4,15 +4,14 @@ defineProps<{
 }>()
 const emit = defineEmits(['update:modelValue', 'close'])
 
-const ui = useUIStore()
 const networkStore = useNetworkStore()
 
-function selectNetwork(address: Address) {
-  // if (!addressStore.activeAddresses.includes(address)) {
-  //   addressStore.selectAddress(address)
-  //   ui.addressDialogOpen = false
-  // }
-}
+// function selectNetwork(address: Address) {
+//   // if (!addressStore.activeAddresses.includes(address)) {
+//   //   addressStore.selectAddress(address)
+//   //   ui.addressDialogOpen = false
+//   // }
+// }
 
 function close() {
   emit('update:modelValue', false)

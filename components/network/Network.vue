@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const ui = useUIStore()
 const networkStore = useNetworkStore()
-const activeNetwork = $computed(() => networkStore.activeNetworks?.length ? networkStore.activeNetworks[0] : networks.homestead)
+const activeNetwork = computed(() => networkStore.activeNetworks?.length ? networkStore.activeNetworks[0] : networks.homestead)
 </script>
 
 <template>

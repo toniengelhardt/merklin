@@ -30,7 +30,7 @@ async function connectWallet(connectorName: keyof typeof connectors) {
           MetaMask
         </div>
       </div>
-      <div
+      <!-- <div
         h-28 mt-2 flex-col-center rounded-2xl bg-element hover:bg-element-active
         cursor-pointer
         @click="connectWallet('walletconnect')"
@@ -39,7 +39,7 @@ async function connectWallet(connectorName: keyof typeof connectors) {
         <div text-xl>
           WalletConnect
         </div>
-      </div>
+      </div> -->
     </div>
     <div flex-col-center max-w-100 mt-6 text-xs text-dim>
       <div

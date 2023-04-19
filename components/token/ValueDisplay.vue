@@ -10,8 +10,8 @@ const props = defineProps<{
   timestamp?: DatetimeString
 }>()
 
-const valueDisplay = $computed(() => (+ethersUtils.formatUnits(props.value, 'ether') * (props.multiplier || 1)).toPrecision(4))
-const currencyDisplay = $computed(() => useEthToCurrencyFormatted(+ethersUtils.formatUnits(props.value, 'ether')))
+const valueDisplay = computed(() => (+ethersUtils.formatUnits(props.value, 'ether') * (props.multiplier || 1)).toPrecision(4))
+const currencyDisplay = computed(() => useEthToCurrencyFormatted(+ethersUtils.formatUnits(props.value, 'ether')))
 </script>
 
 <template>

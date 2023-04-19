@@ -63,7 +63,7 @@ const chainlinkPriceAddresses = {
 
 const chainlinkPriceContracts: Record<string, ethers.Contract> = {}
 
-export const usePriceFeed = async (marketPair: MarketPair) => {
+export async function usePriceFeed(marketPair: MarketPair) {
   if (!chainlinkPriceContracts[marketPair]) {
     const provider = await useRpcProvider()
     chainlinkPriceContracts[marketPair] = new ethers.Contract(chainlinkPriceAddresses[marketPair], aggregatorV3InterfaceABI, provider)

@@ -1,5 +1,6 @@
 import { /* $fetch, */ fetch, setup } from '@nuxt/test-utils'
 import { describe, expect, it } from 'vitest'
+
 // import { expectNoClientErrors } from './utils'
 
 // See examples here:

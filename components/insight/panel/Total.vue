@@ -5,7 +5,7 @@ const walletStore = useWalletStore()
 
 const balance = await walletStore.updateBalance()
 
-const assetTotal = $computed(() => {
+const assetTotal = computed(() => {
   if (transactionStore.assetTotalEth) {
     return new Intl.NumberFormat(
       'en-US',

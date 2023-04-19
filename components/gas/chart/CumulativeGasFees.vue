@@ -17,22 +17,22 @@ const colorMode = useColorMode()
 const ui = useUIStore()
 const transactionStore = useTransactionStore()
 
-const items = $computed(() => transactionStore.transactionItems)
-const data = $computed(() => items ? generateData(items, props.unit) : undefined)
+const items = computed(() => transactionStore.transactionItems)
+const data = computed(() => items.value ? generateData(items.value, props.unit) : undefined)
 
-const fillColors = $computed(() => (
+const fillColors = computed(() => (
   colorMode.value === 'light'
     ? [(colors.yellow as Colors)['400'], (colors.orange as Colors)['400'], (colors.rose as Colors)['400']]
     : [(colors.yellow as Colors)['500'], (colors.orange as Colors)['500'], (colors.rose as Colors)['600']]
 ))
 
 type ChartDataType = ChartData<any, (number | ScatterDataPoint | null)[], unknown>
-const chartData = $computed<ChartDataType | undefined>(() => (
-  data
+const chartData = computed<ChartDataType | undefined>(() => (
+  data.value
     ? ({
         datasets: [
           {
-            data,
+            data: data.value,
             borderWidth: 2,
             borderColor: 'rgba(0,0,0,0)', // (context: any) => generateChartGradient(context, lineColors),
             backgroundColor: 'transparent',
@@ -40,7 +40,7 @@ const chartData = $computed<ChartDataType | undefined>(() => (
             pointBackgroundColor: 'transparent',
             fill: {
               target: 'origin',
-              above: (context: any) => generateChartGradient(context, fillColors),
+              above: (context: any) => generateChartGradient(context, fillColors.value),
             },
             stepped: true,
           },
@@ -49,8 +49,8 @@ const chartData = $computed<ChartDataType | undefined>(() => (
     : undefined
 ))
 
-const chartOptions = $computed<ChartOptions<any> | undefined>(() => (
-  data
+const chartOptions = computed<ChartOptions<any> | undefined>(() => (
+  data.value
     ? ({
         responsive: true,
         maintainAspectRatio: false,

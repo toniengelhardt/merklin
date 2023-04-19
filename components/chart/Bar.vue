@@ -20,7 +20,7 @@ const props = withDefaults(defineProps<{
 
 const ui = useUIStore()
 
-const mergedHeight = $computed(() => props.height || (ui.mobile ? '10rem' : '12rem'))
+const mergedHeight = computed(() => props.height || (ui.mobile ? '10rem' : '12rem'))
 </script>
 
 <template>

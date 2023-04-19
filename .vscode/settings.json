@@ -3,5 +3,6 @@
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true
     },
+    "unocss.colorPreview": false,
     "vitest.enable": true,
 }

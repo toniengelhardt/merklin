@@ -13,7 +13,7 @@ const currencies = {
   },
 }
 
-export const useCurrency = () => {
+export function useCurrency() {
   // For now static, but should eventually be wired to the selector.
   return currencies.usd
 }

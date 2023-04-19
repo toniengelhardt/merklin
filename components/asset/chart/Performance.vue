@@ -17,22 +17,22 @@ const colorMode = useColorMode()
 const ui = useUIStore()
 const transactionStore = useTransactionStore()
 
-const items = $computed(() => transactionStore.transactionItems)
-const data = $computed(() => items ? generateData(items, props.unit) : undefined)
+const items = computed(() => transactionStore.transactionItems)
+const data = computed(() => items.value ? generateData(items.value, props.unit) : undefined)
 
-const fillColors = $computed(() => (
+const fillColors = computed(() => (
   colorMode.value === 'light'
     ? [(colors.sky as Colors)['400'], (colors.blue as Colors)['400'], (colors.purple as Colors)['400']]
     : [(colors.sky as Colors)['500'], (colors.blue as Colors)['500'], (colors.purple as Colors)['600']]
 ))
 
 type ChartDataType = ChartData<any, (number | ScatterDataPoint | null)[], unknown>
-const chartData = $computed<ChartDataType | undefined>(() => (
-  data
+const chartData = computed<ChartDataType | undefined>(() => (
+  data.value
     ? ({
         datasets: [
           {
-            data,
+            data: data.value,
             borderWidth: 2,
             borderColor: 'rgba(255, 255, 255, 0)',
             backgroundColor: 'transparent',
@@ -40,7 +40,7 @@ const chartData = $computed<ChartDataType | undefined>(() => (
             pointBackgroundColor: 'transparent',
             fill: {
               target: 'origin',
-              above: (context: any) => generateChartGradient(context, fillColors),
+              above: (context: any) => generateChartGradient(context, fillColors.value),
             },
             tension: 0.01,
           },
@@ -49,8 +49,8 @@ const chartData = $computed<ChartDataType | undefined>(() => (
     : undefined
 ))
 
-const chartOptions = $computed<ChartOptions<any> | undefined>(() => (
-  data
+const chartOptions = computed<ChartOptions<any> | undefined>(() => (
+  data.value
     ? ({
         responsive: true,
         maintainAspectRatio: false,
@@ -104,9 +104,9 @@ const chartOptions = $computed<ChartOptions<any> | undefined>(() => (
     : undefined
 ))
 
-function generateData(items: TransactionItem[], unit: 'eth' | 'currency') {
+function generateData(transactionItems: TransactionItem[], unit: 'eth' | 'currency') {
   let cum = 0
-  const data = items.reduce((list: { x: DatetimeString; y: number }[], item) => {
+  const data = transactionItems.reduce((list: { x: DatetimeString; y: number }[], item) => {
     if (item.timestamp && ['send', 'receive'].includes(item.type)) {
       const val = +ethersUtils.formatUnits(item.transaction.value, 'ether')
       cum += (item.type === 'send' ? -1 : 1) * (unit === 'eth' ? val : (useEthToCurrency(val) || 0))

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { connect, disconnect } from '@wagmi/core'
+import { disconnect } from '@wagmi/core'
 
 const ui = useUIStore()
 const wallet = useWalletStore()

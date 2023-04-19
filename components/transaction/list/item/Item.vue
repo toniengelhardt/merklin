@@ -5,19 +5,19 @@ const props = defineProps<{
   item?: TransactionItem
 }>()
 
-const expanded = $ref(false)
+const expanded = ref(false)
 
-const gasPriceDisplay = $computed(() => (
+const gasPriceDisplay = computed(() => (
   props.item?.transaction.gasPrice
     ? Math.round(+ethersUtils.formatUnits(props.item.transaction.gasPrice, 'gwei'))
     : undefined
 ))
-const gasCost = $computed(() => (
-  props.item?.transaction.gasLimit && props.item?.transaction.gasPrice
+const gasCost = computed(() => (
+  (props.item?.transaction.gasLimit && props.item?.transaction.gasPrice)
     ? +ethersUtils.formatUnits(props.item.transaction.gasLimit.mul(props.item.transaction.gasPrice), 'ether')
     : undefined
 ))
-const gasCostDisplay = $computed(() => gasCost?.toPrecision(2))
+const gasCostDisplay = computed(() => gasCost.value?.toPrecision(2))
 </script>
 
 <template>
@@ -25,7 +25,7 @@ const gasCostDisplay = $computed(() => gasCost?.toPrecision(2))
     v-if="item"
     flex flex-col cursor-pointer
     border="solid light 0 t-1"
-    @click="(expanded = !expanded)"
+    @click="expanded = !expanded"
   >
     <div flex items-center h-14>
       <div flex min-w-5 w-5 h-5 md:w-8 md:h-8>

@@ -2,11 +2,11 @@
 const ui = useUIStore()
 const addressStore = useAddressStore()
 
-const activeAddress = $computed(() => addressStore.activeAddresses.length ? addressStore.activeAddresses[0] : undefined)
+const activeAddress = computed(() => addressStore.activeAddresses.length ? addressStore.activeAddresses[0] : undefined)
 
 function copyAddress() {
-  if (activeAddress) {
-    navigator.clipboard.writeText(activeAddress)
+  if (activeAddress.value) {
+    navigator.clipboard.writeText(activeAddress.value)
   }
 }
 </script>

@@ -13,7 +13,7 @@ const compMap: Record<TransactionSignature, any> = {
 }
 
 const transactionStore = useTransactionStore()
-const panels = $computed(() => {
+const panels = computed(() => {
   if (transactionStore.transactionItemsReverse) {
     const _panels: { date: DateString; items: TransactionItem[] }[] = []
     let prevDate: DateString | undefined

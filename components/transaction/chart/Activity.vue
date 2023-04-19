@@ -15,22 +15,22 @@ const colors: Colors = theme.colors!
 const colorMode = useColorMode()
 const ui = useUIStore()
 
-const histData = $computed(() => generateHistograms(props.items))
-const maxVal = $computed(() => (
-  histData
-    ? Math.max(Math.abs(Math.min(...histData.sent)), Math.max(...histData.received), 1)
+const histData = computed(() => generateHistograms(props.items))
+const maxVal = computed(() => (
+  histData.value
+    ? Math.max(Math.abs(Math.min(...histData.value.sent)), Math.max(...histData.value.received), 1)
     : undefined
 ))
 
 const chartData = computed<ChartData<any> | undefined>(() => (
-  histData
+  histData.value
     ? ({
-        labels: histData.labels,
+        labels: histData.value.labels,
         datasets: [
           {
             label: 'Received',
             type: 'bar',
-            data: histData.received,
+            data: histData.value.received,
             backgroundColor: colorMode.value === 'light' ? (colors.green as Colors)['500'] : (colors.green as Colors)['500'],
             stack: 'bars',
             order: 2,
@@ -38,7 +38,7 @@ const chartData = computed<ChartData<any> | undefined>(() => (
           {
             label: 'Sent',
             type: 'bar',
-            data: histData.sent,
+            data: histData.value.sent,
             backgroundColor: colorMode.value === 'light' ? (colors.orange as Colors)['500'] : (colors.orange as Colors)['500'],
             stack: 'bars',
             order: 2,
@@ -49,7 +49,7 @@ const chartData = computed<ChartData<any> | undefined>(() => (
 ))
 
 const chartOptions = computed<ChartOptions<any> | undefined>(() => (
-  histData && maxVal
+  (histData.value && maxVal.value)
     ? ({
         responsive: true,
         maintainAspectRatio: false,
@@ -75,8 +75,8 @@ const chartOptions = computed<ChartOptions<any> | undefined>(() => (
             },
           },
           y: {
-            min: -maxVal,
-            max: maxVal,
+            min: -maxVal.value,
+            max: maxVal.value,
             border: {
               display: false,
             },
