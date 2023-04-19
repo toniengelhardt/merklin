@@ -83,7 +83,15 @@ Please make sure they pass!
 
 Feel free to play around and contribute, open issues, report bugs, and give feedback. The best way to start is to drop a comment on an issue you want to work on, that way we can avoid overlap.
 
-Please don't be afraid to ask questions! You can start a thread under Discussions for topics related to MΞRKLIN specifically or consult the `web3` channel in the [Nuxt Discord](https://discord.com/invite/ps2h6QT) for more general questions about web3 and Nuxt. At some point we might also have our own Discord server.
+Releases are generated with [bumpp](https://github.com/antfu/bumpp). To make the changelog work properly and to get your
+work included please use commit messages based on [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
+and [@commitlint/config-conventional](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventiona), e.g.
+
+- chore: upgrade deps
+- fix: a bug
+- test: something
+
+Don't be afraid to ask questions! You can start a thread under Discussions for topics related to MΞRKLIN specifically or consult the `web3` channel in the [Nuxt Discord](https://discord.com/invite/ps2h6QT) for more general questions about web3 and Nuxt. At some point we might also have our own Discord server.
 
 ---
 
