@@ -2,7 +2,7 @@
   "private": true,
   "name": "merklin",
   "type": "module",
-  "version": "0.6.0-alpha",
+  "version": "0.6.1",
   "repository": "toniengelhardt/merklin",
   "author": "Degenerate humans",
   "license": "MIT",
