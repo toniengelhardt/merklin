@@ -30,7 +30,7 @@ export function useGasPriceFormatted(networkName: NetworkName, naValue = 'N/A', 
 export function useTransactionCost(networkName: NetworkName) {
   const tokenPrice = useTokenPrice(networks[networkName].token?.name as TokenName)
   const gp = useGasPrice(networkName)
-  return computed(() => (tokenPrice && gp.value) ? gp.value * transactionGasLimit[networkName] / 1e9 * tokenPrice.value : undefined)
+  return computed(() => (tokenPrice.value && gp.value) ? gp.value * transactionGasLimit[networkName] / 1e9 * tokenPrice.value : undefined)
 }
 
 export function useTransactionCostFormatted(networkName: NetworkName, naValue = 'N/A') {

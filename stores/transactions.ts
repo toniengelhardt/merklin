@@ -1,4 +1,4 @@
-import { BigNumber, utils as ethersUtils } from 'ethers'
+import { formatUnits } from 'ethers'
 import { defineStore } from 'pinia'
 import { v4 as uuid4 } from 'uuid'
 import { formatDate } from '~/utils/dates'
@@ -52,21 +52,21 @@ export const useTransactionStore = defineStore('transactions', {
     /** Returns total assets in [Wei]. */
     assetTotal(state) {
       if (state.transactionItems) {
-        return state.transactionItems.reduce((total: BigNumber, item) => {
+        return state.transactionItems.reduce((total: bigint, item) => {
           if (item.timestamp) {
             if (item.type === 'send') {
-              total = total.sub(item.transaction.value)
+              total = total - item.transaction.value.toBigInt()
             } else if (item.type === 'receive') {
-              total = total.add(item.transaction.value)
+              total = total + item.transaction.value.toBigInt()
             }
           }
           return total
-        }, BigNumber.from('0'))
+        }, 0n)
       }
       return undefined
     },
     assetTotalEth(): number | undefined {
-      return this.assetTotal ? +ethersUtils.formatUnits(this.assetTotal, 'ether') : undefined
+      return this.assetTotal ? +formatUnits(this.assetTotal, 'ether') : undefined
     },
   },
   persist: {

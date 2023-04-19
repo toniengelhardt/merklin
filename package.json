@@ -55,7 +55,7 @@
     "chartjs-adapter-date-fns": "^3.0.0",
     "chartjs-plugin-annotation": "^2.2.1",
     "date-fns": "^2.29.3",
-    "ethers": "^5.7.2",
+    "ethers": "^6.3.0",
     "events": "^3.3.0",
     "process": "^0.11.10",
     "util": "^0.12.5",

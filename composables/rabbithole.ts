@@ -4,13 +4,13 @@ import { ethers } from 'ethers'
 // https://docs.metamask.io/guide/ethereum-provider.html#table-of-contents
 // https://docs.ethers.io/v5/getting-started/
 
-let web3Provider: ethers.providers.Web3Provider
-let web3Signer: ethers.providers.JsonRpcSigner
-let rpcProvider: ethers.providers.JsonRpcProvider
-let etherscanProvider: ethers.providers.EtherscanProvider
+let web3Provider: ethers.BrowserProvider
+let web3Signer: ethers.JsonRpcSigner
+let rpcProvider: ethers.JsonRpcProvider
+let etherscanProvider: ethers.EtherscanProvider
 
 // We need one default provider per network.
-const defaultProviders: Partial<Record<NetworkName, ethers.providers.BaseProvider>> = {}
+const defaultProviders: Partial<Record<NetworkName, ethers.Provider>> = {}
 
 const network = 'homestead'
 
@@ -19,7 +19,7 @@ const network = 'homestead'
  */
 export async function useWeb3Provider() {
   if (!web3Provider) {
-    web3Provider = new ethers.providers.Web3Provider((window as any).ethereum)
+    web3Provider = new ethers.BrowserProvider((window as any).ethereum)
   }
   if (!web3Signer) {
     web3Signer = await web3Provider?.getSigner()
@@ -49,7 +49,7 @@ export async function useDefaultProvider(network: NetworkName) {
 export async function useRpcProvider() {
   if (!rpcProvider) {
     const config = useRuntimeConfig()
-    rpcProvider = new ethers.providers.JsonRpcProvider(config.public.jsonRpcUrl)
+    rpcProvider = new ethers.JsonRpcProvider(config.public.jsonRpcUrl)
   }
   return rpcProvider
 }
@@ -61,7 +61,7 @@ export async function useRpcProvider() {
 export async function useEtherscanProvider() {
   if (!etherscanProvider) {
     const config = useRuntimeConfig()
-    etherscanProvider = new ethers.providers.EtherscanProvider(network, config.public.etherscanApiKey)
+    etherscanProvider = new ethers.EtherscanProvider(network, config.public.etherscanApiKey)
   }
   return etherscanProvider
 }
@@ -81,15 +81,15 @@ export async function useTransactions() {
  * TODO: Implement this!
  * Hardcoded for now for UI dev.
  */
-export function useEthToCurrency(value: number | undefined) {
+export function useEthToCurrency(value: bigint | undefined) {
   if (value) {
     const priceStore = usePriceStore()
     const conversionFactor = priceStore.eth_usd || 0
-    return value * conversionFactor
+    return value * BigInt(conversionFactor)
   }
 }
 
-export function useEthToCurrencyFormatted(value: number | undefined) {
+export function useEthToCurrencyFormatted(value: bigint | undefined) {
   const cValue = useEthToCurrency(value)
   if (cValue) {
     return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(cValue)

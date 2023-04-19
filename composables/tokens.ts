@@ -4,7 +4,7 @@
 export function useTokenPrice(tokenName: TokenName) {
   const priceStore = usePriceStore()
   const identifier = `${tokenName}_${useCurrency().name}`
-  return computed(() => priceStore[identifier as keyof typeof priceStore])
+  return computed(() => priceStore[identifier as keyof typeof priceStore] as number | undefined)
 }
 
 /**
