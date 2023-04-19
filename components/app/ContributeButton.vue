@@ -1,6 +1,6 @@
 <template>
   <NuxtLink
-    :to="$config.repoUrl"
+    :to="$config.public.repoUrl"
     title="MΞRKLIN repository on GitHub"
     target="_blank"
     btn-default h-6 px-2 text-xs rounded
