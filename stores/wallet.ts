@@ -34,10 +34,16 @@ export const useWalletStore = defineStore('wallet', {
   },
   actions: {
     async updateBalance() {
-      const provider = useWeb3Provider()
-      const signer = (await provider).web3Signer
-      const balance = await signer.getBalance()
-      return (this.balance = ethers.utils.formatEther(balance))
+      try {
+        const provider = useWeb3Provider()
+        const signer = (await provider).web3Signer
+        const balance = await signer.getBalance()
+        this.balance = ethers.utils.formatEther(balance)
+      } catch (error) {
+        console.log('Could not retrieve balance from wallet. This might happen if it is not connected.')
+        this.balance = undefined
+      }
+      return this.balance
     },
     // async getAccount() {
     //   const { web3Provider, web3Signer } = await useWeb3Provider()

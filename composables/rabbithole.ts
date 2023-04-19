@@ -18,10 +18,12 @@ const network = 'homestead'
  * Wallet provider, e.g. MetaMask.
  */
 export async function useWeb3Provider() {
-  if (!web3Provider)
+  if (!web3Provider) {
     web3Provider = new ethers.providers.Web3Provider((window as any).ethereum)
-  if (!web3Signer)
-    web3Signer = await web3Provider.getSigner()
+  }
+  if (!web3Signer) {
+    web3Signer = await web3Provider?.getSigner()
+  }
   return { web3Provider, web3Signer }
 }
 

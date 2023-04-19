@@ -3,10 +3,12 @@ const addressStore = useAddressStore()
 const transactionStore = useTransactionStore()
 const walletStore = useWalletStore()
 
-const balance = await walletStore.updateBalance()
-
 const assetTotal = computed(() => {
   if (transactionStore.assetTotalEth) {
+    // Note: this is not working correctly if the network is not Ethereum.
+    const total = (walletStore.balance !== undefined)
+      ? Number(walletStore.balance)
+      : transactionStore.assetTotalEth
     return new Intl.NumberFormat(
       'en-US',
       {
@@ -17,9 +19,13 @@ const assetTotal = computed(() => {
         minimumFractionDigits: 2,
       },
     )
-      .format(useEthToCurrency(Number(balance)) ?? 0)
+      .format(useEthToCurrency(total) ?? 0)
   }
   return '--'
+})
+
+onMounted(() => {
+  walletStore.updateBalance()
 })
 </script>
 
