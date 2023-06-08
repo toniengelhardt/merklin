@@ -1,6 +1,6 @@
-# M Ξ R K L 🧙🏽‍♂️ N
+# M Ξ R K L I N
 
-__Home:__ [merklin.xyz](https://merklin.xyz) ([repo](https://github.com/toniengelhardt/merklin-website))
+website: [merklin.xyz](https://merklin.xyz) ([repo](https://github.com/toniengelhardt/merklin-website))
 
 MΞRKLIN is an attempt to build an open-source web-only ([PWA](https://web.dev/progressive-web-apps/)) [EVM](https://ethereum.org/en/developers/docs/evm) wallet explorer similar to [Zapper](https://zapper.fi/), [Zerion](https://app.zerion.io/), etc. It's made with [Nuxt 3](https://nuxt.com) and the goal is to provide an educational resource and to introduce [Vue](https://vuejs.org) to the [web3](https://ethereum.org/en/web3) stack.
 
@@ -19,7 +19,7 @@ The idea is to focus primarily on on-chain analytics and visualization, i.a.
 - Network status and comparison
 - etc.
 
-For now, only [Ethereum](https://ethereum.org) and L2 scaling solutions: [Arbitrum](https://arbitrum.io), [Optimism](https://www.optimism.io), [zkSync](https://zksync.io), [Polygon](https://polygon.technology), [Gnosis](https://www.gnosis.io), etc.
+For now, only [Ethereum](https://ethereum.org) and L2 scaling solutions: [Arbitrum](https://arbitrum.io), [Optimism](https://www.optimism.io), [zkSync](https://zksync.io), [Polygon](https://polygon.technology), etc.
 
 Adding the [Bitcoin](https://bitcoin.org) and [Lightning](https://lightning.network) networks is also very important, but that's for later.
 
