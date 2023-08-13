@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { theme } from '@unocss/preset-mini'
 import type { ChartData, ChartOptions, ScatterDataPoint } from 'chart.js'
-import { utils as ethersUtils } from 'ethers'
+import { formatUnits } from 'ethers'
 
 const props = withDefaults(defineProps<{
   unit?: ChartUnitOption
@@ -105,21 +105,21 @@ const chartOptions = computed<ChartOptions<any> | undefined>(() => (
 ))
 
 function generateData(transactionItems: TransactionItem[], unit: 'eth' | 'currency') {
-  let cum = 0
+  let cum = 0n
   const data = transactionItems.reduce((list: { x: DatetimeString; y: number }[], item) => {
     if (item.timestamp && ['send', 'receive'].includes(item.type)) {
-      const val = +ethersUtils.formatUnits(item.transaction.value, 'ether')
-      cum += (item.type === 'send' ? -1 : 1) * (unit === 'eth' ? val : (useEthToCurrency(val) || 0))
+      const val = BigInt(formatUnits(item.transaction.value.toBigInt(), 'ether'))
+      cum += (item.type === 'send' ? -1n : 1n) * (unit === 'eth' ? val : (useEthToCurrency(val) || 0n))
       list.push({
         x: item.timestamp.toISOString(),
-        y: cum,
+        y: Number(cum),
       })
     }
     return list
   }, [])
   data.push({
     x: new Date().toISOString(),
-    y: cum,
+    y: Number(cum),
   })
   return data
 }

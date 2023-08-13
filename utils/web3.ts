@@ -1,5 +1,5 @@
 import { format } from 'date-fns'
-import { utils as ethersUtils } from 'ethers'
+import { formatUnits } from 'ethers'
 
 export const TransactionTypeMap: Record<TransactionType, string> = {
   0: 'legacy',
@@ -34,7 +34,7 @@ export function displayAddress(address: Address): string {
 }
 
 export function inGwei(value: number): number {
-  return Math.round(+ethersUtils.formatUnits(value, 'gwei'))
+  return Math.round(+formatUnits(value, 'gwei'))
 }
 
 export function gweiToEth(value: number): number {

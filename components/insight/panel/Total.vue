@@ -19,7 +19,7 @@ const assetTotal = computed(() => {
         minimumFractionDigits: 2,
       },
     )
-      .format(useEthToCurrency(total) ?? 0)
+      .format(useEthToCurrency(BigInt(total)) ?? 0)
   }
   return '--'
 })
